@@ -1,0 +1,19 @@
+mutation addMappingRule($input: AddParameterMappingRuleInput!) {
+  addParameterMappingRule(input: $input) {
+    mappingRule {
+      name
+      pType
+      codes {
+        code
+        message
+        messages {
+          lang
+          text
+        }
+        status {
+          index
+        }
+      }
+    }
+  }
+}

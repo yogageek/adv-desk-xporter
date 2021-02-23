@@ -1,0 +1,11 @@
+mutation updateMachineStatusWithExistingIndex(
+  $input: UpdateMachineStatusInput!
+) {
+  updateMachineStatus(input: $input) {
+    machineStatus {
+      id
+      name
+      color
+    }
+  }
+}

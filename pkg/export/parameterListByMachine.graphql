@@ -1,0 +1,26 @@
+query parameterListByMachine($machineId: ID!, $lastCursor: String) {
+  machine(id: $machineId) {
+    parameters(first: 100, after: $lastCursor) {
+      edges {
+        cursor
+        node {
+          name
+          description
+          descriptions {
+            lang
+            text
+          }
+          valueType
+          mapping {
+            name
+          }
+          # only export primitive parameter which kind is null
+          kind
+        }
+      }
+      pageInfo {
+        hasNextPage
+      }
+    }
+  }
+}

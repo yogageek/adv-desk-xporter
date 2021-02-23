@@ -1,0 +1,20 @@
+query groupList {
+  groups {
+    name
+    names {
+      lang
+      text
+    }
+    description
+    descriptions {
+      lang
+      text
+    }
+    timeZone
+    parentId
+    coordinate {
+      longitude
+      latitude
+    }
+  }
+}

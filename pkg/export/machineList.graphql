@@ -1,0 +1,23 @@
+query machineList {
+  machines {
+    id
+    groupId
+    index
+    name
+    names {
+      lang
+      text
+    }
+    description
+    descriptions {
+      lang
+      text
+    }
+    imageUrl
+    imageUrls {
+      lang
+      text
+    }
+    isStation
+  }
+}

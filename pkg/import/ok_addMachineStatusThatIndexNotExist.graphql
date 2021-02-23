@@ -1,0 +1,10 @@
+mutation addMachineStatusThatIndexNotExist($input: AddMachineStatusInput!) {
+  addMachineStatus(input: $input) {
+    machineStatus {
+      id
+      index
+      name
+      color
+    }
+  }
+}

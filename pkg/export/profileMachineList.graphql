@@ -1,0 +1,31 @@
+query profileMachineList {
+  profileMachines {
+    name
+    names {
+      lang
+      text
+    }
+    description
+    descriptions {
+      lang
+      text
+    }
+    imageUrl
+    imageUrls {
+      lang
+      text
+    }
+    parameters {
+      name
+      description
+      descriptions {
+        lang
+        text
+      }
+      valueType
+      mapping {
+        name
+      }
+    }
+  }
+}

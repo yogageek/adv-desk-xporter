@@ -1,7 +1,9 @@
 package logic
 
 import (
+	"fmt"
 	model "porter/model/gqlclient"
+	"porter/util"
 )
 
 //匯入machine status總共只需要這些
@@ -74,13 +76,13 @@ func getSourceMachineStatus() (mm []map[string]interface{}) {
 }
 
 //目前最多只能匯入三層
-func ImportMachineStatus(machineStatusDatas []machineStatusData) {
+func ImportMachineStatus(machineStatusDatas []*machineStatusData) {
 	//儲存index與parentId對應關係
 	M1 := map[int]string{}
 	M2 := map[int]string{}
 
 	// debugging 目前只抓萬以下的測
-	var newMachineStatusDatas []machineStatusData
+	var newMachineStatusDatas []*machineStatusData
 	for _, v := range machineStatusDatas {
 		if v.Index < 10000 {
 			newMachineStatusDatas = append(newMachineStatusDatas, v)
@@ -89,6 +91,8 @@ func ImportMachineStatus(machineStatusDatas []machineStatusData) {
 
 	machineStatusDatas = newMachineStatusDatas
 
+	// debugging
+	util.PrintJson(machineStatusDatas)
 	for _, v := range machineStatusDatas {
 		if v.Depth == 1 {
 			input := model.AddMachineStatusInput{
@@ -97,7 +101,9 @@ func ImportMachineStatus(machineStatusDatas []machineStatusData) {
 				Color: v.Color,
 			}
 			//set new id
+			fmt.Println(v.Id)
 			v.Id = AddMachineStatus(input).Id
+			fmt.Println(v.Id)
 			//set parent id map
 			M1[v.Index] = v.Id
 		}
@@ -126,9 +132,11 @@ func ImportMachineStatus(machineStatusDatas []machineStatusData) {
 				Index:    IndexPrefix + v.Index,
 				Color:    v.Color,
 			}
-			_ = AddMachineStatus(input)
+			_ = AddMachineStatus(input) //這裡也要回傳
 		}
 	}
+	// debugging
+	util.PrintJson(machineStatusDatas)
 }
 
 /*

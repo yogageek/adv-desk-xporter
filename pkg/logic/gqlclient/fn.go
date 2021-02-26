@@ -9,9 +9,9 @@ import (
 //匯出的結構
 
 type jsonData struct {
-	MachineStatusData []machineStatusData
-	MappingRuleData   []mappingRuleData
-	ProfileData       []profileData
+	MachineStatusData []*machineStatusData
+	MappingRuleData   []*mappingRuleData
+	ProfileData       []*profileData
 }
 
 //未來改成從model拿原始input

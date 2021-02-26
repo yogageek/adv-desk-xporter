@@ -96,8 +96,10 @@ func ImportMachineStatus(machineStatusDatas []machineStatusData) {
 				Index: IndexPrefix + v.Index,
 				Color: v.Color,
 			}
-			ParentId := AddMachineStatus(input).Id
-			M1[v.Index] = ParentId
+			//set new id
+			v.Id = AddMachineStatus(input).Id
+			//set parent id map
+			M1[v.Index] = v.Id
 		}
 	}
 
@@ -109,8 +111,10 @@ func ImportMachineStatus(machineStatusDatas []machineStatusData) {
 				Index:    IndexPrefix + v.Index,
 				Color:    v.Color,
 			}
-			ParentId := AddMachineStatus(input).Id
-			M2[v.Index] = ParentId
+			//set new id
+			v.Id = AddMachineStatus(input).Id
+			//set parent id map
+			M2[v.Index] = v.Id
 		}
 	}
 

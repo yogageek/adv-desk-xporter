@@ -16,6 +16,7 @@ type jsonData struct {
 
 //未來改成從model拿原始input
 type machineStatusData struct {
+	Id          string
 	ParentId    string
 	ParentIndex int //注意這裡形態要對否則會拿到空值
 	Name        string

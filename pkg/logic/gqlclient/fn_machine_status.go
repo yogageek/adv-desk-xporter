@@ -113,7 +113,7 @@ func ImportMachineStatus(machineStatusDatas []machineStatusData) {
 			M2[v.Index] = ParentId
 		}
 	}
-
+	//fdasfdasf
 	for _, v := range machineStatusDatas {
 		if v.Depth == 3 {
 			input := model.AddMachineStatusInput{

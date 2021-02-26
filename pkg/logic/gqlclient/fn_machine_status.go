@@ -96,7 +96,7 @@ func ImportMachineStatus(machineStatusDatas []machineStatusData) {
 				Index: IndexPrefix + v.Index,
 				Color: v.Color,
 			}
-			ParentId := AddMachineStatus(input)
+			ParentId := AddMachineStatus(input).Id
 			M1[v.Index] = ParentId
 		}
 	}
@@ -109,11 +109,11 @@ func ImportMachineStatus(machineStatusDatas []machineStatusData) {
 				Index:    IndexPrefix + v.Index,
 				Color:    v.Color,
 			}
-			ParentId := AddMachineStatus(input)
+			ParentId := AddMachineStatus(input).Id
 			M2[v.Index] = ParentId
 		}
 	}
-	//fdasfdasf
+
 	for _, v := range machineStatusDatas {
 		if v.Depth == 3 {
 			input := model.AddMachineStatusInput{

@@ -31,7 +31,7 @@ func QueryMachineStatuses() []model.MachineStatuses {
 	return gqlQuery.MachineStatuses
 }
 
-func AddMachineStatus(input model.AddMachineStatusInput) (id string) {
+func AddMachineStatus(input model.AddMachineStatusInput) model.MachineStatus {
 	gqlQuery := model.AddMachineStatus
 
 	variables := map[string]interface{}{
@@ -52,8 +52,7 @@ func AddMachineStatus(input model.AddMachineStatusInput) (id string) {
 	b, _ := json.MarshalIndent(gqlQuery, "", " ")
 	fmt.Printf("%s", b)
 
-	id = gqlQuery.AddMachineStatus.MachineStatus.Id
-	return
+	return gqlQuery.AddMachineStatus.MachineStatus
 }
 
 func AddMachineStatusSample(parentId string) {

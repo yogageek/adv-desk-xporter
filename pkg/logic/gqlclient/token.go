@@ -15,9 +15,9 @@ import (
 var (
 	Token string
 
-	ADMIN_USERNAME    = "devanliang@iii.org.tw"
-	ADMIN_PASSWORD    = "Abcd1234#"
-	IFP_URL           = "https://ifp-organizer-training-eks011.hz.wise-paas.com.cn/graphql"
+	ADMIN_USERNAME = "devanliang@iii.org.tw"
+	ADMIN_PASSWORD = "Abcd1234#"
+	// IFP_URL           = "https://ifp-organizer-training-eks011.hz.wise-paas.com.cn/graphql"
 	TaipeiTimeZone, _ = time.LoadLocation("Asia/Taipei")
 
 	MONGODB_URL      = "52.187.110.12:27017"

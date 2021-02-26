@@ -50,12 +50,12 @@ type AddProfileMachineInput struct {
 var AddProfileParameter struct { //這行可隨便定義 但盡量和下面同名
 	AddProfileParameter struct { //這裡只用來對應addParameterMappingRule 沒其他作用
 		ProfileParameter struct {
-			name graphql.String
+			Name string
 		}
 	} `graphql:"addProfileParameter(input: $input)"`
 }
 
-type AddProfileParameterInput struct {
+type AddParameterInput struct { //這裡struct名字要和graphql($input: AddParameterInput!)一樣
 	MachineId   interface{} `json:"machineId"`
 	Name        interface{} `json:"name"` //tag重要! 攸關轉gql後的大小寫
 	Description interface{} `json:"description"`

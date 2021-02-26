@@ -39,11 +39,16 @@ type MachineStatuses struct { //這裡一定要大寫
 	//Children //沒辦法這樣用,會跟下面重命衝突, 上面還是要寫
 
 	Children []Children //ok
+}
 
+type Parent struct {
+	Index int
 }
 
 //目前desk有規定最多就三層
 type Children struct {
+	Id     graphql.String
+	Parent Parent
 	// ~layer2
 	ParentId graphql.String
 	Index    graphql.Int
@@ -58,6 +63,8 @@ type Children struct {
 }
 
 type Children2 struct {
+	Id     graphql.String
+	Parent Parent
 	// ~layer3
 	ParentId graphql.String
 	Index    graphql.Int

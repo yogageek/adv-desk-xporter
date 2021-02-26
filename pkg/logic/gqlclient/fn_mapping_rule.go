@@ -104,7 +104,7 @@ func ImportMappingRule(mappingRuleDatas []mappingRuleData) {
 		}
 
 		input := model.AddParameterMappingRuleInput{
-			Name:  v.Name,
+			Name:  NamePrefix + v.Name,
 			PType: v.PType,
 			Codes: codes,
 		}

@@ -17,6 +17,7 @@ func QueryParameterMappings() []model.ParameterMappings {
 	err := gclient.Query(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		glog.Error(err)
+		// glog.Fatal(err)
 	}
 
 	//debugging

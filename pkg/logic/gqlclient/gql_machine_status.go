@@ -31,7 +31,7 @@ func QueryMachineStatuses() []model.MachineStatuses {
 	return gqlQuery.MachineStatuses
 }
 
-func AddMachineStatus(input model.AddMachineStatusInput) {
+func AddMachineStatus(input model.AddMachineStatusInput) (id string) {
 	gqlQuery := model.AddMachineStatus
 
 	variables := map[string]interface{}{
@@ -45,11 +45,15 @@ func AddMachineStatus(input model.AddMachineStatusInput) {
 	err := gclient.Mutate(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		glog.Error(err)
+		// glog.Fatal(err)
 	}
 
 	//debugging
 	b, _ := json.MarshalIndent(gqlQuery, "", " ")
 	fmt.Printf("%s", b)
+
+	id = gqlQuery.AddMachineStatus.MachineStatus.Id
+	return
 }
 
 func AddMachineStatusSample(parentId string) {
@@ -79,6 +83,7 @@ func UpdateMachineStatus(id, name, color interface{}) {
 	err := gclient.Mutate(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		log.Error(err)
+		glog.Fatal(err)
 	}
 
 	//debugging

@@ -81,20 +81,20 @@ func getSourceProfileMachines() (results []model.ProfileMachine) {
 func ImportProfileMachine(profileDatas []profileData) {
 	for _, v := range profileDatas {
 		input := model.AddProfileMachineInput{
-			Name:        v.Name,
+			Name:        NamePrefix + string(v.Name), //# wait to refac
 			Description: v.Description,
 			ImageUrl:    v.ImageUrl,
 		}
 		id := AddProfileMachine(input)
-		ImportProfileParameter(id, v)
+		importProfileParameter(id, v)
 	}
 }
 
 //後
-func ImportProfileParameter(machineId string, profileData profileData) {
+func importProfileParameter(machineId string, profileData profileData) {
 	for _, v := range profileData.Parameters {
-		input := model.AddProfileParameterInput{
-			MachineId:   v.MachineId,
+		input := model.AddParameterInput{
+			MachineId:   machineId,
 			Name:        v.Name,
 			Description: v.Description,
 			ValueType:   v.ValueType,

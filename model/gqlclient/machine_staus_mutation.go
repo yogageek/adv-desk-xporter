@@ -23,10 +23,10 @@ var AddMachineStatus struct {
 }
 
 type MachineStatus struct {
-	Id    graphql.String //`json:"id"`
-	Name  graphql.String //`json:"name"`
-	Index graphql.Int    //`json:"index"`
-	Color graphql.String //`json:"color"`
+	Id    string //`json:"id"`
+	Name  string //`json:"name"`
+	Index int    //`json:"index"`
+	Color string //`json:"color"`
 }
 
 type AddMachineStatusInput struct { //參數

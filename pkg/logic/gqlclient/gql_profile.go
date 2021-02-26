@@ -40,6 +40,7 @@ func AddProfileMachine(input model.AddProfileMachineInput) (id string) {
 	err := gclient.Mutate(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		glog.Error(err)
+		// glog.Fatal(err)
 	}
 
 	// //debugging
@@ -50,7 +51,7 @@ func AddProfileMachine(input model.AddProfileMachineInput) (id string) {
 	return
 }
 
-func AddProfileParameter(input model.AddProfileParameterInput) {
+func AddProfileParameter(input model.AddParameterInput) {
 	gqlQuery := model.AddProfileParameter
 
 	variables := map[string]interface{}{
@@ -64,6 +65,7 @@ func AddProfileParameter(input model.AddProfileParameterInput) {
 	err := gclient.Mutate(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		glog.Error(err)
+		// glog.Fatal(err)
 	}
 
 	//debugging

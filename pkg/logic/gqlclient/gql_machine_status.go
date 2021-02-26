@@ -50,7 +50,7 @@ func AddMachineStatus(input model.AddMachineStatusInput) model.MachineStatus {
 
 	//debugging
 	b, _ := json.MarshalIndent(gqlQuery, "", " ")
-	fmt.Printf("%s", b)
+	fmt.Printf("\n gql return \n %s", b)
 
 	return gqlQuery.AddMachineStatus.MachineStatus
 }

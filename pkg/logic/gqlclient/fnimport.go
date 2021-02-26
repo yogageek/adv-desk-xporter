@@ -10,12 +10,9 @@ import (
 func Import() {
 	data := ReadFile()
 
-	ms := data.MachineStatusData
-	// mr := data.MappingRuleData
-	// p := data.ProfileData
 	//business logic
-	ImportMachineStatus(ms) //ok
-	// ImportMappingRule(mr)   //ok
+	ImportMachineStatus(&data) //ok
+	// ImportMappingRule(&data)   //ok
 	// ImportProfileMachine(p) //ok
 
 }

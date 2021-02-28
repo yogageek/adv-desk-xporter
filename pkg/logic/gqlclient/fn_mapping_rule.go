@@ -56,6 +56,7 @@ func getSourceMappingRule() (results []map[string]interface{}) {
 	res := QueryParameterMappings()
 	for _, v := range res {
 		M := map[string]interface{}{
+			"id":    v.Id,
 			"name":  v.Name,
 			"pType": v.PType,
 		}
@@ -86,7 +87,8 @@ func getSourceMappingRule() (results []map[string]interface{}) {
 	return
 }
 
-func ImportMappingRule(mappingRuleDatas []mappingRuleData) {
+func ImportMappingRule(jsonData *jsonData) {
+	mappingRuleDatas := jsonData.MappingRuleData
 	for _, v := range mappingRuleDatas {
 
 		codes := []model.AddParameterMappingCodesEntry{}
@@ -96,7 +98,8 @@ func ImportMappingRule(mappingRuleDatas []mappingRuleData) {
 				Message:  v.Message,
 				StatusId: v.StatusId,
 				Translations: model.ParameterMappingCodeTranslationEntry{
-					Lang:    v.Lang,
+					// Lang:    v.Lang,
+					Lang:    "zh-TW",
 					Message: v.Text,
 				},
 			}
@@ -108,6 +111,8 @@ func ImportMappingRule(mappingRuleDatas []mappingRuleData) {
 			PType: v.PType,
 			Codes: codes,
 		}
-		AddParameterMappingRule(input)
+		//set new id
+		parameterMappings := AddParameterMappingRule(input)
+		v.NewId = parameterMappings.Id
 	}
 }

@@ -182,6 +182,19 @@
    ],
    "name": "測試Rule",
    "pType": "Number"
+  },
+  {
+   "detail": [
+    {
+     "code": "2",
+     "lang": "en",
+     "message": "測試msg",
+     "statusId": "TVN0YXR1cw.YDho1MGunQAGpEZu",
+     "text": "測試msg"
+    }
+   ],
+   "name": "測試Rule2",
+   "pType": "Number"
   }
  ],
  "profileData": [

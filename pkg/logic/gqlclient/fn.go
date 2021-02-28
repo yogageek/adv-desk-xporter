@@ -17,6 +17,7 @@ type jsonData struct {
 //未來改成從model拿原始input
 type machineStatusData struct {
 	Id          string
+	NewId       string //改直接放Id就好(錯)
 	ParentId    string
 	ParentIndex int //注意這裡形態要對否則會拿到空值
 	Name        string
@@ -26,6 +27,8 @@ type machineStatusData struct {
 }
 
 type mappingRuleData struct {
+	Id     string
+	NewId  string
 	Name   string
 	PType  string
 	Detail []Detail

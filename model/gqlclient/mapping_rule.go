@@ -4,6 +4,7 @@ import "github.com/shurcooL/graphql"
 
 //for query, no need json tag------
 type ParameterMappings struct { //這裡一定要大寫
+	Id    string
 	Name  graphql.String //裡面的欄位名稱一定要大寫開頭, 而且型態要正確!
 	PType graphql.String
 	Codes []Code

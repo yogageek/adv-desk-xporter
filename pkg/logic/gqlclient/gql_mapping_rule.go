@@ -27,7 +27,7 @@ func QueryParameterMappings() []model.ParameterMappings {
 	return gqlQuery.ParameterMappings
 }
 
-func AddParameterMappingRule(input model.AddParameterMappingRuleInput) {
+func AddParameterMappingRule(input model.AddParameterMappingRuleInput) model.ParameterMappings {
 	gqlQuery := model.AddParameterMappingRule
 
 	variables := map[string]interface{}{
@@ -46,6 +46,8 @@ func AddParameterMappingRule(input model.AddParameterMappingRuleInput) {
 	//debugging
 	b, _ := json.MarshalIndent(gqlQuery, "", " ")
 	fmt.Printf("%s", b)
+
+	return gqlQuery.AddParameterMappingRule.MappingRule.ParameterMappings
 }
 
 func AddParameterMappingRuleSample() {

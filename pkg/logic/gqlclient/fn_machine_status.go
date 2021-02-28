@@ -96,6 +96,8 @@ func ImportMachineStatus(jsonData *jsonData) {
 	// util.PrintJson(machineStatusDatas)
 	// fmt.Println("----------------------------")
 
+	//fix: add set new machine status id after import
+
 	for _, v := range machineStatusDatas {
 		if v.Depth == 1 {
 			input := model.AddMachineStatusInput{
@@ -104,9 +106,9 @@ func ImportMachineStatus(jsonData *jsonData) {
 				Color: v.Color,
 			}
 			//set new id after import
-			v.Id = AddMachineStatus(input).Id
+			v.NewId = AddMachineStatus(input).Id
 			//set parent id map (根據index來判斷parentid是誰)
-			M1[v.Index] = v.Id
+			M1[v.Index] = v.NewId
 		}
 	}
 
@@ -119,9 +121,9 @@ func ImportMachineStatus(jsonData *jsonData) {
 				Color:    v.Color,
 			}
 			//set new id
-			v.Id = AddMachineStatus(input).Id
-			//set parent id map
-			M2[v.Index] = v.Id
+			v.NewId = AddMachineStatus(input).Id
+			//set parent id map (根據index來判斷parentid是誰)
+			M2[v.Index] = v.NewId
 		}
 	}
 
@@ -133,7 +135,7 @@ func ImportMachineStatus(jsonData *jsonData) {
 				Index:    IndexPrefix + v.Index,
 				Color:    v.Color,
 			}
-			v.Id = AddMachineStatus(input).Id //這裡也要設
+			v.NewId = AddMachineStatus(input).Id //這裡也要設
 		}
 	}
 	// debugging

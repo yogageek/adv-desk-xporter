@@ -3,7 +3,6 @@ package logic
 import (
 	"net/http"
 	"net/http/cookiejar"
-	"os"
 
 	"github.com/shurcooL/graphql"
 )
@@ -35,25 +34,21 @@ import (
 	}()
 */
 
-// var IFP_URL = "https://ifp-organizer-training-eks011.hz.wise-paas.com.cn/graphql"
-// var IFP_URL = "https://ifp-organizer-tienkang-eks002.sa.wise-paas.com/graphql" //天岡
-// var IFP_URL = "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql" //匯出: 銳鼎
-var IFP_URL = "https://ifp-organizer-testingsa1-eks002.sa.wise-paas.com/graphql" //匯入: 測試環境
+var (
+	gclientQ *graphql.Client
+	gclientM *graphql.Client
+)
 
-var gclient *graphql.Client
-
-func InitGqlClientAndToken() {
-	Token := os.Getenv("Token")
-
+func NewGQLClient() {
 	var cookies []*http.Cookie
 	var cookieJar *cookiejar.Jar
 	cookieJar, _ = cookiejar.New(nil)
 	cookies = nil
-
 	httpClient := &http.Client{
 		Jar: cookieJar, //must put
 	}
 
+	//------------->
 	//handling cookie
 	req, _ := http.NewRequest("GET", IFP_URL, nil)
 	req.Header.Set("cookie", Token) // set cookie by req (better way)
@@ -61,6 +56,28 @@ func InitGqlClientAndToken() {
 	cookies = req.Cookies()
 	httpClient.Jar.SetCookies(req.URL, cookies)
 
-	//set graphql client
-	gclient = graphql.NewClient(IFP_URL, httpClient)
+	//set graphql client for query
+	gclientQ = graphql.NewClient(IFP_URL, httpClient)
+
+}
+
+func NewGQLClient2() {
+	var cookies []*http.Cookie
+	var cookieJar *cookiejar.Jar
+	cookieJar, _ = cookiejar.New(nil)
+	cookies = nil
+	httpClient := &http.Client{
+		Jar: cookieJar, //must put
+	}
+
+	//------------->
+	//handling cookie
+	req, _ := http.NewRequest("GET", IFP_URL_IN, nil)
+	req.Header.Set("cookie", Token2) // set cookie by req (better way)
+	// cookies = cookieJar.Cookies(req.URL) // not good way
+	cookies = req.Cookies()
+	httpClient.Jar.SetCookies(req.URL, cookies)
+
+	//set graphql client for mutation
+	gclientM = graphql.NewClient(IFP_URL_IN, httpClient)
 }

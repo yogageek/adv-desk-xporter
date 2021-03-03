@@ -180,6 +180,7 @@
      "text": "測試msg2"
     }
    ],
+   "id": "UE1hcFJ1bGU.YDhpcMGunQAGpEZw",
    "name": "測試Rule",
    "pType": "Number"
   },
@@ -193,6 +194,7 @@
      "text": "測試msg"
     }
    ],
+   "id": "UE1hcFJ1bGU.YDveYMGunQAGpEZ8",
    "name": "測試Rule2",
    "pType": "Number"
   }
@@ -209,8 +211,8 @@
      "Description": "testing",
      "ValueType": "Number",
      "Mapping": {
-      "Name": "測試Rule",
-      "Id": "UE1hcFJ1bGU.YDhpcMGunQAGpEZw"
+      "Name": "測試Rule2",
+      "Id": "UE1hcFJ1bGU.YDveYMGunQAGpEZ8"
      }
     }
    ]

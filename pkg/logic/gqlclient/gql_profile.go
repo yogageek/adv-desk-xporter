@@ -14,7 +14,7 @@ func QueryProfileMachines() []model.ProfileMachine {
 
 	variables := map[string]interface{}{} //if no variables
 
-	err := gclient.Query(context.Background(), &gqlQuery, variables)
+	err := gclientQ.Query(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		glog.Error(err)
 	}
@@ -37,7 +37,7 @@ func AddProfileMachine(input model.AddProfileMachineInput) (id string) {
 	// v, _ := json.MarshalIndent(variables, "", " ")
 	// fmt.Printf("%s", v)
 
-	err := gclient.Mutate(context.Background(), &gqlQuery, variables)
+	err := gclientM.Mutate(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		glog.Error(err)
 		// glog.Fatal(err)
@@ -62,7 +62,7 @@ func AddProfileParameter(input model.AddParameterInput) {
 	// // v, _ := json.MarshalIndent(variables, "", " ")
 	// // fmt.Printf("%s", v)
 
-	err := gclient.Mutate(context.Background(), &gqlQuery, variables)
+	err := gclientM.Mutate(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		glog.Error(err)
 		// glog.Fatal(err)

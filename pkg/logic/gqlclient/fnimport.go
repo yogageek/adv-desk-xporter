@@ -3,6 +3,7 @@ package logic
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"porter/util"
 
@@ -14,7 +15,8 @@ func Import() {
 
 	//business logic
 	ImportMachineStatus(&data) //ok
-	util.PrintJson(data)
+
+	// util.PrintJson(data)
 	b, _ := json.Marshal(data)
 	m := map[string]string{}
 	func() {
@@ -29,7 +31,7 @@ func Import() {
 	}
 	json.Unmarshal(b, &data)
 
-	util.PrintJson(data)
+	// util.PrintJson(data)
 
 	//ok但4000以下不支援 因為無法匯入 因此也無法拿到新id
 
@@ -49,9 +51,28 @@ func Import() {
 	// ERROR: logging before flag.Parse: E0301 02:38:36.074068    7368 gql_mapping_rule.go:43] Translation validation failed: lang: Validator failed for path `lang` with value `en`
 	//接下來存新舊id讓profile能用
 	//-->REPLACE old id with new id
-	//待測試
+	//待測試...
+	b, _ = json.Marshal(data)
+	m = map[string]string{}
+	func() {
+		for _, v := range data.MappingRuleData {
+			if m[v.Id] == "" && v.NewId != "" {
+				m[v.Id] = v.NewId
+			}
+		}
+	}()
+	for k, v := range m {
+		b = bytes.ReplaceAll(b, []byte(k), []byte(v))
+	}
+	json.Unmarshal(b, &data)
 
-	// ImportProfileMachine(p) //ok
+	//debugging
+	fmt.Println("new json before import profile-----------------------------------------")
+	util.PrintJson(data)
+	_ = ioutil.WriteFile("importingDataWithNewId.json", b, 0644)
+	//
+
+	ImportProfileMachine(&data) //ok
 
 }
 

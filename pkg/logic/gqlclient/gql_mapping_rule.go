@@ -14,7 +14,7 @@ func QueryParameterMappings() []model.ParameterMappings {
 
 	variables := map[string]interface{}{} //if no variables
 
-	err := gclient.Query(context.Background(), &gqlQuery, variables)
+	err := gclientQ.Query(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		glog.Error(err)
 		// glog.Fatal(err)
@@ -38,7 +38,7 @@ func AddParameterMappingRule(input model.AddParameterMappingRuleInput) model.Par
 	// v, _ := json.MarshalIndent(variables, "", " ")
 	// fmt.Printf("%s", v)
 
-	err := gclient.Mutate(context.Background(), &gqlQuery, variables)
+	err := gclientM.Mutate(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		glog.Error(err)
 	}

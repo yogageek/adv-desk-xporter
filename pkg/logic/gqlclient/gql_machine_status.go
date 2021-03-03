@@ -19,7 +19,7 @@ func QueryMachineStatuses() []model.MachineStatuses {
 		"layer1Only": graphql.Boolean(true),
 	}
 
-	err := gclient.Query(context.Background(), &gqlQuery, variables)
+	err := gclientQ.Query(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		glog.Error(err)
 	}
@@ -42,7 +42,7 @@ func AddMachineStatus(input model.AddMachineStatusInput) model.MachineStatus {
 	// v, _ := json.MarshalIndent(variables, "", " ")
 	// fmt.Printf("%s", v)
 
-	err := gclient.Mutate(context.Background(), &gqlQuery, variables)
+	err := gclientM.Mutate(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		glog.Error(err)
 		// glog.Fatal(err)
@@ -79,7 +79,7 @@ func UpdateMachineStatus(id, name, color interface{}) {
 	// v, _ := json.MarshalIndent(variables, "", " ")
 	// fmt.Printf("%s", v)
 
-	err := gclient.Mutate(context.Background(), &gqlQuery, variables)
+	err := gclientM.Mutate(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		log.Error(err)
 		glog.Fatal(err)

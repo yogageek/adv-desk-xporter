@@ -145,6 +145,15 @@
   },
   {
    "color": "#008cd6",
+   "depth": 3,
+   "id": "TVN0YXR1cw.YDiZzsGunQAGpEZ6",
+   "index": 5101,
+   "name": "測試3",
+   "parentId": "TVN0YXR1cw.YDhozcGunQAGpEZs",
+   "parentIndex": 5100
+  },
+  {
+   "color": "#008cd6",
    "depth": 2,
    "id": "TVN0YXR1cw.YDho1MGunQAGpEZu",
    "index": 5200,
@@ -171,7 +180,22 @@
      "text": "測試msg2"
     }
    ],
+   "id": "UE1hcFJ1bGU.YDhpcMGunQAGpEZw",
    "name": "測試Rule",
+   "pType": "Number"
+  },
+  {
+   "detail": [
+    {
+     "code": "2",
+     "lang": "en",
+     "message": "測試msg",
+     "statusId": "TVN0YXR1cw.YDho1MGunQAGpEZu",
+     "text": "測試msg"
+    }
+   ],
+   "id": "UE1hcFJ1bGU.YDveYMGunQAGpEZ8",
+   "name": "測試Rule2",
    "pType": "Number"
   }
  ],
@@ -187,11 +211,12 @@
      "Description": "testing",
      "ValueType": "Number",
      "Mapping": {
-      "Name": "測試Rule",
-      "Id": "UE1hcFJ1bGU.YDhpcMGunQAGpEZw"
+      "Name": "測試Rule2",
+      "Id": "UE1hcFJ1bGU.YDveYMGunQAGpEZ8"
      }
     }
    ]
   }
- ]
+ ],
+ "url": "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql"
 }

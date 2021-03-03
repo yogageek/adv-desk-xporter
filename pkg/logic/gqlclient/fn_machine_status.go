@@ -2,6 +2,7 @@ package logic
 
 import (
 	model "porter/model/gqlclient"
+	// . "porter/util"
 )
 
 //匯入machine status總共只需要這些
@@ -74,13 +75,15 @@ func getSourceMachineStatus() (mm []map[string]interface{}) {
 }
 
 //目前最多只能匯入三層
-func ImportMachineStatus(machineStatusDatas []machineStatusData) {
+func ImportMachineStatus(jsonData *jsonData) {
+	machineStatusDatas := jsonData.MachineStatusData
+
 	//儲存index與parentId對應關係
 	M1 := map[int]string{}
 	M2 := map[int]string{}
 
 	// debugging 目前只抓萬以下的測
-	var newMachineStatusDatas []machineStatusData
+	var newMachineStatusDatas []*machineStatusData
 	for _, v := range machineStatusDatas {
 		if v.Index < 10000 {
 			newMachineStatusDatas = append(newMachineStatusDatas, v)
@@ -89,6 +92,12 @@ func ImportMachineStatus(machineStatusDatas []machineStatusData) {
 
 	machineStatusDatas = newMachineStatusDatas
 
+	// debugging
+	// util.PrintJson(machineStatusDatas)
+	// fmt.Println("----------------------------")
+
+	//fix: add set new machine status id after import
+
 	for _, v := range machineStatusDatas {
 		if v.Depth == 1 {
 			input := model.AddMachineStatusInput{
@@ -96,39 +105,45 @@ func ImportMachineStatus(machineStatusDatas []machineStatusData) {
 				Index: IndexPrefix + v.Index,
 				Color: v.Color,
 			}
-			ParentId := AddMachineStatus(input)
-			M1[v.Index] = ParentId
+			//set new id after import
+			v.NewId = AddMachineStatus(input).Id
+			//set parent id map (根據index來判斷parentid是誰)
+			M1[v.Index] = v.NewId
 		}
 	}
 
 	for _, v := range machineStatusDatas {
 		if v.Depth == 2 && M1[v.ParentIndex] != "" {
 			input := model.AddMachineStatusInput{
-				ParentId: M1[v.ParentIndex],
+				ParentId: M1[v.ParentIndex], //從parentIndex找出Id(上面已放入新id)
 				Name:     NamePrefix + v.Name,
 				Index:    IndexPrefix + v.Index,
 				Color:    v.Color,
 			}
-			ParentId := AddMachineStatus(input)
-			M2[v.Index] = ParentId
+			//set new id
+			v.NewId = AddMachineStatus(input).Id
+			//set parent id map (根據index來判斷parentid是誰)
+			M2[v.Index] = v.NewId
 		}
 	}
 
 	for _, v := range machineStatusDatas {
-		if v.Depth == 3 {
+		if v.Depth == 3 && M2[v.ParentIndex] != "" {
 			input := model.AddMachineStatusInput{
-				ParentId: M2[v.ParentIndex],
+				ParentId: M2[v.ParentIndex], //從parentIndex找出Id(上面已放入新id)
 				Name:     NamePrefix + v.Name,
 				Index:    IndexPrefix + v.Index,
 				Color:    v.Color,
 			}
-			_ = AddMachineStatus(input)
+			v.NewId = AddMachineStatus(input).Id //這裡也要設
 		}
 	}
+	// debugging
+	// util.PrintJson(machineStatusDatas)
 }
 
 /*
-	這裡要改寫法
+	這裡要改寫法 ok
 	當第一層導入後 返回parentId跟index 要存起來
 	當導入第二層時 parentId要放剛剛返回的Id
 */

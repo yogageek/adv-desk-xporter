@@ -19,7 +19,7 @@ func QueryMachineStatuses() []model.MachineStatuses {
 		"layer1Only": graphql.Boolean(true),
 	}
 
-	err := gclient.Query(context.Background(), &gqlQuery, variables)
+	err := gclientQ.Query(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		glog.Error(err)
 	}
@@ -31,7 +31,7 @@ func QueryMachineStatuses() []model.MachineStatuses {
 	return gqlQuery.MachineStatuses
 }
 
-func AddMachineStatus(input model.AddMachineStatusInput) (id string) {
+func AddMachineStatus(input model.AddMachineStatusInput) model.MachineStatus {
 	gqlQuery := model.AddMachineStatus
 
 	variables := map[string]interface{}{
@@ -42,7 +42,7 @@ func AddMachineStatus(input model.AddMachineStatusInput) (id string) {
 	// v, _ := json.MarshalIndent(variables, "", " ")
 	// fmt.Printf("%s", v)
 
-	err := gclient.Mutate(context.Background(), &gqlQuery, variables)
+	err := gclientM.Mutate(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		glog.Error(err)
 		// glog.Fatal(err)
@@ -50,10 +50,9 @@ func AddMachineStatus(input model.AddMachineStatusInput) (id string) {
 
 	//debugging
 	b, _ := json.MarshalIndent(gqlQuery, "", " ")
-	fmt.Printf("%s", b)
+	fmt.Printf("\n gql return \n %s", b)
 
-	id = gqlQuery.AddMachineStatus.MachineStatus.Id
-	return
+	return gqlQuery.AddMachineStatus.MachineStatus
 }
 
 func AddMachineStatusSample(parentId string) {
@@ -80,7 +79,7 @@ func UpdateMachineStatus(id, name, color interface{}) {
 	// v, _ := json.MarshalIndent(variables, "", " ")
 	// fmt.Printf("%s", v)
 
-	err := gclient.Mutate(context.Background(), &gqlQuery, variables)
+	err := gclientM.Mutate(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		log.Error(err)
 		glog.Fatal(err)

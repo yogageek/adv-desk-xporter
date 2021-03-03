@@ -9,9 +9,10 @@ import (
 )
 
 func Export() {
-	ss := []string{"machineStatusData", "mappingRuleData", "profileData"}
+	ss := []string{"url", "machineStatusData", "mappingRuleData", "profileData"}
 	ii := []interface{}{}
 
+	ii = append(ii, IFP_URL)
 	ii = append(ii, getSourceMachineStatus())
 	// goto debugging
 	ii = append(ii, getSourceMappingRule())

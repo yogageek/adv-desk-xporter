@@ -78,15 +78,15 @@ func getSourceProfileMachines() (results []model.ProfileMachine) {
 //處理新增的machineId
 
 //先
-func ImportProfileMachine(profileDatas []profileData) {
-	for _, v := range profileDatas {
+func ImportProfileMachine(jsonData *jsonData) {
+	for _, v := range jsonData.ProfileData {
 		input := model.AddProfileMachineInput{
 			Name:        NamePrefix + string(v.Name), //# wait to refac
 			Description: v.Description,
 			ImageUrl:    v.ImageUrl,
 		}
 		id := AddProfileMachine(input)
-		importProfileParameter(id, v)
+		importProfileParameter(id, *v)
 	}
 }
 
@@ -98,9 +98,9 @@ func importProfileParameter(machineId string, profileData profileData) {
 			Name:        v.Name,
 			Description: v.Description,
 			ValueType:   v.ValueType,
-			MappingId:   v.Mapping.Id,
+			MappingId:   v.Mapping.Id, //這裡是放mapping rule id
 		}
-		AddProfileParameter(input)
+		AddProfileParameter(input) //由於沒有其他支要用到profileid 所以這裡不需要處理
 	}
 
 }

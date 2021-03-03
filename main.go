@@ -15,7 +15,7 @@ func init() {
 	os.Setenv("IFP_URL_IN", "https://ifp-organizer-testingsa1-eks002.sa.wise-paas.com/graphql") //匯入: 測試環境
 	logic.DoRefreshToken()
 	logic.NewGQLClient()
-	logic.NewGQLClient2()
+	// logic.NewGQLClient2()
 }
 
 func main() {

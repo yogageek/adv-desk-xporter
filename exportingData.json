@@ -1,6 +1,222 @@
 {
- "machineStatusData": null,
- "mappingRuleData": null,
- "profileData": null,
+ "machineStatusData": [
+  {
+   "color": "#96E796",
+   "depth": 1,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXip",
+   "index": 1000,
+   "name": "Production"
+  },
+  {
+   "color": "#96E796",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXiw",
+   "index": 1200,
+   "name": "Reworking",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXip",
+   "parentIndex": 1000
+  },
+  {
+   "color": "#96E796",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXiv",
+   "index": 1100,
+   "name": "Production",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXip",
+   "parentIndex": 1000
+  },
+  {
+   "color": "#96E796",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXix",
+   "index": 1300,
+   "name": "Reduced Speed",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXip",
+   "parentIndex": 1000
+  },
+  {
+   "color": "#FFA09E",
+   "depth": 1,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXiq",
+   "index": 2000,
+   "name": "Failure"
+  },
+  {
+   "color": "#FFA09E",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXit",
+   "index": 2100,
+   "name": "Failure",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXiq",
+   "parentIndex": 2000
+  },
+  {
+   "color": "#FFA09E",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXiu",
+   "index": 2200,
+   "name": "Adjustment",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXiq",
+   "parentIndex": 2000
+  },
+  {
+   "color": "#FFE091",
+   "depth": 1,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXir",
+   "index": 3000,
+   "name": "Idle"
+  },
+  {
+   "color": "#FFE091",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXiy",
+   "index": 3100,
+   "name": "Setup",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXir",
+   "parentIndex": 3000
+  },
+  {
+   "color": "#FFE091",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXi0",
+   "index": 3300,
+   "name": "Waiting",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXir",
+   "parentIndex": 3000
+  },
+  {
+   "color": "#FFE091",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXiz",
+   "index": 3200,
+   "name": "Startup",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXir",
+   "parentIndex": 3000
+  },
+  {
+   "color": "#FFE091",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXi1",
+   "index": 3400,
+   "name": "Loading",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXir",
+   "parentIndex": 3000
+  },
+  {
+   "color": "#91C6FF",
+   "depth": 1,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXis",
+   "index": 4000,
+   "name": "Line Restraint"
+  },
+  {
+   "color": "#91C6FF",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXi3",
+   "index": 4200,
+   "name": "No Output",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXis",
+   "parentIndex": 4000
+  },
+  {
+   "color": "#91C6FF",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXi2",
+   "index": 4100,
+   "name": "No Input",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXis",
+   "parentIndex": 4000
+  },
+  {
+   "color": "#008cd6",
+   "depth": 1,
+   "id": "TVN0YXR1cw.YDhor8GunQAGpEZo",
+   "index": 5000,
+   "name": "測試"
+  },
+  {
+   "color": "#008cd6",
+   "depth": 2,
+   "id": "TVN0YXR1cw.YDhozcGunQAGpEZs",
+   "index": 5100,
+   "name": "測試1",
+   "parentId": "TVN0YXR1cw.YDhor8GunQAGpEZo",
+   "parentIndex": 5000
+  },
+  {
+   "color": "#008cd6",
+   "depth": 3,
+   "id": "TVN0YXR1cw.YDiZzsGunQAGpEZ6",
+   "index": 5101,
+   "name": "測試3",
+   "parentId": "TVN0YXR1cw.YDhozcGunQAGpEZs",
+   "parentIndex": 5100
+  },
+  {
+   "color": "#008cd6",
+   "depth": 2,
+   "id": "TVN0YXR1cw.YDho1MGunQAGpEZu",
+   "index": 5200,
+   "name": "測試2",
+   "parentId": "TVN0YXR1cw.YDhor8GunQAGpEZo",
+   "parentIndex": 5000
+  }
+ ],
+ "mappingRuleData": [
+  {
+   "detail": [
+    {
+     "code": "1",
+     "lang": "en",
+     "message": "測試msg",
+     "statusId": "TVN0YXR1cw.X63cUG-xTQAGsXip",
+     "text": "測試msg"
+    },
+    {
+     "code": "2",
+     "lang": "en",
+     "message": "測試msg2",
+     "statusId": "",
+     "text": "測試msg2"
+    }
+   ],
+   "id": "UE1hcFJ1bGU.YDhpcMGunQAGpEZw",
+   "name": "測試Rule",
+   "pType": "Number"
+  },
+  {
+   "detail": [
+    {
+     "code": "2",
+     "lang": "en",
+     "message": "測試msg",
+     "statusId": "TVN0YXR1cw.YDho1MGunQAGpEZu",
+     "text": "測試msg"
+    }
+   ],
+   "id": "UE1hcFJ1bGU.YDveYMGunQAGpEZ8",
+   "name": "測試Rule2",
+   "pType": "Number"
+  }
+ ],
+ "profileData": [
+  {
+   "Name": "測試profile",
+   "Description": "testing",
+   "ImageUrl": "",
+   "Parameters": [
+    {
+     "MachineId": "UGZNYWNoaW5l.YDhpjcGunQAGpEZz",
+     "Name": "測試para",
+     "Description": "testing",
+     "ValueType": "Number",
+     "Mapping": {
+      "Name": "測試Rule2",
+      "Id": "UE1hcFJ1bGU.YDveYMGunQAGpEZ8"
+     }
+    }
+   ]
+  }
+ ],
  "url": "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql"
 }

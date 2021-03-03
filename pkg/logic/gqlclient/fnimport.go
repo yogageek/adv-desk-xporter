@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"porter/util"
 
 	"github.com/golang/glog"
 )
@@ -17,7 +16,7 @@ func Import() {
 	ImportMachineStatus(&data) //ok
 
 	// util.PrintJson(data)
-	b, _ := json.Marshal(data)
+	b, _ := json.MarshalIndent(data, "", " ")
 	m := map[string]string{}
 	func() {
 		for _, v := range data.MachineStatusData {
@@ -52,7 +51,7 @@ func Import() {
 	//接下來存新舊id讓profile能用
 	//-->REPLACE old id with new id
 	//待測試...
-	b, _ = json.Marshal(data)
+	b, _ = json.MarshalIndent(data, "", " ")
 	m = map[string]string{}
 	func() {
 		for _, v := range data.MappingRuleData {
@@ -64,13 +63,13 @@ func Import() {
 	for k, v := range m {
 		b = bytes.ReplaceAll(b, []byte(k), []byte(v))
 	}
-	json.Unmarshal(b, &data)
 
 	//debugging
 	fmt.Println("new json before import profile-----------------------------------------")
-	util.PrintJson(data)
 	_ = ioutil.WriteFile("importingDataWithNewId.json", b, 0644)
-	//
+
+	json.Unmarshal(b, &data)
+	// util.PrintJson(data)
 
 	ImportProfileMachine(&data) //ok
 

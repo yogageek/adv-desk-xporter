@@ -36,10 +36,11 @@ var (
 
 func DoRefreshToken() {
 	IFP_URL = os.Getenv("IFP_URL")
-	IFP_URL_IN = os.Getenv("IFP_URL_IN")
 	Token = RefreshToken(IFP_URL)
-	Token2 = RefreshToken(IFP_URL_IN)
 	fmt.Println(Token)
+
+	IFP_URL_IN = os.Getenv("IFP_URL_IN")
+	Token2 = RefreshToken(IFP_URL_IN)
 	fmt.Println(Token2)
 }
 
@@ -81,8 +82,8 @@ func RefreshToken(url string) (token string) {
 	ifpToken := tempSplit[0]
 	tempSplit = strings.Split(cookie[1], ";")
 	eiToken := tempSplit[0]
-	Token = ifpToken + ";" + eiToken
-	return Token
+	token = ifpToken + ";" + eiToken
+	return token
 	// fmt.Println("Token:", Token)
 	// os.Setenv("Token", Token)
 	// time.Sleep(60 * time.Minute)

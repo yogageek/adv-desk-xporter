@@ -58,7 +58,6 @@ func NewGQLClient() {
 
 	//set graphql client for query
 	gclientQ = graphql.NewClient(IFP_URL, httpClient)
-
 }
 
 func NewGQLClient2() {

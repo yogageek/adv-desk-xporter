@@ -12,10 +12,10 @@ func init() {
 	// var IFP_URL = "https://ifp-organizer-training-eks011.hz.wise-paas.com.cn/graphql"
 	// var IFP_URL = "https://ifp-organizer-tienkang-eks002.sa.wise-paas.com/graphql" //天岡
 	os.Setenv("IFP_URL", "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql")    //匯出: 銳鼎
-	os.Setenv("IFP_URL_IN", "https://ifp-organizer-testingsa1-eks002.sa.wise-paas.com/graphql") //匯入: 測試環境
+	os.Setenv("IFP_URL_IN", "https://ifp-organizer-testingsa1-eks002.sa.wise-paas.com/graphql") //匯入: 測試環境。
 	logic.DoRefreshToken()
 	logic.NewGQLClient()
-	// logic.NewGQLClient2()
+	logic.NewGQLClient2()
 }
 
 func main() {

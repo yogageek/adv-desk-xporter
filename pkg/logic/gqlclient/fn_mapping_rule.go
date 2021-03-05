@@ -99,7 +99,7 @@ func ImportMappingRule(jsonData *jsonData) {
 				StatusId: v.StatusId,
 				Translations: model.ParameterMappingCodeTranslationEntry{
 					// Lang:    v.Lang,
-					Lang:    "zh-TW",
+					Lang:    "zh-TW", //暫時
 					Message: v.Text,
 				},
 			}

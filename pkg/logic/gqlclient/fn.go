@@ -73,11 +73,3 @@ func listAll(path string) {
 		}
 	}
 }
-
-/*
-1.接著測試import功能
-
-2.把匯出跟匯入接到server api
-
-3.部屬檔案
-*/

@@ -17,6 +17,20 @@ firstname := c.DefaultQuery("firstname", "None")
 lastname := c.Query("lastname")
 */
 
+// GET /file/status
+func Status(c *gin.Context) {
+	//取檔案進度
+
+	//先做匯入，有時間再做匯出
+	//匯出是否也要像匯入要有那麼多的功能?
+	//是否要納入id機制, 做歷史列表?, 還要再討論
+	//參數要帶使用者?
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "OK",
+	})
+}
+
 func Export(c *gin.Context) {
 	logic.Export()
 	//下載檔案

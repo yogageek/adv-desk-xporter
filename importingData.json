@@ -167,14 +167,14 @@
    "detail": [
     {
      "code": "1",
-     "lang": "en",
+     "lang": "en-US",
      "message": "測試msg",
      "statusId": "TVN0YXR1cw.X63cUG-xTQAGsXip",
      "text": "測試msg"
     },
     {
      "code": "2",
-     "lang": "en",
+     "lang": "en-US",
      "message": "測試msg2",
      "statusId": "",
      "text": "測試msg2"
@@ -188,7 +188,7 @@
    "detail": [
     {
      "code": "2",
-     "lang": "en",
+     "lang": "en-US",
      "message": "測試msg",
      "statusId": "TVN0YXR1cw.YDho1MGunQAGpEZu",
      "text": "測試msg"

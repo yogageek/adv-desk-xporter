@@ -1,1 +1,252 @@
-{"MachineStatusData":[{"Id":"TVN0YXR1cw.X63cUG-xTQAGsXip","NewId":"","ParentId":"","ParentIndex":0,"Name":"Production","Index":1000,"Color":"#96E796","Depth":1},{"Id":"TVN0YXR1cw.X63cUG-xTQAGsXiw","NewId":"","ParentId":"TVN0YXR1cw.X63cUG-xTQAGsXip","ParentIndex":1000,"Name":"Reworking","Index":1200,"Color":"#96E796","Depth":2},{"Id":"TVN0YXR1cw.X63cUG-xTQAGsXiv","NewId":"","ParentId":"TVN0YXR1cw.X63cUG-xTQAGsXip","ParentIndex":1000,"Name":"Production","Index":1100,"Color":"#96E796","Depth":2},{"Id":"TVN0YXR1cw.X63cUG-xTQAGsXix","NewId":"","ParentId":"TVN0YXR1cw.X63cUG-xTQAGsXip","ParentIndex":1000,"Name":"Reduced Speed","Index":1300,"Color":"#96E796","Depth":2},{"Id":"TVN0YXR1cw.X63cUG-xTQAGsXiq","NewId":"","ParentId":"","ParentIndex":0,"Name":"Failure","Index":2000,"Color":"#FFA09E","Depth":1},{"Id":"TVN0YXR1cw.X63cUG-xTQAGsXit","NewId":"","ParentId":"TVN0YXR1cw.X63cUG-xTQAGsXiq","ParentIndex":2000,"Name":"Failure","Index":2100,"Color":"#FFA09E","Depth":2},{"Id":"TVN0YXR1cw.X63cUG-xTQAGsXiu","NewId":"","ParentId":"TVN0YXR1cw.X63cUG-xTQAGsXiq","ParentIndex":2000,"Name":"Adjustment","Index":2200,"Color":"#FFA09E","Depth":2},{"Id":"TVN0YXR1cw.X63cUG-xTQAGsXir","NewId":"","ParentId":"","ParentIndex":0,"Name":"Idle","Index":3000,"Color":"#FFE091","Depth":1},{"Id":"TVN0YXR1cw.X63cUG-xTQAGsXiy","NewId":"","ParentId":"TVN0YXR1cw.X63cUG-xTQAGsXir","ParentIndex":3000,"Name":"Setup","Index":3100,"Color":"#FFE091","Depth":2},{"Id":"TVN0YXR1cw.X63cUG-xTQAGsXi0","NewId":"","ParentId":"TVN0YXR1cw.X63cUG-xTQAGsXir","ParentIndex":3000,"Name":"Waiting","Index":3300,"Color":"#FFE091","Depth":2},{"Id":"TVN0YXR1cw.X63cUG-xTQAGsXiz","NewId":"","ParentId":"TVN0YXR1cw.X63cUG-xTQAGsXir","ParentIndex":3000,"Name":"Startup","Index":3200,"Color":"#FFE091","Depth":2},{"Id":"TVN0YXR1cw.X63cUG-xTQAGsXi1","NewId":"","ParentId":"TVN0YXR1cw.X63cUG-xTQAGsXir","ParentIndex":3000,"Name":"Loading","Index":3400,"Color":"#FFE091","Depth":2},{"Id":"TVN0YXR1cw.X63cUG-xTQAGsXis","NewId":"","ParentId":"","ParentIndex":0,"Name":"Line Restraint","Index":4000,"Color":"#91C6FF","Depth":1},{"Id":"TVN0YXR1cw.X63cUG-xTQAGsXi3","NewId":"","ParentId":"TVN0YXR1cw.X63cUG-xTQAGsXis","ParentIndex":4000,"Name":"No Output","Index":4200,"Color":"#91C6FF","Depth":2},{"Id":"TVN0YXR1cw.X63cUG-xTQAGsXi2","NewId":"","ParentId":"TVN0YXR1cw.X63cUG-xTQAGsXis","ParentIndex":4000,"Name":"No Input","Index":4100,"Color":"#91C6FF","Depth":2},{"Id":"TVN0YXR1cw.YDhor8GunQAGpEZo","NewId":"","ParentId":"","ParentIndex":0,"Name":"測試","Index":5000,"Color":"#008cd6","Depth":1},{"Id":"TVN0YXR1cw.YDhozcGunQAGpEZs","NewId":"","ParentId":"TVN0YXR1cw.YDhor8GunQAGpEZo","ParentIndex":5000,"Name":"測試1","Index":5100,"Color":"#008cd6","Depth":2},{"Id":"TVN0YXR1cw.YDiZzsGunQAGpEZ6","NewId":"","ParentId":"TVN0YXR1cw.YDhozcGunQAGpEZs","ParentIndex":5100,"Name":"測試3","Index":5101,"Color":"#008cd6","Depth":3},{"Id":"TVN0YXR1cw.YDho1MGunQAGpEZu","NewId":"","ParentId":"TVN0YXR1cw.YDhor8GunQAGpEZo","ParentIndex":5000,"Name":"測試2","Index":5200,"Color":"#008cd6","Depth":2}],"MappingRuleData":[{"Id":"UE1hcFJ1bGU.YDhpcMGunQAGpEZw","NewId":"","Name":"測試Rule","PType":"Number","Detail":[{"Code":"1","Message":"測試msg","StatusId":"TVN0YXR1cw.X63cUG-xTQAGsXip","Lang":"en","Text":"測試msg"},{"Code":"2","Message":"測試msg2","StatusId":"","Lang":"en","Text":"測試msg2"}]},{"Id":"UE1hcFJ1bGU.YDveYMGunQAGpEZ8","NewId":"","Name":"測試Rule2","PType":"Number","Detail":[{"Code":"2","Message":"測試msg","StatusId":"TVN0YXR1cw.YDho1MGunQAGpEZu","Lang":"en","Text":"測試msg"}]}],"ProfileData":[{"Name":"測試profile","Description":"testing","ImageUrl":"","Parameters":[{"MachineId":"UGZNYWNoaW5l.YDhpjcGunQAGpEZz","Name":"測試para","Description":"testing","ValueType":"Number","Mapping":{"Name":"測試Rule2","Id":"UE1hcFJ1bGU.YDveYMGunQAGpEZ8"}}]}]}
+{
+ "MachineStatusData": [
+  {
+   "Id": "TVN0YXR1cw.X63cUG-xTQAGsXip",
+   "NewId": "",
+   "ParentId": "",
+   "ParentIndex": 0,
+   "Name": "Production",
+   "Index": 1000,
+   "Color": "#96E796",
+   "Depth": 1
+  },
+  {
+   "Id": "TVN0YXR1cw.X63cUG-xTQAGsXiw",
+   "NewId": "",
+   "ParentId": "TVN0YXR1cw.X63cUG-xTQAGsXip",
+   "ParentIndex": 1000,
+   "Name": "Reworking",
+   "Index": 1200,
+   "Color": "#96E796",
+   "Depth": 2
+  },
+  {
+   "Id": "TVN0YXR1cw.X63cUG-xTQAGsXiv",
+   "NewId": "",
+   "ParentId": "TVN0YXR1cw.X63cUG-xTQAGsXip",
+   "ParentIndex": 1000,
+   "Name": "Production",
+   "Index": 1100,
+   "Color": "#96E796",
+   "Depth": 2
+  },
+  {
+   "Id": "TVN0YXR1cw.X63cUG-xTQAGsXix",
+   "NewId": "",
+   "ParentId": "TVN0YXR1cw.X63cUG-xTQAGsXip",
+   "ParentIndex": 1000,
+   "Name": "Reduced Speed",
+   "Index": 1300,
+   "Color": "#96E796",
+   "Depth": 2
+  },
+  {
+   "Id": "TVN0YXR1cw.X63cUG-xTQAGsXiq",
+   "NewId": "",
+   "ParentId": "",
+   "ParentIndex": 0,
+   "Name": "Failure",
+   "Index": 2000,
+   "Color": "#FFA09E",
+   "Depth": 1
+  },
+  {
+   "Id": "TVN0YXR1cw.X63cUG-xTQAGsXit",
+   "NewId": "",
+   "ParentId": "TVN0YXR1cw.X63cUG-xTQAGsXiq",
+   "ParentIndex": 2000,
+   "Name": "Failure",
+   "Index": 2100,
+   "Color": "#FFA09E",
+   "Depth": 2
+  },
+  {
+   "Id": "TVN0YXR1cw.X63cUG-xTQAGsXiu",
+   "NewId": "",
+   "ParentId": "TVN0YXR1cw.X63cUG-xTQAGsXiq",
+   "ParentIndex": 2000,
+   "Name": "Adjustment",
+   "Index": 2200,
+   "Color": "#FFA09E",
+   "Depth": 2
+  },
+  {
+   "Id": "TVN0YXR1cw.X63cUG-xTQAGsXir",
+   "NewId": "",
+   "ParentId": "",
+   "ParentIndex": 0,
+   "Name": "Idle",
+   "Index": 3000,
+   "Color": "#FFE091",
+   "Depth": 1
+  },
+  {
+   "Id": "TVN0YXR1cw.X63cUG-xTQAGsXiy",
+   "NewId": "",
+   "ParentId": "TVN0YXR1cw.X63cUG-xTQAGsXir",
+   "ParentIndex": 3000,
+   "Name": "Setup",
+   "Index": 3100,
+   "Color": "#FFE091",
+   "Depth": 2
+  },
+  {
+   "Id": "TVN0YXR1cw.X63cUG-xTQAGsXi0",
+   "NewId": "",
+   "ParentId": "TVN0YXR1cw.X63cUG-xTQAGsXir",
+   "ParentIndex": 3000,
+   "Name": "Waiting",
+   "Index": 3300,
+   "Color": "#FFE091",
+   "Depth": 2
+  },
+  {
+   "Id": "TVN0YXR1cw.X63cUG-xTQAGsXiz",
+   "NewId": "",
+   "ParentId": "TVN0YXR1cw.X63cUG-xTQAGsXir",
+   "ParentIndex": 3000,
+   "Name": "Startup",
+   "Index": 3200,
+   "Color": "#FFE091",
+   "Depth": 2
+  },
+  {
+   "Id": "TVN0YXR1cw.X63cUG-xTQAGsXi1",
+   "NewId": "",
+   "ParentId": "TVN0YXR1cw.X63cUG-xTQAGsXir",
+   "ParentIndex": 3000,
+   "Name": "Loading",
+   "Index": 3400,
+   "Color": "#FFE091",
+   "Depth": 2
+  },
+  {
+   "Id": "TVN0YXR1cw.X63cUG-xTQAGsXis",
+   "NewId": "",
+   "ParentId": "",
+   "ParentIndex": 0,
+   "Name": "Line Restraint",
+   "Index": 4000,
+   "Color": "#91C6FF",
+   "Depth": 1
+  },
+  {
+   "Id": "TVN0YXR1cw.X63cUG-xTQAGsXi3",
+   "NewId": "",
+   "ParentId": "TVN0YXR1cw.X63cUG-xTQAGsXis",
+   "ParentIndex": 4000,
+   "Name": "No Output",
+   "Index": 4200,
+   "Color": "#91C6FF",
+   "Depth": 2
+  },
+  {
+   "Id": "TVN0YXR1cw.X63cUG-xTQAGsXi2",
+   "NewId": "",
+   "ParentId": "TVN0YXR1cw.X63cUG-xTQAGsXis",
+   "ParentIndex": 4000,
+   "Name": "No Input",
+   "Index": 4100,
+   "Color": "#91C6FF",
+   "Depth": 2
+  },
+  {
+   "Id": "TVN0YXR1cw.YEHcf3kI5QAHoyOM",
+   "NewId": "TVN0YXR1cw.YEHcf3kI5QAHoyOM",
+   "ParentId": "",
+   "ParentIndex": 0,
+   "Name": "測試",
+   "Index": 5000,
+   "Color": "#008cd6",
+   "Depth": 1
+  },
+  {
+   "Id": "TVN0YXR1cw.YEHcf3kI5QAHoyON",
+   "NewId": "TVN0YXR1cw.YEHcf3kI5QAHoyON",
+   "ParentId": "TVN0YXR1cw.YEHcf3kI5QAHoyOM",
+   "ParentIndex": 5000,
+   "Name": "測試1",
+   "Index": 5100,
+   "Color": "#008cd6",
+   "Depth": 2
+  },
+  {
+   "Id": "TVN0YXR1cw.YEHcf3kI5QAHoyOP",
+   "NewId": "TVN0YXR1cw.YEHcf3kI5QAHoyOP",
+   "ParentId": "TVN0YXR1cw.YEHcf3kI5QAHoyON",
+   "ParentIndex": 5100,
+   "Name": "測試3",
+   "Index": 5101,
+   "Color": "#008cd6",
+   "Depth": 3
+  },
+  {
+   "Id": "TVN0YXR1cw.YEHcf3kI5QAHoyOO",
+   "NewId": "TVN0YXR1cw.YEHcf3kI5QAHoyOO",
+   "ParentId": "TVN0YXR1cw.YEHcf3kI5QAHoyOM",
+   "ParentIndex": 5000,
+   "Name": "測試2",
+   "Index": 5200,
+   "Color": "#008cd6",
+   "Depth": 2
+  }
+ ],
+ "MappingRuleData": [
+  {
+   "Id": "UE1hcFJ1bGU.YDhpcMGunQAGpEZw",
+   "NewId": "",
+   "Name": "測試Rule",
+   "PType": "Number",
+   "Detail": [
+    {
+     "Code": "1",
+     "Message": "測試msg",
+     "StatusId": "TVN0YXR1cw.X63cUG-xTQAGsXip",
+     "Lang": "en-US",
+     "Text": "測試msg"
+    },
+    {
+     "Code": "2",
+     "Message": "測試msg2",
+     "StatusId": "",
+     "Lang": "en-US",
+     "Text": "測試msg2"
+    }
+   ]
+  },
+  {
+   "Id": "UE1hcFJ1bGU.YEHcf3kI5QAHoyOS",
+   "NewId": "UE1hcFJ1bGU.YEHcf3kI5QAHoyOS",
+   "Name": "測試Rule2",
+   "PType": "Number",
+   "Detail": [
+    {
+     "Code": "2",
+     "Message": "測試msg",
+     "StatusId": "TVN0YXR1cw.YEHcf3kI5QAHoyOO",
+     "Lang": "en-US",
+     "Text": "測試msg"
+    }
+   ]
+  }
+ ],
+ "ProfileData": [
+  {
+   "Name": "測試profile",
+   "Description": "testing",
+   "ImageUrl": "",
+   "Parameters": [
+    {
+     "MachineId": "UGZNYWNoaW5l.YDhpjcGunQAGpEZz",
+     "Name": "測試para",
+     "Description": "testing",
+     "ValueType": "Number",
+     "Mapping": {
+      "Name": "測試Rule2",
+      "Id": "UE1hcFJ1bGU.YEHcf3kI5QAHoyOS"
+     }
+    }
+   ]
+  }
+ ]
+}

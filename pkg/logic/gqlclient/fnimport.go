@@ -9,6 +9,12 @@ import (
 	"github.com/golang/glog"
 )
 
+//先做完group->machine->parameter再做
+//增加防呆功能
+//先去取得系統預設語言
+//檢查要匯入的內容是否滿足
+//ok之後再匯入
+
 func Import() {
 	data := ReadFile()
 

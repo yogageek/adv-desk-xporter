@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ifps-xporter
+spec:
+  selector:
+    matchLabels:
+      run: ifps-xporter
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: ifps-xporter
+    spec:
+      containers:
+      - name: ifps-xporter
+        image: iiicondor/ifps-xporter:demo
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 10m
+            memory: 64M
+            ephemeral-storage: 64M
+          limits:
+            cpu: 40m
+            memory: 128M
+            ephemeral-storage: 128M
+        ports:
+        - containerPort: 8080
+          name: http

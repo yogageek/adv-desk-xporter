@@ -19,8 +19,15 @@ func init() {
 }
 
 func main() {
-	// logic.Export()
+	logic.Export()
 	// logic.Import()
+	// logic.QueryMachines()
+	// logic.AddMachineSample()
+	// logic.QueryGroups()
+	// qp := logic.QueryParameters("TWFjaGluZQ.X0OAStZ5cgAG6yN-", "") //cursor:RGF0ZQ.MTU5OTY0MDA2MDAxOQ.X1iR-4RZEgAGpSQj
+	// util.PrintBlue(qp)
+	// logic.AddParameterSample()
+
 	startServer()
 }
 

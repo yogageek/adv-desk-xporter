@@ -4,12 +4,13 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"os"
+	"porter/util"
 
 	"github.com/golang/glog"
 )
 
 func Export() {
-	ss := []string{"url", "machineStatusData", "mappingRuleData", "profileData"}
+	ss := []string{"url", "machineStatusData", "mappingRuleData", "profileData", "groupData"}
 	ii := []interface{}{}
 
 	ii = append(ii, IFP_URL)
@@ -18,13 +19,15 @@ func Export() {
 	ii = append(ii, getSourceMappingRule())
 	// goto debugging
 	ii = append(ii, getSourceProfileMachines())
+	// goto debugging
+	ii = append(ii, getSourceGroups())
 
 	// debugging:
 	// b, _ := json.MarshalIndent(ii, "", " ")
 	// fmt.Printf("%s", b)
 
 	b := appendJson(ss, ii)
-	// fmt.Printf("%s", b)
+	util.PrintCyan(b)
 
 	//output the json file
 	writeFile(b)

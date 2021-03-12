@@ -3,8 +3,8 @@ package logic
 import (
 	"context"
 	"encoding/json"
-	"fmt"
 	model "porter/model/gqlclient"
+	"porter/util"
 
 	"github.com/golang/glog"
 )
@@ -21,7 +21,7 @@ func QueryProfileMachines() []model.ProfileMachine {
 
 	//debugging
 	// b, _ := json.MarshalIndent(gqlQuery, "", " ")
-	// fmt.Printf("%s", b)
+	// util.PrintGreen(b)
 
 	return gqlQuery.ProfileMachines
 }
@@ -45,7 +45,7 @@ func AddProfileMachine(input model.AddProfileMachineInput) (id string) {
 
 	// //debugging
 	// b, _ := json.MarshalIndent(gqlQuery, "", " ")
-	// fmt.Printf("%s", b)
+	// util.PrintYellow(b)
 
 	id = gqlQuery.AddProfileMachine.ProfileMachine.Id
 	return
@@ -70,5 +70,5 @@ func AddProfileParameter(input model.AddParameterInput) {
 
 	//debugging
 	b, _ := json.MarshalIndent(gqlQuery, "", " ")
-	fmt.Printf("%s", b)
+	util.PrintYellow(b)
 }

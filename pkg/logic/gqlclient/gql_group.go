@@ -3,63 +3,65 @@ package logic
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	model "porter/model/gqlclient"
 	"porter/util"
 
 	"github.com/golang/glog"
 )
 
-func QueryParameterMappings() []model.ParameterMappings {
-	gqlQuery := model.QueryParameterMappings
+func QueryGroups() []model.Groups {
+	gqlQuery := model.QueryGroups
 
 	variables := map[string]interface{}{} //if no variables
 
 	err := gclientQ.Query(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		glog.Error(err)
-		// glog.Fatal(err)
 	}
 
 	//debugging
 	// b, _ := json.MarshalIndent(gqlQuery, "", " ")
 	// util.PrintGreen(b)
 
-	return gqlQuery.ParameterMappings
+	return gqlQuery.Groups
 }
 
-func AddParameterMappingRule(input model.AddParameterMappingRuleInput) model.ParameterMappings {
-	gqlQuery := model.AddParameterMappingRule
+func AddGroup(input model.AddGroupInput) (id string) {
+	gqlQuery := model.AddGroup
 
 	variables := map[string]interface{}{
 		"input": input,
 	}
 
-	//debugging
+	// //debugging
 	// v, _ := json.MarshalIndent(variables, "", " ")
 	// fmt.Printf("%s", v)
 
 	err := gclientM.Mutate(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		glog.Error(err)
+		// glog.Fatal(err)
 	}
 
-	//debugging
+	// //debugging
 	b, _ := json.MarshalIndent(gqlQuery, "", " ")
 	util.PrintYellow(b)
 
-	return gqlQuery.AddParameterMappingRule.MappingRule.ParameterMappings
+	id = gqlQuery.AddGroup.Group.Id
+	return
 }
 
-func AddParameterMappingRuleSample() {
-	input := model.AddParameterMappingRuleInput{
-		Name:  "yogaxxxxx",
-		PType: "Number",
-		Codes: []model.AddParameterMappingCodesEntry{
-			model.AddParameterMappingCodesEntry{
-				Code:    "1",
-				Message: "message",
-			},
+func AddGroupSample(parentId string) {
+	input := model.AddGroupInput{
+		Groups: model.Groups{
+			ParentId:    parentId, //如果無也可以直接放""
+			Name:        "yogaGroup3",
+			Description: "test",
+			TimeZone:    "Asia/Taipei",
+			Coordinate:  nil,
 		},
 	}
-	AddParameterMappingRule(input)
+	id := AddGroup(input)
+	fmt.Println("id:", id)
 }

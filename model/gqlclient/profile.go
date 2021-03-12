@@ -55,10 +55,11 @@ var AddProfileParameter struct { //這行可隨便定義 但盡量和下面同�
 	} `graphql:"addProfileParameter(input: $input)"`
 }
 
-type AddParameterInput struct { //這裡struct名字要和graphql($input: AddParameterInput!)一樣
-	MachineId   interface{} `json:"machineId"`
-	Name        interface{} `json:"name"` //tag重要! 攸關轉gql後的大小寫
-	Description interface{} `json:"description"`
-	ValueType   interface{} `json:"valueType"`
-	MappingId   interface{} `json:"mappingId"`
-}
+// #M 被parameter.go中定義的取代
+// type AddParameterInput struct { //這裡struct名字要和graphql($input: AddParameterInput!)一樣
+// 	MachineId   interface{} `json:"machineId"`
+// 	Name        interface{} `json:"name"` //tag重要! 攸關轉gql後的大小寫
+// 	Description interface{} `json:"description"`
+// 	ValueType   interface{} `json:"valueType"`
+// 	MappingId   interface{} `json:"mappingId"`
+// }

@@ -12,6 +12,7 @@ type jsonData struct {
 	MachineStatusData []*machineStatusData
 	MappingRuleData   []*mappingRuleData
 	ProfileData       []*profileData
+	GroupData         []*groupData
 }
 
 //未來改成從model拿原始input
@@ -46,6 +47,10 @@ type Detail struct { //這裡的大小寫會影響到json大小寫
 // 所以我們可以直接忽略export導出的machineId
 type profileData struct {
 	model.ProfileMachine
+}
+
+type groupData struct {
+	model.Groups
 }
 
 func appendJson(keyName []string, data []interface{}) []byte {

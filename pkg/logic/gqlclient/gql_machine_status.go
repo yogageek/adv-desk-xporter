@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	model "porter/model/gqlclient"
+	"porter/util"
 
 	"github.com/golang/glog"
 	"github.com/prometheus/common/log"
@@ -26,7 +27,7 @@ func QueryMachineStatuses() []model.MachineStatuses {
 
 	//debugging
 	// b, _ := json.MarshalIndent(gqlQuery, "", " ")
-	// fmt.Printf("%s", b)
+	// util.PrintGreen(b)
 
 	return gqlQuery.MachineStatuses
 }
@@ -50,7 +51,7 @@ func AddMachineStatus(input model.AddMachineStatusInput) model.MachineStatus {
 
 	//debugging
 	b, _ := json.MarshalIndent(gqlQuery, "", " ")
-	fmt.Printf("\n gql return \n %s", b)
+	util.PrintYellow(b)
 
 	return gqlQuery.AddMachineStatus.MachineStatus
 }

@@ -1,4 +1,41 @@
 {
+ "groupData": [
+  {
+   "id": "R3JvdXA.X0Nt9dZ5cgAG6yNh",
+   "name": "PCB",
+   "description": "",
+   "timeZone": "Asia/Taipei",
+   "coordinate": null
+  },
+  {
+   "id": "R3JvdXA.YD85_8GunQAGpEaG",
+   "name": "SPC",
+   "description": "",
+   "timeZone": "Asia/Taipei",
+   "coordinate": null
+  },
+  {
+   "parentId": "R3JvdXA.X0Nt9dZ5cgAG6yNh",
+   "id": "R3JvdXA.YEBg88GunQAGpEaZ",
+   "name": "測試PCB子群組",
+   "description": "testing",
+   "timeZone": "Asia/Taipei",
+   "coordinate": {
+    "longitude": 2,
+    "latitude": 1
+   }
+  },
+  {
+   "id": "R3JvdXA.YEXwS8GunQAGpEa1",
+   "name": "testGroup",
+   "description": "testing",
+   "timeZone": "Asia/Taipei",
+   "coordinate": {
+    "longitude": 0,
+    "latitude": 0
+   }
+  }
+ ],
  "machineStatusData": [
   {
    "color": "#96E796",

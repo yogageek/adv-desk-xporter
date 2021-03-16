@@ -61,8 +61,8 @@ type Nodes struct {
 }
 
 type PageInfo struct {
-	HasNextPage interface{} `json:"hasNextPage"`
-	EndCursor   interface{} `json:"endCursor"`
+	HasNextPage bool   `json:"hasNextPage"`
+	EndCursor   string `json:"endCursor"`
 }
 
 //新的寫法 看起來較一致
@@ -83,9 +83,9 @@ type AddParameterInput struct { //這裡struct名字要和graphql($input: AddPar
 	MachineId   interface{} `json:"machineId"`
 	Name        interface{} `json:"name"` //tag重要! 攸關轉gql後的大小寫
 	Description interface{} `json:"description"`
-	ScadaId     interface{} `json:"scadaId,omitempty"`
 	ValueType   interface{} `json:"valueType,omitempty"`
 	MappingId   interface{} `json:"mappingId,omitempty"`
+	ScadaId     interface{} `json:"scadaId,omitempty"`
 	TagId       interface{} `json:"tagId,omitempty"`
 	Kind        interface{} `json:"kind,omitempty"`
 }

@@ -3,7 +3,6 @@ package logic
 import (
 	"bytes"
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 
 	"github.com/golang/glog"
@@ -23,7 +22,7 @@ func Import() {
 
 	// util.PrintJson(data)
 	b, _ := json.MarshalIndent(data, "", " ")
-	m := map[string]string{}
+	m := map[string]string{} //儲存新舊id對應關係
 	func() {
 		for _, v := range data.MachineStatusData {
 			if m[v.Id] == "" && v.NewId != "" {
@@ -31,9 +30,10 @@ func Import() {
 			}
 		}
 	}()
-	for k, v := range m {
+	for k, v := range m { //用新id取代整個file中的舊id
 		b = bytes.ReplaceAll(b, []byte(k), []byte(v))
 	}
+	//把舊&data取代掉
 	json.Unmarshal(b, &data)
 
 	// util.PrintJson(data)
@@ -58,7 +58,7 @@ func Import() {
 	//-->REPLACE old id with new id
 	//待測試...
 	b, _ = json.MarshalIndent(data, "", " ")
-	m = map[string]string{}
+	m = map[string]string{} //儲存新舊id對應關係
 	func() {
 		for _, v := range data.MappingRuleData {
 			if m[v.Id] == "" && v.NewId != "" {
@@ -66,18 +66,31 @@ func Import() {
 			}
 		}
 	}()
-	for k, v := range m {
+	for k, v := range m { //用新id取代整個file中的舊id
 		b = bytes.ReplaceAll(b, []byte(k), []byte(v))
 	}
 
-	//debugging
-	fmt.Println("new json before import profile-----------------------------------------")
-	_ = ioutil.WriteFile("importingDataWithNewId.json", b, 0644)
-
-	json.Unmarshal(b, &data)
-	// util.PrintJson(data)
-
 	ImportProfileMachine(&data) //ok
+
+	//groups---
+	idMap := ImportGroups(&data)
+	for k, v := range idMap { //用新id取代整個file中的舊id
+		b = bytes.ReplaceAll(b, []byte(k), []byte(v))
+	}
+	json.Unmarshal(b, &data) //將替換後的資料b 賦予給&data
+	//machines---
+	idMap = ImportMachines(&data)
+	for k, v := range idMap { //用新id取代整個file中的舊id
+		b = bytes.ReplaceAll(b, []byte(k), []byte(v))
+	}
+	json.Unmarshal(b, &data) //將替換後的資料b 賦予給&data
+	//parameters---
+	ImportParameters(&data)
+
+	//debugging------>
+	_ = ioutil.WriteFile("importingData.json", b, 0644)
+	// util.PrintJson(data)
+	//<--------------
 
 }
 

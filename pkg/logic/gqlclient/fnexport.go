@@ -1,16 +1,12 @@
 package logic
 
 import (
-	"encoding/json"
 	"io/ioutil"
-	"os"
 	"porter/util"
-
-	"github.com/golang/glog"
 )
 
 func Export() {
-	ss := []string{"url", "machineStatusData", "mappingRuleData", "profileData", "groupData"}
+	ss := []string{"url", "machineStatusData", "mappingRuleData", "profileData", "groupData", "machineData", "parameterData"}
 	ii := []interface{}{}
 
 	ii = append(ii, IFP_URL)
@@ -20,7 +16,17 @@ func Export() {
 	// goto debugging
 	ii = append(ii, getSourceProfileMachines())
 	// goto debugging
+
 	ii = append(ii, getSourceGroups())
+	// goto debugging
+
+	machineData := getSourceMachines()
+	ii = append(ii, machineData)
+	// goto debugging
+
+	parameterData := getSourceParameters(getMachineIds(machineData))
+	ii = append(ii, parameterData)
+	// goto debugging
 
 	// debugging:
 	// b, _ := json.MarshalIndent(ii, "", " ")
@@ -42,11 +48,11 @@ func writeFile(b []byte) {
 
 	//method2
 	//不知道怎麼避掉\n問題
-	file, _ := os.OpenFile("exportingData_encode.json", os.O_CREATE, os.ModePerm)
-	defer file.Close()
-	encoder := json.NewEncoder(file)
-	err := encoder.Encode(b)
-	if err != nil {
-		glog.Error(err)
-	}
+	// file, _ := os.OpenFile("exportingData_encode.json", os.O_CREATE, os.ModePerm)
+	// defer file.Close()
+	// encoder := json.NewEncoder(file)
+	// err := encoder.Encode(b)
+	// if err != nil {
+	// 	glog.Error(err)
+	// }
 }

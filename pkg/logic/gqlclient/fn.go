@@ -13,6 +13,8 @@ type jsonData struct {
 	MappingRuleData   []*mappingRuleData
 	ProfileData       []*profileData
 	GroupData         []*groupData
+	MachineData       []*machineData
+	ParameterData     []*parameterData
 }
 
 //未來改成從model拿原始input
@@ -51,6 +53,14 @@ type profileData struct {
 
 type groupData struct {
 	model.Groups
+}
+
+type machineData struct {
+	model.Machines
+}
+
+type parameterData struct {
+	model.QueryParametersOb
 }
 
 func appendJson(keyName []string, data []interface{}) []byte {

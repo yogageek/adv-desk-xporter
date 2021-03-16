@@ -27,7 +27,7 @@ func QueryMachines() []model.Machines {
 	return gqlQuery.Machines
 }
 
-func AddMachine(input model.AddMachineInput) {
+func AddMachine(input model.AddMachineInput) (id string) {
 	gqlQuery := model.AddMachine
 
 	variables := map[string]interface{}{
@@ -50,6 +50,8 @@ func AddMachine(input model.AddMachineInput) {
 	b, _ := json.MarshalIndent(gqlQuery, "", " ")
 	util.PrintYellow(b)
 
+	id = gqlQuery.AddMachine.Machine.Id
+	return
 }
 
 func AddMachineSample() {

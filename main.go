@@ -19,7 +19,7 @@ func init() {
 }
 
 func main() {
-	logic.Export()
+	// logic.Export()
 	// logic.Import()
 	// logic.QueryMachines()
 	// logic.AddMachineSample()

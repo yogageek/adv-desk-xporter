@@ -1,7 +1,11 @@
 package logic
 
 import (
+	"fmt"
 	"io/ioutil"
+	"log"
+	"os"
+	"path/filepath"
 	"porter/util"
 )
 
@@ -37,11 +41,12 @@ func Export() {
 
 	//output the json file
 	writeFile(b)
+
+	//-----------
+	checkFilePath()
 }
 
 func writeFile(b []byte) {
-	// 查看當前目錄
-	// listAll(".")
 
 	//method1
 	_ = ioutil.WriteFile("exportingData.json", b, 0644)
@@ -55,4 +60,34 @@ func writeFile(b []byte) {
 	// if err != nil {
 	// 	glog.Error(err)
 	// }
+}
+
+func checkFilePath() {
+	// 查看當前目錄
+	fmt.Println("----------listAll(.)-----------")
+	listAll(".")
+	fmt.Println("----------listAll(./)-----------")
+	listAll("./")
+
+	fmt.Println("------------os.Executable()--------------")
+	ex, err := os.Executable()
+	if err != nil {
+		panic(err)
+	}
+	exPath := filepath.Dir(ex)
+	fmt.Println(exPath)
+
+	fmt.Println("------------ os.Getwd()--------------")
+	path, err := os.Getwd()
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(path) // for example /home/user
+
+	fmt.Println("------------abs--------------")
+	files, _ := ioutil.ReadDir(".")
+	paths, _ := filepath.Abs(".")
+	for _, file := range files {
+		fmt.Println(filepath.Join(paths, file.Name()))
+	}
 }

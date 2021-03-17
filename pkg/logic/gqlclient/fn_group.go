@@ -27,7 +27,9 @@ func ImportGroups(jsonData *jsonData) map[string]string {
 				},
 			}
 			newId := AddGroup(input)
-			M[v.Id] = newId //save new id
+			if newId != "" {
+				M[v.Id] = newId //save new id
+			}
 		}
 	}
 
@@ -40,10 +42,7 @@ func ImportGroups(jsonData *jsonData) map[string]string {
 					Name:        v.Name,
 					Description: v.Description,
 					TimeZone:    v.TimeZone,
-					Coordinate: &model.Coordinate{
-						Longitude: v.Coordinate.Longitude,
-						Latitude:  v.Coordinate.Latitude,
-					},
+					Coordinate:  v.Coordinate,
 				},
 			}
 			newId := AddGroup(input)

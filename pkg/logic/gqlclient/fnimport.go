@@ -95,6 +95,9 @@ func Import() {
 }
 
 func ReadFile() jsonData {
+
+	checkFilePath()
+
 	//step1 Read json file...
 	b, err := ioutil.ReadFile("./importingData.json")
 	if err != nil {

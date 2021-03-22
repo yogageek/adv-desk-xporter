@@ -7,6 +7,7 @@ require (
 	github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869 // indirect
 	github.com/gin-gonic/gin v1.6.3
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
+	github.com/gorilla/websocket v1.4.2
 	github.com/imroc/req v0.3.0
 	github.com/logrusorgru/aurora v2.0.3+incompatible
 	github.com/prometheus/common v0.15.0

@@ -2,10 +2,13 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 	logic "porter/pkg/logic/gqlclient"
 	"porter/routers"
+
+	"github.com/gorilla/websocket"
 )
 
 func init() {
@@ -28,7 +31,8 @@ func main() {
 	// util.PrintBlue(qp)
 	// logic.AddParameterSample()
 
-	startServer()
+	// startServer()
+	mywebsocket()
 }
 
 func startServer() {
@@ -50,3 +54,41 @@ func startServer() {
 //在測匯入是否可以選擇一個檔案
 
 //最後做取完成狀態率( long polling API，可以讓所有使用者能夠即時知道現在是否有匯入匯出的工作正在做。)
+
+func mywebsocket() {
+	upgrader := &websocket.Upgrader{
+		//如果有 cross domain 的需求，可加入這個，不檢查 cross domain
+		CheckOrigin: func(r *http.Request) bool { return true },
+	}
+	http.HandleFunc("/config/file/status", func(w http.ResponseWriter, r *http.Request) {
+		c, err := upgrader.Upgrade(w, r, nil)
+		if err != nil {
+			log.Println("upgrade:", err)
+			return
+		}
+		defer func() {
+			log.Println("disconnect !!")
+			c.Close()
+		}()
+		for {
+			//到時不用處理Read
+			mtype, msg, err := c.ReadMessage()
+			if err != nil {
+				log.Println("read:", err)
+				break
+			}
+			log.Printf("receive: %s\n", msg)
+			//只需將當前status狀態寫到這裡(chanel寫法)
+			err = c.WriteMessage(mtype, msg)
+			if err != nil {
+				log.Println("write:", err)
+				break
+			}
+		}
+	})
+	// log.Println("server start at :8899")
+	// log.Fatal(http.ListenAndServe(":8899", nil))
+
+	log.Println("server start at :8080")
+	log.Fatal(http.ListenAndServe(":8080", nil))
+}

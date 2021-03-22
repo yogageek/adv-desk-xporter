@@ -17,6 +17,30 @@ import (
 func Import() {
 	data := ReadFile()
 
+	//goroutine status
+	chTotal := make(chan int)
+	chCount := make(chan int)
+
+	chTotal <- 1
+	chCount <- 1
+	// //xxx
+
+	// status{
+	// 	mappingstsats:{
+	// 		total:100
+	// 		now:40
+	// 	}
+	// 	profile:{
+	// 		total:100
+	// 		now:40
+	// 	}
+	// 	aaaa:{
+	// 		total:100
+	// 		now:40
+	// 	}
+
+	// }
+
 	//business logic
 	ImportMachineStatus(&data) //ok
 
@@ -93,6 +117,12 @@ func Import() {
 	//<--------------
 
 }
+
+// Import
+//for(
+//importA
+//importB
+//)
 
 func ReadFile() jsonData {
 

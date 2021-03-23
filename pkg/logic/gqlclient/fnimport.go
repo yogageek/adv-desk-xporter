@@ -8,6 +8,15 @@ import (
 	"github.com/golang/glog"
 )
 
+type conuter struct {
+	Count int
+	Total int
+}
+
+type Importer interface {
+	Process(data string)
+}
+
 //先做完group->machine->parameter再做
 //增加防呆功能
 //先去取得系統預設語言
@@ -117,12 +126,6 @@ func Import() {
 	//<--------------
 
 }
-
-// Import
-//for(
-//importA
-//importB
-//)
 
 func ReadFile() jsonData {
 

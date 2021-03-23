@@ -43,23 +43,32 @@ func Export(c *gin.Context) {
 }
 
 func Import(c *gin.Context) {
-	//FormFile()可以取得数据本体、标头，而标头本身有纪录该数据的文件名称，接着只是单纯的I/O处理，这样就会将文件复制一份放到当前目录中。
-	file, err := c.FormFile("file")
+
+	//查看是否正在做，如果是則值接返回錯誤
+	if logic.StateIsAvailable() {
+		c.JSON(http.StatusLocked, gin.H{
+			"error": "is already in process",
+		})
+		return
+	}
+
+	//step1讀取客戶端傳來的formdata
+	// method1
+	file, err := c.FormFile("file") //FormFile()可以取得数据本体、标头，而标头本身有纪录该数据的文件名称，接着只是单纯的I/O处理，这样就会将文件复制一份放到当前目录中。
+	// method2
+	// rfile, handler, err := c.Request.FormFile("file")
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err,
 		})
 	}
-
-	// another style
-	// rfile, handler, err := c.Request.FormFile("file")
-
-	//開啟檔案
+	//step2開啟檔案
 	sourceFile, err := file.Open()
 	if err != nil {
 		glog.Error(err)
 	}
 
+	//step3
 	//***注意以下io copy都只能做一次不然後續會讀不到***
 
 	//---->檔案讀取方式一，通過os.Open返回一個檔案控制代碼，然後利用它進行讀取
@@ -76,7 +85,7 @@ func Import(c *gin.Context) {
 	// }
 	//sth to do
 
-	//---->檔案讀取方式三，存檔
+	//---->檔案讀取方式三，存檔(把剛剛開啟的檔案存入到另一個檔案)
 	filename := "importingData.json"
 	out, err := os.Create(filename)
 	if err != nil {
@@ -90,7 +99,9 @@ func Import(c *gin.Context) {
 	// 快速方式
 	// c.SaveUploadedFile()
 
-	logic.Import()
+	// step4 business logic
+	// logic.Import() //old
+	logic.ToDoProcess() //new
 
 	c.JSON(http.StatusOK, gin.H{
 		"fileName": file.Filename,

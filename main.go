@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
@@ -31,8 +32,8 @@ func main() {
 	// util.PrintBlue(qp)
 	// logic.AddParameterSample()
 
-	// startServer()
-	mywebsocket()
+	go mywebsocket()
+	startServer()
 }
 
 func startServer() {
@@ -70,6 +71,7 @@ func mywebsocket() {
 			log.Println("disconnect !!")
 			c.Close()
 		}()
+
 		for {
 			//到時不用處理Read
 			mtype, msg, err := c.ReadMessage()
@@ -78,7 +80,12 @@ func mywebsocket() {
 				break
 			}
 			log.Printf("receive: %s\n", msg)
+
 			//只需將當前status狀態寫到這裡(chanel寫法)
+			//---
+			res := logic.Res
+			msg, _ = json.MarshalIndent(res, "", " ")
+			//---
 			err = c.WriteMessage(mtype, msg)
 			if err != nil {
 				log.Println("write:", err)
@@ -89,6 +96,6 @@ func mywebsocket() {
 	// log.Println("server start at :8899")
 	// log.Fatal(http.ListenAndServe(":8899", nil))
 
-	log.Println("server start at :8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Println("server start at :8000")
+	log.Fatal(http.ListenAndServe(":8000", nil))
 }

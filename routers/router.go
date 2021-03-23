@@ -25,7 +25,7 @@ func InitRouter() *gin.Engine {
 		})
 		apiv1.GET("/file/export", v1.Export)
 		apiv1.POST("/file/import", v1.Import)
-		apiv1.GET("/file/status", v1.Status)
+		// apiv1.GET("/file/status", v1.Status) //move to websocket
 
 		// 只能瀏覽 不能下載
 		// StaticFile 是加載單個文件，而 StaticFS 是加載一個完整的目錄資源：

@@ -8,15 +8,6 @@ import (
 	"github.com/golang/glog"
 )
 
-type conuter struct {
-	Count int
-	Total int
-}
-
-type Importer interface {
-	Process(data string)
-}
-
 //先做完group->machine->parameter再做
 //增加防呆功能
 //先去取得系統預設語言
@@ -27,12 +18,11 @@ func Import() {
 	data := ReadFile()
 
 	//goroutine status
-	chTotal := make(chan int)
-	chCount := make(chan int)
+	// chTotal := make(chan int)
+	// chCount := make(chan int)
 
-	chTotal <- 1
-	chCount <- 1
-	// //xxx
+	// chTotal <- 1
+	// chCount <- 1
 
 	// status{
 	// 	mappingstsats:{

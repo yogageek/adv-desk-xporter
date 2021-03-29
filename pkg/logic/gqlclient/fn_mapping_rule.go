@@ -50,15 +50,6 @@ parameterMappings {
 }
 */
 
-type a struct {
-	total int
-	count int
-}
-
-func (aa *a) x() {
-
-}
-
 func getSourceMappingRule() (results []map[string]interface{}) {
 	// mm := []map[string]interface{}{}
 

@@ -23,8 +23,8 @@ func InitRouter() *gin.Engine {
 				"message": "OK",
 			})
 		})
-		apiv1.GET("/file/export", v1.Export)
-		apiv1.POST("/file/import", v1.Import)
+		apiv1.GET("/config/file/export", v1.Export)
+		apiv1.POST("/config/file/import", v1.Import)
 		// apiv1.GET("/file/status", v1.Status) //move to websocket
 
 		// 只能瀏覽 不能下載

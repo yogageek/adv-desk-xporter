@@ -73,6 +73,10 @@ func mywebsocket() {
 		}()
 
 		for {
+			//#之後換寫法:
+			//第一次直接write開始訊息
+			//之後如果有read,才做write
+
 			//到時不用處理Read
 			mtype, msg, err := c.ReadMessage()
 			if err != nil {

@@ -15,6 +15,7 @@ type jsonData struct {
 	GroupData         []*groupData
 	MachineData       []*machineData
 	ParameterData     []*parameterData
+	TranslationLangs  []*translationLangs
 }
 
 //未來改成從model拿原始input
@@ -61,6 +62,10 @@ type machineData struct {
 
 type parameterData struct {
 	model.QueryParametersOb
+}
+
+type translationLangs struct {
+	model.TranslationLangs
 }
 
 func appendJson(keyName []string, data []interface{}) []byte {

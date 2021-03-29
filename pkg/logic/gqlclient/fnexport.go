@@ -27,10 +27,12 @@ func Export() {
 	machineData := getSourceMachines()
 	ii = append(ii, machineData)
 	// goto debugging
-
 	parameterData := getSourceParameters(getMachineIds(machineData))
 	ii = append(ii, parameterData)
 	// goto debugging
+
+	translationLangs := getSourceTranslations
+	ii = append(ii, translationLangs)
 
 	// debugging:
 	// b, _ := json.MarshalIndent(ii, "", " ")

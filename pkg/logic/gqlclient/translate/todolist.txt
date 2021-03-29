@@ -1,0 +1,47 @@
+
+都是帶id,lang,name,description
+
+
+Query要先帶出所有
+names{
+    text
+    lang
+}
+descriptions...
+
+X          Y
+----------------------
+可能(1) 同default Lang
+預設A   -> 預設A
+*檢查兩邊default lang是否一樣，否則報錯
+*直接匯
+
+可能(2) 不同default Lang
+2-1
+預設A   -> 預設B
+LangB   -> Lang? (無法匯)
+*檢查其他非default lang是否兩邊都有且是否都非default
+
+2-2
+預設A   -> Lang A
+LangB   -> 預設B
+*需要先拿出X環境LangB資料匯入Y環境預設B
+*才能再用X環境預設A資料匯入Y環境LangA
+*很複雜...
+*當X環境資料只有一種Lang卻在Y環境非預設Lang(無法匯)
+
+
+
+
+
+Mutation.
+translate Group
+translate Machine
+translate MachineStatus
+translate ParameterMappingCode
+translate ProfileMachine
+translate ProfileParameter
+
+
+取環境lang
+Query.translationLangs

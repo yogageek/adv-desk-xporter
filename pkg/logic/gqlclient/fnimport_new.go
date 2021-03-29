@@ -20,6 +20,10 @@ func ToDoProcess() {
 	PrepareDetailTotal(processes)
 	//read data
 	data := ReadFile()
+
+	//set DefaultLang for ImportMappingRule
+	SetDefaultLang()
+
 	//import data
 	ProcessData(&data, processes)
 

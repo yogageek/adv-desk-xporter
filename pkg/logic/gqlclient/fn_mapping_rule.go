@@ -98,8 +98,7 @@ func ImportMappingRule(jsonData *jsonData) {
 				Message:  v.Message,
 				StatusId: v.StatusId,
 				Translations: model.ParameterMappingCodeTranslationEntry{
-					// Lang:    v.Lang,
-					Lang:    "zh-TW", //暫時
+					Lang:    DefaultLang, //#這裡暫時先放要導入的環境的預設語言(因為如果預設語言不存在會錯)
 					Message: v.Text,
 				},
 			}

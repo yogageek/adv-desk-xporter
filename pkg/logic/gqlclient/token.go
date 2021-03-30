@@ -37,11 +37,11 @@ var (
 func DoRefreshToken() {
 	IFP_URL = os.Getenv("IFP_URL")
 	Token = RefreshToken(IFP_URL)
-	fmt.Println(Token)
+	// fmt.Println(Token)
 
 	IFP_URL_IN = os.Getenv("IFP_URL_IN")
 	Token2 = RefreshToken(IFP_URL_IN)
-	fmt.Println(Token2)
+	// fmt.Println(Token2)
 }
 
 func RefreshToken(url string) (token string) {

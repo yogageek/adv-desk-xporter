@@ -74,14 +74,18 @@ func mywebsocket() {
 			c.Close()
 		}()
 
-		fmt.Println("xxx")
+		//測試(如果正在做)直接先write
+		res := logic.Res
+		if res.State == logic.StateDoing {
+			err = c.WriteMessage(1, []byte("still in progress"))
+			if err != nil {
+				log.Println("write:", err)
+			}
+		}
 
 		for { //這個for是常規寫法一定要加
-			//#之後換寫法:
-			//第一次直接write開始訊息
-			//之後如果有read,才做write
 
-			//到時不用處理Read
+			//如果有read,才做write(前端來問進度才返回給他)
 			mtype, msg, err := c.ReadMessage() //web"開啟連接"後就會一路進來並停在這, 如果web有發消息就會往下走並再回來
 			if err != nil {
 				log.Println("read:", err) //web關閉連接後跳出

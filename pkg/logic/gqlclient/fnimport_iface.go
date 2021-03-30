@@ -4,14 +4,14 @@ type State int
 type Mode string
 
 const (
-	stateDoing State = 1
-	stateDone  State = 0
+	StateDoing State = 1
+	StateDone  State = 0
 	modeImport Mode  = "import"
 	modeExport Mode  = "export"
 )
 
 func StateIsAvailable() bool {
-	return Res.State == stateDone
+	return Res.State == StateDone
 }
 
 var Res Response

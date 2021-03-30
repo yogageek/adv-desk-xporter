@@ -12,7 +12,7 @@ func ToDoProcess() {
 
 	func() {
 		Res = Response{}
-		Res.State = stateDoing
+		Res.State = StateDoing
 		Res.Mode = modeImport
 	}()
 
@@ -28,7 +28,7 @@ func ToDoProcess() {
 	ProcessData(&data, processes)
 
 	defer func() {
-		Res.State = stateDone
+		Res.State = StateDone
 	}()
 }
 

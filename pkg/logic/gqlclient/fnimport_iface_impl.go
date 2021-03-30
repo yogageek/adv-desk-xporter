@@ -93,3 +93,15 @@ func (o machines) GetName() string {
 func (o parameters) GetName() string {
 	return "parameters"
 }
+
+func GetCounter(data *jsonData) counter {
+	var total int
+	for _, v := range data.ParameterData {
+		m := v.Machine.Parameters.Nodes
+		total = total + len(m)
+	}
+	return counter{
+		Count: 0,
+		Total: total,
+	}
+}

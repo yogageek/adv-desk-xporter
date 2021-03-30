@@ -77,7 +77,15 @@ func mywebsocket() {
 		//測試(如果正在做)直接先write
 		res := logic.Res
 		if res.State == logic.StateDoing {
-			err = c.WriteMessage(1, []byte("still in progress"))
+			rtn := func() []byte {
+				myR := map[string]interface{}{
+					"error": "still in progress",
+					"state": int(logic.StateDoing),
+				}
+				b, _ := json.MarshalIndent(myR, "", " ")
+				return b
+			}()
+			err = c.WriteMessage(1, rtn)
 			if err != nil {
 				log.Println("write:", err)
 			}

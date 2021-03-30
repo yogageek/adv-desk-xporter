@@ -6,12 +6,12 @@ type Mode string
 const (
 	StateDoing State = 1
 	StateDone  State = 0
-	modeImport Mode  = "import"
-	modeExport Mode  = "export"
+	ModeImport Mode  = "import"
+	ModeExport Mode  = "export"
 )
 
 func StateIsAvailable() bool {
-	return Res.State == StateDone
+	return Res.State == StateDoing
 }
 
 var Res Response

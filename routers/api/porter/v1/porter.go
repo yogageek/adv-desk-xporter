@@ -32,6 +32,9 @@ func Status(c *gin.Context) {
 }
 
 func Export(c *gin.Context) {
+	logic.BeforeProcess(logic.ModeExport)
+	defer logic.AfterProcess()
+
 	logic.Export()
 	//下載檔案
 	c.FileAttachment("./exportingData.json", "exportingData.json") //注意都要加.json 否則會找不到轉很久
@@ -47,10 +50,13 @@ func Import(c *gin.Context) {
 	//查看是否正在做，如果是則值接返回錯誤
 	if logic.StateIsAvailable() {
 		c.JSON(http.StatusLocked, gin.H{
-			"error": "is already in process",
+			"error": "already in process",
 		})
 		return
 	}
+
+	logic.BeforeProcess(logic.ModeImport)
+	defer logic.AfterProcess()
 
 	//step1讀取客戶端傳來的formdata
 	// method1

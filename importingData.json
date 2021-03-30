@@ -4350,5 +4350,25 @@
    ]
   }
  ],
+ "translationLangsData": [
+  {
+   "id": "VHJhbnNsYXRpb25MYW5n.XzyjtZS83gAGuMaH",
+   "name": "English",
+   "lang": "en-US",
+   "isDefault": true
+  },
+  {
+   "id": "VHJhbnNsYXRpb25MYW5n.XzykGpS83gAGuMaJ",
+   "name": "簡體中文",
+   "lang": "zh-CN",
+   "isDefault": false
+  },
+  {
+   "id": "VHJhbnNsYXRpb25MYW5n.XzykApS83gAGuMaI",
+   "name": "正體中文",
+   "lang": "zh-TW",
+   "isDefault": false
+  }
+ ],
  "url": "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql"
 }

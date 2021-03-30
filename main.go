@@ -61,7 +61,9 @@ func mywebsocket() {
 		//如果有 cross domain 的需求，可加入這個，不檢查 cross domain
 		CheckOrigin: func(r *http.Request) bool { return true },
 	}
+
 	http.HandleFunc("/config/file/status", func(w http.ResponseWriter, r *http.Request) {
+		//web"開啟連接"後就會一路進來
 		c, err := upgrader.Upgrade(w, r, nil)
 		if err != nil {
 			log.Println("upgrade:", err)
@@ -72,15 +74,17 @@ func mywebsocket() {
 			c.Close()
 		}()
 
-		for {
+		fmt.Println("xxx")
+
+		for { //這個for是常規寫法一定要加
 			//#之後換寫法:
 			//第一次直接write開始訊息
 			//之後如果有read,才做write
 
 			//到時不用處理Read
-			mtype, msg, err := c.ReadMessage()
+			mtype, msg, err := c.ReadMessage() //web"開啟連接"後就會一路進來並停在這, 如果web有發消息就會往下走並再回來
 			if err != nil {
-				log.Println("read:", err)
+				log.Println("read:", err) //web關閉連接後跳出
 				break
 			}
 			log.Printf("receive: %s\n", msg)

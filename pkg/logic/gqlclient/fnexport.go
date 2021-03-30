@@ -10,14 +10,14 @@ import (
 )
 
 func Export() {
-	ss := []string{"url", "machineStatusData", "mappingRuleData", "profileData", "groupData", "machineData", "parameterData"}
+	ss := []string{"url", "machineStatusData", "mappingRuleData", "profileData", "groupData", "machineData", "parameterData", "translationLangsData"}
 	ii := []interface{}{}
 
 	ii = append(ii, IFP_URL)
 	ii = append(ii, getSourceMachineStatus())
 	// goto debugging
 	ii = append(ii, getSourceMappingRule())
-	// goto debugging
+	// goto debugging`
 	ii = append(ii, getSourceProfileMachines())
 	// goto debugging
 
@@ -31,7 +31,7 @@ func Export() {
 	ii = append(ii, parameterData)
 	// goto debugging
 
-	translationLangs := getSourceTranslations
+	translationLangs := getSourceTranslations()
 	ii = append(ii, translationLangs)
 
 	// debugging:

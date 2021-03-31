@@ -23,6 +23,8 @@ func getSourceParameters(machineIds []string) (objects []model.QueryParametersOb
 	return objects
 }
 
+var loadedParameters int
+
 func ImportParameters(jsonData *jsonData) {
 	parameters := jsonData.ParameterData
 
@@ -45,6 +47,7 @@ func ImportParameters(jsonData *jsonData) {
 			// fmt.Println(v.Description)
 
 			AddParameter(input)
+			loadedParameters++
 		}
 	}
 }

@@ -24,22 +24,6 @@ func Import() {
 	// chTotal <- 1
 	// chCount <- 1
 
-	// status{
-	// 	mappingstsats:{
-	// 		total:100
-	// 		now:40
-	// 	}
-	// 	profile:{
-	// 		total:100
-	// 		now:40
-	// 	}
-	// 	aaaa:{
-	// 		total:100
-	// 		now:40
-	// 	}
-
-	// }
-
 	//business logic
 	ImportMachineStatus(&data) //ok
 

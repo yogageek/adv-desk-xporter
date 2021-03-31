@@ -34,6 +34,7 @@ func ToDoProcess() {
 	SetDefaultLang()
 
 	//import data
+	loadedParameters = 0 //testing put here
 	ProcessData(&data, processes)
 }
 
@@ -45,13 +46,14 @@ func PrepareDetailTotal(data *jsonData, processes []Processer) {
 			counter: NewCounter(),
 		}
 
+		// parameter count 問題暫時沒解
 		//for debugging
-		if processes[i].GetName() == "parameters" {
-			details = detail{
-				Name:    processes[i].GetName(),
-				counter: GetCounter(data),
-			}
-		}
+		// if processes[i].GetName() == "parameters" {
+		// 	details = detail{
+		// 		Name:    processes[i].GetName(),
+		// 		counter: GetCounter(data),
+		// 	}
+		// }
 
 		Res.Details = append(Res.Details, details)
 	}
@@ -59,13 +61,26 @@ func PrepareDetailTotal(data *jsonData, processes []Processer) {
 }
 
 func ProcessData(data *jsonData, processes []Processer) {
+
 	for i := 0; i < len(processes); i++ {
-		//for debugging
-		if processes[i].GetName() == "parameters" {
-			continue
-		}
+
+		// 會有bug
+		// for debugging
+		// if processes[i].GetName() == "parameters" {
+		// 	go func() {
+		// 		for {
+		// 			Res.Details[i].Count = loadedParameters
+		// 			// fmt.Println("ok")
+		// 			time.Sleep(time.Second * 2)
+		// 		}
+		// 	}()
+		// }
+
 		processes[i].Process(data)
+
+		//上面做完這裡才會加一(邏輯不對)
 		Res.Details[i].Count = 1 //把一大類當做一
+
 	}
 	// util.PrintJson(Res)
 }

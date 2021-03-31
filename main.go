@@ -62,7 +62,7 @@ func mywebsocket() {
 		CheckOrigin: func(r *http.Request) bool { return true },
 	}
 
-	http.HandleFunc("/config/file/status", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/websocket/config/file/status", func(w http.ResponseWriter, r *http.Request) {
 		//web"開啟連接"後就會一路進來
 		c, err := upgrader.Upgrade(w, r, nil)
 		if err != nil {

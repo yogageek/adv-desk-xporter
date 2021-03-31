@@ -13,3 +13,8 @@ spec:
           serviceName: ifps-xporter-svc
           servicePort: 8080
         path: /
+      - backend:
+          serviceName: ifps-xporter-svc
+          servicePort: 8000
+        path: /websocket #對應到code的api path /websocket/xx/xx
+        #對應地址 ws://ifps-xporter-ifpsdemo-eks005.sa.wise-paas.com/websocket/config/file/status

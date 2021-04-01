@@ -38,6 +38,7 @@ func main() {
 
 func startServer() {
 	router := routers.InitRouter()
+
 	s := &http.Server{
 		Addr:    fmt.Sprintf(":%d", 8080),
 		Handler: router,

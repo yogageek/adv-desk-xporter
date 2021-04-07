@@ -18,7 +18,7 @@ func Cors() gin.HandlerFunc {
 		//伺服器支援的所有跨域請求的方法
 		c.Header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE,UPDATE")
 		//允許跨域設定可以返回其他子段，可以自定義欄位
-		c.Header("Access-Control-Allow-Headers", "Authorization, Content-Length, X-CSRF-Token, Token, session")
+		c.Header("Access-Control-Allow-Headers", "Authorization, Content-Type, Content-Length, X-CSRF-Token, Token, session")
 		// 允許瀏覽器（客戶端）可以解析的頭部 （重要）
 		c.Header("Access-Control-Expose-Headers", "Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers")
 		//設定快取時間

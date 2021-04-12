@@ -32,6 +32,7 @@ func Status(c *gin.Context) {
 }
 
 func Export(c *gin.Context) {
+	logic.PrepareGQLClient()
 	logic.BeforeProcess(logic.ModeExport)
 	defer logic.AfterProcess()
 
@@ -46,7 +47,7 @@ func Export(c *gin.Context) {
 }
 
 func Import(c *gin.Context) {
-
+	logic.PrepareGQLClient()
 	//查看是否正在做，如果是則值接返回錯誤
 	if logic.StateIsAvailable() {
 		c.JSON(http.StatusLocked, gin.H{

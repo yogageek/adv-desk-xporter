@@ -10,6 +10,7 @@ import (
 	"time"
 
 	"github.com/bitly/go-simplejson"
+	"github.com/prometheus/common/log"
 )
 
 var (
@@ -34,17 +35,35 @@ var (
 	IFP_URL_IN string
 )
 
-func DoRefreshToken() {
-	IFP_URL = os.Getenv("IFP_URL")
-	Token = RefreshToken(IFP_URL)
-	// fmt.Println(Token)
+func LoopRefreshToken() {
 
+	IFP_URL = os.Getenv("IFP_URL")
 	IFP_URL_IN = os.Getenv("IFP_URL_IN")
-	Token2 = RefreshToken(IFP_URL_IN)
+
+	go func() {
+		for {
+			fmt.Println("<<< Loop refresh token >>>")
+			var err error
+			Token, err = RefreshToken(IFP_URL)
+			if err != nil {
+				log.Error("RefreshToken IFP_URL fail")
+				panic(err)
+			}
+			Token2, err = RefreshToken(IFP_URL_IN)
+			if err != nil {
+				log.Error("RefreshToken IFP_URL_IN fail")
+				panic(err)
+			}
+			time.Sleep(15 * time.Minute)
+		}
+	}()
+
+	// fmt.Println(Token)
 	// fmt.Println(Token2)
 }
 
-func RefreshToken(url string) (token string) {
+func RefreshToken(url string) (token string, err error) {
+
 	// for {
 	fmt.Println("----------", time.Now().In(TaipeiTimeZone), "----------")
 	fmt.Println("RefreshToken...")
@@ -55,9 +74,15 @@ func RefreshToken(url string) (token string) {
 		"query":     "mutation signIn($input: SignInInput!) {   signIn(input: $input) {     user {       name       __typename     }     __typename   } }",
 		"variables": variable,
 	})
-	request, _ := http.NewRequest("POST", url, bytes.NewBuffer(httpRequestBody))
+	request, err := http.NewRequest("POST", url, bytes.NewBuffer(httpRequestBody))
+	if err != nil {
+		return "", err
+	}
 	request.Header.Set("Content-Type", "application/json")
-	response, _ := httpClient.Do(request)
+	response, err := httpClient.Do(request)
+	if err != nil {
+		return "", err
+	}
 	m, _ := simplejson.NewFromReader(response.Body)
 	for {
 		if len(m.Get("errors").MustArray()) == 0 {
@@ -67,9 +92,15 @@ func RefreshToken(url string) (token string) {
 				"query":     "mutation signIn($input: SignInInput!) {   signIn(input: $input) {     user {       name       __typename     }     __typename   } }",
 				"variables": variable,
 			})
-			request, _ = http.NewRequest("POST", url, bytes.NewBuffer(httpRequestBody))
+			request, err = http.NewRequest("POST", url, bytes.NewBuffer(httpRequestBody))
+			if err != nil {
+				return "", err
+			}
 			request.Header.Set("Content-Type", "application/json")
-			response, _ = httpClient.Do(request)
+			response, err = httpClient.Do(request)
+			if err != nil {
+				return "", err
+			}
 			m, _ = simplejson.NewFromReader(response.Body)
 		}
 	}
@@ -83,7 +114,7 @@ func RefreshToken(url string) (token string) {
 	tempSplit = strings.Split(cookie[1], ";")
 	eiToken := tempSplit[0]
 	token = ifpToken + ";" + eiToken
-	return token
+	return token, nil
 	// fmt.Println("Token:", Token)
 	// os.Setenv("Token", Token)
 	// time.Sleep(60 * time.Minute)

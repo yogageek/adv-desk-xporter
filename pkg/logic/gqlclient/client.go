@@ -39,6 +39,11 @@ var (
 	gclientM *graphql.Client
 )
 
+func PrepareGQLClient() {
+	NewGQLClient()
+	NewGQLClient2()
+}
+
 func NewGQLClient() {
 	var cookies []*http.Cookie
 	var cookieJar *cookiejar.Jar

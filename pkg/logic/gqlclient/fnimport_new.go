@@ -38,7 +38,9 @@ func ToDoProcess() {
 	ProcessData(&data, processes)
 }
 
+//處理工作狀態status的結構和total數
 func PrepareDetailTotal(data *jsonData, processes []Processer) {
+
 	//處理detail total分母
 	for i := 0; i < len(processes); i++ {
 		details := detail{

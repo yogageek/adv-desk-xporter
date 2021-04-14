@@ -85,6 +85,9 @@ func ProcessData(data *jsonData, processes []Processer) {
 		//上面做完這裡才會加一(邏輯不對)
 		Res.Details[i].Count = 1 //把一大類當做一
 
+		//測試用!!!!
+		break
+
 	}
 	// util.PrintJson(Res)
 }

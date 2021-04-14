@@ -70,6 +70,8 @@ func (o parameters) Process(data *jsonData) {
 	ImportParameters(data)
 }
 
+//------------------------------------------------
+
 func (o machineStatus) GetName() string {
 	return "machineStatus"
 }
@@ -92,6 +94,32 @@ func (o machines) GetName() string {
 
 func (o parameters) GetName() string {
 	return "parameters"
+}
+
+//------------------------------------------------
+func (o machineStatus) GetTotal() int {
+
+	return 1
+}
+
+func (o mappingRule) GetTotal() int {
+	return 1
+}
+
+func (o profileMachine) GetTotal() int {
+	return 1
+}
+
+func (o groups) GetTotal() int {
+	return 1
+}
+
+func (o machines) GetTotal() int {
+	return 1
+}
+
+func (o parameters) GetTotal() int {
+	return 1
 }
 
 func GetCounter(data *jsonData) counter {

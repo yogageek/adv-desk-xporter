@@ -2,6 +2,7 @@ package logic
 
 import (
 	model "porter/model/gqlclient"
+	"porter/pkg/logic/method"
 	// . "porter/util"
 )
 
@@ -74,6 +75,11 @@ func getSourceMachineStatus() (mm []map[string]interface{}) {
 	return
 }
 
+func TotalMachineStatus(jsonData *jsonData) int {
+	machineStatusDatas := jsonData.MachineStatusData
+	return len(machineStatusDatas)
+}
+
 //目前最多只能匯入三層
 func ImportMachineStatus(jsonData *jsonData) {
 	machineStatusDatas := jsonData.MachineStatusData
@@ -96,9 +102,14 @@ func ImportMachineStatus(jsonData *jsonData) {
 	// util.PrintJson(machineStatusDatas)
 	// fmt.Println("----------------------------")
 
+	c := 0
 	//fix: add set new machine status id after import
-
 	for _, v := range machineStatusDatas {
+
+		//channel寫法
+		c++
+		method.ChannelCount("machineStatus", c)
+
 		if v.Depth == 1 {
 			input := model.AddMachineStatusInput{
 				Name:  NamePrefix + v.Name,

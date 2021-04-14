@@ -69,6 +69,7 @@ func Import(c *gin.Context) {
 			"error": err,
 		})
 	}
+
 	//step2開啟檔案
 	sourceFile, err := file.Open()
 	if err != nil {

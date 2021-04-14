@@ -44,7 +44,7 @@ func NewCounter() counter {
 type Processer interface {
 	Process(jsonData *jsonData)
 	GetName() string
-	//GetTotal() int
+	GetTotal() int
 	//要在fnimport_iface_impl裡為每個type新增GetTotal方法
 }
 

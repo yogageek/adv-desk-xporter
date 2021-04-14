@@ -2,9 +2,12 @@ package v1
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	logic "porter/pkg/logic/gqlclient"
+	"porter/pkg/logic/method"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
@@ -36,6 +39,8 @@ type wsError struct {
 const textMsg = 1
 
 func ProcessWs(ws *websocket.Conn) {
+	ws.WriteMessage(textMsg, []byte("connected"))
+
 	var (
 		err error
 		res logic.Response
@@ -61,15 +66,21 @@ func ProcessWs(ws *websocket.Conn) {
 	}
 
 	//setp2 寫入新事件
+	//developing..
 
 	//#這裡用channel來做 後端只要有發 這裡就一直取出來 直到取完為指
+	for {
+		fmt.Println("for...")
+		i := method.ChannelGetCount2()
+		s := strconv.Itoa(i)
+		ws.WriteMessage(1, []byte(s))
+		// msg, _ := json.MarshalIndent(res, "", " ")
+		// err = ws.WriteMessage(textMsg, msg)
+		// if err != nil {
+		// 	log.Println("write:", err)
+		// }
 
-	//developing..
-	msg, _ := json.MarshalIndent(res, "", " ")
-
-	err = ws.WriteMessage(textMsg, msg)
-	if err != nil {
-		log.Println("write:", err)
+		fmt.Println("for...done")
 	}
 }
 

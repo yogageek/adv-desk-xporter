@@ -12,3 +12,33 @@ ok [add] 檢查環境預設語言的API / QueryTranslationLangs
 
 
 [add] 做多語言資料都要匯入 需要改graphql 將其他lang的資料拿出 並在匯入時需要多打新的API將語言資料加入
+
+
+
+做完
+1.取得匯入環境的預設語言
+
+新增
+1.匯入前檢查錯誤功能
+(需比對各匯入物件&匯入環境的資料)
+
+2.當前已匯入數&需匯入總數的值的取得
+(需解析各匯入物件的最底層物件數)
+
+3.當前匯入數的變動值使用go channel技術傳送至webosocket端
+
+4.多語言資料的匯入
+(需多串接略估10隻graphql)
+
+修改
+1.修改websocket事件發送機制
+(改為有事件才發送 需判斷有事件的資料傳送方式及邏輯)
+
+
+c := make(chan bool) //建立一個無緩衝的bool型Channel
+c <- x        //向一個Channel傳送一個值
+<- c          //從一個Channel中接收一個值
+x = <- c      //從Channel c接收一個值並將其儲存到x中
+x, ok = <- c  //從Channel接收一個值，如果channel關閉了或沒有資料，那麼ok將被置為false
+
+

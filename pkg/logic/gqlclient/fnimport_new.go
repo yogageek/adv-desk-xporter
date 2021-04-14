@@ -1,5 +1,6 @@
 package logic
 
+//初始化response資料
 func BeforeProcess(mode Mode) {
 	func() {
 		Res = Response{}
@@ -8,6 +9,7 @@ func BeforeProcess(mode Mode) {
 	}()
 }
 
+//更新response資料為結束狀態
 func AfterProcess() {
 	func() {
 		Res.State = StateDone

@@ -10,6 +10,7 @@ import (
 )
 
 func Export() {
+	//注意這裡如果少加 整個json會錯誤且不易發現
 	ss := []string{"url", "machineStatusData", "mappingRuleData", "profileData", "groupData", "machineData", "parameterData", "translationLangsData"}
 	ii := []interface{}{}
 

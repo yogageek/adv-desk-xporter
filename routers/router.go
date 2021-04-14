@@ -63,6 +63,10 @@ func InitRouter() *gin.Engine {
 		})
 		apiv1.GET("/config/file/export", v1.Export)
 		apiv1.POST("/config/file/import", v1.Import)
+
+		//ws
+		apiv1.GET("/config/file/status", v1.WsEvent)
+
 		// apiv1.GET("/file/status", v1.Status) //move to websocket
 
 		// 只能瀏覽 不能下載

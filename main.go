@@ -68,6 +68,8 @@ func mywebsocket() {
 
 	http.HandleFunc("/websocket/config/file/status", func(w http.ResponseWriter, r *http.Request) {
 		//web"開啟連接"後就會一路進來
+
+		//step1: set upgrader
 		c, err := upgrader.Upgrade(w, r, nil)
 		if err != nil {
 			log.Println("upgrade:", err)
@@ -78,6 +80,7 @@ func mywebsocket() {
 			c.Close()
 		}()
 
+		//setp2: do your logic
 		//測試(如果正在做)直接先write
 		res := logic.Res
 		if res.State == logic.StateDoing {
@@ -116,6 +119,7 @@ func mywebsocket() {
 				break
 			}
 		}
+
 	})
 	// log.Println("server start at :8899")
 	// log.Fatal(http.ListenAndServe(":8899", nil))

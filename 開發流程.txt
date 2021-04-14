@@ -1,0 +1,14 @@
+ok [add] 檢查環境預設語言的API / QueryTranslationLangs
+
+[add] 匯入的狀態值 用channel做寫入 在ws取出
+匯入處理先看這支 fnimport_new
+
+在Processer介面
+	新增//GetTotal() int
+	//要在fnimport_iface_impl裡為每個type新增GetTotal方法
+	//還需知道每做完一筆的count數量有沒有對上
+
+
+
+
+[add] 做多語言資料都要匯入 需要改graphql 將其他lang的資料拿出 並在匯入時需要多打新的API將語言資料加入

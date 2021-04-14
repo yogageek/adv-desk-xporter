@@ -10,6 +10,7 @@ const (
 	ModeExport Mode  = "export"
 )
 
+//返回目前是否為可執行狀態
 func StateIsAvailable() bool {
 	return Res.State == StateDoing
 }
@@ -35,13 +36,16 @@ type counter struct {
 func NewCounter() counter {
 	return counter{
 		Count: 0,
-		Total: 1,
+		Total: 1, //#暫時寫死0
 	}
 }
 
+//Processer 的 processes包含多種要匯入的類型的資料
 type Processer interface {
 	Process(jsonData *jsonData)
 	GetName() string
+	//GetTotal() int
+	//要在fnimport_iface_impl裡為每個type新增GetTotal方法
 }
 
 type machineStatus struct {

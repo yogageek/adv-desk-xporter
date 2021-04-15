@@ -22,13 +22,17 @@ var E int
 var F int
 
 func ChannelCount(s string, i int) {
-
 	// fmt.Println(s, ":", i)
 	go func() { //避免 x<-1 卡住時導致外層卡死
 		switch s {
 		case MachineStatus:
 			fmt.Println("************", i)
 			a <- i //這行有問題
+
+			//要把ws端打開才會往下執行
+			fmt.Println("~~~~~~~~~~~~~")
+			test := <-a
+			fmt.Println(test)
 		case MappingRule:
 			fmt.Println("+++++++++++++", i)
 			b <- i
@@ -41,6 +45,7 @@ func ChannelCount(s string, i int) {
 		case Parameter:
 			f <- i
 		}
+
 	}()
 }
 

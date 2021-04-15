@@ -6,12 +6,14 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+
+	. "porter/pkg/logic/var"
 	"porter/util"
 )
 
 func Export() {
 	//注意這裡如果少加 整個json會錯誤且不易發現
-	ss := []string{"url", "machineStatusData", "mappingRuleData", "profileData", "groupData", "machineData", "parameterData", "translationLangsData"}
+	ss := []string{Url, MachineStatus, MappingRule, Profile, Group, Machine, Parameter, Translation}
 	ii := []interface{}{}
 
 	ii = append(ii, IFP_URL)
@@ -22,7 +24,7 @@ func Export() {
 	ii = append(ii, getSourceProfileMachines())
 	// goto debugging
 
-	ii = append(ii, getSourceGroups())
+	ii = append(ii, GetSourceGroups())
 	// goto debugging
 
 	machineData := getSourceMachines()

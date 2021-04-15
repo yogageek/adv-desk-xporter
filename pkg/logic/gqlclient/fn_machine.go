@@ -1,6 +1,9 @@
 package logic
 
-import model "porter/model/gqlclient"
+import (
+	model "porter/model/gqlclient"
+	. "porter/pkg/logic/var"
+)
 
 // . "porter/util"
 
@@ -15,13 +18,19 @@ func getMachineIds(machines []model.Machines) (ids []string) {
 	return
 }
 
-func ImportMachines(jsonData *jsonData) map[string]string {
+func ImportMachines(jsonData *JsonData) map[string]string {
 	machines := jsonData.MachineData
 
 	//oldId and newId mapping relations
 	M := map[string]string{}
 
+	c := 0
 	for _, v := range machines {
+
+		//channel寫法
+		c++
+		ChannelCount(Machine, c)
+
 		input := model.AddMachineInput{
 			Machines: model.Machines{ //有就放parentId 找不到就放""
 				GroupId:     v.GroupId,

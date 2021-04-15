@@ -6,8 +6,8 @@ import (
 	"log"
 	"net/http"
 	logic "porter/pkg/logic/gqlclient"
-	"porter/pkg/logic/method"
-	"strconv"
+	"porter/util"
+	"time"
 
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
@@ -39,48 +39,64 @@ type wsError struct {
 const textMsg = 1
 
 func ProcessWs(ws *websocket.Conn) {
+
 	ws.WriteMessage(textMsg, []byte("connected"))
 
+	//setp1 檢查是否正在做
+	if logic.StateIsAvailable() {
+		r := wsError{
+			Event: "event-fail",
+			Error: "still in progress",
+			State: int(logic.StateDoing),
+		}
+		err := ws.WriteJSON(r)
+		if err != nil {
+			log.Println("write:", err)
+		}
+		return
+	}
+
+	//setp2 寫入新事件
+	//#這裡用channel來做 後端只要有發 這裡就一直取出來 直到取完為指
 	var (
 		err error
-		res logic.Response
+		res *logic.Response
 	)
 
-	res = logic.Res
-
-	//setp1 檢查是否正在做
-	if res.State == logic.StateDoing {
-		rtn := func() []byte {
-			r := wsError{
-				Event: "eventStart",
-				Error: "still in progress",
-				State: int(logic.StateDoing),
-			}
-			b, _ := json.MarshalIndent(r, "", " ")
-			return b
-		}()
-		err = ws.WriteMessage(textMsg, rtn)
+	sendWs := func() {
+		r := logic.Res
+		msg, _ := json.MarshalIndent(r, "", " ")
+		err = ws.WriteMessage(textMsg, msg)
 		if err != nil {
 			log.Println("write:", err)
 		}
 	}
 
-	//setp2 寫入新事件
-	//developing..
+	func() {
+		for {
+			res := logic.Res
+			if len(res.Details) > 0 {
+				res = logic.Res
+				break
+			}
+			time.Sleep(time.Second * 1)
+		}
+		fmt.Println("ws--------------------")
+		util.PrintJson(res)
+	}()
 
-	//#這裡用channel來做 後端只要有發 這裡就一直取出來 直到取完為指
 	for {
-		fmt.Println("for...")
-		i := method.ChannelGetCount2()
-		s := strconv.Itoa(i)
-		ws.WriteMessage(1, []byte(s))
+		logic.ChannelGetCount2() //如果匯入資料送完 這裡取完 會停在這行  only mStatus
+		sendWs()
+		// testing write ws
+		// s := strconv.Itoa(i)
+		// ws.WriteMessage(1, []byte(s))
+
 		// msg, _ := json.MarshalIndent(res, "", " ")
 		// err = ws.WriteMessage(textMsg, msg)
 		// if err != nil {
 		// 	log.Println("write:", err)
 		// }
-
-		fmt.Println("for...done")
 	}
 }
 

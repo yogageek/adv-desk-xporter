@@ -2,6 +2,7 @@ package logic
 
 import (
 	model "porter/model/gqlclient"
+	. "porter/pkg/logic/var"
 )
 
 // . "porter/util"
@@ -25,10 +26,16 @@ func getSourceParameters(machineIds []string) (objects []model.QueryParametersOb
 
 var loadedParameters int
 
-func ImportParameters(jsonData *jsonData) {
+func ImportParameters(jsonData *JsonData) {
 	parameters := jsonData.ParameterData
 
+	c := 0
 	for _, v := range parameters {
+
+		//channel寫法
+		c++
+		ChannelCount(Parameter, c)
+
 		for _, v := range v.Machine.Parameters.Nodes {
 			input := model.AddParameterInput{
 				MachineId:   v.MachineId,

@@ -8,7 +8,7 @@ import (
 
 //匯出的結構
 
-type jsonData struct {
+type JsonData struct {
 	MachineStatusData []*machineStatusData
 	MappingRuleData   []*mappingRuleData
 	ProfileData       []*profileData

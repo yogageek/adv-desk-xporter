@@ -3,9 +3,10 @@ package logic
 import (
 	"bytes"
 	"encoding/json"
+	. "porter/pkg/logic/var"
 )
 
-func (o machineStatus) Process(data *jsonData) {
+func (o machineStatus) Process(data *JsonData) {
 	ImportMachineStatus(data)
 
 	b, _ := json.MarshalIndent(data, "", " ")
@@ -24,7 +25,7 @@ func (o machineStatus) Process(data *jsonData) {
 	json.Unmarshal(b, &data)
 }
 
-func (o mappingRule) Process(data *jsonData) {
+func (o mappingRule) Process(data *JsonData) {
 	ImportMappingRule(data)
 
 	b, _ := json.MarshalIndent(data, "", " ")
@@ -42,11 +43,11 @@ func (o mappingRule) Process(data *jsonData) {
 	json.Unmarshal(b, data)
 }
 
-func (o profileMachine) Process(data *jsonData) {
+func (o profileMachine) Process(data *JsonData) {
 	ImportProfileMachine(data)
 }
 
-func (o groups) Process(data *jsonData) {
+func (o groups) Process(data *JsonData) {
 	idMap := ImportGroups(data)
 
 	b, _ := json.MarshalIndent(data, "", " ")
@@ -56,7 +57,7 @@ func (o groups) Process(data *jsonData) {
 	json.Unmarshal(b, &data) //將替換後的資料b 賦予給&data
 }
 
-func (o machines) Process(data *jsonData) {
+func (o machines) Process(data *JsonData) {
 	idMap := ImportMachines(data)
 
 	b, _ := json.MarshalIndent(data, "", " ")
@@ -66,70 +67,71 @@ func (o machines) Process(data *jsonData) {
 	json.Unmarshal(b, data) //將替換後的資料b 賦予給&data
 }
 
-func (o parameters) Process(data *jsonData) {
+func (o parameters) Process(data *JsonData) {
 	ImportParameters(data)
 }
 
 //------------------------------------------------
 
 func (o machineStatus) GetName() string {
-	return "machineStatus"
+	return MachineStatus
 }
 
 func (o mappingRule) GetName() string {
-	return "mappingRule"
+	return MappingRule
 }
 
 func (o profileMachine) GetName() string {
-	return "profileMachine"
+	return Profile
 }
 
 func (o groups) GetName() string {
-	return "groups"
+	return Group
 }
 
 func (o machines) GetName() string {
-	return "machines"
+	return Machine
 }
 
 func (o parameters) GetName() string {
-	return "parameters"
+	return Parameter
 }
 
 //------------------------------------------------
-func (o machineStatus) GetTotal() int {
-
-	return 1
+func (o machineStatus) GetTotal(jsonData *JsonData) int {
+	return GetTotalMachineStatus(jsonData)
 }
 
-func (o mappingRule) GetTotal() int {
-	return 1
+func (o mappingRule) GetTotal(jsonData *JsonData) int {
+	return GetTotalMappineRule(jsonData)
 }
 
-func (o profileMachine) GetTotal() int {
-	return 1
+func (o profileMachine) GetTotal(jsonData *JsonData) int {
+	return GetTotalProfile(jsonData)
 }
 
-func (o groups) GetTotal() int {
-	return 1
+func (o groups) GetTotal(jsonData *JsonData) int {
+	return GetTotalGroup(jsonData)
 }
 
-func (o machines) GetTotal() int {
-	return 1
+func (o machines) GetTotal(jsonData *JsonData) int {
+	return GetTotalMachine(jsonData)
 }
 
-func (o parameters) GetTotal() int {
-	return 1
+func (o parameters) GetTotal(jsonData *JsonData) int {
+	return GetTotalParameter(jsonData)
 }
 
-func GetCounter(data *jsonData) counter {
-	var total int
-	for _, v := range data.ParameterData {
-		m := v.Machine.Parameters.Nodes
-		total = total + len(m)
-	}
-	return counter{
-		Count: 0,
-		Total: total,
-	}
-}
+// func GetCounter(data *JsonData) counter {
+// 	var total int
+// 	for _, v := range data.ParameterData {
+// 		m := v.Machine.Parameters.Nodes
+// 		total = total + len(m)
+// 	}
+
+// 	c := 0
+// 	return counter{
+// 		Count: &c,
+// 		Total: total,
+// 	}
+// }

@@ -1,6 +1,9 @@
 package logic
 
-import model "porter/model/gqlclient"
+import (
+	model "porter/model/gqlclient"
+	. "porter/pkg/logic/var"
+)
 
 //import profile有兩個步驟
 /*
@@ -78,8 +81,14 @@ func getSourceProfileMachines() (results []model.ProfileMachine) {
 //處理新增的machineId
 
 //先
-func ImportProfileMachine(jsonData *jsonData) {
+func ImportProfileMachine(jsonData *JsonData) {
+	c := 0
 	for _, v := range jsonData.ProfileData {
+
+		//channel寫法
+		c++
+		ChannelCount(Profile, c)
+
 		input := model.AddProfileMachineInput{
 			Name:        NamePrefix + string(v.Name), //# wait to refac
 			Description: v.Description,

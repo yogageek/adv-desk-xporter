@@ -2,9 +2,10 @@ package logic
 
 import (
 	model "porter/model/gqlclient"
-	"porter/pkg/logic/method"
-	// . "porter/util"
+	. "porter/pkg/logic/var"
 )
+
+// . "porter/util"
 
 //匯入machine status總共只需要這些
 /*
@@ -75,13 +76,8 @@ func getSourceMachineStatus() (mm []map[string]interface{}) {
 	return
 }
 
-func TotalMachineStatus(jsonData *jsonData) int {
-	machineStatusDatas := jsonData.MachineStatusData
-	return len(machineStatusDatas)
-}
-
 //目前最多只能匯入三層
-func ImportMachineStatus(jsonData *jsonData) {
+func ImportMachineStatus(jsonData *JsonData) {
 	machineStatusDatas := jsonData.MachineStatusData
 
 	//儲存index與parentId對應關係
@@ -108,7 +104,7 @@ func ImportMachineStatus(jsonData *jsonData) {
 
 		//channel寫法
 		c++
-		method.ChannelCount("machineStatus", c)
+		ChannelCount(MachineStatus, c)
 
 		if v.Depth == 1 {
 			input := model.AddMachineStatusInput{

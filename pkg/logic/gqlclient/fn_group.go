@@ -1,20 +1,29 @@
 package logic
 
-import model "porter/model/gqlclient"
+import (
+	model "porter/model/gqlclient"
+	. "porter/pkg/logic/var"
+)
 
 // . "porter/util"
 
-func getSourceGroups() []model.Groups {
+func GetSourceGroups() []model.Groups {
 	return QueryGroups()
 }
 
-func ImportGroups(jsonData *jsonData) map[string]string {
+func ImportGroups(jsonData *JsonData) map[string]string {
 	groups := jsonData.GroupData
 
 	//oldId and newId mapping relations
 	M := map[string]string{}
 
+	c := 0
 	for _, v := range groups {
+
+		//channel寫法
+		c++
+		ChannelCount(Group, c)
+
 		//先匯入上層
 		if v.ParentId == "" {
 			input := model.AddGroupInput{

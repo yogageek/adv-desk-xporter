@@ -101,7 +101,7 @@ func Import() {
 
 }
 
-func ReadFile() jsonData {
+func ReadFile() JsonData {
 
 	checkFilePath()
 
@@ -117,7 +117,7 @@ func ReadFile() jsonData {
 	// result := gjson.GetBytes(b, "machineStatusData") //get all values which key is "id" in a array
 	// machineStatusDataB := []byte(result.Raw)
 	// method2
-	var data jsonData
+	var data JsonData
 	err = json.Unmarshal(b, &data)
 	if err != nil {
 		glog.Fatal(err)

@@ -1,6 +1,9 @@
 package logic
 
-import model "porter/model/gqlclient"
+import (
+	model "porter/model/gqlclient"
+	. "porter/pkg/logic/var"
+)
 
 //匯入mapping rule總共只需要這些
 /*
@@ -87,9 +90,15 @@ func getSourceMappingRule() (results []map[string]interface{}) {
 	return
 }
 
-func ImportMappingRule(jsonData *jsonData) {
+func ImportMappingRule(jsonData *JsonData) {
 	mappingRuleDatas := jsonData.MappingRuleData
+
+	c := 0
 	for _, v := range mappingRuleDatas {
+
+		//channel寫法
+		c++
+		ChannelCount(MappingRule, c)
 
 		codes := []model.AddParameterMappingCodesEntry{}
 		for _, v := range v.Detail {

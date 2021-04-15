@@ -41,4 +41,10 @@ c <- x        //向一個Channel傳送一個值
 x = <- c      //從Channel c接收一個值並將其儲存到x中
 x, ok = <- c  //從Channel接收一個值，如果channel關閉了或沒有資料，那麼ok將被置為false
 
-
+順序
+"machineStatus": "1/1",
+"mappingRule": "50/60",
+"profile": "1/20",
+"group": "5/100",
+"machine": "11/160",
+"parameter": "5/5",

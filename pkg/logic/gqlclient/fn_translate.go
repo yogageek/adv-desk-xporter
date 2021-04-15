@@ -16,7 +16,7 @@ func getEnvTranslations() []model.TranslationLangs {
 	return QueryTranslationLangs(gclientM)
 }
 
-func GetDefaultLangFromJson(data *jsonData) string {
+func GetDefaultLangFromJson(data *JsonData) string {
 	t := data.TranslationLangs
 	for _, v := range t {
 		if v.IsDefault {

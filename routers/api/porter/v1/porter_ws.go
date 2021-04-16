@@ -27,9 +27,9 @@ func WsEvent(c *gin.Context) {
 }
 
 type wsResponse struct {
-	Event string      `json:"event"`
-	Error string      `json:"error,omitempty"`
-	State logic.State `json:"state,omitempty"`
+	Event string `json:"event"`
+	Error string `json:"error,omitempty"`
+	logic.Response
 }
 
 // TextMessage denotes a text data message. The text message payload is
@@ -58,8 +58,7 @@ func ProcessWs(ws *websocket.Conn) {
 		if err := ws.WriteJSON(
 			wsResponse{
 				Event: WS_Event_FAIL,
-				Error: "still in progress",
-				State: logic.StateDoing,
+				Error: "in process",
 			},
 		); err != nil {
 			log.Println("write err:", err)
@@ -86,9 +85,12 @@ func ProcessWs(ws *websocket.Conn) {
 		sendWs := func() {
 			// msg, _ := json.MarshalIndent(logic.Res, "", " ")
 			if err := ws.WriteJSON(
-				logic.Res,
+				wsResponse{
+					Event:    WS_Event_PROCESS,
+					Response: logic.Res,
+				},
 			); err != nil {
-				log.Println("write:", err)
+				log.Println("write err:", err)
 			}
 		}
 
@@ -107,6 +109,7 @@ func ProcessWs(ws *websocket.Conn) {
 					log.Println("write:", err)
 				}
 			}
+			logic.Res.State = logic.StateDone
 			return
 		}
 		// testing write ws

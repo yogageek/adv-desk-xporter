@@ -22,9 +22,9 @@ func StateIsAvailable() bool {
 }
 
 type Response struct {
-	Mode    Mode      `json:"mode"`  //import,export
-	State   State     `json:"state"` //1,0
-	Details []*detail `json:"details"`
+	Mode    Mode      `json:"mode,omitempty"`  //import,export
+	State   State     `json:"state,omitempty"` //1,0
+	Details []*detail `json:"details,omitempty"`
 }
 
 type detail struct {

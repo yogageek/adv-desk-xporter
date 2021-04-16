@@ -1,17 +1,15 @@
-ok [add] 檢查環境預設語言的API / QueryTranslationLangs
+[ok] 檢查環境預設語言的API / QueryTranslationLangs
+[ok] 匯入的狀態值 用channel做寫入 在ws取出 匯入處理先看這支 fnimport_new
+[ok] 在Processer介面	新增//GetTotal() int //要在fnimport_iface_impl裡為每個type新增GetTotal方法	//還需知道每做完一筆的count數量有沒有對上
+[ok] websocket發送機制修改
+[ok] 正確取得即時匯入數
 
-[add] 匯入的狀態值 用channel做寫入 在ws取出
-匯入處理先看這支 fnimport_new
-
-在Processer介面
-	新增//GetTotal() int
-	//要在fnimport_iface_impl裡為每個type新增GetTotal方法
-	//還需知道每做完一筆的count數量有沒有對上
-
-
-
-
-[add] 做多語言資料都要匯入 需要改graphql 將其他lang的資料拿出 並在匯入時需要多打新的API將語言資料加入
+[] 取得即時匯出數量
+[] 取得匯出總數
+[] 匯出新增到websocket
+[] 紀錄匯入匯出操作紀錄(可先存記憶體)
+[] GET 取得匯入匯出操作紀錄
+[] 多語言資料都要匯入 需要改graphql 將其他lang的資料拿出 並在匯入時需要多打新的API將語言資料加入
 
 
 
@@ -41,10 +39,3 @@ c <- x        //向一個Channel傳送一個值
 x = <- c      //從Channel c接收一個值並將其儲存到x中
 x, ok = <- c  //從Channel接收一個值，如果channel關閉了或沒有資料，那麼ok將被置為false
 
-順序
-"machineStatus": "1/1",
-"mappingRule": "50/60",
-"profile": "1/20",
-"group": "5/100",
-"machine": "11/160",
-"parameter": "5/5",

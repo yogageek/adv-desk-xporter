@@ -33,6 +33,7 @@ func ChannelCount(s string, i int) {
 			fmt.Println("~~~~~~~~~~~~~")
 			test := <-a
 			fmt.Println(test)
+
 		case MappingRule:
 			fmt.Println("+++++++++++++", i)
 			b <- i
@@ -101,8 +102,9 @@ func ChannelGetCount2() {
 		i = <-f
 		s = Parameter
 
-	default:
-		fmt.Println("exit--------------")
+		// default:
+		// 	fmt.Println("exit--------------")
+		// 這裡不能加defualt 否則因為當沒channel可取後 會結束這個func 讓websocket無限迴圈一直傳
 	}
 
 setRes:

@@ -1,12 +1,9 @@
 package v1
 
 import (
-	"encoding/json"
-	"fmt"
 	"log"
 	"net/http"
 	logic "porter/pkg/logic/gqlclient"
-	"porter/util"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -28,75 +25,79 @@ func WsEvent(c *gin.Context) {
 	ProcessWs(ws)
 }
 
-type wsError struct {
-	Event string `json:"event"`
-	Error string `json:"error"`
-	State int    `json:"state"`
+type wsResponse struct {
+	Event string      `json:"event"`
+	Error string      `json:"error,omitempty"`
+	State logic.State `json:"state,omitempty"`
+	Data  interface{} `json:"data,omitempty"`
 }
 
 // TextMessage denotes a text data message. The text message payload is
 // interpreted as UTF-8 encoded text data.
 const textMsg = 1
 
+const (
+	WS_EVENT_CONNECTED = "event-connected"
+	WS_Event_FAIL      = "event-fail"
+	WS_Event_PROCESS   = "event-process"
+)
+
 func ProcessWs(ws *websocket.Conn) {
 
-	ws.WriteMessage(textMsg, []byte("connected"))
+	if err := ws.WriteJSON(
+		wsResponse{
+			Event: WS_EVENT_CONNECTED,
+		},
+	); err != nil {
+		log.Println("write err:", err)
+	}
 
 	//setp1 檢查是否正在做
 	if logic.StateIsAvailable() {
-		r := wsError{
-			Event: "event-fail",
-			Error: "still in progress",
-			State: int(logic.StateDoing),
-		}
-		err := ws.WriteJSON(r)
-		if err != nil {
-			log.Println("write:", err)
+		if err := ws.WriteJSON(
+			wsResponse{
+				Event: WS_Event_FAIL,
+				Error: "still in progress",
+				State: logic.StateDoing,
+			},
+		); err != nil {
+			log.Println("write err:", err)
 		}
 		return
 	}
 
-	//setp2 寫入新事件
-	//#這裡用channel來做 後端只要有發 這裡就一直取出來 直到取完為指
-	var (
-		err error
-		res *logic.Response
-	)
+	//step temp 檢查後台response(包含total數)是否已建好
+	for {
+		if len(logic.Res.Details) > 0 {
+			break
+		}
+		time.Sleep(time.Second * 1)
+	}
+	log.Println("Already Init Response...")
 
 	sendWs := func() {
-		r := logic.Res
-		msg, _ := json.MarshalIndent(r, "", " ")
-		err = ws.WriteMessage(textMsg, msg)
-		if err != nil {
+		// msg, _ := json.MarshalIndent(logic.Res, "", " ")
+		if err := ws.WriteJSON(
+			wsResponse{
+				Event: WS_Event_PROCESS,
+				State: logic.StateDoing,
+				Data:  logic.Res,
+			},
+		); err != nil {
 			log.Println("write:", err)
 		}
 	}
 
-	func() {
-		for {
-			res := logic.Res
-			if len(res.Details) > 0 {
-				res = logic.Res
-				break
-			}
-			time.Sleep(time.Second * 1)
-		}
-		fmt.Println("ws--------------------")
-		util.PrintJson(res)
-	}()
-
+	//setp2 寫入新事件
+	//#這裡用channel來做 後端只要有發 這裡就一直取出來 直到取完為指
 	for {
 		logic.ChannelGetCount2() //如果匯入資料送完 這裡取完 會停在這行  only mStatus
+
 		sendWs()
+
 		// testing write ws
 		// s := strconv.Itoa(i)
 		// ws.WriteMessage(1, []byte(s))
-
-		// msg, _ := json.MarshalIndent(res, "", " ")
-		// err = ws.WriteMessage(textMsg, msg)
-		// if err != nil {
-		// 	log.Println("write:", err)
-		// }
 	}
 }
 

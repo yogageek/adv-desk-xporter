@@ -31,12 +31,12 @@ func ImportParameters(jsonData *JsonData) {
 
 	c := 0
 	for _, v := range parameters {
-
-		//channel寫法
-		c++
-		ChannelCount(Parameter, c)
-
 		for _, v := range v.Machine.Parameters.Nodes {
+
+			//channel寫法
+			c++
+			ChannelIn(Parameter, c)
+
 			input := model.AddParameterInput{
 				MachineId:   v.MachineId,
 				Name:        v.Name,

@@ -29,7 +29,7 @@ func ImportMachines(jsonData *JsonData) map[string]string {
 
 		//channel寫法
 		c++
-		ChannelCount(Machine, c)
+		ChannelIn(Machine, c)
 
 		input := model.AddMachineInput{
 			Machines: model.Machines{ //有就放parentId 找不到就放""

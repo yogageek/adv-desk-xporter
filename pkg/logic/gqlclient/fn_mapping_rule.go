@@ -98,7 +98,7 @@ func ImportMappingRule(jsonData *JsonData) {
 
 		//channel寫法
 		c++
-		ChannelCount(MappingRule, c)
+		ChannelIn(MappingRule, c)
 
 		codes := []model.AddParameterMappingCodesEntry{}
 		for _, v := range v.Detail {

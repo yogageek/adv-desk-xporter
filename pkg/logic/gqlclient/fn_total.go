@@ -28,6 +28,10 @@ func GetTotalMachine(jsonData *JsonData) int {
 }
 
 func GetTotalParameter(jsonData *JsonData) int {
+	var sum int
 	d := jsonData.ParameterData
-	return len(d)
+	for _, v := range d {
+		sum = sum + len(v.Machine.Parameters.Nodes)
+	}
+	return sum
 }

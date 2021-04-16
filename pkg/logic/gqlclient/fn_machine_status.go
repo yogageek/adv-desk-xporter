@@ -104,7 +104,7 @@ func ImportMachineStatus(jsonData *JsonData) {
 
 		//channel寫法
 		c++
-		ChannelCount(MachineStatus, c)
+		ChannelIn(MachineStatus, c)
 
 		if v.Depth == 1 {
 			input := model.AddMachineStatusInput{

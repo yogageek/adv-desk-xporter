@@ -27,9 +27,9 @@ func doImport(data *JsonData, processes []Processer) {
 	for i := 0; i < len(processes); i++ {
 		processes[i].Process(data)
 		//testing
-		if i == 4 {
-			break
-		}
+		// if i == 4 {
+		// 	break
+		// }
 	}
 	// util.PrintJson(Res)
 }

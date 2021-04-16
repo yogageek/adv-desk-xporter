@@ -87,7 +87,7 @@ func ImportProfileMachine(jsonData *JsonData) {
 
 		//channel寫法
 		c++
-		ChannelCount(Profile, c)
+		ChannelIn(Profile, c)
 
 		input := model.AddProfileMachineInput{
 			Name:        NamePrefix + string(v.Name), //# wait to refac

@@ -22,7 +22,7 @@ func ImportGroups(jsonData *JsonData) map[string]string {
 
 		//channel寫法
 		c++
-		ChannelCount(Group, c)
+		ChannelIn(Group, c)
 
 		//先匯入上層
 		if v.ParentId == "" {

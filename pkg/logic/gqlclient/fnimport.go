@@ -103,7 +103,7 @@ func Import() {
 
 func ReadFile() JsonData {
 
-	checkFilePath()
+	// checkFilePath()
 
 	//step1 Read json file...
 	b, err := ioutil.ReadFile("./importingData.json")

@@ -3,7 +3,6 @@ package logic
 import (
 	"context"
 	"encoding/json"
-	"fmt"
 	model "porter/model/gqlclient"
 	"porter/util"
 
@@ -35,8 +34,8 @@ func AddMachine(input model.AddMachineInput) (id string) {
 	}
 
 	// //debugging
-	v, _ := json.MarshalIndent(variables, "", " ")
-	fmt.Printf("%s", v)
+	// v, _ := json.MarshalIndent(variables, "", " ")
+	// fmt.Printf("%s", v)
 
 	err := gclientM.Mutate(context.Background(), &gqlQuery, variables)
 	if err != nil {

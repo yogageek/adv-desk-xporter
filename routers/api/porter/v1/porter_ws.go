@@ -29,7 +29,6 @@ type wsResponse struct {
 	Event string      `json:"event"`
 	Error string      `json:"error,omitempty"`
 	State logic.State `json:"state,omitempty"`
-	Data  interface{} `json:"data,omitempty"`
 }
 
 // TextMessage denotes a text data message. The text message payload is
@@ -75,23 +74,19 @@ func ProcessWs(ws *websocket.Conn) {
 	}
 	log.Println("Already Init Response...")
 
-	sendWs := func() {
-		// msg, _ := json.MarshalIndent(logic.Res, "", " ")
-		if err := ws.WriteJSON(
-			wsResponse{
-				Event: WS_Event_PROCESS,
-				State: logic.StateDoing,
-				Data:  logic.Res,
-			},
-		); err != nil {
-			log.Println("write:", err)
-		}
-	}
-
 	//setp2 寫入新事件
 	//#這裡用channel來做 後端只要有發 這裡就一直取出來 直到取完為指
 	for {
 		logic.ChannelGetCount2() //如果匯入資料送完 這裡取完 會停在這行  only mStatus
+
+		sendWs := func() {
+			// msg, _ := json.MarshalIndent(logic.Res, "", " ")
+			if err := ws.WriteJSON(
+				logic.Res,
+			); err != nil {
+				log.Println("write:", err)
+			}
+		}
 
 		sendWs()
 

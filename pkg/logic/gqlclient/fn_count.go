@@ -46,7 +46,6 @@ func ChannelCount(s string, i int) {
 		case Parameter:
 			f <- i
 		}
-
 	}()
 }
 

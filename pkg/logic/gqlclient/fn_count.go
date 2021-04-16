@@ -3,6 +3,7 @@ package logic
 import (
 	"fmt"
 	. "porter/pkg/logic/var"
+	"sync"
 )
 
 // var Cm = make(chan map[string]int)
@@ -21,18 +22,25 @@ var D int
 var E int
 var F int
 
+var mux sync.Mutex
+
+//放入
 func ChannelCount(s string, i int) {
+
+	var wg sync.WaitGroup
+	var mux sync.Mutex
+
+	wg.Add(1)
+
 	// fmt.Println(s, ":", i)
 	go func() { //避免 x<-1 卡住時導致外層卡死
 		switch s {
 		case MachineStatus:
-			fmt.Println("************", i)
-			a <- i //這行有問題
-
-			//要把ws端打開才會往下執行
-			fmt.Println("~~~~~~~~~~~~~")
-			test := <-a
-			fmt.Println(test)
+			mux.Lock()
+			fmt.Println("正常印出", i)
+			a <- i                       //這行有問題
+			fmt.Println("~~~~~~~~~~~~~") //要把ws端打開才會往下執行 因為當a<-i沒有取出的話馬上就會卡住
+			mux.Unlock()
 
 		case MappingRule:
 			fmt.Println("+++++++++++++", i)
@@ -46,7 +54,9 @@ func ChannelCount(s string, i int) {
 		case Parameter:
 			f <- i
 		}
+		defer wg.Done()
 	}()
+	wg.Wait()
 }
 
 // style1
@@ -61,6 +71,7 @@ func ChannelCount(s string, i int) {
 
 var ii []int
 
+//取出
 // style2
 func ChannelGetCount2() {
 

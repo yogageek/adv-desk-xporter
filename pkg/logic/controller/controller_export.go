@@ -30,6 +30,9 @@ func ExportController() {
 		// }
 	}
 
+	keys = append(keys, Translation)
+	datas = append(datas, GetSourceTranslations())
+
 	keys = append(keys, Url)
 	datas = append(datas, IFP_URL)
 
@@ -37,7 +40,7 @@ func ExportController() {
 	// b, _ := json.MarshalIndent(ii, "", " ")
 	// fmt.Printf("%s", b)
 
-	b := AppendJson(keys, datas)
+	b := KeysAndValuesToJson(keys, datas)
 	util.PrintCyan(b)
 
 	//output the json file
@@ -95,7 +98,7 @@ func checkFilePath() {
 	}
 }
 
-func AppendJson(keyName []string, data []interface{}) []byte {
+func KeysAndValuesToJson(keyName []string, data []interface{}) []byte {
 
 	m := map[string]interface{}{}
 

@@ -2,18 +2,14 @@ package logic
 
 import (
 	model "porter/model/gqlclient"
+	. "porter/pkg/logic/client"
+	. "porter/pkg/logic/gql"
 
 	"github.com/golang/glog"
 )
 
-var DefaultLang string
-
-func getSourceTranslations() []model.TranslationLangs {
-	return QueryTranslationLangs(gclientQ)
-}
-
 func getEnvTranslations() []model.TranslationLangs {
-	return QueryTranslationLangs(gclientM)
+	return QueryTranslationLangs(GclientM)
 }
 
 func GetDefaultLangFromJson(data *JsonData) string {
@@ -36,8 +32,4 @@ func GetDefaultLangFromEnv() string {
 	}
 	glog.Error("can't find default lang")
 	return ""
-}
-
-func SetDefaultLang() {
-	DefaultLang = GetDefaultLangFromEnv()
 }

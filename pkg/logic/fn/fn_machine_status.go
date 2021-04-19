@@ -2,7 +2,9 @@ package logic
 
 import (
 	model "porter/model/gqlclient"
-	. "porter/pkg/logic/var"
+	. "porter/pkg/logic/gochan"
+	. "porter/pkg/logic/gql"
+	. "porter/pkg/logic/vars"
 )
 
 // . "porter/util"
@@ -34,48 +36,6 @@ machineStatuses{
 }
 */
 
-func getSourceMachineStatus() (mm []map[string]interface{}) {
-	// mm := []map[string]interface{}{}
-	res := QueryMachineStatuses()
-	for _, v := range res {
-		m := map[string]interface{}{
-			"id":    v.Id,
-			"name":  v.Name,
-			"index": v.Index,
-			"color": v.Color,
-			"depth": v.Depth,
-		}
-		mm = append(mm, m)
-		for _, v := range v.Children {
-			m := map[string]interface{}{
-				"id":          v.Id,
-				"parentId":    v.ParentId,
-				"parentIndex": v.Parent.Index,
-				"name":        v.Name,
-				"index":       v.Index,
-				"color":       v.Color,
-				"depth":       v.Depth,
-			}
-			mm = append(mm, m)
-			for _, v := range v.Children {
-				m := map[string]interface{}{
-					"id":          v.Id,
-					"parentId":    v.ParentId,
-					"parentIndex": v.Parent.Index,
-					"name":        v.Name,
-					"index":       v.Index,
-					"color":       v.Color,
-					"depth":       v.Depth,
-				}
-				mm = append(mm, m)
-			}
-		}
-	}
-	// debugging
-	// util.PrintJson(mm)
-	return
-}
-
 //目前最多只能匯入三層
 func ImportMachineStatus(jsonData *JsonData) {
 	machineStatusDatas := jsonData.MachineStatusData
@@ -85,7 +45,7 @@ func ImportMachineStatus(jsonData *JsonData) {
 	M2 := map[int]string{}
 
 	// debugging 目前只抓萬以下的測
-	var newMachineStatusDatas []*machineStatusData
+	var newMachineStatusDatas []*MachineStatusData
 	for _, v := range machineStatusDatas {
 		if v.Index < 10000 {
 			newMachineStatusDatas = append(newMachineStatusDatas, v)

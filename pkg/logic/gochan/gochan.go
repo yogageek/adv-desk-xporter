@@ -2,7 +2,8 @@ package logic
 
 import (
 	"fmt"
-	. "porter/pkg/logic/var"
+
+	. "porter/pkg/logic/vars"
 	"time"
 )
 
@@ -56,27 +57,27 @@ func ChannelOut() bool {
 		select {
 		case i := <-channelA:
 			// fmt.Println(i)
-			SetResponse(MachineStatus, i)
+			SetResponseCount(MachineStatus, i)
 			return true
 		case i := <-channelB:
 			// fmt.Println(i)
-			SetResponse(MappingRule, i)
+			SetResponseCount(MappingRule, i)
 			return true
 		case i := <-channelC:
 			// fmt.Println(i)
-			SetResponse(Profile, i)
+			SetResponseCount(Profile, i)
 			return true
 		case i := <-channelD:
 			// fmt.Println(i)
-			SetResponse(Group, i)
+			SetResponseCount(Group, i)
 			return true
 		case i := <-channelE:
 			// fmt.Println(i)
-			SetResponse(Machine, i)
+			SetResponseCount(Machine, i)
 			return true
 		case i := <-channelF:
 			// fmt.Println(i)
-			SetResponse(Parameter, i)
+			SetResponseCount(Parameter, i)
 			return true
 		case <-time.After(10 * time.Second):
 			break

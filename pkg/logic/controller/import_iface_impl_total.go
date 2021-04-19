@@ -1,5 +1,9 @@
 package logic
 
+import (
+	. "porter/pkg/logic/fn"
+)
+
 // . "porter/util"
 
 func GetTotalMachineStatus(jsonData *JsonData) int {

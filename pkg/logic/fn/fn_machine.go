@@ -2,16 +2,14 @@ package logic
 
 import (
 	model "porter/model/gqlclient"
-	. "porter/pkg/logic/var"
+	. "porter/pkg/logic/gochan"
+	. "porter/pkg/logic/gql"
+	. "porter/pkg/logic/vars"
 )
 
 // . "porter/util"
 
-func getSourceMachines() []model.Machines {
-	return QueryMachines()
-}
-
-func getMachineIds(machines []model.Machines) (ids []string) {
+func GetMachineIds(machines []model.Machines) (ids []string) {
 	for _, v := range machines {
 		ids = append(ids, v.Id)
 	}

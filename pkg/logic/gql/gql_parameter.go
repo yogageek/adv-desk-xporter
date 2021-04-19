@@ -3,6 +3,7 @@ package logic
 import (
 	"context"
 	model "porter/model/gqlclient"
+	. "porter/pkg/logic/client"
 
 	"github.com/golang/glog"
 	"github.com/shurcooL/graphql"
@@ -17,7 +18,7 @@ func QueryParameters(machineId, afterCursor string) model.QueryParametersOb {
 		"after": graphql.String(afterCursor),
 	} //if no variables
 
-	err := gclientQ.Query(context.Background(), &gqlQuery, variables)
+	err := GclientQ.Query(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		glog.Error(err)
 	}
@@ -40,7 +41,7 @@ func AddParameter(input model.AddParameterInput) {
 	// v, _ := json.MarshalIndent(variables, "", " ")
 	// fmt.Printf("%s", v)
 
-	err := gclientM.Mutate(context.Background(), &gqlQuery, variables)
+	err := GclientM.Mutate(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		glog.Error(err)
 		// glog.Fatal(err)

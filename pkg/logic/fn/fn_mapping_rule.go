@@ -2,7 +2,9 @@ package logic
 
 import (
 	model "porter/model/gqlclient"
-	. "porter/pkg/logic/var"
+	. "porter/pkg/logic/gochan"
+	. "porter/pkg/logic/gql"
+	. "porter/pkg/logic/vars"
 )
 
 //匯入mapping rule總共只需要這些
@@ -53,7 +55,7 @@ parameterMappings {
 }
 */
 
-func getSourceMappingRule() (results []map[string]interface{}) {
+func GetSourceMappingRule() (results []map[string]interface{}) {
 	// mm := []map[string]interface{}{}
 
 	res := QueryParameterMappings()
@@ -90,7 +92,16 @@ func getSourceMappingRule() (results []map[string]interface{}) {
 	return
 }
 
+var DefaultLang string
+
+func SetDefaultLang() {
+	DefaultLang = GetDefaultLangFromEnv()
+}
+
 func ImportMappingRule(jsonData *JsonData) {
+	//set DefaultLang for ImportMappingRule
+	SetDefaultLang()
+
 	mappingRuleDatas := jsonData.MappingRuleData
 
 	c := 0

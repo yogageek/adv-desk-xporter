@@ -4,7 +4,11 @@ import (
 	"io"
 	"net/http"
 	"os"
-	logic "porter/pkg/logic/gqlclient"
+	client "porter/pkg/logic/client"
+	logic "porter/pkg/logic/client"
+	controller "porter/pkg/logic/controller"
+
+	vars "porter/pkg/logic/vars"
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang/glog"
@@ -32,11 +36,11 @@ func Status(c *gin.Context) {
 }
 
 func Export(c *gin.Context) {
-	logic.PrepareGQLClient()
-	logic.BeforeProcess(logic.ModeExport)
-	defer logic.AfterProcess()
+	client.PrepareGQLClient()
+	vars.SetResponseDoing(vars.ModeExport)
+	defer vars.SetResponseDone()
 
-	logic.Export()
+	controller.Export()
 	//下載檔案
 	c.FileAttachment("./exportingData.json", "exportingData.json") //注意都要加.json 否則會找不到轉很久
 
@@ -49,15 +53,15 @@ func Export(c *gin.Context) {
 func Import(c *gin.Context) {
 	logic.PrepareGQLClient()
 	//查看是否正在做，如果是則值接返回錯誤
-	if logic.StateIsAvailable() {
+	if vars.StateIsAvailable() {
 		c.JSON(http.StatusLocked, gin.H{
 			"error": "already in process",
 		})
 		return
 	}
 
-	logic.BeforeProcess(logic.ModeImport)
-	defer logic.AfterProcess()
+	vars.SetResponseDoing(vars.ModeImport)
+	defer vars.SetResponseDone()
 
 	//step1讀取客戶端傳來的formdata
 	// method1
@@ -109,7 +113,7 @@ func Import(c *gin.Context) {
 
 	// step4 business logic
 	// logic.Import() //old
-	logic.ImportController() //new
+	controller.ImportController() //new
 
 	c.JSON(http.StatusOK, gin.H{
 		"fileName": file.Filename,

@@ -2,7 +2,9 @@ package logic
 
 import (
 	model "porter/model/gqlclient"
-	. "porter/pkg/logic/var"
+	. "porter/pkg/logic/gochan"
+	. "porter/pkg/logic/gql"
+	. "porter/pkg/logic/vars"
 )
 
 //import profile有兩個步驟
@@ -72,12 +74,6 @@ query profileMachineList {
 }
 */
 
-func getSourceProfileMachines() (results []model.ProfileMachine) {
-	// mm := []map[string]interface{}{}
-	res := QueryProfileMachines()
-	return res
-}
-
 //處理新增的machineId
 
 //先
@@ -100,7 +96,7 @@ func ImportProfileMachine(jsonData *JsonData) {
 }
 
 //後
-func importProfileParameter(machineId string, profileData profileData) {
+func importProfileParameter(machineId string, profileData ProfileData) {
 	for _, v := range profileData.Parameters {
 		input := model.AddParameterInput{
 			MachineId:   machineId,

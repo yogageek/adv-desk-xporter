@@ -4,7 +4,8 @@ import (
 	"context"
 	"encoding/json"
 	model "porter/model/gqlclient"
-	"porter/util"
+	. "porter/pkg/logic/client"
+	. "porter/util"
 
 	"github.com/golang/glog"
 )
@@ -14,7 +15,7 @@ func QueryParameterMappings() []model.ParameterMappings {
 
 	variables := map[string]interface{}{} //if no variables
 
-	err := gclientQ.Query(context.Background(), &gqlQuery, variables)
+	err := GclientQ.Query(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		glog.Error(err)
 		// glog.Fatal(err)
@@ -38,14 +39,14 @@ func AddParameterMappingRule(input model.AddParameterMappingRuleInput) model.Par
 	// v, _ := json.MarshalIndent(variables, "", " ")
 	// fmt.Printf("%s", v)
 
-	err := gclientM.Mutate(context.Background(), &gqlQuery, variables)
+	err := GclientM.Mutate(context.Background(), &gqlQuery, variables)
 	if err != nil {
 		glog.Error(err)
 	}
 
 	//debugging
 	b, _ := json.MarshalIndent(gqlQuery, "", " ")
-	util.PrintYellow(b)
+	PrintYellow(b)
 
 	return gqlQuery.AddParameterMappingRule.MappingRule.ParameterMappings
 }

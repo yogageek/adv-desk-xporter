@@ -4,7 +4,9 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	logic "porter/pkg/logic/gqlclient"
+
+	gochan "porter/pkg/logic/gochan"
+	vars "porter/pkg/logic/vars"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -29,7 +31,7 @@ func WsEvent(c *gin.Context) {
 type wsResponse struct {
 	Event string `json:"event"`
 	Error string `json:"error,omitempty"`
-	logic.Response
+	vars.Response
 }
 
 // TextMessage denotes a text data message. The text message payload is
@@ -54,7 +56,7 @@ func ProcessWs(ws *websocket.Conn) {
 	}
 
 	//setp1 檢查是否正在做
-	if logic.StateIsAvailable() {
+	if vars.StateIsAvailable() {
 		if err := ws.WriteJSON(
 			wsResponse{
 				Event: WS_Event_FAIL,
@@ -68,7 +70,7 @@ func ProcessWs(ws *websocket.Conn) {
 
 	//step temp 檢查後台response(包含total數)是否已建好
 	for {
-		if len(logic.Res.Details) > 0 {
+		if len(vars.Res.Details) > 0 {
 			break
 		}
 		time.Sleep(time.Second * 1)
@@ -80,14 +82,14 @@ func ProcessWs(ws *websocket.Conn) {
 
 	var closeMaxCount int
 	for {
-		b := logic.ChannelOut() //如果匯入資料送完 這裡取完 會停在這行  only mStatus
+		b := gochan.ChannelOut() //如果匯入資料送完 這裡取完 會停在這行  only mStatus
 
 		sendWs := func() {
 			// msg, _ := json.MarshalIndent(logic.Res, "", " ")
 			if err := ws.WriteJSON(
 				wsResponse{
 					Event:    WS_Event_PROCESS,
-					Response: logic.Res,
+					Response: vars.Res,
 				},
 			); err != nil {
 				log.Println("write err:", err)
@@ -109,7 +111,7 @@ func ProcessWs(ws *websocket.Conn) {
 					log.Println("write:", err)
 				}
 			}
-			logic.Res.State = logic.StateDone
+			vars.Res.State = vars.StateDone
 			return
 		}
 		// testing write ws

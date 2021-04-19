@@ -2,27 +2,12 @@ package logic
 
 import (
 	model "porter/model/gqlclient"
-	. "porter/pkg/logic/var"
+	. "porter/pkg/logic/gochan"
+	. "porter/pkg/logic/gql"
+	. "porter/pkg/logic/vars"
 )
 
 // . "porter/util"
-
-func getSourceParameters(machineIds []string) (objects []model.QueryParametersOb) {
-
-	for _, id := range machineIds {
-		cursor := ""
-	again:
-		// fmt.Println(cursor)
-		res := QueryParameters(id, cursor)
-		objects = append(objects, res)
-		if res.Machine.Parameters.PageInfo.HasNextPage {
-			cursor = res.Machine.Parameters.PageInfo.EndCursor
-			goto again
-		}
-	}
-	// return objects[0:1] //debug用
-	return objects
-}
 
 var loadedParameters int
 

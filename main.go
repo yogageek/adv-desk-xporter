@@ -1,16 +1,12 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
-	"log"
 	"net/http"
 	"os"
-	logic "porter/pkg/logic/gqlclient"
+	logic "porter/pkg/logic/client"
 	"porter/routers"
 	"time"
-
-	"github.com/gorilla/websocket"
 )
 
 // var m *sync.Mutex
@@ -38,7 +34,6 @@ func main() {
 	// util.PrintBlue(qp)
 	// logic.AddParameterSample()
 
-	go mywebsocket()
 	startServer()
 }
 
@@ -63,70 +58,70 @@ func startServer() {
 
 //最後做取完成狀態率( long polling API，可以讓所有使用者能夠即時知道現在是否有匯入匯出的工作正在做。)
 
-func mywebsocket() {
-	upgrader := &websocket.Upgrader{
-		//如果有 cross domain 的需求，可加入這個，不檢查 cross domain
-		CheckOrigin: func(r *http.Request) bool { return true },
-	}
+// func mywebsocket() {
+// 	upgrader := &websocket.Upgrader{
+// 		//如果有 cross domain 的需求，可加入這個，不檢查 cross domain
+// 		CheckOrigin: func(r *http.Request) bool { return true },
+// 	}
 
-	http.HandleFunc("/websocket/config/file/status", func(w http.ResponseWriter, r *http.Request) {
-		//web"開啟連接"後就會一路進來
+// 	http.HandleFunc("/websocket/config/file/status", func(w http.ResponseWriter, r *http.Request) {
+// 		//web"開啟連接"後就會一路進來
 
-		//step1: set upgrader
-		c, err := upgrader.Upgrade(w, r, nil)
-		if err != nil {
-			log.Println("upgrade:", err)
-			return
-		}
-		defer func() {
-			log.Println("disconnect !!")
-			c.Close()
-		}()
+// 		//step1: set upgrader
+// 		c, err := upgrader.Upgrade(w, r, nil)
+// 		if err != nil {
+// 			log.Println("upgrade:", err)
+// 			return
+// 		}
+// 		defer func() {
+// 			log.Println("disconnect !!")
+// 			c.Close()
+// 		}()
 
-		//setp2: do your logic
-		//測試(如果正在做)直接先write
-		res := logic.Res
-		if res.State == logic.StateDoing {
-			rtn := func() []byte {
-				myR := map[string]interface{}{
-					"error": "still in progress",
-					"state": int(logic.StateDoing),
-				}
-				b, _ := json.MarshalIndent(myR, "", " ")
-				return b
-			}()
-			err = c.WriteMessage(1, rtn)
-			if err != nil {
-				log.Println("write:", err)
-			}
-		}
+// 		//setp2: do your logic
+// 		//測試(如果正在做)直接先write
+// 		res := logic.Res
+// 		if res.State == logic.StateDoing {
+// 			rtn := func() []byte {
+// 				myR := map[string]interface{}{
+// 					"error": "still in progress",
+// 					"state": int(logic.StateDoing),
+// 				}
+// 				b, _ := json.MarshalIndent(myR, "", " ")
+// 				return b
+// 			}()
+// 			err = c.WriteMessage(1, rtn)
+// 			if err != nil {
+// 				log.Println("write:", err)
+// 			}
+// 		}
 
-		for { //這個for是常規寫法一定要加
+// 		for { //這個for是常規寫法一定要加
 
-			//如果有read,才做write(前端來問進度才返回給他)
-			mtype, msg, err := c.ReadMessage() //web"開啟連接"後就會一路進來並停在這, 如果web有發消息就會往下走並再回來
-			if err != nil {
-				log.Println("read:", err) //web關閉連接後跳出
-				break
-			}
-			log.Printf("receive: %s\n", msg)
+// 			//如果有read,才做write(前端來問進度才返回給他)
+// 			mtype, msg, err := c.ReadMessage() //web"開啟連接"後就會一路進來並停在這, 如果web有發消息就會往下走並再回來
+// 			if err != nil {
+// 				log.Println("read:", err) //web關閉連接後跳出
+// 				break
+// 			}
+// 			log.Printf("receive: %s\n", msg)
 
-			//只需將當前status狀態寫到這裡(chanel寫法)
-			//---
-			res := logic.Res
-			msg, _ = json.MarshalIndent(res, "", " ")
-			//---
-			err = c.WriteMessage(mtype, msg)
-			if err != nil {
-				log.Println("write:", err)
-				break
-			}
-		}
+// 			//只需將當前status狀態寫到這裡(chanel寫法)
+// 			//---
+// 			res := logic.Res
+// 			msg, _ = json.MarshalIndent(res, "", " ")
+// 			//---
+// 			err = c.WriteMessage(mtype, msg)
+// 			if err != nil {
+// 				log.Println("write:", err)
+// 				break
+// 			}
+// 		}
 
-	})
-	// log.Println("server start at :8899")
-	// log.Fatal(http.ListenAndServe(":8899", nil))
+// 	})
+// 	// log.Println("server start at :8899")
+// 	// log.Fatal(http.ListenAndServe(":8899", nil))
 
-	log.Println("server start at :8000")
-	log.Fatal(http.ListenAndServe(":8000", nil))
-}
+// 	log.Println("server start at :8000")
+// 	log.Fatal(http.ListenAndServe(":8000", nil))
+// }

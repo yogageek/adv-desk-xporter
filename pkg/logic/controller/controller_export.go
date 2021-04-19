@@ -1,12 +1,17 @@
 package logic
 
 import (
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
-	. "porter/pkg/logic/var"
+	. "porter/pkg/logic/client"
+
+	. "porter/pkg/logic/fn"
+	. "porter/pkg/logic/vars"
+
 	"porter/util"
 )
 
@@ -16,31 +21,31 @@ func Export() {
 	ii := []interface{}{}
 
 	ii = append(ii, IFP_URL)
-	ii = append(ii, getSourceMachineStatus())
+	ii = append(ii, GetSourceMachineStatus())
 	// goto debugging
-	ii = append(ii, getSourceMappingRule())
+	ii = append(ii, GetSourceMappingRule())
 	// goto debugging`
-	ii = append(ii, getSourceProfileMachines())
+	ii = append(ii, GetSourceProfileMachines())
 	// goto debugging
 
 	ii = append(ii, GetSourceGroups())
 	// goto debugging
 
-	machineData := getSourceMachines()
+	machineData := GetSourceMachines()
 	ii = append(ii, machineData)
 	// goto debugging
-	parameterData := getSourceParameters(getMachineIds(machineData))
+	parameterData := GetSourceParameters(GetMachineIds(machineData))
 	ii = append(ii, parameterData)
 	// goto debugging
 
-	translationLangs := getSourceTranslations()
+	translationLangs := GetSourceTranslations()
 	ii = append(ii, translationLangs)
 
 	// debugging:
 	// b, _ := json.MarshalIndent(ii, "", " ")
 	// fmt.Printf("%s", b)
 
-	b := appendJson(ss, ii)
+	b := AppendJson(ss, ii)
 	util.PrintCyan(b)
 
 	//output the json file
@@ -68,10 +73,10 @@ func writeFile(b []byte) {
 
 func checkFilePath() {
 	// 查看當前目錄
-	fmt.Println("----------listAll(.)-----------")
-	listAll(".")
-	fmt.Println("----------listAll(./)-----------")
-	listAll("./")
+	fmt.Println("----------ListAll(.)-----------")
+	ListAll(".")
+	fmt.Println("----------ListAll(./)-----------")
+	ListAll("./")
 
 	fmt.Println("------------os.Executable()--------------")
 	ex, err := os.Executable()
@@ -93,5 +98,31 @@ func checkFilePath() {
 	paths, _ := filepath.Abs(".")
 	for _, file := range files {
 		fmt.Println(filepath.Join(paths, file.Name()))
+	}
+}
+
+func AppendJson(keyName []string, data []interface{}) []byte {
+
+	m := map[string]interface{}{}
+
+	if len(keyName) == len(data) {
+		for i := 0; i < len(keyName); i++ {
+			m[keyName[i]] = data[i]
+		}
+	}
+
+	b, _ := json.MarshalIndent(m, "", " ")
+	return b
+}
+
+func ListAll(path string) {
+	files, _ := ioutil.ReadDir(path)
+	for _, fi := range files {
+		if fi.IsDir() {
+			//ListAll(path + "/" + fi.Name())
+			println(path + "/" + fi.Name())
+		} else {
+			println(path + "/" + fi.Name())
+		}
 	}
 }

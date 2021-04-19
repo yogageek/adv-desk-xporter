@@ -1,15 +1,15 @@
 package logic
 
 import (
+	. "porter/pkg/logic/gochan"
+
 	model "porter/model/gqlclient"
-	. "porter/pkg/logic/var"
+
+	. "porter/pkg/logic/gql"
+	. "porter/pkg/logic/vars"
 )
 
 // . "porter/util"
-
-func GetSourceGroups() []model.Groups {
-	return QueryGroups()
-}
 
 func ImportGroups(jsonData *JsonData) map[string]string {
 	groups := jsonData.GroupData

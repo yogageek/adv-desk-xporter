@@ -35,8 +35,8 @@ import (
 */
 
 var (
-	gclientQ *graphql.Client
-	gclientM *graphql.Client
+	GclientQ *graphql.Client
+	GclientM *graphql.Client
 )
 
 func PrepareGQLClient() {
@@ -62,7 +62,7 @@ func NewGQLClient() {
 	httpClient.Jar.SetCookies(req.URL, cookies)
 
 	//set graphql client for query
-	gclientQ = graphql.NewClient(IFP_URL, httpClient)
+	GclientQ = graphql.NewClient(IFP_URL, httpClient)
 }
 
 func NewGQLClient2() {
@@ -83,5 +83,5 @@ func NewGQLClient2() {
 	httpClient.Jar.SetCookies(req.URL, cookies)
 
 	//set graphql client for mutation
-	gclientM = graphql.NewClient(IFP_URL_IN, httpClient)
+	GclientM = graphql.NewClient(IFP_URL_IN, httpClient)
 }

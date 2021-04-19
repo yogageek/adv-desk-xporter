@@ -3,7 +3,9 @@ package logic
 import (
 	"bytes"
 	"encoding/json"
-	. "porter/pkg/logic/var"
+	. "porter/pkg/logic/fn"
+
+	. "porter/pkg/logic/vars"
 )
 
 func (o machineStatus) Process(data *JsonData) {

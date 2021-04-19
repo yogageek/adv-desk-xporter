@@ -1,5 +1,10 @@
 package logic
 
+import (
+	. "porter/pkg/logic/fn"
+	. "porter/pkg/logic/vars"
+)
+
 //Processer 的 processes包含多種要匯入的類型的資料
 type Processer interface {
 	Process(jsonData *JsonData)
@@ -9,25 +14,25 @@ type Processer interface {
 }
 
 type machineStatus struct {
-	counter
+	Counter
 }
 
 type mappingRule struct {
-	counter
+	Counter
 }
 
 type profileMachine struct {
-	counter
+	Counter
 }
 
 type groups struct {
-	counter
+	Counter
 }
 
 type machines struct {
-	counter
+	Counter
 }
 
 type parameters struct {
-	counter
+	Counter
 }

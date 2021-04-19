@@ -55,43 +55,6 @@ parameterMappings {
 }
 */
 
-func GetSourceMappingRule() (results []map[string]interface{}) {
-	// mm := []map[string]interface{}{}
-
-	res := QueryParameterMappings()
-	for _, v := range res {
-		M := map[string]interface{}{
-			"id":    v.Id,
-			"name":  v.Name,
-			"pType": v.PType,
-		}
-
-		//array
-		MM := []map[string]interface{}{}
-		for _, v := range v.Codes {
-			m := map[string]interface{}{
-				"code":     v.Code,
-				"message":  v.Message,
-				"statusId": v.StatusId,
-			}
-			for _, v := range v.Messages { //目前messages只有一組
-				mm := map[string]interface{}{
-					"lang": v.Lang,
-					"text": v.Text,
-				}
-				for k, v := range mm {
-					m[k] = v
-				}
-			}
-			MM = append(MM, m)
-		}
-		M["detail"] = MM
-
-		results = append(results, M)
-	}
-	return
-}
-
 var DefaultLang string
 
 func SetDefaultLang() {

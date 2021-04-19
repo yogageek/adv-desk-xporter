@@ -4,8 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	. "porter/pkg/logic/fn"
-
-	. "porter/pkg/logic/vars"
 )
 
 func (o machineStatus) Process(data *JsonData) {
@@ -72,68 +70,3 @@ func (o machines) Process(data *JsonData) {
 func (o parameters) Process(data *JsonData) {
 	ImportParameters(data)
 }
-
-//------------------------------------------------
-
-func (o machineStatus) GetName() string {
-	return MachineStatus
-}
-
-func (o mappingRule) GetName() string {
-	return MappingRule
-}
-
-func (o profileMachine) GetName() string {
-	return Profile
-}
-
-func (o groups) GetName() string {
-	return Group
-}
-
-func (o machines) GetName() string {
-	return Machine
-}
-
-func (o parameters) GetName() string {
-	return Parameter
-}
-
-//------------------------------------------------
-func (o machineStatus) GetTotal(jsonData *JsonData) int {
-	return GetTotalMachineStatus(jsonData)
-}
-
-func (o mappingRule) GetTotal(jsonData *JsonData) int {
-	return GetTotalMappineRule(jsonData)
-}
-
-func (o profileMachine) GetTotal(jsonData *JsonData) int {
-	return GetTotalProfile(jsonData)
-}
-
-func (o groups) GetTotal(jsonData *JsonData) int {
-	return GetTotalGroup(jsonData)
-}
-
-func (o machines) GetTotal(jsonData *JsonData) int {
-	return GetTotalMachine(jsonData)
-}
-
-func (o parameters) GetTotal(jsonData *JsonData) int {
-	return GetTotalParameter(jsonData)
-}
-
-// func GetCounter(data *JsonData) counter {
-// 	var total int
-// 	for _, v := range data.ParameterData {
-// 		m := v.Machine.Parameters.Nodes
-// 		total = total + len(m)
-// 	}
-
-// 	c := 0
-// 	return counter{
-// 		Count: &c,
-// 		Total: total,
-// 	}
-// }

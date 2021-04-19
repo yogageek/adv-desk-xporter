@@ -6,6 +6,34 @@ import (
 
 // . "porter/util"
 
+//------------------------------------------------
+
+func (o machineStatus) GetTotal(jsonData *JsonData) int {
+	return GetTotalMachineStatus(jsonData)
+}
+
+func (o mappingRule) GetTotal(jsonData *JsonData) int {
+	return GetTotalMappineRule(jsonData)
+}
+
+func (o profileMachine) GetTotal(jsonData *JsonData) int {
+	return GetTotalProfile(jsonData)
+}
+
+func (o groups) GetTotal(jsonData *JsonData) int {
+	return GetTotalGroup(jsonData)
+}
+
+func (o machines) GetTotal(jsonData *JsonData) int {
+	return GetTotalMachine(jsonData)
+}
+
+func (o parameters) GetTotal(jsonData *JsonData) int {
+	return GetTotalParameter(jsonData)
+}
+
+//------------------------------------------------
+
 func GetTotalMachineStatus(jsonData *JsonData) int {
 	d := jsonData.MachineStatusData
 	return len(d)

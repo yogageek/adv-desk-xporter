@@ -8,6 +8,7 @@ import (
 	"os"
 	logic "porter/pkg/logic/gqlclient"
 	"porter/routers"
+	"time"
 
 	"github.com/gorilla/websocket"
 )
@@ -45,10 +46,10 @@ func startServer() {
 	router := routers.InitRouter()
 
 	s := &http.Server{
-		Addr:    fmt.Sprintf(":%d", 8080),
-		Handler: router,
-		// ReadTimeout:    ReadTimeout,
-		// WriteTimeout:   WriteTimeout,
+		Addr:        fmt.Sprintf(":%d", 8080),
+		Handler:     router,
+		ReadTimeout: time.Second * 120,
+		// WriteTimeout:      time.Second * 120,
 		// MaxHeaderBytes: 1 << 20,
 	}
 	s.ListenAndServe()

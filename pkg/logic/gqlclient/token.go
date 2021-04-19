@@ -114,6 +114,7 @@ func RefreshToken(url string) (token string, err error) {
 	tempSplit = strings.Split(cookie[1], ";")
 	eiToken := tempSplit[0]
 	token = ifpToken + ";" + eiToken
+	fmt.Println(token)
 	return token, nil
 	// fmt.Println("Token:", Token)
 	// os.Setenv("Token", Token)

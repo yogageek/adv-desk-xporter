@@ -1,9 +1,11 @@
 package routers
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	v1 "porter/routers/api/porter/v1"
+	"time"
 
 	"github.com/gin-gonic/gin"
 )
@@ -61,8 +63,8 @@ func InitRouter() *gin.Engine {
 				"message": "OK",
 			})
 		})
-		apiv1.GET("/config/file/export", v1.Export)
-		apiv1.POST("/config/file/import", v1.Import)
+		apiv1.GET("/config/file/export", v1.Export).Use(middlewareOfLog) //新增存log功能
+		apiv1.POST("/config/file/import", v1.Import).Use(middlewareOfLog)
 
 		//ws
 		apiv1.GET("/config/file/status", v1.WsEvent)
@@ -77,3 +79,42 @@ func InitRouter() *gin.Engine {
 
 	return r
 }
+
+type ProcessLog struct {
+	Database  string      `json:"database,omitempty"`
+	Mode      string      `json:"mode,omitempty"`
+	FileName  []byte      `json:"fileName,omitempty"`
+	Result    string      `json:"result,omitempty"`
+	Error     interface{} `json:"error,omitempty"`
+	CreatedAt time.Time   `json:"createdAt,omitempty"`
+	// UserName  string      `json:"userName,omitempty"`
+}
+
+func middlewareOfLog(c *gin.Context) {
+	fmt.Println("exec middleware1")
+	c.Next()
+
+	defer fmt.Println("after exec middleware1")
+}
+
+/*
+
+   3. 讀取列表 API 要做分頁，以及 filter 狀態(成功、執行中、失敗)和種類(匯入匯出)
+   4. 匯入匯出 Collection 欄位建議(看你有沒有其他建議或缺失)
+      1. 資料庫 ID
+      2. filename (你先自己定義格式)
+      3. username (建立工作時會傳給你)
+      4. 建立時間 createdAt
+      5. 種類: import or export
+      6. 狀態: 成功、執行中、失敗
+      7. error: 整個 Error 物件，除了以下階段以外丟出的錯誤，e.g. 檢查語言失敗
+      8. machineStatus
+         1. loaded
+         2. total
+         3. error 整個 Error 物件，Machine Status 階段丟出的錯誤
+      9. mappingRule
+         1. loaded
+         2. total
+         3. error 整個 Error 物件，Mapping Rule 階段丟出的錯誤
+      10. ...其他階段
+*/

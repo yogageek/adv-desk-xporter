@@ -12,7 +12,7 @@
 [] GET 取得匯入匯出操作紀錄
 [] 多語言資料都要匯入 需要改graphql 將其他lang的資料拿出 並在匯入時需要多打新的API將語言資料加入
 
-
+gomove -d $GOPATH/src/github.com/ksubedi/new-project github.com/ksubedi/go-web-seed github.com/ksubedi/new-project
 
 做完
 1.取得匯入環境的預設語言

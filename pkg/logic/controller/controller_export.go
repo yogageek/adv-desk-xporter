@@ -9,7 +9,6 @@ import (
 	"path/filepath"
 	. "porter/pkg/logic/client"
 
-	. "porter/pkg/logic/fn"
 	. "porter/pkg/logic/vars"
 
 	"porter/util"
@@ -17,58 +16,36 @@ import (
 
 func ExportController() {
 
-	// processes := ImplIface()
-	// MakeResponse(&data, processes)
-	// doImport(&data, processes)
+	processes := ImplIface()
 
-	// for i := 0; i < len(processes); i++ {
-	// 	processes[i].
-	// 	//testing
-	// 	// if i == 4 {
-	// 	// 	break
-	// 	// }
-	// }
-	// util.PrintJson(Res)
+	var keys []string
+	datas := []interface{}{}
 
-}
+	for i := 0; i < len(processes); i++ {
+		keys = append(keys, processes[i].GetName())
+		datas = append(datas, processes[i].GetSource())
+		//testing
+		// if i == 4 {
+		// 	break
+		// }
+	}
 
-func Export() {
-	//注意這裡如果少加 整個json會錯誤且不易發現
-	ss := []string{Url, MachineStatus, MappingRule, Profile, Group, Machine, Parameter, Translation}
-	ii := []interface{}{}
-
-	ii = append(ii, IFP_URL)
-	ii = append(ii, GetSourceMachineStatus())
-	// goto debugging
-	ii = append(ii, GetSourceMappingRule())
-	// goto debugging`
-	ii = append(ii, GetSourceProfileMachines())
-	// goto debugging
-
-	ii = append(ii, GetSourceGroups())
-	// goto debugging
-
-	machineData := GetSourceMachines()
-	ii = append(ii, machineData)
-	// goto debugging
-	parameterData := GetSourceParameters(GetMachineIds(machineData))
-	ii = append(ii, parameterData)
-	// goto debugging
-
-	translationLangs := GetSourceTranslations()
-	ii = append(ii, translationLangs)
+	keys = append(keys, Url)
+	datas = append(datas, IFP_URL)
 
 	// debugging:
 	// b, _ := json.MarshalIndent(ii, "", " ")
 	// fmt.Printf("%s", b)
 
-	b := AppendJson(ss, ii)
+	b := AppendJson(keys, datas)
 	util.PrintCyan(b)
 
 	//output the json file
 	writeFile(b)
+}
 
-	//-----------
+func Export() {
+	ExportController()
 	checkFilePath()
 }
 

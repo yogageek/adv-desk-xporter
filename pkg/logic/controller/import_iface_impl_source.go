@@ -6,12 +6,13 @@ import (
 	. "porter/pkg/logic/gql"
 )
 
-func (o groups) GetSource() []model.Groups {
+func (o groups) GetSource() interface{} {
 	return QueryGroups()
 }
 
-func (o machineStatus) GetSource() (mm []map[string]interface{}) {
-	// mm := []map[string]interface{}{}
+func (o machineStatus) GetSource() interface{} {
+	mm := []map[string]interface{}{}
+
 	res := QueryMachineStatuses()
 	for _, v := range res {
 		m := map[string]interface{}{
@@ -49,15 +50,17 @@ func (o machineStatus) GetSource() (mm []map[string]interface{}) {
 	}
 	// debugging
 	// util.PrintJson(mm)
-	return
+	return mm
 }
 
-func (o machines) GetSource() []model.Machines {
-	return QueryMachines()
+func (o machines) GetSource() interface{} {
+	machines := QueryMachines()
+	SetMachineIds(machines)
+	return machines
 }
 
-func (o mappingRule) GetSource() (results []map[string]interface{}) {
-	// mm := []map[string]interface{}{}
+func (o mappingRule) GetSource() interface{} {
+	results := []map[string]interface{}{}
 
 	res := QueryParameterMappings()
 	for _, v := range res {
@@ -90,11 +93,13 @@ func (o mappingRule) GetSource() (results []map[string]interface{}) {
 
 		results = append(results, M)
 	}
-	return
+	return results
 }
 
-func (o parameters) GetSource(machineIds []string) (objects []model.QueryParametersOb) {
+func (o parameters) GetSource() interface{} {
+	machineIds := GetMachineIds()
 
+	var objects []model.QueryParametersOb
 	for _, id := range machineIds {
 		cursor := ""
 	again:
@@ -110,12 +115,28 @@ func (o parameters) GetSource(machineIds []string) (objects []model.QueryParamet
 	return objects
 }
 
-func (o profileMachine) GetSource() (results []model.ProfileMachine) {
+func (o profileMachine) GetSource() interface{} {
 	// mm := []map[string]interface{}{}
 	res := QueryProfileMachines()
 	return res
 }
 
-func GetSourceTranslations() []model.TranslationLangs {
+func GetSourceTranslations() interface{} {
 	return QueryTranslationLangs(GclientQ)
+}
+
+//------------------------------------------------
+
+var machineIds []string
+
+func SetMachineIds(machines []model.Machines) (ids []string) {
+	for _, v := range machines {
+		ids = append(ids, v.Id)
+	}
+	machineIds = ids
+	return
+}
+
+func GetMachineIds() (ids []string) {
+	return machineIds
 }

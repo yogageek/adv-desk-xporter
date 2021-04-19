@@ -9,13 +9,6 @@ import (
 
 // . "porter/util"
 
-func GetMachineIds(machines []model.Machines) (ids []string) {
-	for _, v := range machines {
-		ids = append(ids, v.Id)
-	}
-	return
-}
-
 func ImportMachines(jsonData *JsonData) map[string]string {
 	machines := jsonData.MachineData
 

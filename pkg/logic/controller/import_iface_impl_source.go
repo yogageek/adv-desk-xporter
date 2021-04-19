@@ -6,11 +6,11 @@ import (
 	. "porter/pkg/logic/gql"
 )
 
-func GetSourceGroups() []model.Groups {
+func (o groups) GetSource() []model.Groups {
 	return QueryGroups()
 }
 
-func GetSourceMachineStatus() (mm []map[string]interface{}) {
+func (o machineStatus) GetSource() (mm []map[string]interface{}) {
 	// mm := []map[string]interface{}{}
 	res := QueryMachineStatuses()
 	for _, v := range res {
@@ -52,11 +52,11 @@ func GetSourceMachineStatus() (mm []map[string]interface{}) {
 	return
 }
 
-func GetSourceMachines() []model.Machines {
+func (o machines) GetSource() []model.Machines {
 	return QueryMachines()
 }
 
-func GetSourceMappingRule() (results []map[string]interface{}) {
+func (o mappingRule) GetSource() (results []map[string]interface{}) {
 	// mm := []map[string]interface{}{}
 
 	res := QueryParameterMappings()
@@ -93,7 +93,7 @@ func GetSourceMappingRule() (results []map[string]interface{}) {
 	return
 }
 
-func GetSourceParameters(machineIds []string) (objects []model.QueryParametersOb) {
+func (o parameters) GetSource(machineIds []string) (objects []model.QueryParametersOb) {
 
 	for _, id := range machineIds {
 		cursor := ""
@@ -110,7 +110,7 @@ func GetSourceParameters(machineIds []string) (objects []model.QueryParametersOb
 	return objects
 }
 
-func GetSourceProfileMachines() (results []model.ProfileMachine) {
+func (o profileMachine) GetSource() (results []model.ProfileMachine) {
 	// mm := []map[string]interface{}{}
 	res := QueryProfileMachines()
 	return res

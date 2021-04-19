@@ -10,7 +10,7 @@ type Processer interface {
 	Process(jsonData *JsonData)
 	GetName() string
 	GetTotal(jsonData *JsonData) int
-	// GetSource() []map[string]interface{}
+	GetSource() []map[string]interface{}
 	//要在fnimport_iface_impl裡為每個type新增GetTotal方法
 }
 

@@ -15,6 +15,23 @@ import (
 	"porter/util"
 )
 
+func ExportController() {
+
+	// processes := ImplIface()
+	// MakeResponse(&data, processes)
+	// doImport(&data, processes)
+
+	// for i := 0; i < len(processes); i++ {
+	// 	processes[i].
+	// 	//testing
+	// 	// if i == 4 {
+	// 	// 	break
+	// 	// }
+	// }
+	// util.PrintJson(Res)
+
+}
+
 func Export() {
 	//注意這裡如果少加 整個json會錯誤且不易發現
 	ss := []string{Url, MachineStatus, MappingRule, Profile, Group, Machine, Parameter, Translation}

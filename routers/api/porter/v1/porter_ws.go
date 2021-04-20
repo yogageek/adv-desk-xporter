@@ -129,7 +129,7 @@ func ProcessWs(ws *websocket.Conn) {
 		}
 	}
 
-case2:
+	// case2:
 	for { //step temp 檢查後台response(包含total數)是否已建好
 		log.Println("check if DETAIL is available...")
 		if vars.GetResponseStatusOfDetail() {
@@ -157,7 +157,8 @@ case2:
 			//debugging 暫時 不然多線程關不掉
 			// return //return 等於斷開連結(不可!)
 
-			goto case2
+			// goto case2
+			return
 
 		}
 		// testing write ws

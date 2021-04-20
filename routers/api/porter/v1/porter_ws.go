@@ -43,6 +43,7 @@ const (
 	Event_START     = "event-start"
 	Event_PROCESS   = "event-process"
 	Event_LOCKED    = "event-locked"
+	Event_UNLOCKED  = "event-unlocked"
 	Event_DONE      = "event-done"
 )
 
@@ -59,68 +60,68 @@ func ProcessWs(ws *websocket.Conn) {
 	}
 
 	//setp1 檢查是否正在做
-restart:
-	for {
-		log.Println("check if state is available...")
 
-		sendEventLocked := func() {
-			if err := ws.WriteJSON(
-				wsResponse{
-					Event: Event_LOCKED,
-					Error: "work is in process",
-				},
-			); err != nil {
-				log.Println("write err:", err)
-			}
+	sendEventLocked := func() {
+		if err := ws.WriteJSON(
+			wsResponse{
+				Event: Event_LOCKED,
+				Error: "work is in process",
+			},
+		); err != nil {
+			log.Println("write err:", err)
 		}
-		sendEventDone := func() {
-			if err := ws.WriteJSON(
-				wsResponse{
-					Event: Event_DONE,
-				},
-			); err != nil {
-				log.Println("write err:", err)
-			}
+	}
+	sendEventUnlocked := func() {
+		if err := ws.WriteJSON(
+			wsResponse{
+				Event: Event_UNLOCKED,
+			},
+		); err != nil {
+			log.Println("write err:", err)
 		}
-
-		if !vars.GetResponseStatusOfState() { //if false, can't do now
-			sendEventLocked() //send event locked
-			goto checkEventDone
+	}
+	sendEventStart := func() {
+		if err := ws.WriteJSON(
+			wsResponse{
+				Event:    Event_START,
+				Response: vars.GetResponse(),
+			},
+		); err != nil {
+			log.Println("write err:", err)
 		}
-
-	checkEventDone:
-		for {
-			if vars.GetResponseStatusOfState() {
-				sendEventDone()
-				break
-			}
-			time.Sleep(time.Second * 1)
-		}
-		break
 	}
 
-	//step temp 檢查後台response(包含total數)是否已建好
 	for {
-		log.Println("check if detail is available...")
-		if vars.GetResponseStatusOfDetail() {
-			//新增發送事件開始前的通知
-			if err := ws.WriteJSON(
-				wsResponse{
-					Event:    Event_START,
-					Response: vars.Res,
-				},
-			); err != nil {
-				log.Println("write err:", err)
+		log.Println("check if STATE is available...")
+		if !vars.GetResponseStatusOfState() { //if false, means not available now
+			sendEventLocked() //send event locked
+			for {
+				if !vars.GetResponseStatusOfState() {
+					time.Sleep(time.Second * 1)
+				} else {
+					sendEventUnlocked()
+					break
+				}
 			}
+		} else {
+			log.Println("%%%%%")
+			break
+		}
+	}
+
+case2:
+	for { //step temp 檢查後台response(包含total數)是否已建好
+		log.Println("check if DETAIL is available...")
+		if vars.GetResponseStatusOfDetail() {
+			sendEventStart() //發送事件開始前的通知
+			log.Println("response already prepared...")
 			break
 		}
 		time.Sleep(time.Second * 1)
 	}
-	log.Println("Already Init Response...")
 
 	//setp2 寫入新事件
 	//#這裡用channel來做 後端只要有發 這裡就一直取出來 直到取完為指
-
 	for {
 		boool := gochan.ChannelOut() //如果匯入資料送完 這裡取完 會停在這行  only mStatus
 
@@ -151,7 +152,7 @@ restart:
 
 			// break //跳出迴圈 重新間測事件
 			PrintJson(vars.Res.Details)
-			goto restart
+			goto case2
 
 			// return //return 等於斷開連結(不可!)
 		}

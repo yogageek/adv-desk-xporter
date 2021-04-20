@@ -1,37 +1,290 @@
 {
-  "groupData": [
+ "groupData": [
+  {
+   "id": "R3JvdXA.X0Nt9dZ5cgAG6yNh",
+   "name": "PCB",
+   "description": "",
+   "timeZone": "Asia/Taipei",
+   "coordinate": null
+  },
+  {
+   "id": "R3JvdXA.YD85_8GunQAGpEaG",
+   "name": "SPC",
+   "description": "",
+   "timeZone": "Asia/Taipei",
+   "coordinate": null
+  },
+  {
+   "id": "R3JvdXA.YEXwS8GunQAGpEa1",
+   "name": "測試群",
+   "description": "testing",
+   "timeZone": "Asia/Taipei",
+   "coordinate": {
+    "longitude": 0,
+    "latitude": 0
+   }
+  },
+  {
+   "parentId": "R3JvdXA.YEXwS8GunQAGpEa1",
+   "id": "R3JvdXA.YFCBoNa3KAAGDClx",
+   "name": "測試群2",
+   "description": "",
+   "timeZone": "Asia/Taipei",
+   "coordinate": {
+    "longitude": 0,
+    "latitude": 0
+   }
+  }
+ ],
+ "machineData": [
+  {
+   "id": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+   "groupId": "R3JvdXA.X0Nt9dZ5cgAG6yNh",
+   "name": "Uno_IMPQ2-S1",
+   "description": "",
+   "imageUrl": ""
+  },
+  {
+   "id": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+   "groupId": "R3JvdXA.X0Nt9dZ5cgAG6yNh",
+   "name": "Uno_IMPQ2-S2",
+   "description": "",
+   "imageUrl": ""
+  },
+  {
+   "id": "TWFjaGluZQ.YD86DsGunQAGpEaI",
+   "groupId": "R3JvdXA.YD85_8GunQAGpEaG",
+   "name": "M1",
+   "description": "",
+   "imageUrl": ""
+  },
+  {
+   "id": "TWFjaGluZQ.YFCCnda3KAAGDClz",
+   "groupId": "R3JvdXA.YFCBoNa3KAAGDClx",
+   "name": "dsds",
+   "description": "",
+   "imageUrl": ""
+  }
+ ],
+ "machineStatusData": [
+  {
+   "color": "#96E796",
+   "depth": 1,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXip",
+   "index": 1000,
+   "name": "Production"
+  },
+  {
+   "color": "#96E796",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXiw",
+   "index": 1200,
+   "name": "Reworking",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXip",
+   "parentIndex": 1000
+  },
+  {
+   "color": "#96E796",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXiv",
+   "index": 1100,
+   "name": "Production",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXip",
+   "parentIndex": 1000
+  },
+  {
+   "color": "#96E796",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXix",
+   "index": 1300,
+   "name": "Reduced Speed",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXip",
+   "parentIndex": 1000
+  },
+  {
+   "color": "#FFA09E",
+   "depth": 1,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXiq",
+   "index": 2000,
+   "name": "Failure"
+  },
+  {
+   "color": "#FFA09E",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXit",
+   "index": 2100,
+   "name": "Failure",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXiq",
+   "parentIndex": 2000
+  },
+  {
+   "color": "#FFA09E",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXiu",
+   "index": 2200,
+   "name": "Adjustment",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXiq",
+   "parentIndex": 2000
+  },
+  {
+   "color": "#FFE091",
+   "depth": 1,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXir",
+   "index": 3000,
+   "name": "Idle"
+  },
+  {
+   "color": "#FFE091",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXiy",
+   "index": 3100,
+   "name": "Setup",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXir",
+   "parentIndex": 3000
+  },
+  {
+   "color": "#FFE091",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXi0",
+   "index": 3300,
+   "name": "Waiting",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXir",
+   "parentIndex": 3000
+  },
+  {
+   "color": "#FFE091",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXiz",
+   "index": 3200,
+   "name": "Startup",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXir",
+   "parentIndex": 3000
+  },
+  {
+   "color": "#FFE091",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXi1",
+   "index": 3400,
+   "name": "Loading",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXir",
+   "parentIndex": 3000
+  },
+  {
+   "color": "#91C6FF",
+   "depth": 1,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXis",
+   "index": 4000,
+   "name": "Line Restraint"
+  },
+  {
+   "color": "#91C6FF",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXi3",
+   "index": 4200,
+   "name": "No Output",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXis",
+   "parentIndex": 4000
+  },
+  {
+   "color": "#91C6FF",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXi2",
+   "index": 4100,
+   "name": "No Input",
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXis",
+   "parentIndex": 4000
+  },
+  {
+   "color": "#008cd6",
+   "depth": 1,
+   "id": "TVN0YXR1cw.YDhor8GunQAGpEZo",
+   "index": 5000,
+   "name": "測試"
+  },
+  {
+   "color": "#008cd6",
+   "depth": 2,
+   "id": "TVN0YXR1cw.YDhozcGunQAGpEZs",
+   "index": 5100,
+   "name": "測試1",
+   "parentId": "TVN0YXR1cw.YDhor8GunQAGpEZo",
+   "parentIndex": 5000
+  },
+  {
+   "color": "#008cd6",
+   "depth": 3,
+   "id": "TVN0YXR1cw.YDiZzsGunQAGpEZ6",
+   "index": 5101,
+   "name": "測試3",
+   "parentId": "TVN0YXR1cw.YDhozcGunQAGpEZs",
+   "parentIndex": 5100
+  },
+  {
+   "color": "#008cd6",
+   "depth": 2,
+   "id": "TVN0YXR1cw.YDho1MGunQAGpEZu",
+   "index": 5200,
+   "name": "測試2",
+   "parentId": "TVN0YXR1cw.YDhor8GunQAGpEZo",
+   "parentIndex": 5000
+  }
+ ],
+ "mappingRuleData": [
+  {
+   "detail": [
     {
-      "id": "P3GvdXA.YC8kHHZlYzWYcvrQ",
-      "name": "Yoga_TESTaaa",
-      "description": "",
-      "timeZone": "Asia/Taipei",
-      "coordinate": null
-    }
-  ],
-  "machineData": [],
-  "machineStatusData": [],
-  "mappingRuleData": [],
-  "parameterData": [],
-  "profileData": [],
-  "translationLangsData": [
-    {
-      "id": "VHJhbnNsYXRpb25MYW5n.XzyjtZS83gAGuMaH",
-      "name": "English",
-      "lang": "en-US",
-      "isDefault": true
+     "code": "1",
+     "lang": "en-US",
+     "message": "測試msg",
+     "statusId": "TVN0YXR1cw.YDhor8GunQAGpEZo",
+     "text": "測試msg"
     },
     {
-      "id": "VHJhbnNsYXRpb25MYW5n.XzykGpS83gAGuMaJ",
-      "name": "簡體中文",
-      "lang": "zh-CN",
-      "isDefault": false
-    },
-    {
-      "id": "VHJhbnNsYXRpb25MYW5n.XzykApS83gAGuMaI",
-      "name": "正體中文",
-      "lang": "zh-TW",
-      "isDefault": false
+     "code": "2",
+     "lang": "en-US",
+     "message": "測試msg2",
+     "statusId": "TVN0YXR1cw.YDhozcGunQAGpEZs",
+     "text": "測試msg2"
     }
-  ],
-  "url": "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql"
+   ],
+   "id": "UE1hcFJ1bGU.YDhpcMGunQAGpEZw",
+   "name": "測試Rule",
+   "pType": "Number"
+  },
+  {
+   "detail": [
+    {
+     "code": "2",
+     "lang": "en-US",
+     "message": "測試msg",
+     "statusId": "TVN0YXR1cw.YDho1MGunQAGpEZu",
+     "text": "測試msg"
+    }
+   ],
+   "id": "UE1hcFJ1bGU.YDveYMGunQAGpEZ8",
+   "name": "測試Rule2",
+   "pType": "Number"
+  }
+ ],
+ "translationLangsData": [
+  {
+   "id": "VHJhbnNsYXRpb25MYW5n.XzyjtZS83gAGuMaH",
+   "name": "English",
+   "lang": "en-US",
+   "isDefault": true
+  },
+  {
+   "id": "VHJhbnNsYXRpb25MYW5n.XzykGpS83gAGuMaJ",
+   "name": "簡體中文",
+   "lang": "zh-CN",
+   "isDefault": false
+  },
+  {
+   "id": "VHJhbnNsYXRpb25MYW5n.XzykApS83gAGuMaI",
+   "name": "正體中文",
+   "lang": "zh-TW",
+   "isDefault": false
+  }
+ ],
+ "url": "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql"
 }

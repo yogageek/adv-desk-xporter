@@ -1,5 +1,7 @@
 package logic
 
+import "fmt"
+
 type State int
 type Mode string
 
@@ -44,8 +46,13 @@ func SetResponseDoing(mode Mode) {
 	}()
 }
 
+func GetResponse() Response {
+	return Res
+}
+
 //是否目前為可執行狀態
 func GetResponseStatusOfState() bool {
+	fmt.Println("Res.State:", Res.State)
 	return Res.State == StateDone
 }
 

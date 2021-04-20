@@ -10,7 +10,7 @@ import (
 	"github.com/golang/glog"
 )
 
-func ImplIface() []Processer {
+func implIface() []Processer {
 	var (
 		a machineStatus
 		b mappingRule
@@ -23,10 +23,14 @@ func ImplIface() []Processer {
 	return processes
 }
 
-func ImportController() {
+func Import() {
+	importController()
+}
+
+func importController() {
 	data := ReadFile() //read data
-	processes := ImplIface()
-	MakeResponse(&data, processes)
+	processes := implIface()
+	makeResponse(&data, processes)
 	doImport(&data, processes)
 }
 
@@ -42,7 +46,7 @@ func doImport(data *JsonData, processes []Processer) {
 	// util.PrintJson(Res)
 }
 
-func MakeResponse(data *JsonData, processes []Processer) {
+func makeResponse(data *JsonData, processes []Processer) {
 	//處理detail total分母
 	for i := 0; i < len(processes); i++ {
 		name := processes[i].GetName()

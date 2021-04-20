@@ -14,9 +14,9 @@ import (
 	"porter/util"
 )
 
-func ExportController() {
+func exportController() {
 
-	processes := ImplIface()
+	processes := implIface()
 
 	var keys []string
 	datas := []interface{}{}
@@ -48,8 +48,8 @@ func ExportController() {
 }
 
 func Export() {
-	ExportController()
-	checkFilePath()
+	exportController()
+	// checkFilePath()
 }
 
 func writeFile(b []byte) {

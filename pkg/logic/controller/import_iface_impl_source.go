@@ -7,6 +7,7 @@ import (
 )
 
 func (o groups) GetSource() interface{} {
+	// count := len(QueryGroups())
 	return QueryGroups()
 }
 

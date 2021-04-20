@@ -5,7 +5,6 @@ import (
 	"log"
 	"net/http"
 	v1 "porter/routers/api/porter/v1"
-	"time"
 
 	"github.com/gin-gonic/gin"
 )
@@ -78,16 +77,6 @@ func InitRouter() *gin.Engine {
 	}
 
 	return r
-}
-
-type ProcessLog struct {
-	Database  string      `json:"database,omitempty"`
-	Mode      string      `json:"mode,omitempty"`
-	FileName  []byte      `json:"fileName,omitempty"`
-	Result    string      `json:"result,omitempty"`
-	Error     interface{} `json:"error,omitempty"`
-	CreatedAt time.Time   `json:"createdAt,omitempty"`
-	// UserName  string      `json:"userName,omitempty"`
 }
 
 func middlewareOfLog(c *gin.Context) {

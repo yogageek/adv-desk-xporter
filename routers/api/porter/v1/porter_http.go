@@ -113,7 +113,7 @@ func Import(c *gin.Context) {
 
 	// step4 business logic
 	// logic.Import() //old
-	controller.ImportController() //new
+	controller.Import() //new
 
 	c.JSON(http.StatusOK, gin.H{
 		"fileName": file.Filename,

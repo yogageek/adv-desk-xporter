@@ -12,11 +12,6 @@ const (
 
 var Res Response
 
-//返回目前是否為可執行狀態
-func StateIsAvailable() bool {
-	return Res.State == StateDoing
-}
-
 type Response struct {
 	Mode    Mode              `json:"mode,omitempty"`  //import,export
 	State   State             `json:"state,omitempty"` //1,0
@@ -49,10 +44,22 @@ func SetResponseDoing(mode Mode) {
 	}()
 }
 
+//是否目前為可執行狀態
+func GetResponseStatusOfState() bool {
+	return Res.State == StateDone
+}
+
+//是否detail已準備好
+func GetResponseStatusOfDetail() bool {
+	return len(Res.Details) > 0
+}
+
 //更新response資料為結束狀態
 func SetResponseDone() {
 	func() {
-		Res.State = StateDone
+		Res = Response{}
+		// Res.State = StateDone
+		// Res.Details = nil
 	}()
 }
 

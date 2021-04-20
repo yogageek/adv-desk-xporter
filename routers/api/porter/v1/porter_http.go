@@ -53,9 +53,9 @@ func Export(c *gin.Context) {
 func Import(c *gin.Context) {
 	logic.PrepareGQLClient()
 	//查看是否正在做，如果是則值接返回錯誤
-	if vars.StateIsAvailable() {
+	if !vars.GetResponseStatusOfState() {
 		c.JSON(http.StatusLocked, gin.H{
-			"error": "already in process",
+			"error": "work is in process",
 		})
 		return
 	}

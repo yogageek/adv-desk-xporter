@@ -1,9 +1,9 @@
 package v1
 
 import (
-	"fmt"
 	"log"
 	"net/http"
+	. "porter/util"
 
 	gochan "porter/pkg/logic/gochan"
 	vars "porter/pkg/logic/vars"
@@ -42,11 +42,13 @@ const (
 	Event_CONNECTED = "event-connected"
 	Event_START     = "event-start"
 	Event_PROCESS   = "event-process"
-	Event_FAIL      = "event-fail"
+	Event_LOCKED    = "event-locked"
 	Event_DONE      = "event-done"
 )
 
 func ProcessWs(ws *websocket.Conn) {
+
+	//注意 return 等於斷開連結(server不應主動斷，client關閉網頁就等於斷線)
 
 	if err := ws.WriteJSON(
 		wsResponse{
@@ -57,21 +59,59 @@ func ProcessWs(ws *websocket.Conn) {
 	}
 
 	//setp1 檢查是否正在做
-	if vars.StateIsAvailable() {
-		if err := ws.WriteJSON(
-			wsResponse{
-				Event: Event_FAIL,
-				Error: "in process",
-			},
-		); err != nil {
-			log.Println("write err:", err)
+restart:
+	for {
+		log.Println("check if state is available...")
+
+		sendEventLocked := func() {
+			if err := ws.WriteJSON(
+				wsResponse{
+					Event: Event_LOCKED,
+					Error: "work is in process",
+				},
+			); err != nil {
+				log.Println("write err:", err)
+			}
 		}
-		return
+		sendEventDone := func() {
+			if err := ws.WriteJSON(
+				wsResponse{
+					Event: Event_DONE,
+				},
+			); err != nil {
+				log.Println("write err:", err)
+			}
+		}
+
+		if !vars.GetResponseStatusOfState() { //if false, can't do now
+			sendEventLocked() //send event locked
+			goto checkEventDone
+		}
+
+	checkEventDone:
+		for {
+			if vars.GetResponseStatusOfState() {
+				sendEventDone()
+				break
+			}
+			time.Sleep(time.Second * 1)
+		}
+		break
 	}
 
 	//step temp 檢查後台response(包含total數)是否已建好
 	for {
-		if len(vars.Res.Details) > 0 {
+		log.Println("check if detail is available...")
+		if vars.GetResponseStatusOfDetail() {
+			//新增發送事件開始前的通知
+			if err := ws.WriteJSON(
+				wsResponse{
+					Event:    Event_START,
+					Response: vars.Res,
+				},
+			); err != nil {
+				log.Println("write err:", err)
+			}
 			break
 		}
 		time.Sleep(time.Second * 1)
@@ -81,9 +121,8 @@ func ProcessWs(ws *websocket.Conn) {
 	//setp2 寫入新事件
 	//#這裡用channel來做 後端只要有發 這裡就一直取出來 直到取完為指
 
-	var closeMaxCount int
 	for {
-		b := gochan.ChannelOut() //如果匯入資料送完 這裡取完 會停在這行  only mStatus
+		boool := gochan.ChannelOut() //如果匯入資料送完 這裡取完 會停在這行  only mStatus
 
 		sendWs := func() {
 			// msg, _ := json.MarshalIndent(logic.Res, "", " ")
@@ -98,22 +137,23 @@ func ProcessWs(ws *websocket.Conn) {
 		}
 
 		// if ChannelOut()==true 代表有從channel取出值
-		if b {
+		if boool {
 			sendWs()
 		} else {
-			closeMaxCount++
-			fmt.Println(closeMaxCount)
-			if closeMaxCount >= 1 {
-				if err := ws.WriteJSON(
-					wsResponse{
-						Event: Event_DONE,
-					},
-				); err != nil {
-					log.Println("write:", err)
-				}
+			if err := ws.WriteJSON(
+				wsResponse{
+					Event: Event_DONE,
+				},
+			); err != nil {
+				log.Println("write:", err)
 			}
 			vars.Res.State = vars.StateDone
-			return //return 等於斷開連結(不可!)
+
+			// break //跳出迴圈 重新間測事件
+			PrintJson(vars.Res.Details)
+			goto restart
+
+			// return //return 等於斷開連結(不可!)
 		}
 		// testing write ws
 		// s := strconv.Itoa(i)

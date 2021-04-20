@@ -1,11 +1,11 @@
 package v1
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	. "porter/util"
 
-	gochan "porter/pkg/logic/gochan"
 	vars "porter/pkg/logic/vars"
 	"time"
 
@@ -142,12 +142,22 @@ case2:
 
 	//setp2 寫入新事件
 	//#這裡用channel來做 後端只要有發 這裡就一直取出來 直到取完為指
+
+	var oldTotalLoaded int
 	for {
-		boool := gochan.ChannelOut() //如果匯入資料送完 這裡取完 會停在這行  only mStatus
+
+		// 移到middleware
+		// boool := gochan.ChannelOut() //如果匯入資料送完 這裡取完 會停在這行  only mStatus
 
 		// if ChannelOut()==true 代表有從channel取出值
-		if boool {
+		newTotalLoaded := vars.GetTotalLoaded()
+		if oldTotalLoaded < newTotalLoaded {
 			snedEventProcess()
+
+			fmt.Println("oldTotalLoaded:", oldTotalLoaded)
+			fmt.Println("newTotalLoaded:", newTotalLoaded)
+			oldTotalLoaded = newTotalLoaded
+
 		} else {
 			sendEventDone()
 			vars.Res.State = vars.StateDone
@@ -157,13 +167,12 @@ case2:
 			//debugging 暫時 不然多線程關不掉
 			// return //return 等於斷開連結(不可!)
 
+			oldTotalLoaded = 0
 			goto case2
-
 		}
 		// testing write ws
 		// s := strconv.Itoa(i)
 		// ws.WriteMessage(1, []byte(s))
-
 	}
 }
 

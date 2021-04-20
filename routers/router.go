@@ -4,7 +4,9 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	gochan "porter/pkg/logic/gochan"
 	v1 "porter/routers/api/porter/v1"
+	"sync"
 
 	"github.com/gin-gonic/gin"
 )
@@ -56,18 +58,20 @@ func InitRouter() *gin.Engine {
 
 	//----------------->
 	apiv1 := r.Group("/")
+	ws := r.Group("/")
 	{
 		apiv1.GET("/", func(c *gin.Context) {
 			c.JSON(200, gin.H{
 				"message": "OK",
 			})
 		})
-		apiv1.GET("/config/file/export", v1.Export).Use(middlewareOfLog) //新增存log功能
-		apiv1.POST("/config/file/import", v1.Import).Use(middlewareOfLog)
+		apiv1.Use(middlewareAPI) //新增存log功能 //.use的先後放置順序很重要 會影響以下
+		apiv1.GET("/config/file/export", v1.Export)
+		apiv1.POST("/config/file/import", v1.Import)
 
 		//ws
-		apiv1.GET("/config/file/status", v1.WsEvent)
-
+		ws.Use(middlewareWS) //新增存log功能 //.use的先後放置順序很重要 會影響以下
+		ws.GET("/config/file/status", v1.WsEvent).Use(middlewareWS)
 		// apiv1.GET("/file/status", v1.Status) //move to websocket
 
 		// 只能瀏覽 不能下載
@@ -79,11 +83,25 @@ func InitRouter() *gin.Engine {
 	return r
 }
 
-func middlewareOfLog(c *gin.Context) {
-	fmt.Println("exec middleware1")
+func middlewareAPI(c *gin.Context) {
+	fmt.Println("exec middleware...")
+	defer fmt.Println("after exec middleware...")
+
+	mutex := sync.Mutex{}
+	go func() {
+		mutex.Lock()
+		gochan.ChannelOut()
+		defer mutex.Unlock()
+	}()
+
 	c.Next()
 
-	defer fmt.Println("after exec middleware1")
+}
+
+func middlewareWS(c *gin.Context) {
+	fmt.Println("exec middleware2...")
+	defer fmt.Println("after exec middleware2...")
+	c.Next()
 }
 
 /*

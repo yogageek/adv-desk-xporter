@@ -46,6 +46,14 @@ func SetResponseDoing(mode Mode) {
 	}()
 }
 
+func GetTotalLoaded() int {
+	loaded := 0
+	for _, v := range Res.Details {
+		loaded += v.Count
+	}
+	return loaded
+}
+
 func GetResponse() Response {
 	return Res
 }

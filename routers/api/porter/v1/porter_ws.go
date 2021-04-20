@@ -39,17 +39,18 @@ type wsResponse struct {
 const textMsg = 1
 
 const (
-	WS_EVENT_CONNECTED = "event-connected"
-	WS_Event_FAIL      = "event-fail"
-	WS_Event_PROCESS   = "event-process"
-	WS_Event_DONE      = "event-done"
+	Event_CONNECTED = "event-connected"
+	Event_START     = "event-start"
+	Event_PROCESS   = "event-process"
+	Event_FAIL      = "event-fail"
+	Event_DONE      = "event-done"
 )
 
 func ProcessWs(ws *websocket.Conn) {
 
 	if err := ws.WriteJSON(
 		wsResponse{
-			Event: WS_EVENT_CONNECTED,
+			Event: Event_CONNECTED,
 		},
 	); err != nil {
 		log.Println("write err:", err)
@@ -59,7 +60,7 @@ func ProcessWs(ws *websocket.Conn) {
 	if vars.StateIsAvailable() {
 		if err := ws.WriteJSON(
 			wsResponse{
-				Event: WS_Event_FAIL,
+				Event: Event_FAIL,
 				Error: "in process",
 			},
 		); err != nil {
@@ -88,7 +89,7 @@ func ProcessWs(ws *websocket.Conn) {
 			// msg, _ := json.MarshalIndent(logic.Res, "", " ")
 			if err := ws.WriteJSON(
 				wsResponse{
-					Event:    WS_Event_PROCESS,
+					Event:    Event_PROCESS,
 					Response: vars.Res,
 				},
 			); err != nil {
@@ -105,14 +106,14 @@ func ProcessWs(ws *websocket.Conn) {
 			if closeMaxCount >= 1 {
 				if err := ws.WriteJSON(
 					wsResponse{
-						Event: WS_Event_DONE,
+						Event: Event_DONE,
 					},
 				); err != nil {
 					log.Println("write:", err)
 				}
 			}
 			vars.Res.State = vars.StateDone
-			return
+			return //return 等於斷開連結(不可!)
 		}
 		// testing write ws
 		// s := strconv.Itoa(i)

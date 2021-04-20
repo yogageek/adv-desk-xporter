@@ -48,7 +48,7 @@ const (
 )
 
 func ProcessWs(ws *websocket.Conn) {
-
+	defer ws.Close()
 	//注意 return 等於斷開連結(server不應主動斷，client關閉網頁就等於斷線)
 
 	if err := ws.WriteJSON(
@@ -83,11 +83,31 @@ func ProcessWs(ws *websocket.Conn) {
 	sendEventStart := func() {
 		if err := ws.WriteJSON(
 			wsResponse{
-				Event:    Event_START,
+				Event: Event_START,
+				// Response: vars.GetResponse(),
+			},
+		); err != nil {
+			log.Println("write err:", err)
+		}
+	}
+	snedEventProcess := func() {
+		// msg, _ := json.MarshalIndent(logic.Res, "", " ")
+		if err := ws.WriteJSON(
+			wsResponse{
+				Event:    Event_PROCESS,
 				Response: vars.GetResponse(),
 			},
 		); err != nil {
 			log.Println("write err:", err)
+		}
+	}
+	sendEventDone := func() {
+		if err := ws.WriteJSON(
+			wsResponse{
+				Event: Event_DONE,
+			},
+		); err != nil {
+			log.Println("write:", err)
 		}
 	}
 
@@ -125,36 +145,20 @@ case2:
 	for {
 		boool := gochan.ChannelOut() //如果匯入資料送完 這裡取完 會停在這行  only mStatus
 
-		sendWs := func() {
-			// msg, _ := json.MarshalIndent(logic.Res, "", " ")
-			if err := ws.WriteJSON(
-				wsResponse{
-					Event:    Event_PROCESS,
-					Response: vars.Res,
-				},
-			); err != nil {
-				log.Println("write err:", err)
-			}
-		}
-
 		// if ChannelOut()==true 代表有從channel取出值
 		if boool {
-			sendWs()
+			snedEventProcess()
 		} else {
-			if err := ws.WriteJSON(
-				wsResponse{
-					Event: Event_DONE,
-				},
-			); err != nil {
-				log.Println("write:", err)
-			}
+			sendEventDone()
 			vars.Res.State = vars.StateDone
-
-			// break //跳出迴圈 重新間測事件
+			// break //跳出迴圈 重新監測事件
 			PrintJson(vars.Res.Details)
+
+			//debugging 暫時 不然多線程關不掉
+			// return //return 等於斷開連結(不可!)
+
 			goto case2
 
-			// return //return 等於斷開連結(不可!)
 		}
 		// testing write ws
 		// s := strconv.Itoa(i)

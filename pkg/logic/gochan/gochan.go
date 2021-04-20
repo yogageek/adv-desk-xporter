@@ -79,7 +79,7 @@ func ChannelOut() bool {
 			// fmt.Println(i)
 			SetResponseCount(Parameter, i)
 			return true
-		case <-time.After(10 * time.Second):
+		case <-time.After(5 * time.Second):
 			break
 			// default:
 			// 	break

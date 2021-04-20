@@ -7,6 +7,7 @@ import (
 	client "porter/pkg/logic/client"
 	logic "porter/pkg/logic/client"
 	controller "porter/pkg/logic/controller"
+	"time"
 
 	vars "porter/pkg/logic/vars"
 
@@ -114,6 +115,7 @@ func Import(c *gin.Context) {
 	// step4 business logic
 	// logic.Import() //old
 	controller.Import() //new
+	time.Sleep(time.Second * 1)
 
 	c.JSON(http.StatusOK, gin.H{
 		"fileName": file.Filename,

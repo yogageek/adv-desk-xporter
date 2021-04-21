@@ -4,9 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	gochan "porter/pkg/logic/gochan"
 	v1 "porter/routers/api/porter/v1"
-	"sync"
 
 	"github.com/gin-gonic/gin"
 )
@@ -86,16 +84,7 @@ func InitRouter() *gin.Engine {
 func middlewareAPI(c *gin.Context) {
 	fmt.Println("exec middleware...")
 	defer fmt.Println("after exec middleware...")
-
-	mutex := sync.Mutex{}
-	go func() {
-		mutex.Lock()
-		gochan.ChannelOut()
-		defer mutex.Unlock()
-	}()
-
 	c.Next()
-
 }
 
 func middlewareWS(c *gin.Context) {

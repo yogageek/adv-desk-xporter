@@ -2,10 +2,13 @@ package logic
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	. "porter/pkg/logic/fn"
-	. "porter/pkg/logic/vars"
+	gochan "porter/pkg/logic/gochan"
+	vars "porter/pkg/logic/vars"
 	. "porter/util"
+	"sync"
 
 	"github.com/golang/glog"
 )
@@ -24,7 +27,35 @@ func implIface() []Processer {
 }
 
 func Import() {
+	mutex := sync.Mutex{}
+	mutex.Lock() //似乎不一定需要
+	go func() {
+		rs := []vars.Response{}
+		for {
+			if gochan.ChannelOut() {
+				details := []vars.ResponseDetail{}
+				publicDetails := vars.GetResponse().Details
+				for _, v := range publicDetails {
+					detail := vars.ResponseDetail{
+						Name:    v.Name,
+						Counter: v.Counter,
+					}
+					details = append(details, detail)
+				}
+				r := vars.Response{
+					Details: details,
+				}
+				rs = append(rs, r)
+			} else {
+				break
+			}
+		}
+		PrintJson(rs)
+		fmt.Println(len(rs))
+	}()
+
 	importController()
+	mutex.Unlock()
 }
 
 func importController() {
@@ -52,16 +83,16 @@ func makeResponse(data *JsonData, processes []Processer) {
 		name := processes[i].GetName()
 		total := processes[i].GetTotal(data)
 
-		details := ResponseDetail{
+		details := vars.ResponseDetail{
 			Name: name,
-			Counter: Counter{
+			Counter: vars.Counter{
 				Total: total,
 				Count: 0,
 			},
 		}
-		Res.Details = append(Res.Details, &details)
+		vars.Res.Details = append(vars.Res.Details, details)
 	}
-	PrintJson(Res)
+	PrintJson(vars.Res)
 }
 
 func ReadFile() JsonData {

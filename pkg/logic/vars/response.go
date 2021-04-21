@@ -15,9 +15,9 @@ const (
 var Res Response
 
 type Response struct {
-	Mode    Mode              `json:"mode,omitempty"`  //import,export
-	State   State             `json:"state,omitempty"` //1,0
-	Details []*ResponseDetail `json:"details,omitempty"`
+	Mode    Mode             `json:"mode,omitempty"`  //import,export
+	State   State            `json:"state,omitempty"` //1,0
+	Details []ResponseDetail `json:"details,omitempty"`
 }
 
 type ResponseDetail struct {
@@ -79,10 +79,11 @@ func SetResponseDone() {
 }
 
 func SetResponseCount(s string, count int) {
-	for _, v := range Res.Details {
+	for i, v := range Res.Details {
 		if s == v.Name {
 			if v.Count < count { //channel順序不定
-				v.Count = count
+				// v.Count = count
+				Res.Details[i].Count = count
 			}
 		}
 	}

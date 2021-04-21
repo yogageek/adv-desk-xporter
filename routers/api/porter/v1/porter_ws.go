@@ -98,7 +98,7 @@ func ProcessWs(ws *websocket.Conn) {
 				Response: vars.GetResponse(),
 			},
 		); err != nil {
-			log.Println("write err:", err)
+			log.Println("snedEventProcess write err:", err)
 		}
 	}
 	sendEventDone := func() {

@@ -92,12 +92,12 @@ func ProcessWs(ws *websocket.Conn) {
 			log.Println("write err:", err)
 		}
 	}
-	snedEventProcess := func() {
+	snedEventProcess := func(r vars.Response) {
 		// msg, _ := json.MarshalIndent(logic.Res, "", " ")
 		if err := ws.WriteJSON(
 			wsResponse{
 				Event:    Event_PROCESS,
-				Response: vars.GetResponse(),
+				Response: r,
 			},
 		); err != nil {
 			log.Println("write err:", err)
@@ -146,45 +146,50 @@ func ProcessWs(ws *websocket.Conn) {
 	//#這裡用channel來做 後端只要有發 這裡就一直取出來 直到取完為指
 
 	var oldTotalLoaded int
+	a := 0
 	for {
 
 		// 移到middleware
 		// boool := gochan.ChannelOut() //如果匯入資料送完 這裡取完 會停在這行  only mStatus
-		time.Sleep(1 * time.Second)
 		fmt.Println(len(controller.Rs))
-		for _, v := range controller.Rs {
-			fmt.Println(v)
-			// if ChannelOut()==true 代表有從channel取出值
-			newTotalLoaded := vars.GetTotalLoaded(v)
-			if oldTotalLoaded <= newTotalLoaded {
-				snedEventProcess()
+		time.Sleep(1 * time.Second)
 
-				fmt.Println("oldTotalLoaded:", oldTotalLoaded)
-				fmt.Println("newTotalLoaded:", newTotalLoaded)
-				oldTotalLoaded = newTotalLoaded
+		v := controller.Rs[len(controller.Rs)-1]
+		// if ChannelOut()==true 代表有從channel取出值
+		newTotalLoaded := vars.GetTotalLoaded(v)
+		if oldTotalLoaded < newTotalLoaded {
+			snedEventProcess(v)
 
-			} else {
+			fmt.Println("oldTotalLoaded:", oldTotalLoaded)
+			fmt.Println("newTotalLoaded:", newTotalLoaded)
+			oldTotalLoaded = newTotalLoaded
 
+		} else {
+			a++
+			if a > 3 {
+				fmt.Println("else oldTotalLoaded:", oldTotalLoaded)
+				fmt.Println("else newTotalLoaded:", newTotalLoaded)
 				sendEventDone()
+				return
 				break
-
-				/*
-					vars.Res.State = vars.StateDone
-					// break //跳出迴圈 重新監測事件
-					PrintJson(vars.Res.Details)
-
-					//debugging 暫時 不然多線程關不掉
-					// return //return 等於斷開連結(不可!)
-
-					oldTotalLoaded = 0
-					goto case2
-				*/
 			}
-			// testing write ws
-			// s := strconv.Itoa(i)
-			// ws.WriteMessage(1, []byte(s))
+
+			/*
+				vars.Res.State = vars.StateDone
+				// break //跳出迴圈 重新監測事件
+				PrintJson(vars.Res.Details)
+
+				//debugging 暫時 不然多線程關不掉
+				// return //return 等於斷開連結(不可!)
+
+				oldTotalLoaded = 0
+				goto case2
+			*/
 		}
-		return
+		// testing write ws
+		// s := strconv.Itoa(i)
+		// ws.WriteMessage(1, []byte(s))
+
 	}
 }
 

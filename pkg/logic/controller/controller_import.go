@@ -26,11 +26,14 @@ func implIface() []Processer {
 	return processes
 }
 
+var Rs []vars.Response
+
 func Import() {
 	mutex := sync.Mutex{}
 	mutex.Lock() //似乎不一定需要
 	go func() {
-		rs := []vars.Response{}
+		Rs = []vars.Response{}
+
 		for {
 			if gochan.ChannelOut() {
 				details := []vars.ResponseDetail{}
@@ -42,16 +45,18 @@ func Import() {
 					}
 					details = append(details, detail)
 				}
+
 				r := vars.Response{
 					Details: details,
 				}
-				rs = append(rs, r)
+
+				Rs = append(Rs, r)
 			} else {
 				break
 			}
 		}
-		PrintJson(rs)
-		fmt.Println(len(rs))
+		PrintJson(Rs)
+		fmt.Println(len(Rs))
 	}()
 
 	importController()

@@ -14,6 +14,8 @@ const (
 
 var Res Response
 
+// var Rs []Response //new
+
 type Response struct {
 	Mode    Mode             `json:"mode,omitempty"`  //import,export
 	State   State            `json:"state,omitempty"` //1,0
@@ -46,9 +48,9 @@ func SetResponseDoing(mode Mode) {
 	}()
 }
 
-func GetTotalLoaded() int {
+func GetTotalLoaded(r Response) int {
 	loaded := 0
-	for _, v := range Res.Details {
+	for _, v := range r.Details {
 		loaded += v.Count
 	}
 	return loaded

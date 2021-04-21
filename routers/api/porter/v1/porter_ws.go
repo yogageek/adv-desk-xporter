@@ -4,8 +4,10 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	. "porter/util"
 
+	// . "porter/util"
+
+	controller "porter/pkg/logic/controller"
 	vars "porter/pkg/logic/vars"
 	"time"
 
@@ -129,7 +131,7 @@ func ProcessWs(ws *websocket.Conn) {
 		}
 	}
 
-case2:
+	// case2:
 	for { //step temp 檢查後台response(包含total數)是否已建好
 		log.Println("check if DETAIL is available...")
 		if vars.GetResponseStatusOfDetail() {
@@ -148,31 +150,41 @@ case2:
 
 		// 移到middleware
 		// boool := gochan.ChannelOut() //如果匯入資料送完 這裡取完 會停在這行  only mStatus
+		time.Sleep(1 * time.Second)
+		fmt.Println(len(controller.Rs))
+		for _, v := range controller.Rs {
+			fmt.Println(v)
+			// if ChannelOut()==true 代表有從channel取出值
+			newTotalLoaded := vars.GetTotalLoaded(v)
+			if oldTotalLoaded <= newTotalLoaded {
+				snedEventProcess()
 
-		// if ChannelOut()==true 代表有從channel取出值
-		newTotalLoaded := vars.GetTotalLoaded()
-		if oldTotalLoaded < newTotalLoaded {
-			snedEventProcess()
+				fmt.Println("oldTotalLoaded:", oldTotalLoaded)
+				fmt.Println("newTotalLoaded:", newTotalLoaded)
+				oldTotalLoaded = newTotalLoaded
 
-			fmt.Println("oldTotalLoaded:", oldTotalLoaded)
-			fmt.Println("newTotalLoaded:", newTotalLoaded)
-			oldTotalLoaded = newTotalLoaded
+			} else {
 
-		} else {
-			sendEventDone()
-			vars.Res.State = vars.StateDone
-			// break //跳出迴圈 重新監測事件
-			PrintJson(vars.Res.Details)
+				sendEventDone()
+				break
 
-			//debugging 暫時 不然多線程關不掉
-			// return //return 等於斷開連結(不可!)
+				/*
+					vars.Res.State = vars.StateDone
+					// break //跳出迴圈 重新監測事件
+					PrintJson(vars.Res.Details)
 
-			oldTotalLoaded = 0
-			goto case2
+					//debugging 暫時 不然多線程關不掉
+					// return //return 等於斷開連結(不可!)
+
+					oldTotalLoaded = 0
+					goto case2
+				*/
+			}
+			// testing write ws
+			// s := strconv.Itoa(i)
+			// ws.WriteMessage(1, []byte(s))
 		}
-		// testing write ws
-		// s := strconv.Itoa(i)
-		// ws.WriteMessage(1, []byte(s))
+		return
 	}
 }
 

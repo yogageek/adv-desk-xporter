@@ -7,8 +7,8 @@ import (
 
 	// . "porter/util"
 
-	controller "porter/pkg/logic/controller"
 	vars "porter/pkg/logic/vars"
+
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -115,10 +115,10 @@ func ProcessWs(ws *websocket.Conn) {
 
 	for {
 		log.Println("check if STATE is available...")
-		if !vars.GetResponseStatusOfState() { //if false, means not available now
+		if !vars.Get_PublicRes_State() { //if false, means not available now
 			sendEventLocked() //send event locked
 			for {
-				if !vars.GetResponseStatusOfState() {
+				if !vars.Get_PublicRes_State() {
 					time.Sleep(time.Second * 1)
 				} else {
 					sendEventUnlocked()
@@ -126,95 +126,48 @@ func ProcessWs(ws *websocket.Conn) {
 				}
 			}
 		} else {
-			log.Println("%%%%%")
 			break
 		}
 	}
 
-	// case2:
-	for { //step temp 檢查後台response(包含total數)是否已建好
+	//檢查後台response(包含total數)是否已建好
+	for {
+		time.Sleep(time.Second * 1)
 		log.Println("check if DETAIL is available...")
-		if vars.GetResponseStatusOfDetail() {
+		if vars.Get_PubliceRes_Detail_Prepared() {
 			sendEventStart() //發送事件開始前的通知
-			log.Println("response already prepared...")
+			log.Println("check if DETAIL is available... -> ok")
 			break
 		}
-		time.Sleep(time.Second * 1)
 	}
 
 	//setp2 寫入新事件
 	//#這裡用channel來做 後端只要有發 這裡就一直取出來 直到取完為指
 
-	var oldTotalLoaded int
-	a := 0
+	var oldLoaded int
+	var duplicatedNum int
+
+	// PrintJson(vars.PublicRess)
+
 	for {
+		l := len(vars.PublicRess)
+		fmt.Println("PublicRess length so far:", l)
+		v := vars.PublicRess[l-1]
 
-		// 移到middleware
-		// boool := gochan.ChannelOut() //如果匯入資料送完 這裡取完 會停在這行  only mStatus
-		fmt.Println(len(controller.Rs))
-		time.Sleep(1 * time.Second)
+		realtimeLoaded := vars.SumLoaded(v)
 
-		v := controller.Rs[len(controller.Rs)-1]
-		// if ChannelOut()==true 代表有從channel取出值
-		newTotalLoaded := vars.GetTotalLoaded(v)
-		if oldTotalLoaded < newTotalLoaded {
+		if oldLoaded < realtimeLoaded {
 			snedEventProcess(v)
-
-			fmt.Println("oldTotalLoaded:", oldTotalLoaded)
-			fmt.Println("newTotalLoaded:", newTotalLoaded)
-			oldTotalLoaded = newTotalLoaded
-
+			oldLoaded = realtimeLoaded
 		} else {
-			a++
-			if a > 3 {
-				fmt.Println("else oldTotalLoaded:", oldTotalLoaded)
-				fmt.Println("else newTotalLoaded:", newTotalLoaded)
+			if duplicatedNum > 2 && vars.ChanDone {
 				sendEventDone()
 				return
-				break
+			} else {
+				duplicatedNum++
+				fmt.Printf("duplicatedNum:%d, realtimeLoaded:%d", duplicatedNum, realtimeLoaded)
 			}
-
-			/*
-				vars.Res.State = vars.StateDone
-				// break //跳出迴圈 重新監測事件
-				PrintJson(vars.Res.Details)
-
-				//debugging 暫時 不然多線程關不掉
-				// return //return 等於斷開連結(不可!)
-
-				oldTotalLoaded = 0
-				goto case2
-			*/
 		}
-		// testing write ws
-		// s := strconv.Itoa(i)
-		// ws.WriteMessage(1, []byte(s))
-
+		time.Sleep(time.Second * 1)
 	}
 }
-
-/*
-修改socekt邏輯
-
-基本上用推送的方式就是事件進度有更新的時候發送，而不是要前端主動定期去要，這樣本質上又變成週期輪詢了
-而且前端可能會是多個
-後端也不一定要固定周期發送，是「進度有更新發送」
-
-{
-  type: 'event-name',
-  data: {
-    ...
-  },
-}
-
-啟動連線->返回連上成功/連上失敗
-{
-	type:"eventStart"
-}
-過程->後台會一直更新狀態值,有更新則寫回ws
-{
-	type:"eventProcess"
-	value...
-}
-沒更新就不用再繼續回復
-*/

@@ -5,32 +5,6 @@ import (
 	"time"
 )
 
-/*
-
-boool := gochan.ChannelOut() //如果匯入資料送完 這裡取完 會停在這行  only mStatus
-
-		// if ChannelOut()==true 代表有從channel取出值
-		if boool {
-			snedEventProcess()
-		} else {
-			sendEventDone()
-			vars.Res.State = vars.StateDone
-			// break //跳出迴圈 重新監測事件
-			PrintJson(vars.Res.Details)
-
-			//debugging 暫時 不然多線程關不掉
-			// return //return 等於斷開連結(不可!)
-
-			goto case2
-
-		}
-		// testing write ws
-		// s := strconv.Itoa(i)
-		// ws.WriteMessage(1, []byte(s))
-		goto case2
-
-*/
-
 // var Cm = make(chan map[string]int)
 var channelA = make(chan int)
 var channelB = make(chan int)
@@ -40,8 +14,8 @@ var channelE = make(chan int)
 var channelF = make(chan int)
 
 //放入
-func ChannelIn(s string, i int) {
-	switch s {
+func ChannelIn(name string, i int) {
+	switch name {
 	case MachineStatus:
 		// fmt.Println("A正常印出", i)
 		go func(channel chan<- int, order int) {
@@ -81,45 +55,43 @@ func ChannelOut() bool {
 		select {
 		case i := <-channelA:
 			// fmt.Println(i)
-			SetResponseCount(MachineStatus, i)
+			Update_PuclicRes_Detail(MachineStatus, i)
 			return true
 		case i := <-channelB:
 			// fmt.Println(i)
-			SetResponseCount(MappingRule, i)
+			Update_PuclicRes_Detail(MappingRule, i)
 			return true
 		case i := <-channelC:
 			// fmt.Println(i)
-			SetResponseCount(Profile, i)
+			Update_PuclicRes_Detail(Profile, i)
 			return true
 		case i := <-channelD:
 			// fmt.Println(i)
-			SetResponseCount(Group, i)
+			Update_PuclicRes_Detail(Group, i)
 			return true
 		case i := <-channelE:
 			// fmt.Println(i)
-			SetResponseCount(Machine, i)
+			Update_PuclicRes_Detail(Machine, i)
 			return true
 		case i := <-channelF:
 			// fmt.Println(i)
-			SetResponseCount(Parameter, i)
+			Update_PuclicRes_Detail(Parameter, i)
 			return true
 		case <-time.After(5 * time.Second):
-			break
+			return false
 			// default:
 			// 	break
 		}
-		return false
 	}
-
-	//也可用for range的方式取出channel
-	// var ints []int
-	// for i := range channelA {
-	// 	ints = append(ints, i)
-	// 	fmt.Println("A:", ints)
-	// 	break
-	// }
-
 }
+
+//也可用for range的方式取出channel
+// var ints []int
+// for i := range channelA {
+// 	ints = append(ints, i)
+// 	fmt.Println("A:", ints)
+// 	break
+// }
 
 // func ChannelGetCount1() {
 // 	go func() {

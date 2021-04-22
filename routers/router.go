@@ -4,7 +4,12 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
+	"porter/db"
+	vars "porter/pkg/logic/vars"
 	v1 "porter/routers/api/porter/v1"
+	util "porter/util"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 )
@@ -55,17 +60,20 @@ func InitRouter() *gin.Engine {
 	// gin.SetMode(setting.RunMode)
 
 	//----------------->
-	apiv1 := r.Group("/")
+	api := r.Group("/")
+	log := r.Group("/")
 	ws := r.Group("/")
 	{
-		apiv1.GET("/", func(c *gin.Context) {
+		api.GET("/", func(c *gin.Context) {
 			c.JSON(200, gin.H{
 				"message": "OK",
 			})
 		})
-		apiv1.Use(middlewareAPI) //新增存log功能 //.use的先後放置順序很重要 會影響以下
-		apiv1.GET("/config/file/export", v1.Export)
-		apiv1.POST("/config/file/import", v1.Import)
+		api.Use(middlewareAPI) //新增存log功能 //.use的先後放置順序很重要 會影響以下
+		api.GET("/config/file/export", v1.Export)
+		api.POST("/config/file/import", v1.Import)
+
+		log.GET("/config/file/logs", v1.Logs)
 
 		//ws
 		ws.Use(middlewareWS) //新增存log功能 //.use的先後放置順序很重要 會影響以下
@@ -82,9 +90,35 @@ func InitRouter() *gin.Engine {
 }
 
 func middlewareAPI(c *gin.Context) {
-	fmt.Println("exec middleware...")
-	defer fmt.Println("after exec middleware...")
+	fmt.Println("create log...")
+	defer fmt.Println("saving log...")
+
+	path := c.FullPath()
+	pathList := strings.Split(path, "/")
+	mode := pathList[len(pathList)-1]
+
+	fileName := ""
+	if mode == "import" {
+		if file, err := c.Copy().FormFile("file"); err == nil {
+			fileName = file.Filename
+		}
+	}
+
+	log := &vars.Log{
+		Database:  os.Getenv("MONGODB_DATABASE"),
+		FileName:  fileName,
+		Mode:      mode,
+		CreatedAt: util.GetNow(),
+	}
+
 	c.Next()
+
+	log.Result = "success"
+	log.Error = ""
+	//取error出來
+
+	db.Insert(db.Clog, log)
+
 }
 
 func middlewareWS(c *gin.Context) {

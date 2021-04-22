@@ -3,13 +3,16 @@
 [ok] 在Processer介面	新增//GetTotal() int //要在fnimport_iface_impl裡為每個type新增GetTotal方法	//還需知道每做完一筆的count數量有沒有對上
 [ok] websocket發送機制修改
 [ok] 正確取得即時匯入數
-[ok] http api改即時回覆 已經發生timeout問題(目前先改成設定2分鐘timeout)
+[tbd] http api改即時回覆 已經發生timeout問題(目前先改成設定2分鐘timeout) -> 目前import可以 export不行
 
+[ok] GET 取得匯入匯出操作紀錄
+[ok] 紀錄匯入匯出操作紀錄(存db)
+[] 蒐集匯入錯誤並存入log
+
+[] 匯入前預判錯誤
 [] 取得即時匯出數量
 [] 取得匯出總數
-[] 紀錄匯入匯出操作紀錄(可先存記憶體)
 [] 匯出新增到websocket
-[] GET 取得匯入匯出操作紀錄
 [] 多語言資料都要匯入 需要改graphql 將其他lang的資料拿出 並在匯入時需要多打新的API將語言資料加入
 
 //轉移pkg

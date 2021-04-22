@@ -1,12 +1,13 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"net/http"
 	"os"
+	"porter/db"
 	logic "porter/pkg/logic/client"
 	"porter/routers"
-	"time"
 )
 
 // var m *sync.Mutex
@@ -14,11 +15,37 @@ import (
 // m.Lock()
 // m.Unlock()
 
+func usage() {
+	flag.PrintDefaults()
+	os.Exit(2)
+}
+
+func setFlag() {
+	flag.Usage = usage
+
+	//after setting here, no more need to put in .vscode args
+	flag.Set("alsologtostderr", "true")
+	flag.Set("v", "5")        //Info,Error...這種的不用set v就印的出來, glog.V(3)...這種的要set v才印的出來
+	flag.Set("log_dir", "gg") //put glog log data into "gg" folder, (注意要先把資料夾創出來!)
+	//stderrthreshold确保了只有大于或者等于该级别的日志才会被输出到stderr中，也就是标准错误输出中，默认为ERROR。当设置为FATAL时候，不会再有任何error信息的输出。
+
+	flag.Parse() //解析上面的set。 after parse(), so that your flag.set start effected
+}
+
 func init() {
 	// var IFP_URL = "https://ifp-organizer-training-eks011.hz.wise-paas.com.cn/graphql"
 	// var IFP_URL = "https://ifp-organizer-tienkang-eks002.sa.wise-paas.com/graphql" //天岡
 	os.Setenv("IFP_URL", "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql")    //匯出: 銳鼎
 	os.Setenv("IFP_URL_IN", "https://ifp-organizer-testingsa1-eks002.sa.wise-paas.com/graphql") //匯入: 測試環境。
+
+	os.Setenv("MONGODB_URL", "52.187.110.12:27017")
+	os.Setenv("MONGODB_DATABASE", "87e1dc58-4c20-4e65-ad81-507270f6bdac")
+	os.Setenv("MONGODB_USERNAME", "19e0ce80-af51-404c-8d55-9edefcbd4bdf")
+	os.Setenv("MONGODB_PASSWORD", "TYyvTeVemAlJzzuq4w3sBr2D")
+
+	setFlag()
+	db.StartMongo()
+	go db.MongoHealCheckLoop()
 	logic.LoopRefreshToken()
 
 	// runtime.GOMAXPROCS(1)
@@ -41,87 +68,17 @@ func startServer() {
 	router := routers.InitRouter()
 
 	s := &http.Server{
-		Addr:        fmt.Sprintf(":%d", 8080),
-		Handler:     router,
-		ReadTimeout: time.Second * 120,
+		Addr:    fmt.Sprintf(":%d", 8080),
+		Handler: router,
+		// ReadTimeout: time.Second * 120,
 		// WriteTimeout:      time.Second * 120,
 		// MaxHeaderBytes: 1 << 20,
 	}
 	s.ListenAndServe()
 }
 
-//接下來掛server 3支api
-
-//先測匯出是否可以導出一個檔案
-
-//在測匯入是否可以選擇一個檔案
-
-//最後做取完成狀態率( long polling API，可以讓所有使用者能夠即時知道現在是否有匯入匯出的工作正在做。)
-
 // func mywebsocket() {
 // 	upgrader := &websocket.Upgrader{
 // 		//如果有 cross domain 的需求，可加入這個，不檢查 cross domain
 // 		CheckOrigin: func(r *http.Request) bool { return true },
 // 	}
-
-// 	http.HandleFunc("/websocket/config/file/status", func(w http.ResponseWriter, r *http.Request) {
-// 		//web"開啟連接"後就會一路進來
-
-// 		//step1: set upgrader
-// 		c, err := upgrader.Upgrade(w, r, nil)
-// 		if err != nil {
-// 			log.Println("upgrade:", err)
-// 			return
-// 		}
-// 		defer func() {
-// 			log.Println("disconnect !!")
-// 			c.Close()
-// 		}()
-
-// 		//setp2: do your logic
-// 		//測試(如果正在做)直接先write
-// 		res := logic.Res
-// 		if res.State == logic.StateDoing {
-// 			rtn := func() []byte {
-// 				myR := map[string]interface{}{
-// 					"error": "still in progress",
-// 					"state": int(logic.StateDoing),
-// 				}
-// 				b, _ := json.MarshalIndent(myR, "", " ")
-// 				return b
-// 			}()
-// 			err = c.WriteMessage(1, rtn)
-// 			if err != nil {
-// 				log.Println("write:", err)
-// 			}
-// 		}
-
-// 		for { //這個for是常規寫法一定要加
-
-// 			//如果有read,才做write(前端來問進度才返回給他)
-// 			mtype, msg, err := c.ReadMessage() //web"開啟連接"後就會一路進來並停在這, 如果web有發消息就會往下走並再回來
-// 			if err != nil {
-// 				log.Println("read:", err) //web關閉連接後跳出
-// 				break
-// 			}
-// 			log.Printf("receive: %s\n", msg)
-
-// 			//只需將當前status狀態寫到這裡(chanel寫法)
-// 			//---
-// 			res := logic.Res
-// 			msg, _ = json.MarshalIndent(res, "", " ")
-// 			//---
-// 			err = c.WriteMessage(mtype, msg)
-// 			if err != nil {
-// 				log.Println("write:", err)
-// 				break
-// 			}
-// 		}
-
-// 	})
-// 	// log.Println("server start at :8899")
-// 	// log.Fatal(http.ListenAndServe(":8899", nil))
-
-// 	log.Println("server start at :8000")
-// 	log.Fatal(http.ListenAndServe(":8000", nil))
-// }

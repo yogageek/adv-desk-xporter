@@ -49,7 +49,7 @@ func Update_PublicRes_Start(mode Mode) {
 
 //更新response資料為結束狀態
 func Update_PublicRes_Done() {
-	time.Sleep(2 * time.Second)
+	time.Sleep(3 * time.Second)
 	PublicRes.State = StateDone
 	PublicRes.Rdetails = nil //這裡清掉後，ws會拿不到資料，故要sleep
 }

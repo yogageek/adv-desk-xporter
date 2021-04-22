@@ -2,20 +2,21 @@ package logic
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	. "porter/pkg/logic/fn"
 	gochan "porter/pkg/logic/gochan"
 	vars "porter/pkg/logic/vars"
-	. "porter/util"
+
+	// . "porter/util"
 
 	"github.com/golang/glog"
-	"github.com/prometheus/common/log"
 )
 
 func Import() {
 	go syncDoImport()
 	importController()
-	PrintJson(vars.Get_PublicRess())
+	// PrintJson(vars.Get_PublicRess())
 	// mutex := sync.Mutex{} //似乎不一定需要，尚未驗證
 	// mutex.Lock()
 	// mutex.Unlock()
@@ -24,12 +25,13 @@ func Import() {
 
 func syncDoImport() {
 	vars.ResetPublicRess()
+	vars.ChanDone = false
 	for {
 		if gochan.ChannelOut() {
 			vars.AppendResToRess()
 		} else {
 			vars.ChanDone = true
-			log.Info("channel out done, break for loop, length:", len(vars.PublicRess))
+			fmt.Println("channel out done, break for loop, length:", len(vars.PublicRess))
 			break
 		}
 		// log.Info("channel out done, length:", len(vars.PublicRess))

@@ -1,7 +1,6 @@
 package v1
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 
@@ -145,13 +144,11 @@ func ProcessWs(ws *websocket.Conn) {
 	//#這裡用channel來做 後端只要有發 這裡就一直取出來 直到取完為指
 
 	var oldLoaded int
-	var duplicatedNum int
-
 	// PrintJson(vars.PublicRess)
-
 	for {
+		time.Sleep(time.Second * 1)
 		l := len(vars.PublicRess)
-		fmt.Println("PublicRess length so far:", l)
+		// fmt.Println("PublicRess length so far:", l)
 		v := vars.PublicRess[l-1]
 
 		realtimeLoaded := vars.SumLoaded(v)
@@ -160,14 +157,10 @@ func ProcessWs(ws *websocket.Conn) {
 			snedEventProcess(v)
 			oldLoaded = realtimeLoaded
 		} else {
-			if duplicatedNum > 2 && vars.ChanDone {
+			if vars.ChanDone {
 				sendEventDone()
 				return
-			} else {
-				duplicatedNum++
-				fmt.Printf("duplicatedNum:%d, realtimeLoaded:%d", duplicatedNum, realtimeLoaded)
 			}
 		}
-		time.Sleep(time.Second * 1)
 	}
 }

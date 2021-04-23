@@ -112,8 +112,16 @@ func middlewareAPI(c *gin.Context) {
 		CreatedAt: util.GetNow(),
 	}
 
-	c.Next()
+	go ChanFlow()
 
+	go func(c *gochan.StructChan) {
+		c.TakeFromChan()
+
+	}(gochan.GetChan())
+	fmt.Println("###")
+	c.Next()
+	fmt.Println(gochan.GetChan().Errs)
+	fmt.Println(gochan.GetChan().Sum)
 	log.Result = "success"
 	log.Error = ""
 	//取error出來
@@ -128,7 +136,6 @@ func ChanFlow() {
 	}
 	c.InitChan()
 	gochan.SetChan(c)
-
 }
 
 func middlewareWS(c *gin.Context) {

@@ -20,11 +20,13 @@ var TheStructChan StructChan
 
 type StructChan struct {
 	Name  string
+	Sum   int
+	Errs  []string
 	errCh chan error
 }
 
 func (c *StructChan) InitChan() {
-	c.errCh = make(chan error, 1)
+	c.errCh = make(chan error, 10000)
 }
 
 //跨PKG設置*chan
@@ -39,17 +41,20 @@ func GetChan() *StructChan {
 
 func (sc *StructChan) SendToChan(err error) {
 	sc.errCh <- err
-	fmt.Println(sc.Name, "notified")
+	fmt.Println(sc.Name, "SendToChan ok")
 }
 
 func (sc *StructChan) TakeFromChan() {
-	// When you are ready to read from goroutine do this:
-	select {
-	case err := <-sc.errCh:
-		println(err)
+	a := 0
+	for {
+		a++
+		err := <-sc.errCh
+		fmt.Println("TakeFromChan err:", err.Error())
+		sc.Errs = append(sc.Errs, err.Error())
+		if a > 5 {
+			break
+		}
 	}
-
-	//add into array to save error
 }
 
 func main() {

@@ -6,6 +6,7 @@ import (
 	"fmt"
 	model "porter/model/gqlclient"
 	. "porter/pkg/logic/client"
+	gochan "porter/pkg/logic/gochan"
 	. "porter/util"
 
 	"github.com/golang/glog"
@@ -41,6 +42,10 @@ func AddGroup(input model.AddGroupInput) (id string) {
 
 	err := GclientM.Mutate(context.Background(), &gqlQuery, variables)
 	if err != nil {
+		// c := gochan.GetChan()
+		// c.SendToChan(err)
+		gochan.GetChan().SendToChan(err)
+
 		glog.Error(err)
 		// glog.Fatal(err)
 	}

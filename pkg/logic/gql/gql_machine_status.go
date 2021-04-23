@@ -8,6 +8,8 @@ import (
 	. "porter/pkg/logic/client"
 	. "porter/util"
 
+	gochan "porter/pkg/logic/gochan"
+
 	"github.com/golang/glog"
 	"github.com/prometheus/common/log"
 	"github.com/shurcooL/graphql"
@@ -46,6 +48,9 @@ func AddMachineStatus(input model.AddMachineStatusInput) model.MachineStatus {
 
 	err := GclientM.Mutate(context.Background(), &gqlQuery, variables)
 	if err != nil {
+		// c := gochan.GetChan()
+		// c.SendToChan(err)
+		gochan.GetChan().SendToChan(err)
 		glog.Error(err)
 		// glog.Fatal(err)
 	}

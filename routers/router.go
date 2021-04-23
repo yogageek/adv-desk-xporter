@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"porter/db"
+	gochan "porter/pkg/logic/gochan"
 	vars "porter/pkg/logic/vars"
 	v1 "porter/routers/api/porter/v1"
 	util "porter/util"
@@ -118,6 +119,15 @@ func middlewareAPI(c *gin.Context) {
 	//取error出來
 
 	db.Insert(db.Clog, log)
+
+}
+
+func ChanFlow() {
+	c := &gochan.StructChan{
+		Name: "this is name",
+	}
+	c.InitChan()
+	gochan.SetChan(c)
 
 }
 

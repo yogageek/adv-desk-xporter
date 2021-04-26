@@ -7,6 +7,7 @@ import (
 	model "porter/model/gqlclient"
 	. "porter/pkg/logic/client"
 	gochan "porter/pkg/logic/gochan"
+	vars "porter/pkg/logic/vars"
 	. "porter/util"
 
 	"github.com/golang/glog"
@@ -44,8 +45,7 @@ func AddGroup(input model.AddGroupInput) (id string) {
 	if err != nil {
 		// c := gochan.GetChan()
 		// c.SendToChan(err)
-		gochan.GetChan().SendToChan(err)
-
+		gochan.GetChan().PutChan(err, vars.Group)
 		glog.Error(err)
 		// glog.Fatal(err)
 	}

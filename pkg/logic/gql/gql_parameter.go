@@ -4,6 +4,8 @@ import (
 	"context"
 	model "porter/model/gqlclient"
 	. "porter/pkg/logic/client"
+	gochan "porter/pkg/logic/gochan"
+	vars "porter/pkg/logic/vars"
 
 	"github.com/golang/glog"
 	"github.com/shurcooL/graphql"
@@ -43,6 +45,7 @@ func AddParameter(input model.AddParameterInput) {
 
 	err := GclientM.Mutate(context.Background(), &gqlQuery, variables)
 	if err != nil {
+		gochan.GetChan().PutChan(err, vars.Parameter)
 		glog.Error(err)
 		// glog.Fatal(err)
 	}

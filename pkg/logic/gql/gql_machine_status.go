@@ -9,6 +9,7 @@ import (
 	. "porter/util"
 
 	gochan "porter/pkg/logic/gochan"
+	vars "porter/pkg/logic/vars"
 
 	"github.com/golang/glog"
 	"github.com/prometheus/common/log"
@@ -50,7 +51,7 @@ func AddMachineStatus(input model.AddMachineStatusInput) model.MachineStatus {
 	if err != nil {
 		// c := gochan.GetChan()
 		// c.SendToChan(err)
-		gochan.GetChan().SendToChan(err)
+		gochan.GetChan().PutChan(err, vars.MachineStatus)
 		glog.Error(err)
 		// glog.Fatal(err)
 	}

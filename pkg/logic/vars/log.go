@@ -7,7 +7,7 @@ type Log struct {
 	Mode      string      `json:"mode"`
 	FileName  string      `json:"fileName"`
 	Result    string      `json:"result"`
-	Error     interface{} `json:"error"`
+	Error     interface{} `json:"error,omitempty"`
 	CreatedAt time.Time   `json:"createdAt"`
 	// UserName  string      `json:"userName"`
 }

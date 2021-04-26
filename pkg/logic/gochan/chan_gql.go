@@ -1,7 +1,6 @@
 package logic
 
 import (
-	"fmt"
 	"time"
 )
 
@@ -16,64 +15,69 @@ PKG gql，new func(接收*chan) 並塞值進去
 */
 
 //跨PKG使用共同*chan
-var TheStructChan StructChan
+var TheStructChan LogChan
 
-type StructChan struct {
-	Name  string
-	Sum   int
-	Errs  []string
-	errCh chan error
+type LogChan struct {
+	ChanS    chan ChanStruct
+	Err      interface{}
+	ErrCount int
 }
 
-func (c *StructChan) InitChan() {
-	c.errCh = make(chan error, 10000)
+type ChanStruct struct {
+	Name string `json:"errName,omitempty"`
+	Msg  string `json:"errMsg,omitempty"`
+}
+
+func (c *LogChan) InitChan() {
+	c.ChanS = make(chan ChanStruct)
 }
 
 //跨PKG設置*chan
-func SetChan(sc *StructChan) {
-	TheStructChan = *sc
+func SetChan(c *LogChan) {
+	TheStructChan = *c
 }
 
 //跨PKG傳送*chan
-func GetChan() *StructChan {
+func GetChan() *LogChan {
 	return &TheStructChan
 }
 
-func (sc *StructChan) SendToChan(err error) {
-	sc.errCh <- err
-	fmt.Println(sc.Name, "SendToChan ok")
+func (c *LogChan) PutChan(err error, name string) {
+	c.ChanS <- ChanStruct{
+		Name: name,
+		Msg:  err.Error(),
+	}
 }
 
-func (sc *StructChan) TakeFromChan() {
-	a := 0
+func (c *LogChan) TakeChan() {
+	var cslist []ChanStruct
 	for {
-		a++
-		err := <-sc.errCh
-		fmt.Println("TakeFromChan err:", err.Error())
-		sc.Errs = append(sc.Errs, err.Error())
-		if a > 5 {
-			break
+		cs, ok := <-c.ChanS
+		if ok {
+			cslist = append(cslist, cs)
+			c.ErrCount = len(cslist)
+			c.Err = cslist
 		}
 	}
 }
 
-func main() {
-	sc1 := &StructChan{
-		Name:  "created with Channel",
-		errCh: make(chan error, 1),
+func sample() {
+	sc1 := &LogChan{
+		// Name: "created with Channel",
+		// oldCh: make(chan error, 1),
 	}
 
-	sc2 := &StructChan{
-		Name: "created without channel",
+	sc2 := &LogChan{
+		// Name: "created without channel",
 	}
 	sc2.InitChan()
 
 	var err error
 	go func() {
-		sc1.SendToChan(err)
+		sc1.PutChan(err, "A")
 	}()
 	go func() {
-		sc2.SendToChan(err)
+		sc2.PutChan(err, "B")
 	}()
 	time.Sleep(5 * time.Second)
 

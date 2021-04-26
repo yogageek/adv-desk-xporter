@@ -70,15 +70,15 @@ func InitRouter() *gin.Engine {
 				"message": "OK",
 			})
 		})
-		api.Use(middlewareAPI) //新增存log功能 //.use的先後放置順序很重要 會影響以下
+		api.Use(middleware_api) //新增存log功能 //.use的先後放置順序很重要 會影響以下
 		api.GET("/config/file/export", v1.Export)
 		api.POST("/config/file/import", v1.Import)
 
 		log.GET("/config/file/logs", v1.Logs)
 
 		//ws
-		ws.Use(middlewareWS) //新增存log功能 //.use的先後放置順序很重要 會影響以下
-		ws.GET("/config/file/status", v1.WsEvent).Use(middlewareWS)
+		ws.Use(middleware_ws)
+		ws.GET("/config/file/status", v1.WsEvent).Use(middleware_ws)
 		// apiv1.GET("/file/status", v1.Status) //move to websocket
 
 		// 只能瀏覽 不能下載
@@ -90,7 +90,7 @@ func InitRouter() *gin.Engine {
 	return r
 }
 
-func middlewareAPI(c *gin.Context) {
+func middleware_api(c *gin.Context) {
 	fmt.Println("create log...")
 	defer fmt.Println("saving log...")
 
@@ -104,44 +104,46 @@ func middlewareAPI(c *gin.Context) {
 			fileName = file.Filename
 		}
 	}
+	if mode == "export" {
+		fileName = "exportingData.json"
+	}
 
 	log := &vars.Log{
 		Database:  os.Getenv("MONGODB_DATABASE"),
 		FileName:  fileName,
 		Mode:      mode,
 		CreatedAt: util.GetNow(),
+		Result:    "success",
 	}
 
 	go ChanFlow()
 
-	go func(c *gochan.StructChan) {
-		c.TakeFromChan()
-
-	}(gochan.GetChan())
-	fmt.Println("###")
 	c.Next()
-	fmt.Println(gochan.GetChan().Errs)
-	fmt.Println(gochan.GetChan().Sum)
-	log.Result = "success"
-	log.Error = ""
-	//取error出來
+
+	// util.PrintJson(gochan.GetChan().Err)
+	// util.PrintJson(gochan.GetChan().ErrCount)
+
+	if gochan.GetChan().ErrCount > 0 {
+		log.Result = "fail"
+		log.Error = gochan.GetChan().Err
+	}
 
 	db.Insert(db.Clog, log)
 
 }
 
 func ChanFlow() {
-	c := &gochan.StructChan{
-		Name: "this is name",
-	}
+	c := &gochan.LogChan{}
 	c.InitChan()
-	gochan.SetChan(c)
+	gochan.SetChan(c)              //設定全域chan
+	go gochan.GetChan().TakeChan() //持續拿取
 }
 
-func middlewareWS(c *gin.Context) {
+func middleware_ws(c *gin.Context) {
 	fmt.Println("exec middleware2...")
 	defer fmt.Println("after exec middleware2...")
 	c.Next()
+
 }
 
 /*

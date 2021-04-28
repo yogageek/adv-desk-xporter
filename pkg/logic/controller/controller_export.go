@@ -8,6 +8,7 @@ import (
 	"os"
 	"path/filepath"
 	. "porter/pkg/logic/client"
+	vars "porter/pkg/logic/vars"
 
 	. "porter/pkg/logic/vars"
 
@@ -21,14 +22,31 @@ func exportController() {
 	var keys []string
 	datas := []interface{}{}
 
+	//ws export status
+	func() {
+		vars.ResetPublicRess()
+		vars.ChanDone = false
+		for i := 0; i < len(processes); i++ {
+			vars.Update_PuclicRes_Detail_Total(processes[i].GetName(), 1)
+		}
+	}()
+
 	for i := 0; i < len(processes); i++ {
 		keys = append(keys, processes[i].GetName())
 		datas = append(datas, processes[i].GetSource())
+
+		//ws export status
+		vars.Update_PuclicRes_Detail(processes[i].GetName(), 1)
+		vars.AppendResToRess()
+
 		//testing
 		// if i == 4 {
 		// 	break
 		// }
 	}
+
+	//ws export status
+	vars.ChanDone = true
 
 	keys = append(keys, Translation)
 	datas = append(datas, GetSourceTranslations())

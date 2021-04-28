@@ -39,13 +39,6 @@ func Export(c *gin.Context) {
 
 func Import(c *gin.Context) {
 	logic.PrepareGQLClient()
-	//查看是否正在做，如果是則值接返回錯誤
-	if !vars.Get_PublicRes_State() {
-		c.JSON(http.StatusLocked, gin.H{
-			"error": "work is in process",
-		})
-		return
-	}
 
 	vars.Update_PublicRes_Start(vars.ModeImport)
 	defer vars.Update_PublicRes_Done()

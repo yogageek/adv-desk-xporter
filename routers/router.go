@@ -91,6 +91,15 @@ func InitRouter() *gin.Engine {
 }
 
 func middleware_api(c *gin.Context) {
+	//查看是否正在做，如果是則值接返回錯誤
+	if !vars.Get_PublicRes_State() {
+		c.JSON(http.StatusLocked, gin.H{
+			"error": "work is in process",
+		})
+		c.Abort() //當請求被中間件攔截時，確保停止後續的api調用
+		return
+	}
+
 	fmt.Println("create log...")
 	defer fmt.Println("saving log...")
 

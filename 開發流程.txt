@@ -9,12 +9,53 @@
 [ok] 紀錄匯入匯出操作紀錄(存db)
 [ok] 蒐集匯入錯誤並存入log
 
-[] 匯入前預判錯誤
+[x] 匯入前預判錯誤
+
 [] 匯出-取得即時匯出數量
 [] 匯出-取得匯出總數
 [] 匯出-匯出新增到websocket
 
+---------->
 [] 多語言資料都要匯入 需要改graphql 將其他lang的資料拿出 並在匯入時需要多打新的API將語言資料加入
+
+我提議：
+直接拿匯出的欄位本身和預設語言，匯入到目標的欄位本身和預設語言，預設語言可能不同，不用管也照寫內容
+非預設語言如果匯出方和匯入方有相同的才寫入
+
+其中 B 的預設語言為 X
+1. 檢查 X 有沒有在 A 的支援語言裡面(translationLangs)，沒有提示失敗訊息，有的話就下一步
+2. 檢查 A 所有資料的必填可翻譯欄位有沒有 X 語言的翻譯，只要有任一缺失就提示失敗訊息，都有的話開始匯入資料
+
+A 要匯入到 B
+ 
+其中 B 的預設語言為 X
+ 
+## 檢查預設語言
+ 
+1. 檢查 X 是否存在
+   1. 沒有提示失敗訊息
+   2. 有的話就下一步
+2. 檢查 X 有沒有在 A 的支援語言裡面(translationLangs)
+   1. 沒有提示失敗訊息
+   2. 有的話就下一步
+3. 檢查 A 所有資料的必填可翻譯欄位有沒有 X 語言的翻譯
+   1. 只要有任一缺失就提示失敗訊息
+   2. 都有的話開始匯入流程
+ 
+## 匯入流程
+ 
+1. 查看 A 的所有支援語言是否在 B 裡面
+   1. 沒有的話在 B 裡新增缺失的支援語言(Mutation.addTranslationLang)，並繼續下一步。
+2. 開始匯入資料
+ 
+要注意的是再匯入時，原資料欄位要改成X語言的翻譯
+
+CY:
+1.有 Mutation.updateMachineStatus , Mutation.translateMachineStatus 可以 update Machine Status
+匯入端的 status id 要先列出所有匯入端的 status ，用 index 來找出 status 來取用 id
+2.Mapping Code 對應到 Status 要用 index 找匯入端的 status id 來對應，以 index 為主，因為 id 一定不一樣
+
+<----------
 
 //轉移pkg
 gomove -d $GOPATH/src/github.com/ksubedi/new-project github.com/ksubedi/go-web-seed github.com/ksubedi/new-project

@@ -58,6 +58,14 @@ func LoopRefreshToken() {
 		}
 	}()
 
+wait:
+	if Token == "" && Token2 == "" {
+		time.Sleep(time.Millisecond * 300)
+	} else {
+		return
+	}
+	goto wait
+
 	// fmt.Println(Token)
 	// fmt.Println(Token2)
 }

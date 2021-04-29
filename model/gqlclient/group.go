@@ -8,11 +8,14 @@ type Groups struct { //這裡一定要大寫
 	Description string      `json:"description"`
 	TimeZone    string      `json:"timeZone"`
 	Coordinate  *Coordinate `json:"coordinate"`
+	//新增多語言資料
+	Names        []Name        `json:"names"`
+	Descriptions []Description `json:"descriptions"`
 }
 
 type Coordinate struct {
-	Longitude int `json:"longitude"`
-	Latitude  int `json:"latitude"`
+	Longitude float64 `json:"longitude"`
+	Latitude  float64 `json:"latitude"`
 }
 
 var QueryGroups struct { //這行可隨便定義

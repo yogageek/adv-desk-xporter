@@ -7,6 +7,7 @@ import (
 	"os"
 	"porter/db"
 	logic "porter/pkg/logic/client"
+	gql "porter/pkg/logic/gql"
 	"porter/routers"
 )
 
@@ -33,11 +34,11 @@ func setFlag() {
 }
 
 func init() {
-	// var IFP_URL = "https://ifp-organizer-training-eks011.hz.wise-paas.com.cn/graphql"
 	// var IFP_URL = "https://ifp-organizer-tienkang-eks002.sa.wise-paas.com/graphql" //天岡
-	os.Setenv("IFP_URL", "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql")    //匯出: 銳鼎
-	os.Setenv("IFP_URL_IN", "https://ifp-organizer-testingsa1-eks002.sa.wise-paas.com/graphql") //匯入: 測試環境。
-
+	// os.Setenv("IFP_URL", "https://ifp-organizer-training-eks011.hz.wise-paas.com.cn/graphql")
+	os.Setenv("IFP_URL", "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql") //匯出: 銳鼎
+	// os.Setenv("IFP_URL_IN", "https://ifp-organizer-testingsa1-eks002.sa.wise-paas.com/graphql") //匯入: 測試環境。
+	os.Setenv("IFP_URL_IN", "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql") //匯出: 銳鼎
 	os.Setenv("MONGODB_URL", "52.187.110.12:27017")
 	os.Setenv("MONGODB_DATABASE", "87e1dc58-4c20-4e65-ad81-507270f6bdac")
 	os.Setenv("MONGODB_USERNAME", "19e0ce80-af51-404c-8d55-9edefcbd4bdf")
@@ -49,17 +50,11 @@ func init() {
 	logic.LoopRefreshToken()
 
 	// runtime.GOMAXPROCS(1)
+
 }
 
 func main() {
-	// logic.Export()
-	// logic.Import()
-	// logic.QueryMachines()
-	// logic.AddMachineSample()
-	// logic.QueryGroups()
-	// qp := logic.QueryParameters("TWFjaGluZQ.X0OAStZ5cgAG6yN-", "") //cursor:RGF0ZQ.MTU5OTY0MDA2MDAxOQ.X1iR-4RZEgAGpSQj
-	// util.PrintBlue(qp)
-	// logic.AddParameterSample()
+	gql.Run()
 
 	startServer()
 }

@@ -14,22 +14,33 @@
 
 [x] 匯入前預判錯誤
 
+[] 多語言資料都要匯入 
+
+
+group ok ->add
+machine ok ->add 
+profileMachine ok 
+profileParameter ok
+parameterRule none
+parameterCode ok
+
+#特別處理ParameterMappingCode - messages (in mapping_rule.go)
+#特別處理MachineStatus - names
+
+
 ---------->
-[] 多語言資料都要匯入 需要改graphql 將其他lang的資料拿出 並在匯入時需要多打新的API將語言資料加入
+需要改graphql 將其他lang的資料拿出 並在匯入時需要多打新的API將語言資料加入
 
 我提議：
 直接拿匯出的欄位本身和預設語言，匯入到目標的欄位本身和預設語言，預設語言可能不同，不用管也照寫內容
 非預設語言如果匯出方和匯入方有相同的才寫入
 
+A 要匯入到 B 
 其中 B 的預設語言為 X
 1. 檢查 X 有沒有在 A 的支援語言裡面(translationLangs)，沒有提示失敗訊息，有的話就下一步
 2. 檢查 A 所有資料的必填可翻譯欄位有沒有 X 語言的翻譯，只要有任一缺失就提示失敗訊息，都有的話開始匯入資料
 
-A 要匯入到 B
- 
-其中 B 的預設語言為 X
- 
-## 檢查預設語言
+## 檢查預設語言   ------檢查
  
 1. 檢查 X 是否存在
    1. 沒有提示失敗訊息

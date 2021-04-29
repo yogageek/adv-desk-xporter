@@ -10,14 +10,19 @@ type ProfileMachine struct { //這裡一定要大寫
 	ImageUrl    graphql.String
 	//---import profileParameters need
 	Parameters []Parameters
+	//新增多語言資料
+	Names        []Name        `json:"names"`
+	Descriptions []Description `json:"descriptions"`
+	ImageUrls    []ImageUrl    `json:"imageUrl"`
 }
 
 type Parameters struct {
-	MachineId   graphql.String
-	Name        graphql.String
-	Description graphql.String
-	ValueType   graphql.String
-	Mapping     Mapping
+	MachineId    graphql.String
+	Name         graphql.String
+	Description  graphql.String
+	Descriptions []Description `json:"descriptions"`
+	ValueType    graphql.String
+	Mapping      Mapping
 }
 
 //綁到mapping rule

@@ -8,6 +8,10 @@ type Machines struct { //這裡一定要大寫
 	Description string `json:"description"`
 	ImageUrl    string `json:"imageUrl"`
 	IsStation   *bool  `json:"isStation,omitempty"` //omitempty的代表參數不一定要放或不用放
+	//新增多語言資料
+	Names        []Name        `json:"names"`
+	Descriptions []Description `json:"descriptions"`
+	ImageUrls    []ImageUrl    `json:"imageUrls"`
 }
 
 var QueryMachines struct { //這行可隨便定義

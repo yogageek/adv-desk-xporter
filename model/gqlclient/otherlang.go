@@ -9,3 +9,8 @@ type Description struct { //這裡一定要大寫
 	Text string `json:"text,omitempty"`
 	Lang string `json:"lang,omitempty"`
 }
+
+type ImageUrl struct { //這裡一定要大寫
+	Text string `json:"text,omitempty"`
+	Lang string `json:"lang,omitempty"`
+}

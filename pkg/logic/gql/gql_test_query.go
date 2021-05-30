@@ -53,7 +53,7 @@ func TestQuery() {
 	}()
 }
 
-//gql translate多語言欄位資料
+//取export出來的data, parse後，打 gql translate多語言欄位資料
 func TestAdd() {
 
 }

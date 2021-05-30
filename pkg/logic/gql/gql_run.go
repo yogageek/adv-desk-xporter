@@ -9,6 +9,7 @@ import (
 	util "porter/util"
 )
 
+//這裡測試增加group的多語言(做到一半)
 func Run() {
 	// logic.LoopRefreshToken()
 	time.Sleep(1 * time.Second)

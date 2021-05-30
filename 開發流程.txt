@@ -16,6 +16,36 @@
 
 [] 多語言資料都要匯入 
 
+多語言需增加查詢graphql欄位部分----------->
+MachineStatus
+- names 
+
+ParameterMappingRule
+none 
+
+ParameterMappingCode
+- messages 
+
+ProfileMachine
+- names
+- descriptions
+- imageUrls 
+
+ProfileParameter
+- descriptions 
+
+Group
+- names
+- descriptions 
+
+Machine
+- names
+- descriptions
+- imageUrls 
+
+Parameter
+- descriptions
+<-----------多語言需增加查詢graphql欄位部分
 
 group ok ->add
 machine ok ->add 

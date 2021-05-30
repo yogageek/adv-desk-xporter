@@ -53,9 +53,14 @@ func init() {
 
 }
 
+func testFn() {
+	gql.TestQuery()
+	//測試export
+	// controller.Export()
+}
 func main() {
 	gql.Run()
-
+	testFn()
 	startServer()
 }
 

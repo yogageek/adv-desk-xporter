@@ -14,7 +14,7 @@ type Code struct {
 	Code     graphql.String
 	Message  graphql.String
 	StatusId graphql.String
-	Messages []Message
+	Messages []Message //多語言資料
 }
 
 type Message struct {

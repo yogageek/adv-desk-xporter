@@ -50,14 +50,15 @@ type QueryParametersOb struct { //這行可隨便命名
 }
 
 type Nodes struct {
-	ScadaId     interface{} `json:"scadaId"`
-	TagId       interface{} `json:"tagId"`
-	MachineId   interface{} `json:"machineId"`
-	Name        interface{} `json:"name"`
-	Description interface{} `json:"description"`
-	ValueType   interface{} `json:"valueType"`
-	MappingId   interface{} `json:"mappingId"`
-	Kind        interface{} `json:"kind"`
+	ScadaId      interface{}   `json:"scadaId"`
+	TagId        interface{}   `json:"tagId"`
+	MachineId    interface{}   `json:"machineId"`
+	Name         interface{}   `json:"name"`
+	Description  interface{}   `json:"description"`
+	Descriptions []Description `json:"descriptions"`
+	ValueType    interface{}   `json:"valueType"`
+	MappingId    interface{}   `json:"mappingId"`
+	Kind         interface{}   `json:"kind"`
 }
 
 type PageInfo struct {

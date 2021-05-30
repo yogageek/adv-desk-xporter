@@ -5,24 +5,62 @@
    "name": "PCB",
    "description": "",
    "timeZone": "Asia/Taipei",
-   "coordinate": null
+   "coordinate": null,
+   "names": [
+    {
+     "text": "PCB",
+     "lang": "en-US"
+    }
+   ],
+   "descriptions": []
   },
   {
    "id": "R3JvdXA.YD85_8GunQAGpEaG",
    "name": "SPC",
    "description": "",
    "timeZone": "Asia/Taipei",
-   "coordinate": null
+   "coordinate": null,
+   "names": [
+    {
+     "text": "SPC",
+     "lang": "en-US"
+    }
+   ],
+   "descriptions": []
   },
   {
    "id": "R3JvdXA.YEXwS8GunQAGpEa1",
-   "name": "測試群",
-   "description": "testing",
+   "name": "TestTrans",
+   "description": "kekekeke",
    "timeZone": "Asia/Taipei",
    "coordinate": {
     "longitude": 0,
     "latitude": 0
-   }
+   },
+   "names": [
+    {
+     "text": "TestTrans",
+     "lang": "en-US"
+    },
+    {
+     "text": "xxx",
+     "lang": "zh-CN"
+    },
+    {
+     "text": "測試(正體)",
+     "lang": "zh-TW"
+    }
+   ],
+   "descriptions": [
+    {
+     "text": "kekekeke",
+     "lang": "en-US"
+    },
+    {
+     "text": "xx",
+     "lang": "zh-CN"
+    }
+   ]
   },
   {
    "parentId": "R3JvdXA.YEXwS8GunQAGpEa1",
@@ -33,7 +71,36 @@
    "coordinate": {
     "longitude": 0,
     "latitude": 0
-   }
+   },
+   "names": [
+    {
+     "text": "測試群2",
+     "lang": "en-US"
+    }
+   ],
+   "descriptions": []
+  },
+  {
+   "parentId": "R3JvdXA.YEXwS8GunQAGpEa1",
+   "id": "R3JvdXA.YI-e22k7bwAHp9B5",
+   "name": "SC",
+   "description": "",
+   "timeZone": "Asia/Taipei",
+   "coordinate": {
+    "longitude": 0,
+    "latitude": 0
+   },
+   "names": [
+    {
+     "text": "SC",
+     "lang": "en-US"
+    },
+    {
+     "text": "SC中文",
+     "lang": "zh-TW"
+    }
+   ],
+   "descriptions": []
   }
  ],
  "machineData": [
@@ -42,28 +109,84 @@
    "groupId": "R3JvdXA.X0Nt9dZ5cgAG6yNh",
    "name": "Uno_IMPQ2-S1",
    "description": "",
-   "imageUrl": ""
+   "imageUrl": "",
+   "names": [
+    {
+     "text": "Uno_IMPQ2-S1",
+     "lang": "en-US"
+    },
+    {
+     "text": "Uno_IMPQ2-S1",
+     "lang": "zh-CN"
+    },
+    {
+     "text": "Uno_IMPQ2-S1",
+     "lang": "zh-TW"
+    }
+   ],
+   "descriptions": [],
+   "imageUrls": []
   },
   {
    "id": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
    "groupId": "R3JvdXA.X0Nt9dZ5cgAG6yNh",
    "name": "Uno_IMPQ2-S2",
    "description": "",
-   "imageUrl": ""
+   "imageUrl": "",
+   "names": [
+    {
+     "text": "Uno_IMPQ2-S2",
+     "lang": "en-US"
+    },
+    {
+     "text": "Uno_IMPQ2-S2",
+     "lang": "zh-CN"
+    },
+    {
+     "text": "Uno_IMPQ2-S2",
+     "lang": "zh-TW"
+    }
+   ],
+   "descriptions": [],
+   "imageUrls": []
   },
   {
    "id": "TWFjaGluZQ.YD86DsGunQAGpEaI",
    "groupId": "R3JvdXA.YD85_8GunQAGpEaG",
    "name": "M1",
    "description": "",
-   "imageUrl": ""
+   "imageUrl": "",
+   "names": [
+    {
+     "text": "M1",
+     "lang": "en-US"
+    },
+    {
+     "text": "M1机台",
+     "lang": "zh-CN"
+    },
+    {
+     "text": "M1機台",
+     "lang": "zh-TW"
+    }
+   ],
+   "descriptions": [],
+   "imageUrls": []
   },
   {
    "id": "TWFjaGluZQ.YFCCnda3KAAGDClz",
    "groupId": "R3JvdXA.YFCBoNa3KAAGDClx",
    "name": "dsds",
    "description": "",
-   "imageUrl": ""
+   "imageUrl": "",
+   "names": [
+    {
+     "text": "dsds",
+     "lang": "en-US"
+    }
+   ],
+   "descriptions": [],
+   "imageUrls": []
   }
  ],
  "machineStatusData": [
@@ -72,7 +195,8 @@
    "depth": 1,
    "id": "TVN0YXR1cw.X63cUG-xTQAGsXip",
    "index": 1000,
-   "name": "Production"
+   "name": "Production",
+   "names": []
   },
   {
    "color": "#96E796",
@@ -80,6 +204,7 @@
    "id": "TVN0YXR1cw.X63cUG-xTQAGsXiw",
    "index": 1200,
    "name": "Reworking",
+   "names": [],
    "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXip",
    "parentIndex": 1000
   },
@@ -89,6 +214,7 @@
    "id": "TVN0YXR1cw.X63cUG-xTQAGsXiv",
    "index": 1100,
    "name": "Production",
+   "names": [],
    "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXip",
    "parentIndex": 1000
   },
@@ -98,6 +224,7 @@
    "id": "TVN0YXR1cw.X63cUG-xTQAGsXix",
    "index": 1300,
    "name": "Reduced Speed",
+   "names": [],
    "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXip",
    "parentIndex": 1000
   },
@@ -106,7 +233,8 @@
    "depth": 1,
    "id": "TVN0YXR1cw.X63cUG-xTQAGsXiq",
    "index": 2000,
-   "name": "Failure"
+   "name": "Failure",
+   "names": []
   },
   {
    "color": "#FFA09E",
@@ -114,6 +242,7 @@
    "id": "TVN0YXR1cw.X63cUG-xTQAGsXit",
    "index": 2100,
    "name": "Failure",
+   "names": [],
    "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXiq",
    "parentIndex": 2000
   },
@@ -123,6 +252,7 @@
    "id": "TVN0YXR1cw.X63cUG-xTQAGsXiu",
    "index": 2200,
    "name": "Adjustment",
+   "names": [],
    "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXiq",
    "parentIndex": 2000
   },
@@ -131,7 +261,8 @@
    "depth": 1,
    "id": "TVN0YXR1cw.X63cUG-xTQAGsXir",
    "index": 3000,
-   "name": "Idle"
+   "name": "Idle",
+   "names": []
   },
   {
    "color": "#FFE091",
@@ -139,6 +270,7 @@
    "id": "TVN0YXR1cw.X63cUG-xTQAGsXiy",
    "index": 3100,
    "name": "Setup",
+   "names": [],
    "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXir",
    "parentIndex": 3000
   },
@@ -148,6 +280,7 @@
    "id": "TVN0YXR1cw.X63cUG-xTQAGsXi0",
    "index": 3300,
    "name": "Waiting",
+   "names": [],
    "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXir",
    "parentIndex": 3000
   },
@@ -157,6 +290,7 @@
    "id": "TVN0YXR1cw.X63cUG-xTQAGsXiz",
    "index": 3200,
    "name": "Startup",
+   "names": [],
    "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXir",
    "parentIndex": 3000
   },
@@ -166,6 +300,7 @@
    "id": "TVN0YXR1cw.X63cUG-xTQAGsXi1",
    "index": 3400,
    "name": "Loading",
+   "names": [],
    "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXir",
    "parentIndex": 3000
   },
@@ -174,7 +309,8 @@
    "depth": 1,
    "id": "TVN0YXR1cw.X63cUG-xTQAGsXis",
    "index": 4000,
-   "name": "Line Restraint"
+   "name": "Line Restraint",
+   "names": []
   },
   {
    "color": "#91C6FF",
@@ -182,6 +318,7 @@
    "id": "TVN0YXR1cw.X63cUG-xTQAGsXi3",
    "index": 4200,
    "name": "No Output",
+   "names": [],
    "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXis",
    "parentIndex": 4000
   },
@@ -191,6 +328,7 @@
    "id": "TVN0YXR1cw.X63cUG-xTQAGsXi2",
    "index": 4100,
    "name": "No Input",
+   "names": [],
    "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXis",
    "parentIndex": 4000
   },
@@ -199,7 +337,17 @@
    "depth": 1,
    "id": "TVN0YXR1cw.YDhor8GunQAGpEZo",
    "index": 5000,
-   "name": "測試"
+   "name": "測試",
+   "names": [
+    {
+     "Lang": "en-US",
+     "Text": "測試"
+    },
+    {
+     "Lang": "zh-TW",
+     "Text": "測試(正體)"
+    }
+   ]
   },
   {
    "color": "#008cd6",
@@ -207,6 +355,12 @@
    "id": "TVN0YXR1cw.YDhozcGunQAGpEZs",
    "index": 5100,
    "name": "測試1",
+   "names": [
+    {
+     "Lang": "en-US",
+     "Text": "測試1"
+    }
+   ],
    "parentId": "TVN0YXR1cw.YDhor8GunQAGpEZo",
    "parentIndex": 5000
   },
@@ -216,6 +370,12 @@
    "id": "TVN0YXR1cw.YDiZzsGunQAGpEZ6",
    "index": 5101,
    "name": "測試3",
+   "names": [
+    {
+     "Lang": "en-US",
+     "Text": "測試3"
+    }
+   ],
    "parentId": "TVN0YXR1cw.YDhozcGunQAGpEZs",
    "parentIndex": 5100
   },
@@ -225,6 +385,12 @@
    "id": "TVN0YXR1cw.YDho1MGunQAGpEZu",
    "index": 5200,
    "name": "測試2",
+   "names": [
+    {
+     "Lang": "en-US",
+     "Text": "測試2"
+    }
+   ],
    "parentId": "TVN0YXR1cw.YDhor8GunQAGpEZo",
    "parentIndex": 5000
   }
@@ -277,6 +443,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "B-Time-set1",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -287,6 +454,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_allamount",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -297,6 +465,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_aver_uti",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -307,6 +476,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_peeling_uti",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -317,6 +487,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_develop_uti",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -327,6 +498,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_defectfreerate",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -337,6 +509,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_partnum",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -347,6 +520,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_realamount",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -357,6 +531,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_peel_status",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -367,6 +542,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_etch_status",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -377,6 +553,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_expectamount",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -387,6 +564,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_develop_status",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -397,6 +575,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_etching_uti",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -407,6 +586,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_workoder",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -417,6 +597,12 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_develop_pre",
        "description": "Develop",
+       "descriptions": [
+        {
+         "text": "Develop",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -427,6 +613,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_develop_sp",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -437,6 +624,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_dry_tp",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -447,6 +635,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_etch_sp",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -457,6 +646,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_dryhz",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -467,6 +657,12 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_etch_pre",
        "description": "Etch",
+       "descriptions": [
+        {
+         "text": "Etch",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -477,6 +673,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_gravity",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -487,6 +684,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_oxpoten",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -497,6 +695,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_etch_tp",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -507,6 +706,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_peel_sp",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -517,6 +717,12 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_peel_pre",
        "description": "Peel",
+       "descriptions": [
+        {
+         "text": "Peel",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -527,6 +733,16 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_peel_tp",
        "description": "",
+       "descriptions": [
+        {
+         "text": "剝離",
+         "lang": "zh-CN"
+        },
+        {
+         "text": "剝離",
+         "lang": "zh-TW"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -537,6 +753,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_develop_tp",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -547,6 +764,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_HCL",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -557,6 +775,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_peelset",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -567,6 +786,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_developset",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -577,6 +797,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_spset3",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -587,6 +808,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_preset",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -597,6 +819,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_tpset2",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -607,6 +830,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_spset2",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -617,6 +841,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_spset1",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -627,6 +852,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_spset4",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -637,6 +863,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_dryset",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -647,6 +874,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_tpset4",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -657,6 +885,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_tpset3",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -667,6 +896,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_tpset1",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -677,6 +907,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "C壓力異常1",
        "description": "",
+       "descriptions": [],
        "valueType": "Discrete",
        "mappingId": null,
        "kind": null
@@ -687,6 +918,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "HCL濃度異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -697,6 +929,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "氧化電位異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -707,6 +940,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "乾燥槽溫度異常1",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -717,6 +951,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "乾燥機速度異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -727,6 +962,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "剝膜壓力異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -737,6 +973,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "蝕刻槽溫度異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -747,6 +984,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "蝕刻壓力異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -757,6 +995,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "緊急停止鈕異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -767,6 +1006,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "剝膜速度異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -777,6 +1017,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "剝膜槽溫度異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -787,6 +1028,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "蝕刻速度異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -797,6 +1039,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "顯影槽溫度異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -807,6 +1050,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "乾燥機氣壓異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -817,6 +1061,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "比重異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -827,6 +1072,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "顯影壓力異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -837,6 +1083,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ERR0001",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -847,6 +1094,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ERR0004",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -857,6 +1105,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ERR0003",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -867,6 +1116,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ERR0002",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -877,6 +1127,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ERR0005",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -887,6 +1138,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ERR0006",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -897,6 +1149,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_Waittime",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -907,6 +1160,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "PCB_DRAIN",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -917,6 +1171,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_Runtime",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -927,6 +1182,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_Errortime",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -937,6 +1193,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "PCB_DES",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -947,6 +1204,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "PCB_MAINTAIN",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -957,6 +1215,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "des_Stoptime",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -967,6 +1226,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "L1_M4",
        "description": "",
+       "descriptions": [],
        "valueType": "Discrete",
        "mappingId": null,
        "kind": null
@@ -977,6 +1237,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "L1_M5",
        "description": "",
+       "descriptions": [],
        "valueType": "Discrete",
        "mappingId": null,
        "kind": null
@@ -987,6 +1248,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "L1_M2",
        "description": "",
+       "descriptions": [],
        "valueType": "Discrete",
        "mappingId": null,
        "kind": null
@@ -997,6 +1259,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "L1_M3",
        "description": "",
+       "descriptions": [],
        "valueType": "Discrete",
        "mappingId": null,
        "kind": null
@@ -1007,6 +1270,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "L1_M1",
        "description": "",
+       "descriptions": [],
        "valueType": "Discrete",
        "mappingId": null,
        "kind": null
@@ -1017,6 +1281,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "L2_M4",
        "description": "",
+       "descriptions": [],
        "valueType": "Discrete",
        "mappingId": null,
        "kind": null
@@ -1027,6 +1292,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "L2_M2",
        "description": "",
+       "descriptions": [],
        "valueType": "Discrete",
        "mappingId": null,
        "kind": null
@@ -1037,6 +1303,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "L2_M1",
        "description": "",
+       "descriptions": [],
        "valueType": "Discrete",
        "mappingId": null,
        "kind": null
@@ -1047,6 +1314,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "L2_M3",
        "description": "",
+       "descriptions": [],
        "valueType": "Discrete",
        "mappingId": null,
        "kind": null
@@ -1057,6 +1325,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "L3_M3",
        "description": "",
+       "descriptions": [],
        "valueType": "Discrete",
        "mappingId": null,
        "kind": null
@@ -1067,6 +1336,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "L3_M1",
        "description": "",
+       "descriptions": [],
        "valueType": "Discrete",
        "mappingId": null,
        "kind": null
@@ -1077,6 +1347,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "L2_M5",
        "description": "",
+       "descriptions": [],
        "valueType": "Discrete",
        "mappingId": null,
        "kind": null
@@ -1087,6 +1358,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "L3_M2",
        "description": "",
+       "descriptions": [],
        "valueType": "Discrete",
        "mappingId": null,
        "kind": null
@@ -1097,6 +1369,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "L3_M4",
        "description": "",
+       "descriptions": [],
        "valueType": "Discrete",
        "mappingId": null,
        "kind": null
@@ -1107,6 +1380,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "L3_M5",
        "description": "",
+       "descriptions": [],
        "valueType": "Discrete",
        "mappingId": null,
        "kind": null
@@ -1117,6 +1391,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_PH",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1127,6 +1402,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_COD",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1137,6 +1413,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_總鉻",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1147,6 +1424,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_累積流量",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1157,6 +1435,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_總砷",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1167,6 +1446,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_氨氮",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1177,6 +1457,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_純水量",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1187,6 +1468,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_總汞",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1197,6 +1479,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_瞬間流量",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1207,6 +1490,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_總鉛",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1217,6 +1501,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_總銀",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1227,6 +1512,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_RO水量",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1237,6 +1523,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_總鎘",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1247,6 +1534,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_總銅",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1257,6 +1545,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_過濾水量",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1267,6 +1556,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_軟化水量",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1289,6 +1579,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_總鎳",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1299,6 +1590,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_綜合達標",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1309,6 +1601,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_台東1廠",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1319,6 +1612,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_高雄1廠",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1329,6 +1623,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_新竹1廠",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1339,6 +1634,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_異常次數",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1349,6 +1645,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_台中1廠",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1359,6 +1656,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_台南1廠",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1369,6 +1667,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain_台北1廠",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1379,6 +1678,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain回收水異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1389,6 +1689,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain廢棄塔異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1399,6 +1700,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain冷凝水異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1409,6 +1711,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain化鎳廢液槽異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1419,6 +1722,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain總銀異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1429,6 +1733,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain硝酸廢液槽異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1439,6 +1744,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drainRO水量異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1449,6 +1755,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain純水量異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1459,6 +1766,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain氧化電位異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1469,6 +1777,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain系統次閥異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1479,6 +1788,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drainPH異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1489,6 +1799,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain總鉻異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1499,6 +1810,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain總鎳異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1509,6 +1821,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain化鎳廢水槽異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1519,6 +1832,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain軟化水量異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1529,6 +1843,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain系統主閥異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1539,6 +1854,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "drain過濾水量異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1549,6 +1865,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maOK",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1559,6 +1876,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maNG",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1569,6 +1887,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma化銀進度",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1579,6 +1898,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma壓合進度",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1589,6 +1909,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma噴錫進度",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1599,6 +1920,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma外層進度",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1609,6 +1931,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma成金進度",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1619,6 +1942,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma成檢進度",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1629,6 +1953,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma浸鎳金",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1639,6 +1964,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma電鍍軟金",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1649,6 +1975,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma防焊進度",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1659,6 +1986,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma鑲金手指進度",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1669,6 +1997,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma金手指鍍鎳金",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1679,6 +2008,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma鑽孔進度",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1689,6 +2019,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma電鍍進度",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1699,6 +2030,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maUser3",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -1709,6 +2041,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maUser4",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -1719,6 +2052,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maUser1",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -1729,6 +2063,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maNGcount",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1739,6 +2074,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "macount1",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1749,6 +2085,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maorder",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -1759,6 +2096,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "macount2",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1769,6 +2107,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maUser2",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -1779,6 +2118,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maorder1",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -1789,6 +2129,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma良率",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1799,6 +2140,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "macount",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1809,6 +2151,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma入料異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1819,6 +2162,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma汽缸異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1829,6 +2173,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma壓力異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1839,6 +2184,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma溫度異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1849,6 +2195,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma出料異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1859,6 +2206,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma電壓異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1869,6 +2217,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ma馬達異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1879,6 +2228,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maM1OKcount",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1889,6 +2239,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maM1NGcount",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1899,6 +2250,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maM1NGtime",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1909,6 +2261,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maM3OKcount",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1919,6 +2272,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maM4OKcount",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1929,6 +2283,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maM3NGcount",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1939,6 +2294,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maM2NGtime",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1949,6 +2305,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maM2OKcount",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1959,6 +2316,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maM2NGcount",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1969,6 +2327,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maM4NGcount",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1979,6 +2338,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maM4NGtime",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1989,6 +2349,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maMXstauts3",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -1999,6 +2360,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maM3NGtime",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2009,6 +2371,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maMXstauts2",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2019,6 +2382,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "maMXstauts1",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2029,6 +2393,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "oven入料異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2039,6 +2404,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "oven出料異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2049,6 +2415,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "oven烤箱1溫度異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2059,6 +2426,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "oven烤箱1速度異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2069,6 +2437,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "oven烤箱1過載異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2079,6 +2448,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "oven烤箱2溫度異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2089,6 +2459,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "oven烤箱2過載異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2099,6 +2470,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "oven烤箱2速度異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2109,6 +2481,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "oven烤箱3溫度異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2119,6 +2492,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "oven烤箱3過載異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2129,6 +2503,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "oven烤箱3速度異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2139,6 +2514,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "oven緊急按鈕異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2149,6 +2525,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "oven空壓異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2159,6 +2536,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ovenERR001",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -2169,6 +2547,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ovenERR003",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -2179,6 +2558,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ovenERR002",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -2189,6 +2569,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ovenERR004",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -2199,6 +2580,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "oven保養",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2209,6 +2591,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "oven停機",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2219,6 +2602,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "oven異常",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2229,6 +2613,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ovenERcount",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2239,6 +2624,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ovenM1alarm",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -2249,6 +2635,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ovenM1sp",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2259,6 +2646,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ovenM1tmp",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2269,6 +2657,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ovenM2alarm",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -2279,6 +2668,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ovenM3tmp",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2301,6 +2691,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ovenM3alarm",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -2311,6 +2702,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ovenM3sp",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2321,6 +2713,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ovenM2tmp",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2331,6 +2724,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "ovenM2sp",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2341,6 +2735,7 @@
        "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
        "name": "PCB_OVEN",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2363,6 +2758,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "HCL濃度異常",
        "description": "2HCL濃度異常",
+       "descriptions": [
+        {
+         "text": "2HCL濃度異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2373,6 +2774,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "PCB_DES",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2383,6 +2785,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "PCB_MAINTAIN",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2393,6 +2796,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "PCB_DRAIN",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2403,6 +2807,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_Runtime",
        "description": "2des_Runtime",
+       "descriptions": [
+        {
+         "text": "2des_Runtime",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2413,6 +2823,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "PCB_OVEN",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2423,6 +2834,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_Stoptime",
        "description": "2des_Stoptime",
+       "descriptions": [
+        {
+         "text": "2des_Stoptime",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2433,6 +2850,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_Errortime",
        "description": "2des_Errortime",
+       "descriptions": [
+        {
+         "text": "2des_Errortime",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2443,6 +2866,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_HCL",
        "description": "2des_HCL",
+       "descriptions": [
+        {
+         "text": "2des_HCL",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2453,6 +2882,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_Waittime",
        "description": "2des_Waittime",
+       "descriptions": [
+        {
+         "text": "2des_Waittime",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2463,6 +2898,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_allamount",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2473,6 +2909,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_develop_tp",
        "description": "2des_develop_tp",
+       "descriptions": [
+        {
+         "text": "2des_develop_tp",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2483,6 +2925,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_defectfreerate",
        "description": "2des_defectfreerate",
+       "descriptions": [
+        {
+         "text": "2des_defectfreerate",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2493,6 +2941,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_develop_pre",
        "description": "2des_develop_pre",
+       "descriptions": [
+        {
+         "text": "2des_develop_pre",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2503,6 +2957,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_develop_status",
        "description": "2des_develop_status",
+       "descriptions": [
+        {
+         "text": "2des_develop_status",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2513,6 +2973,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_develop_sp",
        "description": "2des_develop_sp",
+       "descriptions": [
+        {
+         "text": "2des_develop_sp",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2523,6 +2989,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_aver_uti",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2533,6 +3000,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_develop_uti",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2543,6 +3011,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_dry_tp",
        "description": "2des_dry_tp",
+       "descriptions": [
+        {
+         "text": "2des_dry_tp",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2553,6 +3027,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_developset",
        "description": "2des_developset",
+       "descriptions": [
+        {
+         "text": "2des_developset",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2563,6 +3043,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_dryhz",
        "description": "2des_dryhz",
+       "descriptions": [
+        {
+         "text": "2des_dryhz",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2573,6 +3059,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_dryset",
        "description": "2des_dryset",
+       "descriptions": [
+        {
+         "text": "2des_dryset",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2583,6 +3075,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_etch_pre",
        "description": "2des_etch_pre",
+       "descriptions": [
+        {
+         "text": "2des_etch_pre",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2593,6 +3091,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_etch_sp",
        "description": "2des_etch_sp",
+       "descriptions": [
+        {
+         "text": "2des_etch_sp",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2603,6 +3107,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_etch_tp",
        "description": "2des_etch_tp",
+       "descriptions": [
+        {
+         "text": "2des_etch_tp",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2613,6 +3123,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_gravity",
        "description": "2des_gravity",
+       "descriptions": [
+        {
+         "text": "2des_gravity",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2623,6 +3139,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_etching_uti",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2633,6 +3150,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_oxpoten",
        "description": "2des_oxpoten",
+       "descriptions": [
+        {
+         "text": "2des_oxpoten",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2643,6 +3166,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_etch_status",
        "description": "2des_etch_status",
+       "descriptions": [
+        {
+         "text": "2des_etch_status",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2653,6 +3182,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_expectamount",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2663,6 +3193,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_partnum",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -2673,6 +3204,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_peel_pre",
        "description": "2des_peel_pre",
+       "descriptions": [
+        {
+         "text": "2des_peel_pre",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2683,6 +3220,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_peel_sp",
        "description": "2des_peel_sp",
+       "descriptions": [
+        {
+         "text": "2des_peel_sp",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2693,6 +3236,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_peel_status",
        "description": "2des_peel_status",
+       "descriptions": [
+        {
+         "text": "2des_peel_status",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2703,6 +3252,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_peel_tp",
        "description": "2des_peel_tp",
+       "descriptions": [
+        {
+         "text": "2des_peel_tp",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2713,6 +3268,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_peeling_uti",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2723,6 +3279,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_spset1",
        "description": "2des_spset1",
+       "descriptions": [
+        {
+         "text": "2des_spset1",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2733,6 +3295,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_peelset",
        "description": "2des_peelset",
+       "descriptions": [
+        {
+         "text": "2des_peelset",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2743,6 +3311,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_preset",
        "description": "2des_preset",
+       "descriptions": [
+        {
+         "text": "2des_preset",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2753,6 +3327,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_realamount",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2763,6 +3338,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_spset2",
        "description": "2des_spset2",
+       "descriptions": [
+        {
+         "text": "2des_spset2",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2773,6 +3354,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_tpset1",
        "description": "2des_tpset1",
+       "descriptions": [
+        {
+         "text": "2des_tpset1",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2783,6 +3370,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_spset3",
        "description": "2des_spset3",
+       "descriptions": [
+        {
+         "text": "2des_spset3",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2793,6 +3386,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_spset4",
        "description": "2des_spset4",
+       "descriptions": [
+        {
+         "text": "2des_spset4",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2803,6 +3402,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_workoder",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -2813,6 +3413,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_tpset3",
        "description": "2des_tpset3",
+       "descriptions": [
+        {
+         "text": "2des_tpset3",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2823,6 +3429,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_tpset2",
        "description": "2des_tpset2",
+       "descriptions": [
+        {
+         "text": "2des_tpset2",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2833,6 +3445,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "des_tpset4",
        "description": "2des_tpset4",
+       "descriptions": [
+        {
+         "text": "2des_tpset4",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2843,6 +3461,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drainPH異常",
        "description": "2drainPH異常",
+       "descriptions": [
+        {
+         "text": "2drainPH異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2853,6 +3477,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drainRO水量異常",
        "description": "2drainRO水量異常",
+       "descriptions": [
+        {
+         "text": "2drainRO水量異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2863,6 +3493,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_COD",
        "description": "2drain_COD",
+       "descriptions": [
+        {
+         "text": "2drain_COD",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2873,6 +3509,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_RO水量",
        "description": "2drain_RO水量",
+       "descriptions": [
+        {
+         "text": "2drain_RO水量",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2883,6 +3525,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_PH",
        "description": "2drain_PH",
+       "descriptions": [
+        {
+         "text": "2drain_PH",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2893,6 +3541,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_台中1廠",
        "description": "2drain_台中1廠",
+       "descriptions": [
+        {
+         "text": "2drain_台中1廠",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2903,6 +3557,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_台東1廠",
        "description": "2drain_台東1廠",
+       "descriptions": [
+        {
+         "text": "2drain_台東1廠",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2913,6 +3573,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_台北1廠",
        "description": "2drain_台北1廠",
+       "descriptions": [
+        {
+         "text": "2drain_台北1廠",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2923,6 +3589,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain廢棄塔異常",
        "description": "2drain_廢棄塔異常",
+       "descriptions": [
+        {
+         "text": "2drain_廢棄塔異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2933,6 +3605,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_台南1廠",
        "description": "2drain_台南1廠",
+       "descriptions": [
+        {
+         "text": "2drain_台南1廠",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2943,6 +3621,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain氧化電位異常",
        "description": "2drain_氧化電位異常",
+       "descriptions": [
+        {
+         "text": "2drain_氧化電位異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2953,6 +3637,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_新竹1廠",
        "description": "2drain_新竹1廠",
+       "descriptions": [
+        {
+         "text": "2drain_新竹1廠",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2963,6 +3653,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_純水量",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2973,6 +3664,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_異常次數",
        "description": "2drain_異常次數",
+       "descriptions": [
+        {
+         "text": "2drain_異常次數",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2983,6 +3680,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_硝酸廢液槽異常",
        "description": "2drain_硝酸廢液槽異常",
+       "descriptions": [
+        {
+         "text": "2drain_硝酸廢液槽異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -2993,6 +3696,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_瞬間流量",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3003,6 +3707,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_累積流量",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3013,6 +3718,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_綜合達標",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3023,6 +3729,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain純水量異常",
        "description": "2drain_純水量異常",
+       "descriptions": [
+        {
+         "text": "2drain_純水量異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3033,6 +3745,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_氨氮",
        "description": "2drain_氨氮",
+       "descriptions": [
+        {
+         "text": "2drain_氨氮",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3043,6 +3761,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_總汞",
        "description": "2drain_總汞",
+       "descriptions": [
+        {
+         "text": "2drain_總汞",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3053,6 +3777,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_系統次閥異常",
        "description": "2drain_系統次閥異常",
+       "descriptions": [
+        {
+         "text": "2drain_系統次閥異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3063,6 +3793,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_總鉛",
        "description": "2drain_總鉛",
+       "descriptions": [
+        {
+         "text": "2drain_總鉛",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3073,6 +3809,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_總鉻",
        "description": "2drain_總鉻",
+       "descriptions": [
+        {
+         "text": "2drain_總鉻",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3083,6 +3825,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_總砷",
        "description": "2drain_總砷",
+       "descriptions": [
+        {
+         "text": "2drain_總砷",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3093,6 +3841,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_總銀",
        "description": "2drain_總銀",
+       "descriptions": [
+        {
+         "text": "2drain_總銀",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3103,6 +3857,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_總鎘",
        "description": "2drain_總鎘",
+       "descriptions": [
+        {
+         "text": "2drain_總鎘",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3113,6 +3873,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_總銅",
        "description": "2drain_總銅",
+       "descriptions": [
+        {
+         "text": "2drain_總銅",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3123,6 +3889,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_總鎳",
        "description": "2drain_總鎳",
+       "descriptions": [
+        {
+         "text": "2drain_總鎳",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3133,6 +3905,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain總鉻異常",
        "description": "2drain_總鉻異常",
+       "descriptions": [
+        {
+         "text": "2drain_總鉻異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3143,6 +3921,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain總銀異常",
        "description": "2drain_總銀異常",
+       "descriptions": [
+        {
+         "text": "2drain_總銀異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3153,6 +3937,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain總鎳異常",
        "description": "2drain_總鎳異常",
+       "descriptions": [
+        {
+         "text": "2drain_總鎳異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3163,6 +3953,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain冷凝水異常",
        "description": "2drain冷凝水異常",
+       "descriptions": [
+        {
+         "text": "2drain冷凝水異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3173,6 +3969,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_軟化水量",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3183,6 +3980,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain軟化水量異常",
        "description": "2drain_軟化水量異常",
+       "descriptions": [
+        {
+         "text": "2drain_軟化水量異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3193,6 +3996,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain化鎳廢液槽異常",
        "description": "2drain化鎳廢液槽異常",
+       "descriptions": [
+        {
+         "text": "2drain化鎳廢液槽異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3203,6 +4012,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_過濾水量",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3213,6 +4023,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain_高雄1廠",
        "description": "2drain_高雄1廠",
+       "descriptions": [
+        {
+         "text": "2drain_高雄1廠",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3223,6 +4039,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain化鎳廢水槽異常",
        "description": "2drain化鎳廢水槽異常",
+       "descriptions": [
+        {
+         "text": "2drain化鎳廢水槽異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3233,6 +4055,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain回收水異常",
        "description": "2drain回收水異常",
+       "descriptions": [
+        {
+         "text": "2drain回收水異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3243,6 +4071,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain系統主閥異常",
        "description": "2drain系統主閥異常",
+       "descriptions": [
+        {
+         "text": "2drain系統主閥異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3253,6 +4087,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "drain過濾水量異常",
        "description": "2drain_過濾水量異常",
+       "descriptions": [
+        {
+         "text": "2drain_過濾水量異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3263,6 +4103,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maM1NGtime",
        "description": "2maM1NGtime",
+       "descriptions": [
+        {
+         "text": "2maM1NGtime",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3273,6 +4119,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maM1OKcount",
        "description": "2maM1OKcount",
+       "descriptions": [
+        {
+         "text": "2maM1OKcount",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3283,6 +4135,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maM2NGcount",
        "description": "2maM2NGcount",
+       "descriptions": [
+        {
+         "text": "2maM2NGcount",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3293,6 +4151,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maM2NGtime",
        "description": "2maM2NGtime",
+       "descriptions": [
+        {
+         "text": "2maM2NGtime",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3303,6 +4167,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maM1NGcount",
        "description": "2maM1NGcount",
+       "descriptions": [
+        {
+         "text": "2maM1NGcount",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3313,6 +4183,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maM4NGcount",
        "description": "2maM4NGcount",
+       "descriptions": [
+        {
+         "text": "2maM4NGcount",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3323,6 +4199,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maM3NGcount",
        "description": "2maM3NGcount",
+       "descriptions": [
+        {
+         "text": "2maM3NGcount",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3333,6 +4215,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maM2OKcount",
        "description": "2maM2OKcount",
+       "descriptions": [
+        {
+         "text": "2maM2OKcount",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3343,6 +4231,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maM3NGtime",
        "description": "2maM3NGtime",
+       "descriptions": [
+        {
+         "text": "2maM3NGtime",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3353,6 +4247,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maM3OKcount",
        "description": "2maM3OKcount",
+       "descriptions": [
+        {
+         "text": "2maM3OKcount",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3375,6 +4275,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maM4NGtime",
        "description": "2maM4NGtime",
+       "descriptions": [
+        {
+         "text": "2maM4NGtime",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3385,6 +4291,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maM4OKcount",
        "description": "2maM4OKcount",
+       "descriptions": [
+        {
+         "text": "2maM4OKcount",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3395,6 +4307,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maMXstauts3",
        "description": "2maMXstatus3",
+       "descriptions": [
+        {
+         "text": "2maMXstatus3",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3405,6 +4323,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maNG",
        "description": "2maNG",
+       "descriptions": [
+        {
+         "text": "2maNG",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3415,6 +4339,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maOK",
        "description": "2maOK",
+       "descriptions": [
+        {
+         "text": "2maOK",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3425,6 +4355,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maNGcount",
        "description": "2maNGcount",
+       "descriptions": [
+        {
+         "text": "2maNGcount",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3435,6 +4371,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maUser1",
        "description": "2maUser1",
+       "descriptions": [
+        {
+         "text": "2maUser1",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -3445,6 +4387,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maMXstauts1",
        "description": "2maMXstatus1",
+       "descriptions": [
+        {
+         "text": "2maMXstatus1",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3455,6 +4403,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maMXstauts2",
        "description": "2maMXstatus2",
+       "descriptions": [
+        {
+         "text": "2maMXstatus2",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3465,6 +4419,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maUser2",
        "description": "2maUser2",
+       "descriptions": [
+        {
+         "text": "2maUser2",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -3475,6 +4435,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "macount2",
        "description": "2macount2",
+       "descriptions": [
+        {
+         "text": "2macount2",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3485,6 +4451,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maUser3",
        "description": "2maUser3",
+       "descriptions": [
+        {
+         "text": "2maUser3",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -3495,6 +4467,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "macount",
        "description": "2macount",
+       "descriptions": [
+        {
+         "text": "2macount",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3505,6 +4483,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maUser4",
        "description": "2maUser4",
+       "descriptions": [
+        {
+         "text": "2maUser4",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -3515,6 +4499,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "macount1",
        "description": "2macount1",
+       "descriptions": [
+        {
+         "text": "2macount1",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3525,6 +4515,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maorder",
        "description": "2maorder",
+       "descriptions": [
+        {
+         "text": "2maorder",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -3535,6 +4531,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma入料異常",
        "description": "2ma入料異常",
+       "descriptions": [
+        {
+         "text": "2ma入料異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3545,6 +4547,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "maorder1",
        "description": "2maorder1",
+       "descriptions": [
+        {
+         "text": "2maorder1",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -3555,6 +4563,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma出料異常",
        "description": "2ma出料異常",
+       "descriptions": [
+        {
+         "text": "2ma出料異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3565,6 +4579,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma化銀異常",
        "description": "2ma化銀異常",
+       "descriptions": [
+        {
+         "text": "2ma化銀異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3575,6 +4595,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma噴錫進度",
        "description": "2ma噴錫進度",
+       "descriptions": [
+        {
+         "text": "2ma噴錫進度",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3585,6 +4611,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma成金進度",
        "description": "2ma成金進度",
+       "descriptions": [
+        {
+         "text": "2ma成金進度",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3595,6 +4627,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma壓合進度",
        "description": "2ma壓合進度",
+       "descriptions": [
+        {
+         "text": "2ma壓合進度",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3605,6 +4643,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma壓力異常",
        "description": "2ma壓力異常",
+       "descriptions": [
+        {
+         "text": "2ma壓力異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3615,6 +4659,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma成檢進度",
        "description": "2ma成檢進度",
+       "descriptions": [
+        {
+         "text": "2ma成檢進度",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3625,6 +4675,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma外層進度",
        "description": "2ma外層進度",
+       "descriptions": [
+        {
+         "text": "2ma外層進度",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3635,6 +4691,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma汽缸異常",
        "description": "2ma汽缸異常",
+       "descriptions": [
+        {
+         "text": "2ma汽缸異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3645,6 +4707,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma溫度異常",
        "description": "2ma溫度異常",
+       "descriptions": [
+        {
+         "text": "2ma溫度異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3655,6 +4723,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma良率",
        "description": "2ma良率",
+       "descriptions": [
+        {
+         "text": "2ma良率",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3665,6 +4739,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma浸鎳金",
        "description": "2ma浸鎳金",
+       "descriptions": [
+        {
+         "text": "2ma浸鎳金",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3675,6 +4755,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma金手指鍍鎳金",
        "description": "2ma金手指鍍鎳金",
+       "descriptions": [
+        {
+         "text": "2ma金手指鍍鎳金",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3685,6 +4771,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma鑽孔進度",
        "description": "2ma鑽孔進度",
+       "descriptions": [
+        {
+         "text": "2ma鑽孔進度",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3695,6 +4787,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma鑲金手指進度",
        "description": "2ma鑲金手指進度",
+       "descriptions": [
+        {
+         "text": "2ma鑲金手指進度",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3705,6 +4803,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma電壓異常",
        "description": "2ma電壓異常",
+       "descriptions": [
+        {
+         "text": "2ma電壓異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3715,6 +4819,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma電鍍進度",
        "description": "2ma電鍍進度",
+       "descriptions": [
+        {
+         "text": "2ma電鍍進度",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3725,6 +4835,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma馬達異常",
        "description": "2ma馬達異常",
+       "descriptions": [
+        {
+         "text": "2ma馬達異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3735,6 +4851,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma電鍍軟金",
        "description": "2ma電鍍軟金",
+       "descriptions": [
+        {
+         "text": "2ma電鍍軟金",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3745,6 +4867,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma防焊進度",
        "description": "2ma防焊進度",
+       "descriptions": [
+        {
+         "text": "2ma防焊進度",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3755,6 +4883,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ovenERR001",
        "description": "2ovenER001",
+       "descriptions": [
+        {
+         "text": "2ovenER001",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -3765,6 +4899,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ovenERR003",
        "description": "2ovenER003",
+       "descriptions": [
+        {
+         "text": "2ovenER003",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -3775,6 +4915,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ovenERR002",
        "description": "2ovenER002",
+       "descriptions": [
+        {
+         "text": "2ovenER002",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -3785,6 +4931,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ovenERR004",
        "description": "2ovenER004",
+       "descriptions": [
+        {
+         "text": "2ovenER004",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -3795,6 +4947,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ovenERcount",
        "description": "2ovenERcount",
+       "descriptions": [
+        {
+         "text": "2ovenERcount",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3805,6 +4963,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ovenM2tmp",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3815,6 +4974,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ovenM3alarm",
        "description": "2ovenM3alarm",
+       "descriptions": [
+        {
+         "text": "2ovenM3alarm",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -3825,6 +4990,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ovenM1tmp",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3835,6 +5001,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ovenM2alarm",
        "description": "2ovenM2alarm",
+       "descriptions": [
+        {
+         "text": "2ovenM2alarm",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -3845,6 +5017,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ovenM1sp",
        "description": "2ovenM1sp",
+       "descriptions": [
+        {
+         "text": "2ovenM1sp",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3855,6 +5033,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ovenM1alarm",
        "description": "2ovenM1alarm",
+       "descriptions": [
+        {
+         "text": "2ovenM1alarm",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -3865,6 +5049,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ovenM2sp",
        "description": "2ovenM2sp",
+       "descriptions": [
+        {
+         "text": "2ovenM2sp",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3875,6 +5065,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ovenM3sp",
        "description": "2ovenM3sp",
+       "descriptions": [
+        {
+         "text": "2ovenM3sp",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3885,6 +5081,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ovenM3tmp",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3895,6 +5092,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "oven停機",
        "description": "2oven停機",
+       "descriptions": [
+        {
+         "text": "2oven停機",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3905,6 +5108,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "oven保養",
        "description": "2oven保養",
+       "descriptions": [
+        {
+         "text": "2oven保養",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3915,6 +5124,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "oven出料異常",
        "description": "2oven出料異常",
+       "descriptions": [
+        {
+         "text": "2oven出料異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3925,6 +5140,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "oven入料異常",
        "description": "2oven入料異常",
+       "descriptions": [
+        {
+         "text": "2oven入料異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3935,6 +5156,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "oven烤箱1溫度異常",
        "description": "2oven烤箱1溫度異常",
+       "descriptions": [
+        {
+         "text": "2oven烤箱1溫度異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3945,6 +5172,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "oven烤箱1過載異常",
        "description": "2oven烤箱1過載異常",
+       "descriptions": [
+        {
+         "text": "2oven烤箱1過載異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3955,6 +5188,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "oven烤箱2溫度異常",
        "description": "2oven烤箱2溫度異常",
+       "descriptions": [
+        {
+         "text": "2oven烤箱2溫度異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3965,6 +5204,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "oven烤箱1速度異常",
        "description": "2oven烤箱1速度異常",
+       "descriptions": [
+        {
+         "text": "2oven烤箱1速度異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3975,6 +5220,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "oven烤箱2過載異常",
        "description": "2oven烤箱2過載異常",
+       "descriptions": [
+        {
+         "text": "2oven烤箱2過載異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3985,6 +5236,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "oven烤箱2速度異常",
        "description": "2oven烤箱2速度異常",
+       "descriptions": [
+        {
+         "text": "2oven烤箱2速度異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -3995,6 +5252,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "oven烤箱3溫度異常",
        "description": "2oven烤箱3溫度異常",
+       "descriptions": [
+        {
+         "text": "2oven烤箱3溫度異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4005,6 +5268,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "oven異常",
        "description": "2oven異常",
+       "descriptions": [
+        {
+         "text": "2oven異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4015,6 +5284,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "oven烤箱3過載異常",
        "description": "2oven烤箱3過載異常",
+       "descriptions": [
+        {
+         "text": "2oven烤箱3過載異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4025,6 +5300,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "oven緊急按鈕異常",
        "description": "2oven緊急按鈕異常",
+       "descriptions": [
+        {
+         "text": "2oven緊急按鈕異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4035,6 +5316,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "oven空壓異常",
        "description": "2oven空壓異常",
+       "descriptions": [
+        {
+         "text": "2oven空壓異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4045,6 +5332,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "oven烤箱3速度異常",
        "description": "2oven烤箱3速度異常",
+       "descriptions": [
+        {
+         "text": "2oven烤箱3速度異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4055,6 +5348,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "乾燥槽溫度異常1",
        "description": "2乾燥槽溫度異常1",
+       "descriptions": [
+        {
+         "text": "2乾燥槽溫度異常1",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4065,6 +5364,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "乾燥機氣壓異常",
        "description": "2乾燥機氣壓異常",
+       "descriptions": [
+        {
+         "text": "2乾燥機氣壓異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4075,6 +5380,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "乾燥機速度異常",
        "description": "2乾燥機速度異常",
+       "descriptions": [
+        {
+         "text": "2乾燥機速度異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4085,6 +5396,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "剝膜槽溫度異常",
        "description": "2剝膜槽溫度異常",
+       "descriptions": [
+        {
+         "text": "2剝膜槽溫度異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4095,6 +5412,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "氧化電位異常",
        "description": "2氧化電位異常",
+       "descriptions": [
+        {
+         "text": "2氧化電位異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4105,6 +5428,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "剝膜速度異常",
        "description": "2剝膜速度異常",
+       "descriptions": [
+        {
+         "text": "2剝膜速度異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4115,6 +5444,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "比重異常",
        "description": "2比重異常",
+       "descriptions": [
+        {
+         "text": "2比重異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4125,6 +5460,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "剝膜壓力異常",
        "description": "2剝膜壓力異常",
+       "descriptions": [
+        {
+         "text": "2剝膜壓力異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4135,6 +5476,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "緊急停止鈕異常",
        "description": "2緊急停止鈕異常",
+       "descriptions": [
+        {
+         "text": "2緊急停止鈕異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4145,6 +5492,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "蝕刻速度異常",
        "description": "2蝕刻速度異常",
+       "descriptions": [
+        {
+         "text": "2蝕刻速度異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4155,6 +5508,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "蝕刻壓力異常",
        "description": "2蝕刻壓力異常",
+       "descriptions": [
+        {
+         "text": "2蝕刻壓力異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4165,6 +5524,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "蝕刻槽溫度異常",
        "description": "2蝕刻槽溫度異常",
+       "descriptions": [
+        {
+         "text": "2蝕刻槽溫度異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4175,6 +5540,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "顯影壓力異常",
        "description": "2顯影壓力異常",
+       "descriptions": [
+        {
+         "text": "2顯影壓力異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4185,6 +5556,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "顯影槽溫度異常",
        "description": "2顯影槽溫度異常",
+       "descriptions": [
+        {
+         "text": "2顯影槽溫度異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4195,6 +5572,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "顯影速度異常",
        "description": "2顯影速度異常",
+       "descriptions": [
+        {
+         "text": "2顯影速度異常",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4205,6 +5588,12 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "B-Time-set1",
        "description": "2B-Time-set1",
+       "descriptions": [
+        {
+         "text": "2B-Time-set1",
+         "lang": "en-US"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4215,6 +5604,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ERR0001",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -4225,6 +5615,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ERR0002",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -4235,6 +5626,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ERR0003",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -4245,6 +5637,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ERR0006",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -4255,6 +5648,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ERR0005",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -4265,6 +5659,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ERR0004",
        "description": "",
+       "descriptions": [],
        "valueType": "String",
        "mappingId": null,
        "kind": null
@@ -4275,6 +5670,7 @@
        "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
        "name": "ma化銀進度",
        "description": "",
+       "descriptions": [],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4297,6 +5693,20 @@
        "machineId": "TWFjaGluZQ.YD86DsGunQAGpEaI",
        "name": "CP_1",
        "description": "CuSO4",
+       "descriptions": [
+        {
+         "text": "CuSO4",
+         "lang": "en-US"
+        },
+        {
+         "text": "硫酸铜浓度",
+         "lang": "zh-CN"
+        },
+        {
+         "text": "硫酸銅濃度",
+         "lang": "zh-TW"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4307,6 +5717,20 @@
        "machineId": "TWFjaGluZQ.YD86DsGunQAGpEaI",
        "name": "CP_2",
        "description": "H2SO4",
+       "descriptions": [
+        {
+         "text": "H2SO4",
+         "lang": "en-US"
+        },
+        {
+         "text": "硫酸浓度",
+         "lang": "zh-CN"
+        },
+        {
+         "text": "硫酸濃度",
+         "lang": "zh-TW"
+        }
+       ],
        "valueType": "Number",
        "mappingId": null,
        "kind": null
@@ -4341,13 +5765,32 @@
      "MachineId": "UGZNYWNoaW5l.YDhpjcGunQAGpEZz",
      "Name": "測試para",
      "Description": "testing",
+     "descriptions": [
+      {
+       "text": "testing",
+       "lang": "en-US"
+      }
+     ],
      "ValueType": "Number",
      "Mapping": {
       "Name": "測試Rule2",
       "Id": "UE1hcFJ1bGU.YDveYMGunQAGpEZ8"
      }
     }
-   ]
+   ],
+   "names": [
+    {
+     "text": "測試profile",
+     "lang": "en-US"
+    }
+   ],
+   "descriptions": [
+    {
+     "text": "testing",
+     "lang": "en-US"
+    }
+   ],
+   "imageUrls": []
   }
  ],
  "translationLangsData": [

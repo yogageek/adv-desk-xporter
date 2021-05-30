@@ -19,6 +19,7 @@ func (o machineStatus) GetSource() interface{} {
 		m := map[string]interface{}{
 			"id":    v.Id,
 			"name":  v.Name,
+			"names": v.Names,
 			"index": v.Index,
 			"color": v.Color,
 			"depth": v.Depth,
@@ -30,6 +31,7 @@ func (o machineStatus) GetSource() interface{} {
 				"parentId":    v.ParentId,
 				"parentIndex": v.Parent.Index,
 				"name":        v.Name,
+				"names":       v.Names,
 				"index":       v.Index,
 				"color":       v.Color,
 				"depth":       v.Depth,
@@ -41,6 +43,7 @@ func (o machineStatus) GetSource() interface{} {
 					"parentId":    v.ParentId,
 					"parentIndex": v.Parent.Index,
 					"name":        v.Name,
+					"names":       v.Names,
 					"index":       v.Index,
 					"color":       v.Color,
 					"depth":       v.Depth,

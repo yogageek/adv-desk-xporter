@@ -13,7 +13,7 @@ type ProfileMachine struct { //這裡一定要大寫
 	//新增多語言資料
 	Names        []Name        `json:"names"`
 	Descriptions []Description `json:"descriptions"`
-	ImageUrls    []ImageUrl    `json:"imageUrl"`
+	ImageUrls    []ImageUrl    `json:"imageUrls"`
 }
 
 type Parameters struct {

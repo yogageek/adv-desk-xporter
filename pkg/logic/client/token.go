@@ -187,6 +187,44 @@ func RefreshTokenByAppSecret() {
 			fmt.Println("Token:", config.Token)
 			time.Sleep(60 * time.Minute)
 		} else {
+			/*
+				- 呼叫 Get EnSaaS Client API，失敗就等十秒後重試，三次後就自殺
+				- https://docs.wise-paas.advantech.com.cn/zh-tw/Guides_and_API_References/Cloud_Services/SSO/1569378270407013482/v1.4.6  中的 GET /clients/{clientIdOrName}
+
+				- HTTP Method: GET
+				- HTTP Header: X-Auth-SRPToken=${WISE_PAAS_SERVICE_NAME}
+				- URL: ${WISE_PAAS_SSO_API_URL}/clients/${WISE_PAAS_SERVICE_NAME}
+				- Query String
+				- mode=name
+				- namespace=${namespace}
+				- serviceName=${WISE_PAAS_SERVICE_NAME}
+				- appId=${appID}
+				- datacenter=${datacenter}
+				- workspace=${workspace}
+				- cluster=${cluster}
+
+				- 取回應中的 clientSecret 欄位
+
+				```json
+				{
+					"clientId": "string",
+					"clientSecret": "string",
+					"creationTime": 0,
+					"lastModifiedTime": 0,
+					"appName": "string",
+					"appId": "string",
+					"serviceName": "string",
+					"cluster": "string",
+					"workspace": "string",
+					"namespace": "string",
+					"datacenter": "string",
+					"redirectUrl": "string",
+					"scopes": [
+					"string"
+					]
+				}
+				```
+			*/
 			fmt.Println("refreshClientSecret")
 			timestamp := time.Now()
 			options := &newSRPTokenOptions{Timestamp: &timestamp}
@@ -197,6 +235,7 @@ func RefreshTokenByAppSecret() {
 			request.Header.Set("X-Auth-SRPToken", result)
 			q := request.URL.Query()
 			if config.Namespace == "ifpsdev" || config.Namespace == "ifpsdemo" {
+				// 我們自己環境連的是 eks011 training 的站點, 這裡寫死
 				q.Add("cluster", "eks011")
 				q.Add("workspace", "53e8c8bd-b724-4c87-a905-5bbc5c30a36c")
 				q.Add("namespace", "training")

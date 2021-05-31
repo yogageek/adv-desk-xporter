@@ -36,6 +36,20 @@ func setFlag() {
 
 func initGlobalVar() {
 
+	/*
+		### 地端
+		- 讀取 `IFP_APP_SECRET_FILE` 路徑檔案的內容
+
+		### 雲端
+		- 環境變數會有
+		- WISE_PAAS_SERVICE_NAME
+		- WISE_PAAS_SSO_API_URL
+		- namespace
+		- appID
+		- datacenter
+		- workspace
+		- cluster
+	*/
 	config.Datacenter = os.Getenv("datacenter")
 	config.Workspace = os.Getenv("workspace")
 	config.Cluster = os.Getenv("cluster")

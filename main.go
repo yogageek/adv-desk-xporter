@@ -59,10 +59,6 @@ func initGlobalVar() {
 }
 
 func init() {
-	// 2021/05/31
-	initGlobalVar()
-	// 2021/05/31 End
-
 	// var IFP_URL = "https://ifp-organizer-tienkang-eks002.sa.wise-paas.com/graphql" //天岡
 	// os.Setenv("IFP_URL", "https://ifp-organizer-training-eks011.hz.wise-paas.com.cn/graphql")
 	os.Setenv("IFP_URL", "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql") //匯出: 銳鼎
@@ -72,6 +68,14 @@ func init() {
 	os.Setenv("MONGODB_DATABASE", "87e1dc58-4c20-4e65-ad81-507270f6bdac")
 	os.Setenv("MONGODB_USERNAME", "19e0ce80-af51-404c-8d55-9edefcbd4bdf")
 	os.Setenv("MONGODB_PASSWORD", "TYyvTeVemAlJzzuq4w3sBr2D")
+
+	// 2021/05/31
+	os.Setenv("IFP_DESK_USERNAME", "devanliang@iii.org.tw")
+	os.Setenv("IFP_DESK_PASSWORD", "Abcd1234#")
+	os.Setenv("IFP_DESK_API_URL", "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql")
+	initGlobalVar()
+	go logic.RefreshTokenByAppSecret()
+	// 2021/05/31 End
 
 	setFlag()
 	db.StartMongo()

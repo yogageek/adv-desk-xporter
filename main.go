@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"porter/config"
 	"porter/db"
 	logic "porter/pkg/logic/client"
 	gql "porter/pkg/logic/gql"
@@ -33,7 +34,35 @@ func setFlag() {
 	flag.Parse() //解析上面的set。 after parse(), so that your flag.set start effected
 }
 
+func initGlobalVar() {
+
+	config.Datacenter = os.Getenv("datacenter")
+	config.Workspace = os.Getenv("workspace")
+	config.Cluster = os.Getenv("cluster")
+	config.Namespace = os.Getenv("namespace")
+	if config.Namespace == "ifpsdev" || config.Namespace == "ifpsdemo" {
+		config.SSOURL = "https://api-sso-ensaas.hz.wise-paas.com.cn/v4.0"
+	} else {
+		config.SSOURL = os.Getenv("SSO_API_URL")
+	}
+	external := os.Getenv("external")
+
+	ifps_desk_api_url := os.Getenv("IFP_DESK_API_URL")
+	if len(ifps_desk_api_url) != 0 {
+		config.IFPURL = ifps_desk_api_url
+	} else {
+		config.IFPURL = "https://ifp-organizer-" + config.Namespace + "-" + config.Cluster + "." + external + "/graphql"
+	}
+
+	config.AdminUsername = os.Getenv("IFP_DESK_USERNAME")
+	config.AdminPassword = os.Getenv("IFP_DESK_PASSWORD")
+}
+
 func init() {
+	// 2021/05/31
+	initGlobalVar()
+	// 2021/05/31 End
+
 	// var IFP_URL = "https://ifp-organizer-tienkang-eks002.sa.wise-paas.com/graphql" //天岡
 	// os.Setenv("IFP_URL", "https://ifp-organizer-training-eks011.hz.wise-paas.com.cn/graphql")
 	os.Setenv("IFP_URL", "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql") //匯出: 銳鼎

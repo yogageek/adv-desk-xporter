@@ -11,6 +11,7 @@ type ParameterMappings struct { //這裡一定要大寫
 }
 
 type Code struct {
+	Id       graphql.String
 	Code     graphql.String
 	Message  graphql.String
 	StatusId graphql.String

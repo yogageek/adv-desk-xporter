@@ -50,6 +50,7 @@ type QueryParametersOb struct { //這行可隨便命名
 }
 
 type Nodes struct {
+	Id           interface{}   `json:"id"`
 	ScadaId      interface{}   `json:"scadaId"`
 	TagId        interface{}   `json:"tagId"`
 	MachineId    interface{}   `json:"machineId"`

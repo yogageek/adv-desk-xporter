@@ -5,6 +5,7 @@ import "github.com/shurcooL/graphql"
 //for query, no need json tag------
 type ProfileMachine struct { //這裡一定要大寫
 	//---import profileMachines need
+	Id          graphql.String
 	Name        graphql.String //裡面的欄位名稱一定要大寫開頭, 而且型態要正確! #import profile1 need
 	Description graphql.String
 	ImageUrl    graphql.String
@@ -17,6 +18,7 @@ type ProfileMachine struct { //這裡一定要大寫
 }
 
 type Parameters struct {
+	Id           graphql.String
 	MachineId    graphql.String
 	Name         graphql.String
 	Description  graphql.String

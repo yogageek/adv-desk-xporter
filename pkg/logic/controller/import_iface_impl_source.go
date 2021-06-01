@@ -6,6 +6,8 @@ import (
 	. "porter/pkg/logic/gql"
 )
 
+//GetSource->把query gql返回的值(視情況轉格式)放入json
+
 func (o groups) GetSource() interface{} {
 	// count := len(QueryGroups())
 	return QueryGroups()

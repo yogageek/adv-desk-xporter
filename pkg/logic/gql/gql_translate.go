@@ -120,6 +120,7 @@ func TestMutation() {
 			Name:        "aaa" + "_multilang",
 			Lang:        "en-US",
 			Description: "test description...",
+			ImageUrl:    "",
 		}
 		gqlQuery := model.TranslateMachine
 		Mutate(input, &gqlQuery)
@@ -219,4 +220,67 @@ func TestMutation() {
 	profileParameter()     //7
 
 	//return
+}
+
+func TranslateMachineStatus(id, name, lang string) {
+	input := model.TranslateMachineStatusInput{
+		Id: id, Name: name, Lang: lang,
+	}
+	gqlQuery := model.TranslateMachineStatus
+	Mutate(input, &gqlQuery)
+}
+
+func TranslateGroup(id, name, lang, desc string) {
+	input := model.TranslateGroupInput{
+		Id:          id,
+		Name:        name,
+		Lang:        lang,
+		Description: desc,
+	}
+	gqlQuery := model.TranslateGroup
+	Mutate(input, &gqlQuery)
+}
+
+func TranslateMachine(id, name, lang, desc, imageUrl string) {
+	input := model.TranslateMachineInput{
+		Id:          id,
+		Name:        name,
+		Lang:        lang,
+		Description: desc,
+		ImageUrl:    imageUrl,
+	}
+	gqlQuery := model.TranslateMachine
+	Mutate(input, &gqlQuery)
+}
+
+func TranslateParameterMappingCode(id, lang, message string) {
+	input := model.TranslateParameterMappingCodeInput{
+		Id:      id,
+		Lang:    lang,
+		Message: message,
+	}
+	gqlQuery := model.TranslateParameterMappingCode
+	Mutate(input, &gqlQuery)
+}
+
+func TranslateProfileMachine(id, name, lang, desc, imageUrl string) {
+	input := model.TranslateMachineInput{
+		Id:          id,
+		Name:        name,
+		Lang:        lang,
+		Description: desc,
+		ImageUrl:    imageUrl,
+	}
+	gqlQuery := model.TranslateProfileMachine
+	Mutate(input, &gqlQuery)
+}
+
+func TranslateParameter(id, lang, desc string) {
+	input := model.TranslateParameterInput{
+		Id:          id,
+		Lang:        lang,
+		Description: desc,
+	}
+	gqlQuery := model.TranslateProfileParameter
+	Mutate(input, &gqlQuery)
 }

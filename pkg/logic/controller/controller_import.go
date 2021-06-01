@@ -75,7 +75,6 @@ func doImport(data *JsonData, processes []Processer) {
 }
 
 func readFile() JsonData {
-
 	// checkFilePath()
 
 	//step1 Read json file...

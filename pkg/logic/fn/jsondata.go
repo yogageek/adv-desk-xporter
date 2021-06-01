@@ -23,9 +23,14 @@ type MachineStatusData struct {
 	ParentId    string
 	ParentIndex int //注意這裡形態要對否則會拿到空值
 	Name        string
+	Names       []Name
 	Index       int
 	Color       string
 	Depth       int
+}
+type Name struct {
+	Text string
+	Lang string
 }
 
 type MappingRuleData struct {

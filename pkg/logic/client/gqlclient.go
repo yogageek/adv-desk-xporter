@@ -3,6 +3,7 @@ package logic
 import (
 	"net/http"
 	"net/http/cookiejar"
+	"porter/config"
 
 	"github.com/shurcooL/graphql"
 )
@@ -57,6 +58,11 @@ func NewGQLClient() {
 	//handling cookie
 	req, _ := http.NewRequest("GET", IFP_URL, nil)
 	req.Header.Set("cookie", Token) // set cookie by req (better way)
+
+	// 2021/06/01 appSecret
+	req.Header.Set("x-Ifp-App-Secret", config.Token)
+	// 2021/06/01 End
+
 	// cookies = cookieJar.Cookies(req.URL) // not good way
 	cookies = req.Cookies()
 	httpClient.Jar.SetCookies(req.URL, cookies)
@@ -78,6 +84,11 @@ func NewGQLClient2() {
 	//handling cookie
 	req, _ := http.NewRequest("GET", IFP_URL_IN, nil)
 	req.Header.Set("cookie", Token2) // set cookie by req (better way)
+
+	// 2021/06/01 appSecret
+	req.Header.Set("x-Ifp-App-Secret", config.Token)
+	// 2021/06/01 End
+
 	// cookies = cookieJar.Cookies(req.URL) // not good way
 	cookies = req.Cookies()
 	httpClient.Jar.SetCookies(req.URL, cookies)

@@ -212,3 +212,13 @@ func MinMax(array []int) (int, int) {
 	}
 	return min, max
 }
+
+//2021/06/01
+func InArray(s string, a []string) bool {
+	for _, i := range a {
+		if i == s {
+			return true
+		}
+	}
+	return false
+}

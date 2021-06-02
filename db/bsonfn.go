@@ -171,6 +171,28 @@ func FindAll(collection string, query interface{}, selector interface{}, result 
 	return nil
 }
 
+// 2021/06/01
+// FindAll will find all resources.
+func FindAllByOpts(collection string, query interface{}, selector interface{}, result interface{}, sort string, skip int, limit int) error {
+	// Query method to specify the fields to query
+	// Select method to specify the fields
+	/*
+	* @param {[type]} collectionName string [description]
+	* @param {[type]} query          bson.M [description]
+	* @param {[type]} sort           bson.M [description]
+	* @param {[type]} selector       bson.M [description]
+	* @param {[type]} skip           int    [description]
+	* @param {[type]} limit          int)   (results      []interface{}, err error [description]
+	 */
+	err := MongoDB.UseC(collection).Find(query).Sort(sort).Select(selector).Skip(skip).Limit(limit).All(result)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+// 2021/06/01 End
+
 // FindAll will find all resources.
 func Count(collection string, query interface{}, selector interface{}, result interface{}) (int, error) {
 	// Query method to specify the fields to query

@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"porter/config"
 	"porter/db"
 	logic "porter/pkg/logic/client"
 
@@ -34,6 +35,44 @@ func setFlag() {
 	flag.Parse() //解析上面的set。 after parse(), so that your flag.set start effected
 }
 
+func initGlobalVar() {
+
+	/*
+		### 地端
+		- 讀取 `IFP_APP_SECRET_FILE` 路徑檔案的內容
+
+		### 雲端
+		- 環境變數會有
+		- WISE_PAAS_SERVICE_NAME
+		- WISE_PAAS_SSO_API_URL
+		- namespace
+		- appID
+		- datacenter
+		- workspace
+		- cluster
+	*/
+	config.Datacenter = os.Getenv("datacenter")
+	config.Workspace = os.Getenv("workspace")
+	config.Cluster = os.Getenv("cluster")
+	config.Namespace = os.Getenv("namespace")
+	if config.Namespace == "ifpsdev" || config.Namespace == "ifpsdemo" {
+		config.SSOURL = "https://api-sso-ensaas.hz.wise-paas.com.cn/v4.0"
+	} else {
+		config.SSOURL = os.Getenv("SSO_API_URL")
+	}
+	external := os.Getenv("external")
+
+	ifps_desk_api_url := os.Getenv("IFP_DESK_API_URL")
+	if len(ifps_desk_api_url) != 0 {
+		config.IFPURL = ifps_desk_api_url
+	} else {
+		config.IFPURL = "https://ifp-organizer-" + config.Namespace + "-" + config.Cluster + "." + external + "/graphql"
+	}
+
+	config.AdminUsername = os.Getenv("IFP_DESK_USERNAME")
+	config.AdminPassword = os.Getenv("IFP_DESK_PASSWORD")
+}
+
 func init() {
 	// os.Setenv("IFP_URL", "https://ifp-organizer-tienkang-eks002.sa.wise-paas.com/graphql") //天岡
 	// os.Setenv("IFP_URL", "https://ifp-organizer-training-eks011.hz.wise-paas.com.cn/graphql") //training
@@ -48,6 +87,14 @@ func init() {
 	os.Setenv("MONGODB_DATABASE", "87e1dc58-4c20-4e65-ad81-507270f6bdac")
 	os.Setenv("MONGODB_USERNAME", "19e0ce80-af51-404c-8d55-9edefcbd4bdf")
 	os.Setenv("MONGODB_PASSWORD", "TYyvTeVemAlJzzuq4w3sBr2D")
+
+	// 2021/05/31
+	os.Setenv("IFP_DESK_USERNAME", "devanliang@iii.org.tw")
+	os.Setenv("IFP_DESK_PASSWORD", "Abcd1234#")
+	os.Setenv("IFP_DESK_API_URL", "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql")
+	initGlobalVar()
+	go logic.RefreshTokenByAppSecret()
+	// 2021/05/31 End
 
 	setFlag()
 	db.StartMongo()

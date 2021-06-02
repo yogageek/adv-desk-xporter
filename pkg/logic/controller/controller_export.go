@@ -7,12 +7,13 @@ import (
 	"log"
 	"os"
 	"path/filepath"
-	. "porter/pkg/logic/client"
+	"porter/config"
+
+	// . "porter/pkg/logic/client"
 	vars "porter/pkg/logic/vars"
+	"porter/util"
 
 	. "porter/pkg/logic/vars"
-
-	"porter/util"
 )
 
 func exportController() {
@@ -52,7 +53,7 @@ func exportController() {
 	datas = append(datas, GetSourceTranslations())
 
 	keys = append(keys, Url)
-	datas = append(datas, IFP_URL)
+	datas = append(datas, config.IFP_URL)
 
 	// debugging:
 	// b, _ := json.MarshalIndent(ii, "", " ")

@@ -8,44 +8,53 @@ import (
 	"github.com/shurcooL/graphql"
 )
 
-/*
-	//set token by oauth2
-	src := oauth2.StaticTokenSource(
-		&oauth2.Token{
-			AccessToken: os.Getenv("Token")},
-	)
-	httpClient := oauth2.NewClient(context.Background(), src)
-*/
-//setting cookies for httpclient
-// cookie := &http.Cookie{
-// 	Name:  "token",
-// 	Value: token,
-// 	// Path:  "/",
-// 	// Domain: ".weibo.cn",
-// }
-// cookies = append(cookies, cookie)
-/*
-	//fail , will get null
-	func() {
-		b, err := json.Marshal(&Query)
-		if err != nil {
-			glog.Error(err)
-		}
-		fmt.Println(string(b))
-	}()
-*/
-
 var (
 	GclientQ *graphql.Client
 	GclientM *graphql.Client
 )
 
-func PrepareGQLClient() {
-	NewGQLClient()
-	NewGQLClient2()
+func PrepareGQLClientByAppSecret() {
+	NewGQLClientHeader1()
+	NewGQLClientHeader2()
 }
 
-func NewGQLClient() {
+func NewGQLClientHeader1() {
+	httpClient := http.DefaultClient
+	rt := WithHeader(httpClient.Transport)
+	rt.Set("X-Ifp-App-Secret", config.Token)
+	httpClient.Transport = rt
+	GclientQ = graphql.NewClient(config.IFP_URL, httpClient)
+
+	//-------test-------
+	// GclientQ = graphql.NewClient("https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql", httpClient)
+
+	// gqlQuery := model.QueryMachineStatuses
+
+	// variables := map[string]interface{}{
+	// 	"layer1Only": graphql.Boolean(true),
+	// }
+
+	// err := GclientQ.Query(context.Background(), &gqlQuery, variables)
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// fmt.Println(gqlQuery)
+}
+
+func NewGQLClientHeader2() {
+	httpClient := http.DefaultClient
+	rt := WithHeader(httpClient.Transport)
+	rt.Set("X-Ifp-App-Secret", config.Token)
+	httpClient.Transport = rt
+	GclientM = graphql.NewClient(config.IFP_URL_IN, httpClient)
+}
+
+func PrepareGQLClientByUserPwd() {
+	NewGQLClientCookie1()
+	NewGQLClientCookie2()
+}
+
+func NewGQLClientCookie1() {
 	var cookies []*http.Cookie
 	var cookieJar *cookiejar.Jar
 	cookieJar, _ = cookiejar.New(nil)
@@ -56,22 +65,17 @@ func NewGQLClient() {
 
 	//------------->
 	//handling cookie
-	req, _ := http.NewRequest("GET", IFP_URL, nil)
-	req.Header.Set("cookie", Token) // set cookie by req (better way)
-
-	// 2021/06/01 appSecret
-	req.Header.Set("x-Ifp-App-Secret", config.Token)
-	// 2021/06/01 End
-
+	req, _ := http.NewRequest("GET", config.IFP_URL, nil)
+	req.Header.Set("cookie", UserPwdToken) // set cookie by req (better way)
 	// cookies = cookieJar.Cookies(req.URL) // not good way
 	cookies = req.Cookies()
 	httpClient.Jar.SetCookies(req.URL, cookies)
 
 	//set graphql client for query
-	GclientQ = graphql.NewClient(IFP_URL, httpClient)
+	GclientQ = graphql.NewClient(config.IFP_URL, httpClient)
 }
 
-func NewGQLClient2() {
+func NewGQLClientCookie2() {
 	var cookies []*http.Cookie
 	var cookieJar *cookiejar.Jar
 	cookieJar, _ = cookiejar.New(nil)
@@ -82,17 +86,12 @@ func NewGQLClient2() {
 
 	//------------->
 	//handling cookie
-	req, _ := http.NewRequest("GET", IFP_URL_IN, nil)
-	req.Header.Set("cookie", Token2) // set cookie by req (better way)
-
-	// 2021/06/01 appSecret
-	req.Header.Set("x-Ifp-App-Secret", config.Token)
-	// 2021/06/01 End
-
+	req, _ := http.NewRequest("GET", config.IFP_URL_IN, nil)
+	req.Header.Set("cookie", UserPwdToken2) // set cookie by req (better way)
 	// cookies = cookieJar.Cookies(req.URL) // not good way
 	cookies = req.Cookies()
 	httpClient.Jar.SetCookies(req.URL, cookies)
 
 	//set graphql client for mutation
-	GclientM = graphql.NewClient(IFP_URL_IN, httpClient)
+	GclientM = graphql.NewClient(config.IFP_URL_IN, httpClient)
 }

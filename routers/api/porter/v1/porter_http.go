@@ -4,8 +4,9 @@ import (
 	"io"
 	"net/http"
 	"os"
-	client "porter/pkg/logic/client"
+
 	logic "porter/pkg/logic/client"
+
 	controller "porter/pkg/logic/controller"
 
 	vars "porter/pkg/logic/vars"
@@ -22,7 +23,7 @@ lastname := c.Query("lastname")
 */
 
 func Export(c *gin.Context) {
-	client.PrepareGQLClient()
+	logic.PrepareGQLClientByAppSecret()
 
 	vars.Update_PublicRes_Start(vars.ModeExport)
 	defer vars.Update_PublicRes_Done()
@@ -38,7 +39,7 @@ func Export(c *gin.Context) {
 }
 
 func Import(c *gin.Context) {
-	logic.PrepareGQLClient()
+	logic.PrepareGQLClientByAppSecret()
 
 	vars.Update_PublicRes_Start(vars.ModeImport)
 	defer vars.Update_PublicRes_Done()

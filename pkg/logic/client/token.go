@@ -8,7 +8,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"os"
 	"porter/config"
 	"strings"
 	"time"
@@ -30,34 +29,22 @@ var (
 )
 
 var (
-	// Token  string
-	// Token2 string
-
-	//for debugging
-	Token  = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJpZnAub3JnIiwic3ViIjoiNjAzNWVjZDk3OTA4ZTUwMDA3YTMxZGU4IiwiYXVkIjoidXNlciIsInVzZXJuYW1lIjoiZGV2YW5saWFuZ0BpaWkub3JnLnR3Iiwid2lzZVBhYXNSZWZyZXNoVG9rZW4iOiJlNzI0MzAzOC1jMmI5LTExZWItOTU5NS00MmQ4MmE1MWExMzQiLCJpYXQiOjE2MjI1Mzg5MjYsImV4cCI6MTYyMjU2NzcyNn0.vFgdS2MxOjPm4VgVgh-YCgadMZ4RASk3vHAZcwDZiTQ;EIToken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5IjoiVFciLCJjcmVhdGlvblRpbWUiOjE1ODQ5MzQ5MzksImV4cCI6MTYyMjU0MjUyNiwiZmlyc3ROYW1lIjoiRGV2YW4iLCJpYXQiOjE2MjI1Mzg5MjYsImlkIjoiNGMzNGM2MzgtNmNiOC0xMWVhLWIzOGUtYmFjYmEwYzcyYzczIiwiaXNzIjoid2lzZS1wYWFzIiwibGFzdE1vZGlmaWVkVGltZSI6MTYyMjUzODkwMywibGFzdE5hbWUiOiJMaWFuZyIsInJlZnJlc2hUb2tlbiI6ImU3MjQzMDM4LWMyYjktMTFlYi05NTk1LTQyZDgyYTUxYTEzNCIsInN0YXR1cyI6IkFjdGl2ZSIsInVzZXJuYW1lIjoiZGV2YW5saWFuZ0BpaWkub3JnLnR3In0.qiV51B8jRBP4z9oDGo4Q1ItYai_1xdr7dOROD3hBwXgp3Sf48D8ZjS9ZZqSUNOPiqkZboZvaONUeQH7BQjYLBw"
-	Token2 = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJpZnAub3JnIiwic3ViIjoiNjAzNWVjZDk3OTA4ZTUwMDA3YTMxZGU4IiwiYXVkIjoidXNlciIsInVzZXJuYW1lIjoiZGV2YW5saWFuZ0BpaWkub3JnLnR3Iiwid2lzZVBhYXNSZWZyZXNoVG9rZW4iOiJlNzI0MzAzOC1jMmI5LTExZWItOTU5NS00MmQ4MmE1MWExMzQiLCJpYXQiOjE2MjI1Mzg5MjYsImV4cCI6MTYyMjU2NzcyNn0.vFgdS2MxOjPm4VgVgh-YCgadMZ4RASk3vHAZcwDZiTQ;EIToken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5IjoiVFciLCJjcmVhdGlvblRpbWUiOjE1ODQ5MzQ5MzksImV4cCI6MTYyMjU0MjUyNiwiZmlyc3ROYW1lIjoiRGV2YW4iLCJpYXQiOjE2MjI1Mzg5MjYsImlkIjoiNGMzNGM2MzgtNmNiOC0xMWVhLWIzOGUtYmFjYmEwYzcyYzczIiwiaXNzIjoid2lzZS1wYWFzIiwibGFzdE1vZGlmaWVkVGltZSI6MTYyMjUzODkwMywibGFzdE5hbWUiOiJMaWFuZyIsInJlZnJlc2hUb2tlbiI6ImU3MjQzMDM4LWMyYjktMTFlYi05NTk1LTQyZDgyYTUxYTEzNCIsInN0YXR1cyI6IkFjdGl2ZSIsInVzZXJuYW1lIjoiZGV2YW5saWFuZ0BpaWkub3JnLnR3In0.qiV51B8jRBP4z9oDGo4Q1ItYai_1xdr7dOROD3hBwXgp3Sf48D8ZjS9ZZqSUNOPiqkZboZvaONUeQH7BQjYLBw"
+	UserPwdToken  string
+	UserPwdToken2 string
 )
 
-var (
-	IFP_URL    string
-	IFP_URL_IN string
-)
-
-func LoopRefreshToken() {
-
-	IFP_URL = os.Getenv("IFP_URL")
-	IFP_URL_IN = os.Getenv("IFP_URL_IN")
+func Loop_RefreshTokenByUserPwd() {
 
 	go func() {
 		for {
 			fmt.Println("<<< Loop refresh token >>>")
 			var err error
-			Token, err = RefreshToken(IFP_URL)
+			UserPwdToken, err = RefreshTokenByUserPwd(config.IFP_URL)
 			if err != nil {
 				log.Error("RefreshToken IFP_URL fail")
 				panic(err)
 			}
-			Token2, err = RefreshToken(IFP_URL_IN)
+			UserPwdToken2, err = RefreshTokenByUserPwd(config.IFP_URL_IN)
 			if err != nil {
 				log.Error("RefreshToken IFP_URL_IN fail")
 				panic(err)
@@ -67,7 +54,7 @@ func LoopRefreshToken() {
 	}()
 
 wait:
-	if Token == "" && Token2 == "" {
+	if UserPwdToken == "" && UserPwdToken2 == "" {
 		time.Sleep(time.Millisecond * 300)
 	} else {
 		return
@@ -78,7 +65,7 @@ wait:
 	// fmt.Println(Token2)
 }
 
-func RefreshToken(url string) (token string, err error) {
+func RefreshTokenByUserPwd(url string) (token string, err error) {
 
 	// for {
 	fmt.Println("----------", time.Now().In(TaipeiTimeZone), "----------")
@@ -143,7 +130,7 @@ func RefreshTokenByAppSecret() {
 	for {
 		fmt.Println("----------", time.Now().In(config.TaipeiTimeZone), "----------")
 		if len(config.Datacenter) == 0 {
-			fmt.Println("refreshToken")
+			fmt.Println("len(config.Datacenter) == 0 refreshToken============")
 			httpClient := &http.Client{}
 			content := map[string]string{"username": config.AdminUsername, "password": config.AdminPassword}
 			variable := map[string]interface{}{"input": content}
@@ -191,45 +178,7 @@ func RefreshTokenByAppSecret() {
 			fmt.Println("Token:", config.Token)
 			time.Sleep(60 * time.Minute)
 		} else {
-			/*
-				- 呼叫 Get EnSaaS Client API，失敗就等十秒後重試，三次後就自殺
-				- https://docs.wise-paas.advantech.com.cn/zh-tw/Guides_and_API_References/Cloud_Services/SSO/1569378270407013482/v1.4.6  中的 GET /clients/{clientIdOrName}
-
-				- HTTP Method: GET
-				- HTTP Header: X-Auth-SRPToken=${WISE_PAAS_SERVICE_NAME}
-				- URL: ${WISE_PAAS_SSO_API_URL}/clients/${WISE_PAAS_SERVICE_NAME}
-				- Query String
-				- mode=name
-				- namespace=${namespace}
-				- serviceName=${WISE_PAAS_SERVICE_NAME}
-				- appId=${appID}
-				- datacenter=${datacenter}
-				- workspace=${workspace}
-				- cluster=${cluster}
-
-				- 取回應中的 clientSecret 欄位
-
-				```json
-				{
-					"clientId": "string",
-					"clientSecret": "string",
-					"creationTime": 0,
-					"lastModifiedTime": 0,
-					"appName": "string",
-					"appId": "string",
-					"serviceName": "string",
-					"cluster": "string",
-					"workspace": "string",
-					"namespace": "string",
-					"datacenter": "string",
-					"redirectUrl": "string",
-					"scopes": [
-					"string"
-					]
-				}
-				```
-			*/
-			fmt.Println("refreshClientSecret")
+			fmt.Println("len(config.Datacenter) != 0 refreshClientSecret============")
 			timestamp := time.Now()
 			options := &newSRPTokenOptions{Timestamp: &timestamp}
 			result := newSrpToken("OEE", options)
@@ -250,6 +199,7 @@ func RefreshTokenByAppSecret() {
 			}
 			q.Add("serviceName", "OEE")
 			request.URL.RawQuery = q.Encode()
+			fmt.Println(request)
 			response, _ := httpClient.Do(request)
 			m, _ := simplejson.NewFromReader(response.Body)
 			config.Token = m.Get("clientSecret").MustString()

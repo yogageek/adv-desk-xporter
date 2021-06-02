@@ -66,7 +66,7 @@ func TestAdd() {
 func TestMutation() {
 	//init
 	func() {
-		logic.PrepareGQLClient()
+		logic.PrepareGQLClientByAppSecret()
 	}()
 
 	//machine status

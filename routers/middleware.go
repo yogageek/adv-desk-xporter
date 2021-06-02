@@ -67,19 +67,16 @@ func middleware_api(c *gin.Context) {
 	// eiToken := c.Cookie("EIToken")
 	// 這裡是直接取 Request 過來的 Cookie 去用 jwt 解 IFPToken, 並沒有做驗證!!並沒有做驗證!!並沒有做驗證!!
 	// 後續還是要去打 Desk 的 Graphql 取得 me 作為 username!!
-	token, err := jwt.Parse(ifpToken, func(token *jwt.Token) (interface{}, error) {
-		// Don't forget to validate the alg is what you expect:
-		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
-			return nil, fmt.Errorf("Unexpected signing method: %v", token.Header["alg"])
-		}
 
-		// hmacSampleSecret is a []byte containing your secret, e.g. []byte("my_secret_key")
-		hmacSampleSecret := []byte("")
-		return hmacSampleSecret, nil
-	})
+	token, _, err := new(jwt.Parser).ParseUnverified(ifpToken, jwt.MapClaims{})
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 
-	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
-		userName = fmt.Sprintf("%s", claims["username"])
+	if claims, ok := token.Claims.(jwt.MapClaims); ok {
+		fmt.Println(claims["username"])
+		userName = fmt.Sprint(claims["username"])
 	} else {
 		fmt.Println(err)
 	}

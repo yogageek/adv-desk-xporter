@@ -84,6 +84,11 @@ func init() {
 	os.Setenv("MONGODB_PASSWORD", "TYyvTeVemAlJzzuq4w3sBr2D")
 
 	// 2021/05/31
+	os.Setenv("SSO_API_URL", "https://api-sso-ensaas.hz.wise-paas.com.cn/v4.0")
+	os.Setenv("datacenter", "hz")
+	os.Setenv("workspace", "52434e96-f390-474c-8bf1-15e4802fc4fc")
+	os.Setenv("cluster", "eks011")
+	os.Setenv("namespace", "impelex")
 	os.Setenv("IFP_DESK_USERNAME", "devanliang@iii.org.tw")
 	os.Setenv("IFP_DESK_PASSWORD", "Abcd1234#")
 	os.Setenv("IFP_DESK_API_URL", "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql")

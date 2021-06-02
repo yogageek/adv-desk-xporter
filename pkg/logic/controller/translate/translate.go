@@ -70,14 +70,12 @@ func Translate(data *fn.JsonData) {
 		}
 	}
 
-	//找不到parameter mapping
 	mappingRuleData := data.MappingRuleData
 	for _, v := range mappingRuleData {
-		for _, v := range v.Detail {
-			//v.detail要加[]messages
-			// for _, description := range v.Descriptions {
-			// 	gql.TranslateParameterMappingCode(string(v.Id))
-			// }
+		for _, vv := range v.Detail {
+			for _, message := range vv.Messages {
+				gql.TranslateParameterMappingCode(vv.Id, message.Text, message.Lang)
+			}
 		}
 	}
 

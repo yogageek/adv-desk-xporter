@@ -42,11 +42,19 @@ type MappingRuleData struct {
 }
 
 type Detail struct { //這裡的大小寫會影響到json大小寫
+	Id       string
 	Code     string
 	Message  string
 	StatusId string
 	Lang     string
 	Text     string
+	Messages []Message //fix
+}
+
+//fix
+type Message struct {
+	Lang string
+	Text string
 }
 
 // 匯入profile第二步時候 需要帶profileMachineId 但這個id會在匯入profile第一步的時候才會產生 因此要在第一步時抓下來

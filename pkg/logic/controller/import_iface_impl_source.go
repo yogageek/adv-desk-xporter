@@ -80,9 +80,11 @@ func (o mappingRule) GetSource() interface{} {
 		MM := []map[string]interface{}{}
 		for _, v := range v.Codes {
 			m := map[string]interface{}{
+				"id":       v.Id, //fix
 				"code":     v.Code,
 				"message":  v.Message,
 				"statusId": v.StatusId,
+				"messages": v.Messages, // fix
 			}
 			for _, v := range v.Messages { //目前messages只有一組
 				mm := map[string]interface{}{

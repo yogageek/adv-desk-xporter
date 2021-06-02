@@ -199,8 +199,10 @@ func RefreshTokenByAppSecret() {
 			}
 			q.Add("serviceName", "OEE")
 			request.URL.RawQuery = q.Encode()
-			fmt.Println(request)
-			response, _ := httpClient.Do(request)
+			response, err := httpClient.Do(request)
+			if err != nil {
+				fmt.Println(err)
+			}
 			m, _ := simplejson.NewFromReader(response.Body)
 			config.Token = m.Get("clientSecret").MustString()
 			fmt.Println("Token:", config.Token)

@@ -196,7 +196,12 @@
    "id": "TVN0YXR1cw.X63cUG-xTQAGsXip",
    "index": 1000,
    "name": "Production",
-   "names": []
+   "names": [
+    {
+     "Lang": "en-US",
+     "Text": "Production_MULTILANG"
+    }
+   ]
   },
   {
    "color": "#96E796",

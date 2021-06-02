@@ -9,5 +9,5 @@ type Log struct {
 	Result    string      `json:"result"`
 	Error     interface{} `json:"error,omitempty"`
 	CreatedAt time.Time   `json:"createdAt"`
-	// UserName  string      `json:"userName"`
+	UserName  string      `json:"userName"`
 }

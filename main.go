@@ -7,7 +7,8 @@ import (
 	"os"
 	"porter/db"
 	logic "porter/pkg/logic/client"
-	gql "porter/pkg/logic/gql"
+
+	// gql "porter/pkg/logic/gql"
 	"porter/routers"
 )
 
@@ -59,7 +60,7 @@ func init() {
 
 func testFn() {
 	// gql.TestQuery()
-	gql.TestMutation()
+	// gql.TestMutation()
 	//測試export
 	// controller.Export()
 }

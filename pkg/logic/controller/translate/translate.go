@@ -2,7 +2,6 @@ package translate
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	fn "porter/pkg/logic/fn"
 	gql "porter/pkg/logic/gql"
@@ -12,7 +11,7 @@ import (
 
 func TestTranslate() {
 	//step1 Read json file...
-	b, err := ioutil.ReadFile("./importingData.json")
+	b, err := ioutil.ReadFile("./exportingData.json")
 	if err != nil {
 		glog.Fatal(err)
 	}
@@ -27,11 +26,11 @@ func TestTranslate() {
 
 func Translate(data *fn.JsonData) {
 	//從export檔取得langs種類
-	var Langs []string
-	for _, v := range data.TranslationLangs {
-		Langs = append(Langs, v.Lang)
-	}
-	fmt.Println("langs:", Langs)
+	// var Langs []string
+	// for _, v := range data.TranslationLangs {
+	// 	Langs = append(Langs, v.Lang)
+	// }
+	// fmt.Println("langs:", Langs)
 
 	machineStatusData := data.MachineStatusData
 	for _, v := range machineStatusData {

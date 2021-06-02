@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"porter/pkg/logic/controller/translate"
 	. "porter/pkg/logic/fn"
 	gochan "porter/pkg/logic/gochan"
 	vars "porter/pkg/logic/vars"
@@ -43,6 +44,8 @@ func importController() {
 	processes := implIface()
 	updatePuclicResTotal(&data, processes)
 	doImport(&data, processes)
+	//new
+	translate.Translate(&data)
 }
 
 func implIface() []Processer {

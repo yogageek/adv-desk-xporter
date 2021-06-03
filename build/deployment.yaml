@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ifps-xporter
-        image: iiicondor/ifps-xporter:demo
+        image: iiicondor/ifps-xporter:1.0.0
         imagePullPolicy: Always
         resources:
           requests:

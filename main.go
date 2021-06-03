@@ -40,42 +40,40 @@ func setFlag() {
 }
 
 func init() {
-	// os.Setenv("IFP_URL", "https://ifp-organizer-tienkang-eks002.sa.wise-paas.com/graphql") //天岡
-	// os.Setenv("IFP_URL", "https://ifp-organizer-training-eks011.hz.wise-paas.com.cn/graphql") //training
-
-	// os.Setenv("IFP_URL", "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql") //匯出: 銳鼎
-	// os.Setenv("IFP_URL_IN", "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql") //匯出: 銳鼎
-
-	os.Setenv("IFP_URL", "https://ifp-organizer-testingsa1-eks002.sa.wise-paas.com/graphql")    //匯出: 測試環境
-	os.Setenv("IFP_URL_IN", "https://ifp-organizer-testingsa1-eks002.sa.wise-paas.com/graphql") //匯入: 測試環境。
-
+	setFlag()
 	os.Setenv("MONGODB_URL", "52.187.110.12:27017")
 	os.Setenv("MONGODB_DATABASE", "87e1dc58-4c20-4e65-ad81-507270f6bdac")
 	os.Setenv("MONGODB_USERNAME", "19e0ce80-af51-404c-8d55-9edefcbd4bdf")
 	os.Setenv("MONGODB_PASSWORD", "TYyvTeVemAlJzzuq4w3sBr2D")
 
-	// 2021/05/31
 	os.Setenv("IFP_DESK_USERNAME", "devanliang@iii.org.tw")
 	os.Setenv("IFP_DESK_PASSWORD", "Abcd1234#")
-	os.Setenv("IFP_DESK_API_URL", "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql")
+	// os.Setenv("IFP_DESK_API_URL", "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql")
+
+	os.Setenv("IFP_DESK_API_URL", "https://ifp-organizer-testingsa1-eks002.sa.wise-paas.com/graphql") //匯出: 測試環境
+	// os.Setenv("IFP_DESK_API_URL", "https://ifp-organizer-testingsa1-eks002.sa.wise-paas.com/graphql") //匯入: 測試環境。
+	// os.Setenv("IFP_DESK_API_URL", "https://ifp-organizer-tienkang-eks002.sa.wise-paas.com/graphql") //天岡
+	// os.Setenv("IFP_DESK_API_URL", "https://ifp-organizer-training-eks011.hz.wise-paas.com.cn/graphql") //training
+	// os.Setenv("IFP_DESK_API_URL", "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql") //匯出: 銳鼎
+	// os.Setenv("IFP_DESK_API_URL", "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql") //匯出: 銳鼎
 
 	//for test appSecret
-	os.Setenv("datacenter", "hz")
-	os.Setenv("workspace", "52434e96-f390-474c-8bf1-15e4802fc4fc")
-	os.Setenv("cluster", "eks011")
-	os.Setenv("namespace", "impelex")
-	os.Setenv("SSO_API_URL", "https://api-sso-ensaas.hz.wise-paas.com.cn/v4.0")
+	// os.Setenv("datacenter", "hz")
+	// os.Setenv("workspace", "52434e96-f390-474c-8bf1-15e4802fc4fc")
+	// os.Setenv("cluster", "eks011")
+	// os.Setenv("namespace", "impelex")
+	// os.Setenv("SSO_API_URL", "https://api-sso-ensaas.hz.wise-paas.com.cn/v4.0")
 
 	initGlobalVar()
 
-	go logic.RefreshTokenByAppSecret() //app secret
-	// logic.Loop_RefreshTokenByUserPwd() //user pwd
+	if config.AdminUsername != "" && config.AdminPassword != "" {
+		logic.Loop_RefreshTokenByUserPwd() //use user pwd
+	} else {
+		go logic.RefreshTokenByAppSecret() //use app secret
+	}
 
-	setFlag()
 	db.StartMongo()
 	go db.MongoHealCheckLoop()
-
-	// runtime.GOMAXPROCS(1)
 }
 
 func initGlobalVar() {

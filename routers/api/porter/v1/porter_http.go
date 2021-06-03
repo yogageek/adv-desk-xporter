@@ -23,7 +23,7 @@ lastname := c.Query("lastname")
 */
 
 func Export(c *gin.Context) {
-	logic.PrepareGQLClientByAppSecret()
+	logic.PrepareGQLCLient()
 
 	vars.Update_PublicRes_Start(vars.ModeExport)
 	defer vars.Update_PublicRes_Done()
@@ -39,7 +39,7 @@ func Export(c *gin.Context) {
 }
 
 func Import(c *gin.Context) {
-	logic.PrepareGQLClientByAppSecret()
+	logic.PrepareGQLCLient()
 
 	vars.Update_PublicRes_Start(vars.ModeImport)
 	defer vars.Update_PublicRes_Done()

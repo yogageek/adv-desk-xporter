@@ -8,9 +8,13 @@ import (
 	"porter/config"
 	"porter/db"
 	logic "porter/pkg/logic/client"
+	"strings"
+	"time"
 
 	// gql "porter/pkg/logic/gql"
 	"porter/routers"
+
+	"github.com/bitly/go-simplejson"
 )
 
 // var m *sync.Mutex
@@ -75,13 +79,11 @@ func init() {
 }
 
 func initGlobalVar() {
-	config.IFP_URL = os.Getenv("IFP_URL")
-	config.IFP_URL_IN = os.Getenv("IFP_URL")
-
 	config.Datacenter = os.Getenv("datacenter")
 	config.Workspace = os.Getenv("workspace")
 	config.Cluster = os.Getenv("cluster")
 	config.Namespace = os.Getenv("namespace")
+
 	if config.Namespace == "ifpsdev" || config.Namespace == "ifpsdemo" {
 		config.SSOURL = "https://api-sso-ensaas.hz.wise-paas.com.cn/v4.0"
 	} else {
@@ -92,12 +94,38 @@ func initGlobalVar() {
 	ifps_desk_api_url := os.Getenv("IFP_DESK_API_URL")
 	if len(ifps_desk_api_url) != 0 {
 		config.IFPURL = ifps_desk_api_url
+		config.IFP_URL = config.IFPURL
+		config.IFP_URL_IN = config.IFPURL
 	} else {
 		config.IFPURL = "https://ifp-organizer-" + config.Namespace + "-" + config.Cluster + "." + external + "/graphql"
+		config.IFP_URL = config.IFPURL
+		config.IFP_URL_IN = config.IFPURL
 	}
 
 	config.AdminUsername = os.Getenv("IFP_DESK_USERNAME")
 	config.AdminPassword = os.Getenv("IFP_DESK_PASSWORD")
+
+	// ensaas services
+	ensaasService := os.Getenv("ENSAAS_SERVICES")
+	if len(ensaasService) != 0 {
+		tempReader := strings.NewReader(ensaasService)
+		m, _ := simplejson.NewFromReader(tempReader)
+		mongodb := m.Get("mongodb").GetIndex(0).Get("credentials").MustMap()
+		config.MongodbURL = mongodb["externalHosts"].(string)
+		config.MongodbDatabase = mongodb["database"].(string)
+		config.MongodbUsername = mongodb["username"].(string)
+		config.MongodbPassword = mongodb["password"].(string)
+	} else {
+		config.MongodbURL = os.Getenv("MONGODB_URL")
+		config.MongodbDatabase = os.Getenv("MONGODB_DATABASE")
+		config.MongodbUsername = os.Getenv("MONGODB_USERNAME")
+		config.MongodbPassword = os.Getenv("MONGODB_PASSWORD")
+	}
+
+	fmt.Println("----------", time.Now().In(config.TaipeiTimeZone), "----------")
+	fmt.Println("IFP -> URL:", config.IFPURL)
+	fmt.Println("SSO -> URL:", config.SSOURL)
+	fmt.Println("MongoDB Connect ->", " URL:", config.MongodbURL, " Database:", config.MongodbDatabase)
 }
 
 func testFn() {

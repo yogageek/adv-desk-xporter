@@ -17,14 +17,6 @@ import (
 )
 
 var (
-	ADMIN_USERNAME = "devanliang@iii.org.tw"
-	ADMIN_PASSWORD = "Abcd1234#"
-
-	MONGODB_URL      = "52.187.110.12:27017"
-	MONGODB_DATABASE = "ifp-data-hub-dev"
-	MONGODB_USERNAME = "e270673c-ce08-4c35-93e2-333ed103736f"
-	MONGODB_PASSWORD = "VUSkt9bbTKSTzb7ZArp36jLk"
-
 	TaipeiTimeZone, _ = time.LoadLocation("Asia/Taipei")
 )
 
@@ -71,7 +63,7 @@ func RefreshTokenByUserPwd(url string) (token string, err error) {
 	fmt.Println("----------", time.Now().In(TaipeiTimeZone), "----------")
 	fmt.Println("RefreshToken...")
 	httpClient := &http.Client{}
-	content := map[string]string{"username": ADMIN_USERNAME, "password": ADMIN_PASSWORD}
+	content := map[string]string{"username": config.AdminUsername, "password": config.AdminPassword}
 	variable := map[string]interface{}{"input": content}
 	httpRequestBody, _ := json.Marshal(map[string]interface{}{
 		"query":     "mutation signIn($input: SignInInput!) {   signIn(input: $input) {     user {       name       __typename     }     __typename   } }",

@@ -24,7 +24,7 @@ func Logs(c *gin.Context) {
 	if sort == "" {
 		sort = "-_id"
 	}
-	skip, _ := strconv.Atoi(c.Query("page"))
+	skip, _ := strconv.Atoi(c.Query("offset"))
 	// queryM := bson.M{}
 	// for key, val := range c.Request.URL.Query() {
 	// 	if !util.InArray(key, []string{"_limit", "_offset", "_sort"}) {

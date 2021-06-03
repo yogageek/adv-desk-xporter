@@ -7,8 +7,8 @@ import (
 	"porter/db"
 	gochan "porter/pkg/logic/gochan"
 	vars "porter/pkg/logic/vars"
-	util "porter/util"
 	"strings"
+	"time"
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
@@ -34,11 +34,16 @@ func middleware_api(c *gin.Context) {
 	fileName := ""
 	if mode == "import" {
 		if file, err := c.Copy().FormFile("file"); err == nil {
-			fileName = file.Filename
+			// d := fmt.Sprint(time.Now().UTC().Format("20060102"))
+			// sysFileName := "iFactory_Desk_" + d
+			fileName = file.Filename + ".json"
 		}
+
 	}
 	if mode == "export" {
-		fileName = "exportingData.json"
+		d := fmt.Sprint(time.Now().UTC().Format("20060102"))
+		sysFileName := "iFactory_Desk_" + d
+		fileName = sysFileName + ".json"
 	}
 
 	// 2021/06/02 Username
@@ -70,7 +75,10 @@ func middleware_api(c *gin.Context) {
 
 	token, _, err := new(jwt.Parser).ParseUnverified(ifpToken, jwt.MapClaims{})
 	if err != nil {
-		fmt.Println(err)
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "invalid token",
+		})
+		c.Abort() //當請求被中間件攔截時，確保停止後續的api調用
 		return
 	}
 
@@ -92,7 +100,7 @@ func middleware_api(c *gin.Context) {
 		Database:  os.Getenv("MONGODB_DATABASE"),
 		FileName:  fileName,
 		Mode:      mode,
-		CreatedAt: util.GetNow(),
+		CreatedAt: time.Now().UTC(),
 		Result:    "success",
 		UserName:  userName,
 	}

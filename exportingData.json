@@ -1,10 +1,6243 @@
 {
- "groupData": null,
- "machineData": null,
- "machineStatusData": [],
- "mappingRuleData": [],
- "parameterData": null,
- "profileData": null,
- "translationLangsData": null,
- "url": ""
+ "groupData": [
+  {
+   "id": "R3JvdXA.X0Nt9dZ5cgAG6yNh",
+   "name": "PCB",
+   "description": "",
+   "timeZone": "Asia/Taipei",
+   "coordinate": null,
+   "names": [
+    {
+     "text": "PCB",
+     "lang": "en-US"
+    }
+   ],
+   "descriptions": []
+  },
+  {
+   "id": "R3JvdXA.YD85_8GunQAGpEaG",
+   "name": "SPC",
+   "description": "",
+   "timeZone": "Asia/Taipei",
+   "coordinate": null,
+   "names": [
+    {
+     "text": "SPC",
+     "lang": "en-US"
+    }
+   ],
+   "descriptions": []
+  },
+  {
+   "id": "R3JvdXA.YEXwS8GunQAGpEa1",
+   "name": "TestTrans",
+   "description": "kekekeke",
+   "timeZone": "Asia/Taipei",
+   "coordinate": {
+    "longitude": 0,
+    "latitude": 0
+   },
+   "names": [
+    {
+     "text": "TestTrans",
+     "lang": "en-US"
+    },
+    {
+     "text": "xxx",
+     "lang": "zh-CN"
+    },
+    {
+     "text": "測試(正體)",
+     "lang": "zh-TW"
+    }
+   ],
+   "descriptions": [
+    {
+     "text": "kekekeke",
+     "lang": "en-US"
+    },
+    {
+     "text": "xx",
+     "lang": "zh-CN"
+    }
+   ]
+  },
+  {
+   "parentId": "R3JvdXA.YEXwS8GunQAGpEa1",
+   "id": "R3JvdXA.YFCBoNa3KAAGDClx",
+   "name": "測試群2",
+   "description": "",
+   "timeZone": "Asia/Taipei",
+   "coordinate": {
+    "longitude": 0,
+    "latitude": 0
+   },
+   "names": [
+    {
+     "text": "測試群2",
+     "lang": "en-US"
+    }
+   ],
+   "descriptions": []
+  },
+  {
+   "parentId": "R3JvdXA.YEXwS8GunQAGpEa1",
+   "id": "R3JvdXA.YI-e22k7bwAHp9B5",
+   "name": "SC",
+   "description": "",
+   "timeZone": "Asia/Taipei",
+   "coordinate": {
+    "longitude": 0,
+    "latitude": 0
+   },
+   "names": [
+    {
+     "text": "SC",
+     "lang": "en-US"
+    },
+    {
+     "text": "SC中文",
+     "lang": "zh-TW"
+    }
+   ],
+   "descriptions": []
+  }
+ ],
+ "machineData": [
+  {
+   "id": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+   "groupId": "R3JvdXA.X0Nt9dZ5cgAG6yNh",
+   "name": "Uno_IMPQ2-S1",
+   "description": "",
+   "imageUrl": "",
+   "names": [
+    {
+     "text": "Uno_IMPQ2-S1",
+     "lang": "en-US"
+    },
+    {
+     "text": "Uno_IMPQ2-S1",
+     "lang": "zh-CN"
+    },
+    {
+     "text": "Uno_IMPQ2-S1",
+     "lang": "zh-TW"
+    }
+   ],
+   "descriptions": [],
+   "imageUrls": []
+  },
+  {
+   "id": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+   "groupId": "R3JvdXA.X0Nt9dZ5cgAG6yNh",
+   "name": "Uno_IMPQ2-S2",
+   "description": "",
+   "imageUrl": "",
+   "names": [
+    {
+     "text": "Uno_IMPQ2-S2",
+     "lang": "en-US"
+    },
+    {
+     "text": "Uno_IMPQ2-S2",
+     "lang": "zh-CN"
+    },
+    {
+     "text": "Uno_IMPQ2-S2",
+     "lang": "zh-TW"
+    }
+   ],
+   "descriptions": [],
+   "imageUrls": []
+  },
+  {
+   "id": "TWFjaGluZQ.YD86DsGunQAGpEaI",
+   "groupId": "R3JvdXA.YD85_8GunQAGpEaG",
+   "name": "M1",
+   "description": "",
+   "imageUrl": "",
+   "names": [
+    {
+     "text": "M1",
+     "lang": "en-US"
+    },
+    {
+     "text": "M1机台",
+     "lang": "zh-CN"
+    },
+    {
+     "text": "M1機台",
+     "lang": "zh-TW"
+    }
+   ],
+   "descriptions": [],
+   "imageUrls": []
+  },
+  {
+   "id": "TWFjaGluZQ.YFCCnda3KAAGDClz",
+   "groupId": "R3JvdXA.YFCBoNa3KAAGDClx",
+   "name": "dsds",
+   "description": "",
+   "imageUrl": "",
+   "names": [
+    {
+     "text": "dsds",
+     "lang": "en-US"
+    }
+   ],
+   "descriptions": [],
+   "imageUrls": []
+  }
+ ],
+ "machineStatusData": [
+  {
+   "color": "#96E796",
+   "depth": 1,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXip",
+   "index": 1000,
+   "name": "Production",
+   "names": [
+    {
+     "Lang": "en-US",
+     "Text": "Production_MULTILANG"
+    }
+   ]
+  },
+  {
+   "color": "#96E796",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXiw",
+   "index": 1200,
+   "name": "Reworking",
+   "names": [],
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXip",
+   "parentIndex": 1000
+  },
+  {
+   "color": "#96E796",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXiv",
+   "index": 1100,
+   "name": "Production",
+   "names": [],
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXip",
+   "parentIndex": 1000
+  },
+  {
+   "color": "#96E796",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXix",
+   "index": 1300,
+   "name": "Reduced Speed",
+   "names": [],
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXip",
+   "parentIndex": 1000
+  },
+  {
+   "color": "#FFA09E",
+   "depth": 1,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXiq",
+   "index": 2000,
+   "name": "Failure",
+   "names": []
+  },
+  {
+   "color": "#FFA09E",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXit",
+   "index": 2100,
+   "name": "Failure",
+   "names": [],
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXiq",
+   "parentIndex": 2000
+  },
+  {
+   "color": "#FFA09E",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXiu",
+   "index": 2200,
+   "name": "Adjustment",
+   "names": [],
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXiq",
+   "parentIndex": 2000
+  },
+  {
+   "color": "#FFE091",
+   "depth": 1,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXir",
+   "index": 3000,
+   "name": "Idle",
+   "names": []
+  },
+  {
+   "color": "#FFE091",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXiy",
+   "index": 3100,
+   "name": "Setup",
+   "names": [],
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXir",
+   "parentIndex": 3000
+  },
+  {
+   "color": "#FFE091",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXi0",
+   "index": 3300,
+   "name": "Waiting",
+   "names": [],
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXir",
+   "parentIndex": 3000
+  },
+  {
+   "color": "#FFE091",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXiz",
+   "index": 3200,
+   "name": "Startup",
+   "names": [],
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXir",
+   "parentIndex": 3000
+  },
+  {
+   "color": "#FFE091",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXi1",
+   "index": 3400,
+   "name": "Loading",
+   "names": [],
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXir",
+   "parentIndex": 3000
+  },
+  {
+   "color": "#91C6FF",
+   "depth": 1,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXis",
+   "index": 4000,
+   "name": "Line Restraint",
+   "names": []
+  },
+  {
+   "color": "#91C6FF",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXi3",
+   "index": 4200,
+   "name": "No Output",
+   "names": [],
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXis",
+   "parentIndex": 4000
+  },
+  {
+   "color": "#91C6FF",
+   "depth": 2,
+   "id": "TVN0YXR1cw.X63cUG-xTQAGsXi2",
+   "index": 4100,
+   "name": "No Input",
+   "names": [],
+   "parentId": "TVN0YXR1cw.X63cUG-xTQAGsXis",
+   "parentIndex": 4000
+  },
+  {
+   "color": "#008cd6",
+   "depth": 1,
+   "id": "TVN0YXR1cw.YDhor8GunQAGpEZo",
+   "index": 5000,
+   "name": "測試",
+   "names": [
+    {
+     "Lang": "en-US",
+     "Text": "測試"
+    },
+    {
+     "Lang": "zh-TW",
+     "Text": "測試(正體)"
+    }
+   ]
+  },
+  {
+   "color": "#008cd6",
+   "depth": 2,
+   "id": "TVN0YXR1cw.YDhozcGunQAGpEZs",
+   "index": 5100,
+   "name": "測試1",
+   "names": [
+    {
+     "Lang": "en-US",
+     "Text": "測試1"
+    }
+   ],
+   "parentId": "TVN0YXR1cw.YDhor8GunQAGpEZo",
+   "parentIndex": 5000
+  },
+  {
+   "color": "#008cd6",
+   "depth": 3,
+   "id": "TVN0YXR1cw.YDiZzsGunQAGpEZ6",
+   "index": 5101,
+   "name": "測試3",
+   "names": [
+    {
+     "Lang": "en-US",
+     "Text": "測試3"
+    }
+   ],
+   "parentId": "TVN0YXR1cw.YDhozcGunQAGpEZs",
+   "parentIndex": 5100
+  },
+  {
+   "color": "#008cd6",
+   "depth": 2,
+   "id": "TVN0YXR1cw.YDho1MGunQAGpEZu",
+   "index": 5200,
+   "name": "測試2",
+   "names": [
+    {
+     "Lang": "en-US",
+     "Text": "測試2"
+    }
+   ],
+   "parentId": "TVN0YXR1cw.YDhor8GunQAGpEZo",
+   "parentIndex": 5000
+  }
+ ],
+ "mappingRuleData": [
+  {
+   "detail": [
+    {
+     "code": "1",
+     "id": "UE1hcENvZGU.YDhpcMGunQAGpEZx",
+     "lang": "en-US",
+     "message": "測試msg",
+     "messages": [
+      {
+       "Lang": "en-US",
+       "Text": "測試msg"
+      }
+     ],
+     "statusId": "TVN0YXR1cw.YDhor8GunQAGpEZo",
+     "text": "測試msg"
+    },
+    {
+     "code": "2",
+     "id": "UE1hcENvZGU.YDhuecGunQAGpEZ4",
+     "lang": "en-US",
+     "message": "測試msg2",
+     "messages": [
+      {
+       "Lang": "en-US",
+       "Text": "測試msg2"
+      }
+     ],
+     "statusId": "TVN0YXR1cw.YDhozcGunQAGpEZs",
+     "text": "測試msg2"
+    }
+   ],
+   "id": "UE1hcFJ1bGU.YDhpcMGunQAGpEZw",
+   "name": "測試Rule",
+   "pType": "Number"
+  },
+  {
+   "detail": [
+    {
+     "code": "2",
+     "id": "UE1hcENvZGU.YDveYMGunQAGpEZ9",
+     "lang": "en-US",
+     "message": "測試msg",
+     "messages": [
+      {
+       "Lang": "en-US",
+       "Text": "測試msg"
+      }
+     ],
+     "statusId": "TVN0YXR1cw.YDho1MGunQAGpEZu",
+     "text": "測試msg"
+    }
+   ],
+   "id": "UE1hcFJ1bGU.YDveYMGunQAGpEZ8",
+   "name": "測試Rule2",
+   "pType": "Number"
+  }
+ ],
+ "parameterData": [
+  {
+   "Machine": {
+    "Parameters": {
+     "Nodes": [
+      {
+       "id": "UGFyYW1ldGVy.X0OAytZ5cgAG6yTI",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "B-Time-set1",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "B-Time-set1",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0R9qtZ5cgAG6yW0",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_allamount",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_allamount",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0R9qtZ5cgAG6yW1",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_aver_uti",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_aver_uti",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0R9q9Z5cgAG6yW2",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_peeling_uti",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_peeling_uti",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0R9q9Z5cgAG6yW5",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_develop_uti",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_develop_uti",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0R9q9Z5cgAG6yW3",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_defectfreerate",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_defectfreerate",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0R9q9Z5cgAG6yW4",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_partnum",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_partnum",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0R9q9Z5cgAG6yW6",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_realamount",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_realamount",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0R9q9Z5cgAG6yW7",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_peel_status",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_peel_status",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0R9q9Z5cgAG6yW-",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_etch_status",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_etch_status",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0R9q9Z5cgAG6yW8",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_expectamount",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_expectamount",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0R9q9Z5cgAG6yW9",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_develop_status",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_develop_status",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0R9q9Z5cgAG6yW_",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_etching_uti",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_etching_uti",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0R9q9Z5cgAG6yXA",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_workoder",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_workoder",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0Swb9Z5cgAG6yXB",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_develop_pre",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_develop_pre",
+       "description": "Develop",
+       "descriptions": [
+        {
+         "text": "Develop",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0Swb9Z5cgAG6yXC",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_develop_sp",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_develop_sp",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0SwcNZ5cgAG6yXI",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_dry_tp",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_dry_tp",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0SwcNZ5cgAG6yXJ",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_etch_sp",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_etch_sp",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0SwcNZ5cgAG6yXK",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_dryhz",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_dryhz",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0SwcNZ5cgAG6yXE",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_etch_pre",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_etch_pre",
+       "description": "Etch",
+       "descriptions": [
+        {
+         "text": "Etch",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0SwcNZ5cgAG6yXG",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_gravity",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_gravity",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0SwcNZ5cgAG6yXL",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_oxpoten",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_oxpoten",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0SwcNZ5cgAG6yXF",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_etch_tp",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_etch_tp",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0SwcNZ5cgAG6yXH",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_peel_sp",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_peel_sp",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0SwcNZ5cgAG6yXM",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_peel_pre",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_peel_pre",
+       "description": "Peel",
+       "descriptions": [
+        {
+         "text": "Peel",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0SwcNZ5cgAG6yXN",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_peel_tp",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_peel_tp",
+       "description": "",
+       "descriptions": [
+        {
+         "text": "剝離",
+         "lang": "zh-CN"
+        },
+        {
+         "text": "剝離",
+         "lang": "zh-TW"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0SwcNZ5cgAG6yXD",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_develop_tp",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_develop_tp",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0SwcdZ5cgAG6yXO",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_HCL",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_HCL",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0S-gdZ5cgAG6yXP",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_peelset",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_peelset",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0S-gdZ5cgAG6yXR",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_developset",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_developset",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0S-gdZ5cgAG6yXU",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_spset3",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_spset3",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0S-gdZ5cgAG6yXS",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_preset",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_preset",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0S-gdZ5cgAG6yXV",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_tpset2",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_tpset2",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0S-gdZ5cgAG6yXY",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_spset2",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_spset2",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0S-gdZ5cgAG6yXX",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_spset1",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_spset1",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0S-gdZ5cgAG6yXT",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_spset4",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_spset4",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0S-gdZ5cgAG6yXQ",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_dryset",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_dryset",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0S-gdZ5cgAG6yXW",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_tpset4",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_tpset4",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0S-gdZ5cgAG6yXZ",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_tpset3",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_tpset3",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0S-gtZ5cgAG6yXa",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_tpset1",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_tpset1",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TGKtZ5cgAG6yXb",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "C壓力異常1",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "C壓力異常1",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Discrete",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TM6NZ5cgAG6yXc",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "HCL濃度異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "HCL濃度異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TM6dZ5cgAG6yXg",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "氧化電位異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "氧化電位異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TM6dZ5cgAG6yXk",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "乾燥槽溫度異常1",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "乾燥槽溫度異常1",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TM6dZ5cgAG6yXe",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "乾燥機速度異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "乾燥機速度異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TM6dZ5cgAG6yXj",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "剝膜壓力異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "剝膜壓力異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TM6dZ5cgAG6yXi",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "蝕刻槽溫度異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "蝕刻槽溫度異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TM6dZ5cgAG6yXh",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "蝕刻壓力異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "蝕刻壓力異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TM6dZ5cgAG6yXn",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "緊急停止鈕異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "緊急停止鈕異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TM6dZ5cgAG6yXl",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "剝膜速度異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "剝膜速度異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TM6dZ5cgAG6yXf",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "剝膜槽溫度異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "剝膜槽溫度異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TM6dZ5cgAG6yXm",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "蝕刻速度異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "蝕刻速度異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TM6dZ5cgAG6yXp",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "顯影槽溫度異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "顯影槽溫度異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TM6dZ5cgAG6yXd",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "乾燥機氣壓異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "乾燥機氣壓異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TM6dZ5cgAG6yXo",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "比重異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "比重異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TM6dZ5cgAG6yXq",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "顯影壓力異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "顯影壓力異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TTLNZ5cgAG6yXr",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ERR0001",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ERR0001",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TTLNZ5cgAG6yXs",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ERR0004",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ERR0004",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TTLNZ5cgAG6yXt",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ERR0003",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ERR0003",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TTLNZ5cgAG6yXu",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ERR0002",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ERR0002",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TTLdZ5cgAG6yXv",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ERR0005",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ERR0005",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TTLdZ5cgAG6yXw",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ERR0006",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ERR0006",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TYf9Z5cgAG6yX0",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_Waittime",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_Waittime",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TYf9Z5cgAG6yXx",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "PCB_DRAIN",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "PCB_DRAIN",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TYgNZ5cgAG6yX4",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_Runtime",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_Runtime",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TYf9Z5cgAG6yX1",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_Errortime",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_Errortime",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TYf9Z5cgAG6yXy",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "PCB_DES",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "PCB_DES",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TYf9Z5cgAG6yXz",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "PCB_MAINTAIN",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "PCB_MAINTAIN",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0TYf9Z5cgAG6yX3",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "des_Stoptime",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "des_Stoptime",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0WvANZ5cgAG6yX8",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "L1_M4",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "L1_M4",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Discrete",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0WvANZ5cgAG6yX6",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "L1_M5",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "L1_M5",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Discrete",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0WvANZ5cgAG6yX9",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "L1_M2",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "L1_M2",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Discrete",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0WvANZ5cgAG6yX7",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "L1_M3",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "L1_M3",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Discrete",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0WvANZ5cgAG6yX5",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "L1_M1",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "L1_M1",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Discrete",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0WvANZ5cgAG6yX_",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "L2_M4",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "L2_M4",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Discrete",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0WvANZ5cgAG6yX-",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "L2_M2",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "L2_M2",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Discrete",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0WvAdZ5cgAG6yYD",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "L2_M1",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "L2_M1",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Discrete",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0WvAdZ5cgAG6yYE",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "L2_M3",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "L2_M3",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Discrete",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0WvAdZ5cgAG6yYF",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "L3_M3",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "L3_M3",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Discrete",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0WvAdZ5cgAG6yYB",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "L3_M1",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "L3_M1",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Discrete",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0WvAdZ5cgAG6yYA",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "L2_M5",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "L2_M5",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Discrete",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0WvAdZ5cgAG6yYC",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "L3_M2",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "L3_M2",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Discrete",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0WvAdZ5cgAG6yYG",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "L3_M4",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "L3_M4",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Discrete",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X0WvAdZ5cgAG6yYH",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "L3_M5",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "L3_M5",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Discrete",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1iR-oRZEgAGpSQU",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_PH",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_PH",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1iR-YRZEgAGpSQT",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_COD",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_COD",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1iR-oRZEgAGpSQZ",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_總鉻",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_總鉻",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1iR-oRZEgAGpSQa",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_累積流量",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_累積流量",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1iR-oRZEgAGpSQb",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_總砷",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_總砷",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1iR-oRZEgAGpSQV",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_氨氮",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_氨氮",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1iR-oRZEgAGpSQW",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_純水量",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_純水量",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1iR-oRZEgAGpSQX",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_總汞",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_總汞",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1iR-oRZEgAGpSQd",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_瞬間流量",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_瞬間流量",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1iR-4RZEgAGpSQf",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_總鉛",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_總鉛",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1iR-4RZEgAGpSQg",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_總銀",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_總銀",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1iR-oRZEgAGpSQY",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_RO水量",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_RO水量",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1iR-oRZEgAGpSQc",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_總鎘",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_總鎘",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1iR-oRZEgAGpSQe",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_總銅",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_總銅",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1iR-4RZEgAGpSQh",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_過濾水量",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_過濾水量",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1iR-4RZEgAGpSQj",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_軟化水量",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_軟化水量",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      }
+     ],
+     "PageInfo": {
+      "hasNextPage": true,
+      "endCursor": "RGF0ZQ.MTU5OTY0MDA2MDAxOQ.X1iR-4RZEgAGpSQj"
+     }
+    }
+   }
+  },
+  {
+   "Machine": {
+    "Parameters": {
+     "Nodes": [
+      {
+       "id": "UGFyYW1ldGVy.X1iR-4RZEgAGpSQi",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_總鎳",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_總鎳",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1inq4RZEgAGpSQl",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_綜合達標",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_綜合達標",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1inq4RZEgAGpSQk",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_台東1廠",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_台東1廠",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1inq4RZEgAGpSQm",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_高雄1廠",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_高雄1廠",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1inq4RZEgAGpSQo",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_新竹1廠",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_新竹1廠",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1inq4RZEgAGpSQp",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_異常次數",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_異常次數",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1inq4RZEgAGpSQn",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_台中1廠",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_台中1廠",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1inq4RZEgAGpSQq",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_台南1廠",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_台南1廠",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1inq4RZEgAGpSQr",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain_台北1廠",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain_台北1廠",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1ssKZ_9AwAGdoiX",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain回收水異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain回收水異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1ssKZ_9AwAGdoiY",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain廢棄塔異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain廢棄塔異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1ssKp_9AwAGdoia",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain冷凝水異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain冷凝水異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1ssKp_9AwAGdoid",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain化鎳廢液槽異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain化鎳廢液槽異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1ssKp_9AwAGdoic",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain總銀異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain總銀異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1ssKp_9AwAGdoiZ",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain硝酸廢液槽異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain硝酸廢液槽異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1ssKZ_9AwAGdoiW",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drainRO水量異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drainRO水量異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1ssK5_9AwAGdoie",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain純水量異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain純水量異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1ssK5_9AwAGdoif",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain氧化電位異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain氧化電位異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1ssKp_9AwAGdoib",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain系統次閥異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain系統次閥異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1ssK5_9AwAGdoig",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drainPH異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drainPH異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1ssK5_9AwAGdoij",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain總鉻異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain總鉻異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1ssK5_9AwAGdoil",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain總鎳異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain總鎳異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1ssK5_9AwAGdoih",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain化鎳廢水槽異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain化鎳廢水槽異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1ssK5_9AwAGdoik",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain軟化水量異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain軟化水量異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1ssK5_9AwAGdoii",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain系統主閥異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain系統主閥異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1ssLJ_9AwAGdoim",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "drain過濾水量異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "drain過濾水量異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s35p_9AwAGdoin",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maOK",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maOK",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s355_9AwAGdoio",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maNG",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maNG",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s355_9AwAGdoip",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma化銀進度",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma化銀進度",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s36J_9AwAGdoiq",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma壓合進度",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma壓合進度",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s36J_9AwAGdoir",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma噴錫進度",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma噴錫進度",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s36J_9AwAGdois",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma外層進度",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma外層進度",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s36J_9AwAGdoit",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma成金進度",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma成金進度",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s36J_9AwAGdoiu",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma成檢進度",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma成檢進度",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s36J_9AwAGdoiv",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma浸鎳金",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma浸鎳金",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s36p_9AwAGdoi0",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma電鍍軟金",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma電鍍軟金",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s36Z_9AwAGdoiy",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma防焊進度",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma防焊進度",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s36Z_9AwAGdoiw",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma鑲金手指進度",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma鑲金手指進度",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s36Z_9AwAGdoix",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma金手指鍍鎳金",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma金手指鍍鎳金",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s36p_9AwAGdoiz",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma鑽孔進度",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma鑽孔進度",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s36p_9AwAGdoi1",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma電鍍進度",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma電鍍進度",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s-QJ_9AwAGdoi7",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maUser3",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maUser3",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s-P5_9AwAGdoi3",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maUser4",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maUser4",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s-QJ_9AwAGdoi6",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maUser1",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maUser1",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s-P5_9AwAGdoi4",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maNGcount",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maNGcount",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s-P5_9AwAGdoi2",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "macount1",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "macount1",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s-QJ_9AwAGdoi-",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maorder",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maorder",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s-QJ_9AwAGdoi8",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "macount2",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "macount2",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s-QJ_9AwAGdoi_",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maUser2",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maUser2",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s-QJ_9AwAGdojA",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maorder1",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maorder1",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s-P5_9AwAGdoi5",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma良率",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma良率",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1s-QJ_9AwAGdoi9",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "macount",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "macount",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1tEbZ_9AwAGdojB",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma入料異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma入料異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1tEbp_9AwAGdojC",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma汽缸異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma汽缸異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1tEbp_9AwAGdojD",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma壓力異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma壓力異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1tEbp_9AwAGdojE",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma溫度異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma溫度異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1tEbp_9AwAGdojF",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma出料異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma出料異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1tEb5_9AwAGdojG",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma電壓異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma電壓異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1tEb5_9AwAGdojH",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ma馬達異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ma馬達異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xZrp_9AwAGdojI",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maM1OKcount",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maM1OKcount",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xZrp_9AwAGdojJ",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maM1NGcount",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maM1NGcount",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xZrp_9AwAGdojK",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maM1NGtime",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maM1NGtime",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xZsZ_9AwAGdojO",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maM3OKcount",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maM3OKcount",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xZsZ_9AwAGdojQ",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maM4OKcount",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maM4OKcount",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xZsJ_9AwAGdojL",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maM3NGcount",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maM3NGcount",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xZsZ_9AwAGdojN",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maM2NGtime",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maM2NGtime",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xZsJ_9AwAGdojM",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maM2OKcount",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maM2OKcount",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xZsZ_9AwAGdojR",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maM2NGcount",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maM2NGcount",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xZsZ_9AwAGdojP",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maM4NGcount",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maM4NGcount",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xZsZ_9AwAGdojS",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maM4NGtime",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maM4NGtime",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xZsZ_9AwAGdojU",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maMXstauts3",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maMXstauts3",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xZsZ_9AwAGdojT",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maM3NGtime",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maM3NGtime",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xZsp_9AwAGdojW",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maMXstauts2",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maMXstauts2",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xZsp_9AwAGdojV",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "maMXstauts1",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "maMXstauts1",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xjrJ_9AwAGdojX",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "oven入料異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "oven入料異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xjrZ_9AwAGdojY",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "oven出料異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "oven出料異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xjrZ_9AwAGdojZ",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "oven烤箱1溫度異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "oven烤箱1溫度異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xjrp_9AwAGdoja",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "oven烤箱1速度異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "oven烤箱1速度異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xjrp_9AwAGdojb",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "oven烤箱1過載異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "oven烤箱1過載異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xjrp_9AwAGdojc",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "oven烤箱2溫度異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "oven烤箱2溫度異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xjrp_9AwAGdojd",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "oven烤箱2過載異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "oven烤箱2過載異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xjrp_9AwAGdoje",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "oven烤箱2速度異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "oven烤箱2速度異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xjrp_9AwAGdojf",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "oven烤箱3溫度異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "oven烤箱3溫度異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xjr5_9AwAGdojg",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "oven烤箱3過載異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "oven烤箱3過載異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xjr5_9AwAGdojh",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "oven烤箱3速度異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "oven烤箱3速度異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xjsJ_9AwAGdoji",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "oven緊急按鈕異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "oven緊急按鈕異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xjsJ_9AwAGdojj",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "oven空壓異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "oven空壓異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xnSJ_9AwAGdojk",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ovenERR001",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ovenERR001",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xnSZ_9AwAGdojl",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ovenERR003",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ovenERR003",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xnSZ_9AwAGdojm",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ovenERR002",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ovenERR002",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xnSZ_9AwAGdojn",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ovenERR004",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ovenERR004",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xnSp_9AwAGdojo",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "oven保養",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "oven保養",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xnSp_9AwAGdojp",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "oven停機",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "oven停機",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xnSp_9AwAGdojq",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "oven異常",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "oven異常",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xnSp_9AwAGdojr",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ovenERcount",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ovenERcount",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xr8J_9AwAGdojs",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ovenM1alarm",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ovenM1alarm",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xr8Z_9AwAGdojt",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ovenM1sp",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ovenM1sp",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xr8Z_9AwAGdoju",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ovenM1tmp",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ovenM1tmp",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xr8Z_9AwAGdojv",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ovenM2alarm",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ovenM2alarm",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xr8p_9AwAGdojw",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ovenM3tmp",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ovenM3tmp",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      }
+     ],
+     "PageInfo": {
+      "hasNextPage": true,
+      "endCursor": "RGF0ZQ.MTU5OTg5MjQ2NzE0OQ.X1xr8p_9AwAGdojw"
+     }
+    }
+   }
+  },
+  {
+   "Machine": {
+    "Parameters": {
+     "Nodes": [
+      {
+       "id": "UGFyYW1ldGVy.X1xr8p_9AwAGdojy",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ovenM3alarm",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ovenM3alarm",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xr8p_9AwAGdojx",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ovenM3sp",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ovenM3sp",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xr8p_9AwAGdojz",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ovenM2tmp",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ovenM2tmp",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X1xr8p_9AwAGdoj0",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "ovenM2sp",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "ovenM2sp",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2CBS5_9AwAGdoj4",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "PCB_OVEN",
+       "machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+       "name": "PCB_OVEN",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      }
+     ],
+     "PageInfo": {
+      "hasNextPage": false,
+      "endCursor": "RGF0ZQ.MTYwMDE2MDA3NTk0OA.X2CBS5_9AwAGdoj4"
+     }
+    }
+   }
+  },
+  {
+   "Machine": {
+    "Parameters": {
+     "Nodes": [
+      {
+       "id": "UGFyYW1ldGVy.X2w4MzqBXwAG75Bm",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2HCL濃度異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "HCL濃度異常",
+       "description": "2HCL濃度異常",
+       "descriptions": [
+        {
+         "text": "2HCL濃度異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4MzqBXwAG75Bl",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2PCB_DES",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "PCB_DES",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4MzqBXwAG75Bo",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2PCB_MATAIN",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "PCB_MAINTAIN",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4MzqBXwAG75Bn",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2PCB_DRAIN",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "PCB_DRAIN",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4MzqBXwAG75Bp",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_Runtime",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_Runtime",
+       "description": "2des_Runtime",
+       "descriptions": [
+        {
+         "text": "2des_Runtime",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4NDqBXwAG75Br",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2PCB_OVEN",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "PCB_OVEN",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4NDqBXwAG75Bt",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_Stoptime",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_Stoptime",
+       "description": "2des_Stoptime",
+       "descriptions": [
+        {
+         "text": "2des_Stoptime",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4NDqBXwAG75Bq",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_Errortime",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_Errortime",
+       "description": "2des_Errortime",
+       "descriptions": [
+        {
+         "text": "2des_Errortime",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4NDqBXwAG75Bs",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_HCL",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_HCL",
+       "description": "2des_HCL",
+       "descriptions": [
+        {
+         "text": "2des_HCL",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4NDqBXwAG75Bu",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_Waittime",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_Waittime",
+       "description": "2des_Waittime",
+       "descriptions": [
+        {
+         "text": "2des_Waittime",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4NjqBXwAG75Bv",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_allamount",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_allamount",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4NjqBXwAG75Bx",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_develop_tp",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_develop_tp",
+       "description": "2des_develop_tp",
+       "descriptions": [
+        {
+         "text": "2des_develop_tp",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4NjqBXwAG75Bz",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_defectfreerate",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_defectfreerate",
+       "description": "2des_defectfreerate",
+       "descriptions": [
+        {
+         "text": "2des_defectfreerate",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4NjqBXwAG75Bw",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_develop_pre",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_develop_pre",
+       "description": "2des_develop_pre",
+       "descriptions": [
+        {
+         "text": "2des_develop_pre",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4NjqBXwAG75B0",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_develop_status",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_develop_status",
+       "description": "2des_develop_status",
+       "descriptions": [
+        {
+         "text": "2des_develop_status",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4NjqBXwAG75By",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_develop_sp",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_develop_sp",
+       "description": "2des_develop_sp",
+       "descriptions": [
+        {
+         "text": "2des_develop_sp",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4NjqBXwAG75B1",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_aver_uti",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_aver_uti",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4NjqBXwAG75B2",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_develop_uti",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_develop_uti",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4NzqBXwAG75B4",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_dry_tp",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_dry_tp",
+       "description": "2des_dry_tp",
+       "descriptions": [
+        {
+         "text": "2des_dry_tp",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4NzqBXwAG75B3",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_developset",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_developset",
+       "description": "2des_developset",
+       "descriptions": [
+        {
+         "text": "2des_developset",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4ODqBXwAG75B5",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_dryhz",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_dryhz",
+       "description": "2des_dryhz",
+       "descriptions": [
+        {
+         "text": "2des_dryhz",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4ODqBXwAG75B7",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_dryset",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_dryset",
+       "description": "2des_dryset",
+       "descriptions": [
+        {
+         "text": "2des_dryset",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4ODqBXwAG75B6",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_etch_pre",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_etch_pre",
+       "description": "2des_etch_pre",
+       "descriptions": [
+        {
+         "text": "2des_etch_pre",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4ODqBXwAG75B8",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_etch_sp",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_etch_sp",
+       "description": "2des_etch_sp",
+       "descriptions": [
+        {
+         "text": "2des_etch_sp",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4OTqBXwAG75B9",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_etch_tp",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_etch_tp",
+       "description": "2des_etch_tp",
+       "descriptions": [
+        {
+         "text": "2des_etch_tp",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4OTqBXwAG75B-",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_gravity",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_gravity",
+       "description": "2des_gravity",
+       "descriptions": [
+        {
+         "text": "2des_gravity",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4OTqBXwAG75B_",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_etching_uti",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_etching_uti",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4OTqBXwAG75CB",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_oxpoten",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_oxpoten",
+       "description": "2des_oxpoten",
+       "descriptions": [
+        {
+         "text": "2des_oxpoten",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4OTqBXwAG75CA",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_etch_status",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_etch_status",
+       "description": "2des_etch_status",
+       "descriptions": [
+        {
+         "text": "2des_etch_status",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4OTqBXwAG75CC",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_expectamount",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_expectamount",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PDqBXwAG75CD",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_partnum",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_partnum",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PDqBXwAG75CE",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_peel_pre",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_peel_pre",
+       "description": "2des_peel_pre",
+       "descriptions": [
+        {
+         "text": "2des_peel_pre",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PDqBXwAG75CF",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_peel_sp",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_peel_sp",
+       "description": "2des_peel_sp",
+       "descriptions": [
+        {
+         "text": "2des_peel_sp",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PDqBXwAG75CG",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_peel_status",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_peel_status",
+       "description": "2des_peel_status",
+       "descriptions": [
+        {
+         "text": "2des_peel_status",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PDqBXwAG75CH",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_peel_tp",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_peel_tp",
+       "description": "2des_peel_tp",
+       "descriptions": [
+        {
+         "text": "2des_peel_tp",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PDqBXwAG75CI",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_peeling_uti",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_peeling_uti",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PDqBXwAG75CK",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_spset1",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_spset1",
+       "description": "2des_spset1",
+       "descriptions": [
+        {
+         "text": "2des_spset1",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PDqBXwAG75CJ",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_peelset",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_peelset",
+       "description": "2des_peelset",
+       "descriptions": [
+        {
+         "text": "2des_peelset",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PDqBXwAG75CM",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_preset",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_preset",
+       "description": "2des_preset",
+       "descriptions": [
+        {
+         "text": "2des_preset",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PDqBXwAG75CL",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_realamount",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_realamount",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PjqBXwAG75CN",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_spset2",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_spset2",
+       "description": "2des_spset2",
+       "descriptions": [
+        {
+         "text": "2des_spset2",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PjqBXwAG75CQ",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_tpset1",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_tpset1",
+       "description": "2des_tpset1",
+       "descriptions": [
+        {
+         "text": "2des_tpset1",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PjqBXwAG75CO",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_spset3",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_spset3",
+       "description": "2des_spset3",
+       "descriptions": [
+        {
+         "text": "2des_spset3",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PjqBXwAG75CP",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_spset4",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_spset4",
+       "description": "2des_spset4",
+       "descriptions": [
+        {
+         "text": "2des_spset4",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PjqBXwAG75CT",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_workoder",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_workoder",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PjqBXwAG75CR",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_tpset3",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_tpset3",
+       "description": "2des_tpset3",
+       "descriptions": [
+        {
+         "text": "2des_tpset3",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PjqBXwAG75CS",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_tpset2",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_tpset2",
+       "description": "2des_tpset2",
+       "descriptions": [
+        {
+         "text": "2des_tpset2",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PjqBXwAG75CV",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2des_tpset4",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "des_tpset4",
+       "description": "2des_tpset4",
+       "descriptions": [
+        {
+         "text": "2des_tpset4",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PjqBXwAG75CU",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drainPH異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drainPH異常",
+       "description": "2drainPH異常",
+       "descriptions": [
+        {
+         "text": "2drainPH異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PjqBXwAG75CW",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drainRO水量異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drainRO水量異常",
+       "description": "2drainRO水量異常",
+       "descriptions": [
+        {
+         "text": "2drainRO水量異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4PzqBXwAG75CX",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_COD",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_COD",
+       "description": "2drain_COD",
+       "descriptions": [
+        {
+         "text": "2drain_COD",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4QDqBXwAG75CY",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_RO水量",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_RO水量",
+       "description": "2drain_RO水量",
+       "descriptions": [
+        {
+         "text": "2drain_RO水量",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4QDqBXwAG75CZ",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_PH",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_PH",
+       "description": "2drain_PH",
+       "descriptions": [
+        {
+         "text": "2drain_PH",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4QDqBXwAG75Cc",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_台中1廠",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_台中1廠",
+       "description": "2drain_台中1廠",
+       "descriptions": [
+        {
+         "text": "2drain_台中1廠",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4QDqBXwAG75Ce",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_台東1廠",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_台東1廠",
+       "description": "2drain_台東1廠",
+       "descriptions": [
+        {
+         "text": "2drain_台東1廠",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4QDqBXwAG75Ca",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_台北1廠",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_台北1廠",
+       "description": "2drain_台北1廠",
+       "descriptions": [
+        {
+         "text": "2drain_台北1廠",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4QDqBXwAG75Cd",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_廢棄塔異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain廢棄塔異常",
+       "description": "2drain_廢棄塔異常",
+       "descriptions": [
+        {
+         "text": "2drain_廢棄塔異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4QDqBXwAG75Cb",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_台南1廠",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_台南1廠",
+       "description": "2drain_台南1廠",
+       "descriptions": [
+        {
+         "text": "2drain_台南1廠",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4QDqBXwAG75Cg",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_氧化電位異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain氧化電位異常",
+       "description": "2drain_氧化電位異常",
+       "descriptions": [
+        {
+         "text": "2drain_氧化電位異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4QDqBXwAG75Cf",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_新竹1廠",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_新竹1廠",
+       "description": "2drain_新竹1廠",
+       "descriptions": [
+        {
+         "text": "2drain_新竹1廠",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4QjqBXwAG75Cj",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_純水量",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_純水量",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4QjqBXwAG75Ci",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_異常次數",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_異常次數",
+       "description": "2drain_異常次數",
+       "descriptions": [
+        {
+         "text": "2drain_異常次數",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4QjqBXwAG75Ck",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_硝酸廢液槽異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_硝酸廢液槽異常",
+       "description": "2drain_硝酸廢液槽異常",
+       "descriptions": [
+        {
+         "text": "2drain_硝酸廢液槽異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4QjqBXwAG75Cl",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_瞬間流量",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_瞬間流量",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4QjqBXwAG75Cq",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_累積流量",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_累積流量",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4QjqBXwAG75Cp",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_綜合達標",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_綜合達標",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4QjqBXwAG75Cn",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_純水量異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain純水量異常",
+       "description": "2drain_純水量異常",
+       "descriptions": [
+        {
+         "text": "2drain_純水量異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4QjqBXwAG75Ch",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_氨氮",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_氨氮",
+       "description": "2drain_氨氮",
+       "descriptions": [
+        {
+         "text": "2drain_氨氮",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4QjqBXwAG75Co",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_總汞",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_總汞",
+       "description": "2drain_總汞",
+       "descriptions": [
+        {
+         "text": "2drain_總汞",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4QjqBXwAG75Cm",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_系統次閥異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_系統次閥異常",
+       "description": "2drain_系統次閥異常",
+       "descriptions": [
+        {
+         "text": "2drain_系統次閥異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4RDqBXwAG75Cr",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_總鉛",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_總鉛",
+       "description": "2drain_總鉛",
+       "descriptions": [
+        {
+         "text": "2drain_總鉛",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4RDqBXwAG75Ct",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_總鉻",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_總鉻",
+       "description": "2drain_總鉻",
+       "descriptions": [
+        {
+         "text": "2drain_總鉻",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4RDqBXwAG75Cs",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_總砷",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_總砷",
+       "description": "2drain_總砷",
+       "descriptions": [
+        {
+         "text": "2drain_總砷",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4RDqBXwAG75Cw",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_總銀",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_總銀",
+       "description": "2drain_總銀",
+       "descriptions": [
+        {
+         "text": "2drain_總銀",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4RDqBXwAG75Cz",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_總鎘",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_總鎘",
+       "description": "2drain_總鎘",
+       "descriptions": [
+        {
+         "text": "2drain_總鎘",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4RDqBXwAG75Cx",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_總銅",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_總銅",
+       "description": "2drain_總銅",
+       "descriptions": [
+        {
+         "text": "2drain_總銅",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4RTqBXwAG75C0",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_總鎳",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_總鎳",
+       "description": "2drain_總鎳",
+       "descriptions": [
+        {
+         "text": "2drain_總鎳",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4RDqBXwAG75Cu",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_總鉻異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain總鉻異常",
+       "description": "2drain_總鉻異常",
+       "descriptions": [
+        {
+         "text": "2drain_總鉻異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4RDqBXwAG75Cv",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_總銀異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain總銀異常",
+       "description": "2drain_總銀異常",
+       "descriptions": [
+        {
+         "text": "2drain_總銀異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4RDqBXwAG75Cy",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_總鎳異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain總鎳異常",
+       "description": "2drain_總鎳異常",
+       "descriptions": [
+        {
+         "text": "2drain_總鎳異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4RjqBXwAG75C3",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain冷凝水異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain冷凝水異常",
+       "description": "2drain冷凝水異常",
+       "descriptions": [
+        {
+         "text": "2drain冷凝水異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4RjqBXwAG75C1",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_軟化水量",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_軟化水量",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4RjqBXwAG75C2",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_軟化水量異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain軟化水量異常",
+       "description": "2drain_軟化水量異常",
+       "descriptions": [
+        {
+         "text": "2drain_軟化水量異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4RjqBXwAG75C8",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain化鎳廢液槽異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain化鎳廢液槽異常",
+       "description": "2drain化鎳廢液槽異常",
+       "descriptions": [
+        {
+         "text": "2drain化鎳廢液槽異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4RjqBXwAG75C4",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_過濾水量",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_過濾水量",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4RjqBXwAG75C5",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_高雄1廠",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain_高雄1廠",
+       "description": "2drain_高雄1廠",
+       "descriptions": [
+        {
+         "text": "2drain_高雄1廠",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4RjqBXwAG75C6",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain化鎳廢水槽異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain化鎳廢水槽異常",
+       "description": "2drain化鎳廢水槽異常",
+       "descriptions": [
+        {
+         "text": "2drain化鎳廢水槽異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4RjqBXwAG75C9",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain回收水異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain回收水異常",
+       "description": "2drain回收水異常",
+       "descriptions": [
+        {
+         "text": "2drain回收水異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4RzqBXwAG75C-",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain系統主閥異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain系統主閥異常",
+       "description": "2drain系統主閥異常",
+       "descriptions": [
+        {
+         "text": "2drain系統主閥異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4RjqBXwAG75C7",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2drain_過濾水量異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "drain過濾水量異常",
+       "description": "2drain_過濾水量異常",
+       "descriptions": [
+        {
+         "text": "2drain_過濾水量異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4SDqBXwAG75C_",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maM1NGtime",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maM1NGtime",
+       "description": "2maM1NGtime",
+       "descriptions": [
+        {
+         "text": "2maM1NGtime",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4STqBXwAG75DA",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maM1OKcount",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maM1OKcount",
+       "description": "2maM1OKcount",
+       "descriptions": [
+        {
+         "text": "2maM1OKcount",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4STqBXwAG75DB",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maM2NGcount",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maM2NGcount",
+       "description": "2maM2NGcount",
+       "descriptions": [
+        {
+         "text": "2maM2NGcount",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4STqBXwAG75DC",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maM2NGtime",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maM2NGtime",
+       "description": "2maM2NGtime",
+       "descriptions": [
+        {
+         "text": "2maM2NGtime",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4STqBXwAG75DD",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maM1NGcount",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maM1NGcount",
+       "description": "2maM1NGcount",
+       "descriptions": [
+        {
+         "text": "2maM1NGcount",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4STqBXwAG75DH",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maM4NGcount",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maM4NGcount",
+       "description": "2maM4NGcount",
+       "descriptions": [
+        {
+         "text": "2maM4NGcount",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4STqBXwAG75DF",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maM3NGcount",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maM3NGcount",
+       "description": "2maM3NGcount",
+       "descriptions": [
+        {
+         "text": "2maM3NGcount",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4STqBXwAG75DE",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maM2OKcount",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maM2OKcount",
+       "description": "2maM2OKcount",
+       "descriptions": [
+        {
+         "text": "2maM2OKcount",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4STqBXwAG75DG",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maM3NGtime",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maM3NGtime",
+       "description": "2maM3NGtime",
+       "descriptions": [
+        {
+         "text": "2maM3NGtime",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4STqBXwAG75DI",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maM3OKcount",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maM3OKcount",
+       "description": "2maM3OKcount",
+       "descriptions": [
+        {
+         "text": "2maM3OKcount",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      }
+     ],
+     "PageInfo": {
+      "hasNextPage": true,
+      "endCursor": "RGF0ZQ.MTYwMDkyNzgxOTQxNA.X2w4STqBXwAG75DI"
+     }
+    }
+   }
+  },
+  {
+   "Machine": {
+    "Parameters": {
+     "Nodes": [
+      {
+       "id": "UGFyYW1ldGVy.X2w4TDqBXwAG75DJ",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maM4NGtime",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maM4NGtime",
+       "description": "2maM4NGtime",
+       "descriptions": [
+        {
+         "text": "2maM4NGtime",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4TDqBXwAG75DK",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maM4OKcount",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maM4OKcount",
+       "description": "2maM4OKcount",
+       "descriptions": [
+        {
+         "text": "2maM4OKcount",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4TTqBXwAG75DN",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maMXstatus3",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maMXstauts3",
+       "description": "2maMXstatus3",
+       "descriptions": [
+        {
+         "text": "2maMXstatus3",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4TTqBXwAG75DO",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maNG",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maNG",
+       "description": "2maNG",
+       "descriptions": [
+        {
+         "text": "2maNG",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4TTqBXwAG75DP",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maOK",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maOK",
+       "description": "2maOK",
+       "descriptions": [
+        {
+         "text": "2maOK",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4TTqBXwAG75DQ",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maNGcount",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maNGcount",
+       "description": "2maNGcount",
+       "descriptions": [
+        {
+         "text": "2maNGcount",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4TTqBXwAG75DR",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maUser1",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maUser1",
+       "description": "2maUser1",
+       "descriptions": [
+        {
+         "text": "2maUser1",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4TTqBXwAG75DM",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maMXstatus1",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maMXstauts1",
+       "description": "2maMXstatus1",
+       "descriptions": [
+        {
+         "text": "2maMXstatus1",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4TTqBXwAG75DL",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maMXstatus2",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maMXstauts2",
+       "description": "2maMXstatus2",
+       "descriptions": [
+        {
+         "text": "2maMXstatus2",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4TTqBXwAG75DS",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maUser2",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maUser2",
+       "description": "2maUser2",
+       "descriptions": [
+        {
+         "text": "2maUser2",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4TzqBXwAG75DX",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2macount2",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "macount2",
+       "description": "2macount2",
+       "descriptions": [
+        {
+         "text": "2macount2",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4TjqBXwAG75DT",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maUser3",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maUser3",
+       "description": "2maUser3",
+       "descriptions": [
+        {
+         "text": "2maUser3",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4TzqBXwAG75DW",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2macount",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "macount",
+       "description": "2macount",
+       "descriptions": [
+        {
+         "text": "2macount",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4TzqBXwAG75DU",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maUser4",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maUser4",
+       "description": "2maUser4",
+       "descriptions": [
+        {
+         "text": "2maUser4",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4TzqBXwAG75DV",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2macount1",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "macount1",
+       "description": "2macount1",
+       "descriptions": [
+        {
+         "text": "2macount1",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4TzqBXwAG75Da",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maorder",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maorder",
+       "description": "2maorder",
+       "descriptions": [
+        {
+         "text": "2maorder",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4TzqBXwAG75DZ",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma入料異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma入料異常",
+       "description": "2ma入料異常",
+       "descriptions": [
+        {
+         "text": "2ma入料異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4TzqBXwAG75DY",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2maorder1",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "maorder1",
+       "description": "2maorder1",
+       "descriptions": [
+        {
+         "text": "2maorder1",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4TzqBXwAG75Db",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma出料異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma出料異常",
+       "description": "2ma出料異常",
+       "descriptions": [
+        {
+         "text": "2ma出料異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4TzqBXwAG75Dc",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma化銀異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma化銀異常",
+       "description": "2ma化銀異常",
+       "descriptions": [
+        {
+         "text": "2ma化銀異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4UDqBXwAG75Dd",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma噴錫進度",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma噴錫進度",
+       "description": "2ma噴錫進度",
+       "descriptions": [
+        {
+         "text": "2ma噴錫進度",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4UTqBXwAG75Df",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma成金進度",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma成金進度",
+       "description": "2ma成金進度",
+       "descriptions": [
+        {
+         "text": "2ma成金進度",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4UTqBXwAG75De",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma壓合進度",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma壓合進度",
+       "description": "2ma壓合進度",
+       "descriptions": [
+        {
+         "text": "2ma壓合進度",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4UTqBXwAG75Dg",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma壓力異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma壓力異常",
+       "description": "2ma壓力異常",
+       "descriptions": [
+        {
+         "text": "2ma壓力異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4UTqBXwAG75Dh",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma成檢進度",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma成檢進度",
+       "description": "2ma成檢進度",
+       "descriptions": [
+        {
+         "text": "2ma成檢進度",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4UTqBXwAG75Di",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma外層進度",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma外層進度",
+       "description": "2ma外層進度",
+       "descriptions": [
+        {
+         "text": "2ma外層進度",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4UjqBXwAG75Dl",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma汽缸異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma汽缸異常",
+       "description": "2ma汽缸異常",
+       "descriptions": [
+        {
+         "text": "2ma汽缸異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4UTqBXwAG75Dj",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma溫度異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma溫度異常",
+       "description": "2ma溫度異常",
+       "descriptions": [
+        {
+         "text": "2ma溫度異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4UTqBXwAG75Dk",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma良率",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma良率",
+       "description": "2ma良率",
+       "descriptions": [
+        {
+         "text": "2ma良率",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4UjqBXwAG75Dm",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma浸鎳金",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma浸鎳金",
+       "description": "2ma浸鎳金",
+       "descriptions": [
+        {
+         "text": "2ma浸鎳金",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4UzqBXwAG75Dn",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma金手指鍍鎳金",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma金手指鍍鎳金",
+       "description": "2ma金手指鍍鎳金",
+       "descriptions": [
+        {
+         "text": "2ma金手指鍍鎳金",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4UzqBXwAG75Dp",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma鑽孔進度",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma鑽孔進度",
+       "description": "2ma鑽孔進度",
+       "descriptions": [
+        {
+         "text": "2ma鑽孔進度",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4UzqBXwAG75Do",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma鑲金手指進度",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma鑲金手指進度",
+       "description": "2ma鑲金手指進度",
+       "descriptions": [
+        {
+         "text": "2ma鑲金手指進度",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4UzqBXwAG75Dv",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma電壓異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma電壓異常",
+       "description": "2ma電壓異常",
+       "descriptions": [
+        {
+         "text": "2ma電壓異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4UzqBXwAG75Dq",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma電鍍進度",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma電鍍進度",
+       "description": "2ma電鍍進度",
+       "descriptions": [
+        {
+         "text": "2ma電鍍進度",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4UzqBXwAG75Ds",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma馬達異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma馬達異常",
+       "description": "2ma馬達異常",
+       "descriptions": [
+        {
+         "text": "2ma馬達異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4UzqBXwAG75Dt",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma電鍍軟金",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma電鍍軟金",
+       "description": "2ma電鍍軟金",
+       "descriptions": [
+        {
+         "text": "2ma電鍍軟金",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4UzqBXwAG75Dr",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma防焊進度",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma防焊進度",
+       "description": "2ma防焊進度",
+       "descriptions": [
+        {
+         "text": "2ma防焊進度",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4UzqBXwAG75Du",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ovenER001",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ovenERR001",
+       "description": "2ovenER001",
+       "descriptions": [
+        {
+         "text": "2ovenER001",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4UzqBXwAG75Dw",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ovenER003",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ovenERR003",
+       "description": "2ovenER003",
+       "descriptions": [
+        {
+         "text": "2ovenER003",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4VTqBXwAG75Dx",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ovenER002",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ovenERR002",
+       "description": "2ovenER002",
+       "descriptions": [
+        {
+         "text": "2ovenER002",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4VTqBXwAG75Dy",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ovenER004",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ovenERR004",
+       "description": "2ovenER004",
+       "descriptions": [
+        {
+         "text": "2ovenER004",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4VTqBXwAG75Dz",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ovenERcount",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ovenERcount",
+       "description": "2ovenERcount",
+       "descriptions": [
+        {
+         "text": "2ovenERcount",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4VjqBXwAG75D3",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ovenM2tmp",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ovenM2tmp",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4VjqBXwAG75D6",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ovenM3alarm",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ovenM3alarm",
+       "description": "2ovenM3alarm",
+       "descriptions": [
+        {
+         "text": "2ovenM3alarm",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4VjqBXwAG75D1",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ovenM1tmp",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ovenM1tmp",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4VjqBXwAG75D4",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ovenM2alarm",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ovenM2alarm",
+       "description": "2ovenM2alarm",
+       "descriptions": [
+        {
+         "text": "2ovenM2alarm",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4VjqBXwAG75D2",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ovenM1sp",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ovenM1sp",
+       "description": "2ovenM1sp",
+       "descriptions": [
+        {
+         "text": "2ovenM1sp",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4VjqBXwAG75D5",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ovenM1alarm",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ovenM1alarm",
+       "description": "2ovenM1alarm",
+       "descriptions": [
+        {
+         "text": "2ovenM1alarm",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4VjqBXwAG75D0",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ovenM2sp",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ovenM2sp",
+       "description": "2ovenM2sp",
+       "descriptions": [
+        {
+         "text": "2ovenM2sp",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4VzqBXwAG75D7",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ovenM3sp",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ovenM3sp",
+       "description": "2ovenM3sp",
+       "descriptions": [
+        {
+         "text": "2ovenM3sp",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4VzqBXwAG75D8",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ovenM3tmp",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ovenM3tmp",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4VzqBXwAG75D9",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2oven停機",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "oven停機",
+       "description": "2oven停機",
+       "descriptions": [
+        {
+         "text": "2oven停機",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4VzqBXwAG75D-",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2oven保養",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "oven保養",
+       "description": "2oven保養",
+       "descriptions": [
+        {
+         "text": "2oven保養",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4VzqBXwAG75D_",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2oven出料異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "oven出料異常",
+       "description": "2oven出料異常",
+       "descriptions": [
+        {
+         "text": "2oven出料異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4WDqBXwAG75EA",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2oven入料異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "oven入料異常",
+       "description": "2oven入料異常",
+       "descriptions": [
+        {
+         "text": "2oven入料異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4WDqBXwAG75EE",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2oven烤箱1溫度異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "oven烤箱1溫度異常",
+       "description": "2oven烤箱1溫度異常",
+       "descriptions": [
+        {
+         "text": "2oven烤箱1溫度異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4WDqBXwAG75EC",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2oven烤箱1過載異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "oven烤箱1過載異常",
+       "description": "2oven烤箱1過載異常",
+       "descriptions": [
+        {
+         "text": "2oven烤箱1過載異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4WDqBXwAG75ED",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2oven烤箱2溫度異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "oven烤箱2溫度異常",
+       "description": "2oven烤箱2溫度異常",
+       "descriptions": [
+        {
+         "text": "2oven烤箱2溫度異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4WDqBXwAG75EB",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2oven烤箱1速度異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "oven烤箱1速度異常",
+       "description": "2oven烤箱1速度異常",
+       "descriptions": [
+        {
+         "text": "2oven烤箱1速度異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4WTqBXwAG75EF",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2oven烤箱2過載異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "oven烤箱2過載異常",
+       "description": "2oven烤箱2過載異常",
+       "descriptions": [
+        {
+         "text": "2oven烤箱2過載異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4WTqBXwAG75EG",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2oven烤箱2速度異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "oven烤箱2速度異常",
+       "description": "2oven烤箱2速度異常",
+       "descriptions": [
+        {
+         "text": "2oven烤箱2速度異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4WTqBXwAG75EH",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2oven烤箱3溫度異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "oven烤箱3溫度異常",
+       "description": "2oven烤箱3溫度異常",
+       "descriptions": [
+        {
+         "text": "2oven烤箱3溫度異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4WjqBXwAG75EK",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2oven異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "oven異常",
+       "description": "2oven異常",
+       "descriptions": [
+        {
+         "text": "2oven異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4WTqBXwAG75EJ",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2oven烤箱3過載異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "oven烤箱3過載異常",
+       "description": "2oven烤箱3過載異常",
+       "descriptions": [
+        {
+         "text": "2oven烤箱3過載異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4WjqBXwAG75EL",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2oven緊急按鈕異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "oven緊急按鈕異常",
+       "description": "2oven緊急按鈕異常",
+       "descriptions": [
+        {
+         "text": "2oven緊急按鈕異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4WjqBXwAG75EN",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2oven空壓異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "oven空壓異常",
+       "description": "2oven空壓異常",
+       "descriptions": [
+        {
+         "text": "2oven空壓異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4WTqBXwAG75EI",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2oven烤箱3速度異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "oven烤箱3速度異常",
+       "description": "2oven烤箱3速度異常",
+       "descriptions": [
+        {
+         "text": "2oven烤箱3速度異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4WjqBXwAG75EM",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2乾燥槽溫度異常1",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "乾燥槽溫度異常1",
+       "description": "2乾燥槽溫度異常1",
+       "descriptions": [
+        {
+         "text": "2乾燥槽溫度異常1",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4WjqBXwAG75EO",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2乾燥機氣壓異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "乾燥機氣壓異常",
+       "description": "2乾燥機氣壓異常",
+       "descriptions": [
+        {
+         "text": "2乾燥機氣壓異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4XTqBXwAG75EP",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2乾燥機速度異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "乾燥機速度異常",
+       "description": "2乾燥機速度異常",
+       "descriptions": [
+        {
+         "text": "2乾燥機速度異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4XTqBXwAG75EQ",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2剝膜槽溫度異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "剝膜槽溫度異常",
+       "description": "2剝膜槽溫度異常",
+       "descriptions": [
+        {
+         "text": "2剝膜槽溫度異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4XTqBXwAG75ET",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2氧化電位異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "氧化電位異常",
+       "description": "2氧化電位異常",
+       "descriptions": [
+        {
+         "text": "2氧化電位異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4XTqBXwAG75EU",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2剝膜速度異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "剝膜速度異常",
+       "description": "2剝膜速度異常",
+       "descriptions": [
+        {
+         "text": "2剝膜速度異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4XTqBXwAG75ER",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2比重異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "比重異常",
+       "description": "2比重異常",
+       "descriptions": [
+        {
+         "text": "2比重異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4XTqBXwAG75ES",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2剝膜壓力異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "剝膜壓力異常",
+       "description": "2剝膜壓力異常",
+       "descriptions": [
+        {
+         "text": "2剝膜壓力異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4XTqBXwAG75EV",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2緊急停止鈕異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "緊急停止鈕異常",
+       "description": "2緊急停止鈕異常",
+       "descriptions": [
+        {
+         "text": "2緊急停止鈕異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4XTqBXwAG75EW",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2蝕刻速度異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "蝕刻速度異常",
+       "description": "2蝕刻速度異常",
+       "descriptions": [
+        {
+         "text": "2蝕刻速度異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4XTqBXwAG75EX",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2蝕刻壓力異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "蝕刻壓力異常",
+       "description": "2蝕刻壓力異常",
+       "descriptions": [
+        {
+         "text": "2蝕刻壓力異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4XTqBXwAG75EY",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2蝕刻槽溫度異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "蝕刻槽溫度異常",
+       "description": "2蝕刻槽溫度異常",
+       "descriptions": [
+        {
+         "text": "2蝕刻槽溫度異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4XjqBXwAG75Ea",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2顯影壓力異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "顯影壓力異常",
+       "description": "2顯影壓力異常",
+       "descriptions": [
+        {
+         "text": "2顯影壓力異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4XjqBXwAG75EZ",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2顯影槽溫度異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "顯影槽溫度異常",
+       "description": "2顯影槽溫度異常",
+       "descriptions": [
+        {
+         "text": "2顯影槽溫度異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X2w4XjqBXwAG75Eb",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2顯影速度異常",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "顯影速度異常",
+       "description": "2顯影速度異常",
+       "descriptions": [
+        {
+         "text": "2顯影速度異常",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X3LZ_zqBXwAG75HV",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2B-Time-set1",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "B-Time-set1",
+       "description": "2B-Time-set1",
+       "descriptions": [
+        {
+         "text": "2B-Time-set1",
+         "lang": "en-US"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X3LaADqBXwAG75HW",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ERR0001",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ERR0001",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X3LaATqBXwAG75HX",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ERR0002",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ERR0002",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X3LaATqBXwAG75HY",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ERR0003",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ERR0003",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X3LaATqBXwAG75Ha",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ERR0006",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ERR0006",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X3LaAjqBXwAG75Hb",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ERR0005",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ERR0005",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X3LaATqBXwAG75HZ",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ERR0004",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ERR0004",
+       "description": "",
+       "descriptions": [],
+       "valueType": "String",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.X3LrBjqBXwAG75Hj",
+       "scadaId": "scada_MLiWnhbYms",
+       "tagId": "2ma化銀進度",
+       "machineId": "TWFjaGluZQ.X2w3BjqBXwAG75Bj",
+       "name": "ma化銀進度",
+       "description": "",
+       "descriptions": [],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      }
+     ],
+     "PageInfo": {
+      "hasNextPage": false,
+      "endCursor": "RGF0ZQ.MTYwMTM2Njc5MDUxNw.X3LrBjqBXwAG75Hj"
+     }
+    }
+   }
+  },
+  {
+   "Machine": {
+    "Parameters": {
+     "Nodes": [
+      {
+       "id": "UGFyYW1ldGVy.YD8-gMGunQAGpEaK",
+       "scadaId": "scada_oVvoMiBMUWFk",
+       "tagId": "CP_1",
+       "machineId": "TWFjaGluZQ.YD86DsGunQAGpEaI",
+       "name": "CP_1",
+       "description": "CuSO4",
+       "descriptions": [
+        {
+         "text": "CuSO4",
+         "lang": "en-US"
+        },
+        {
+         "text": "硫酸铜浓度",
+         "lang": "zh-CN"
+        },
+        {
+         "text": "硫酸銅濃度",
+         "lang": "zh-TW"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      },
+      {
+       "id": "UGFyYW1ldGVy.YD8-gMGunQAGpEaL",
+       "scadaId": "scada_oVvoMiBMUWFk",
+       "tagId": "CP_2",
+       "machineId": "TWFjaGluZQ.YD86DsGunQAGpEaI",
+       "name": "CP_2",
+       "description": "H2SO4",
+       "descriptions": [
+        {
+         "text": "H2SO4",
+         "lang": "en-US"
+        },
+        {
+         "text": "硫酸浓度",
+         "lang": "zh-CN"
+        },
+        {
+         "text": "硫酸濃度",
+         "lang": "zh-TW"
+        }
+       ],
+       "valueType": "Number",
+       "mappingId": null,
+       "kind": null
+      }
+     ],
+     "PageInfo": {
+      "hasNextPage": false,
+      "endCursor": "RGF0ZQ.MTYxNDc1NzUwNDQ3MA.YD8-gMGunQAGpEaL"
+     }
+    }
+   }
+  },
+  {
+   "Machine": {
+    "Parameters": {
+     "Nodes": [],
+     "PageInfo": {
+      "hasNextPage": false,
+      "endCursor": ""
+     }
+    }
+   }
+  }
+ ],
+ "profileData": [
+  {
+   "Id": "UGZNYWNoaW5l.YDhpjcGunQAGpEZz",
+   "Name": "測試profile",
+   "Description": "testing",
+   "ImageUrl": "",
+   "Parameters": [
+    {
+     "Id": "UGZQYXJhbWV0ZXI.YDhpr8GunQAGpEZ2",
+     "MachineId": "UGZNYWNoaW5l.YDhpjcGunQAGpEZz",
+     "Name": "測試para",
+     "Description": "testing",
+     "descriptions": [
+      {
+       "text": "testing",
+       "lang": "en-US"
+      }
+     ],
+     "ValueType": "Number",
+     "Mapping": {
+      "Name": "測試Rule2",
+      "Id": "UE1hcFJ1bGU.YDveYMGunQAGpEZ8"
+     }
+    }
+   ],
+   "names": [
+    {
+     "text": "測試profile",
+     "lang": "en-US"
+    }
+   ],
+   "descriptions": [
+    {
+     "text": "testing",
+     "lang": "en-US"
+    }
+   ],
+   "imageUrls": []
+  }
+ ],
+ "translationLangsData": [
+  {
+   "id": "VHJhbnNsYXRpb25MYW5n.XzyjtZS83gAGuMaH",
+   "name": "English",
+   "lang": "en-US",
+   "isDefault": true
+  },
+  {
+   "id": "VHJhbnNsYXRpb25MYW5n.XzykGpS83gAGuMaJ",
+   "name": "簡體中文",
+   "lang": "zh-CN",
+   "isDefault": false
+  },
+  {
+   "id": "VHJhbnNsYXRpb25MYW5n.XzykApS83gAGuMaI",
+   "name": "正體中文",
+   "lang": "zh-TW",
+   "isDefault": false
+  }
+ ],
+ "url": "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql"
 }

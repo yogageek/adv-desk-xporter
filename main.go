@@ -127,7 +127,7 @@ func init() {
 	setFlag()
 	db.StartMongo()
 	go db.MongoHealCheckLoop()
-	logic.LoopRefreshToken()
+	// logic.LoopRefreshToken()
 
 	// runtime.GOMAXPROCS(1)
 

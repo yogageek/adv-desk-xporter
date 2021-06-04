@@ -173,23 +173,25 @@ func RefreshTokenByAppSecret() {
 			fmt.Println("len(config.Datacenter) != 0 refreshClientSecret============")
 			timestamp := time.Now()
 			options := &newSRPTokenOptions{Timestamp: &timestamp}
-			result := newSrpToken("OEE", options)
+			result := newSrpToken("export", options)
 			httpClient := &http.Client{}
-			request, _ := http.NewRequest("GET", config.SSOURL+"/clients/OEE", nil)
+			request, _ := http.NewRequest("GET", config.SSOURL+"/clients/ifpsexport", nil)
 			request.Header.Set("Content-Type", "application/json")
 			request.Header.Set("X-Auth-SRPToken", result)
 			q := request.URL.Query()
-			if config.Namespace == "ifpsdev" || config.Namespace == "ifpsdemo" {
+			if config.Namespace == "ifpsdev" {
 				// 我們自己環境連的是 eks011 training 的站點, 這裡寫死
 				q.Add("cluster", "eks011")
 				q.Add("workspace", "53e8c8bd-b724-4c87-a905-5bbc5c30a36c")
 				q.Add("namespace", "training")
+				q.Add("appId", config.AppID)
 			} else {
 				q.Add("cluster", config.Cluster)
 				q.Add("workspace", config.Workspace)
 				q.Add("namespace", config.Namespace)
+				q.Add("appId", config.AppID)
 			}
-			q.Add("serviceName", "OEE")
+			q.Add("serviceName", "export")
 			request.URL.RawQuery = q.Encode()
 			response, err := httpClient.Do(request)
 			if err != nil {

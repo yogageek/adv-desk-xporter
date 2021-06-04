@@ -85,7 +85,7 @@ func initGlobalVar() {
 	config.Workspace = os.Getenv("workspace")
 	config.Cluster = os.Getenv("cluster")
 	config.Namespace = os.Getenv("namespace")
-
+	config.AppID = os.Getenv("appID")
 	if config.Namespace == "ifpsdev" || config.Namespace == "ifpsdemo" {
 		config.SSOURL = "https://api-sso-ensaas.hz.wise-paas.com.cn/v4.0"
 	} else {
@@ -142,16 +142,18 @@ func init() {
 	os.Setenv("MONGODB_PASSWORD", "TYyvTeVemAlJzzuq4w3sBr2D")
 
 	// 2021/05/31
-	os.Setenv("SSO_API_URL", "https://api-sso-ensaas.hz.wise-paas.com.cn/v4.0")
-	os.Setenv("datacenter", "hz")
-	os.Setenv("workspace", "52434e96-f390-474c-8bf1-15e4802fc4fc")
-	os.Setenv("cluster", "eks011")
-	os.Setenv("namespace", "impelex")
+	os.Setenv("SSO_API_URL", "https://api-sso-ensaas.sa.wise-paas.com/v4.0")
+	os.Setenv("datacenter", "sa")
+	os.Setenv("workspace", "4d468e6a-0744-40f0-8c05-e89c31440fc3")
+	os.Setenv("cluster", "eks005")
+	os.Setenv("namespace", "ifpsdemo")
+	os.Setenv("appID", "IunAtiS_vsxaFcgN5QluNwfxbXN7tUu3-1614837178")
 	os.Setenv("IFP_DESK_USERNAME", "devanliang@iii.org.tw")
 	os.Setenv("IFP_DESK_PASSWORD", "Abcd1234#")
 	os.Setenv("IFP_DESK_API_URL", "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql")
 	initGlobalVar()
 	go logic.RefreshTokenByAppSecret()
+	// MDVlOGM1N2QtYzQ0MC0xMWViLTlmNzUtYmUxNGNlMTk2ZDQ2
 	// 2021/05/31 End
 
 	setFlag()

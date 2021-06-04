@@ -3,7 +3,7 @@ package db
 import (
 	// _ "iii/m2i/v1/setenv" //可以使用_ "github.com/xxx/xxx"引入包，提前在這支前做init裡的方法
 
-	"os"
+	"porter/config"
 	"time"
 
 	"github.com/golang/glog"
@@ -43,10 +43,10 @@ func MongoHealCheckLoop() {
 }
 
 func StartMongo() {
-	mongodb_url = os.Getenv("MONGODB_URL")
-	mongodb_database = os.Getenv("MONGODB_DATABASE")
-	mongodb_username = os.Getenv("MONGODB_USERNAME")
-	mongodb_password = os.Getenv("MONGODB_PASSWORD")
+	mongodb_url = config.MongodbURL
+	mongodb_database = config.MongodbDatabase
+	mongodb_username = config.MongodbUsername
+	mongodb_password = config.MongodbPassword
 	MongoDB = NewMongo()
 }
 

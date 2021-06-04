@@ -13,6 +13,14 @@ var (
 	GclientM *graphql.Client
 )
 
+func PrepareGQLCLient() {
+	if config.AdminUsername != "" && config.AdminPassword != "" {
+		PrepareGQLClientByUserPwd()
+	} else {
+		PrepareGQLClientByAppSecret()
+	}
+}
+
 func PrepareGQLClientByAppSecret() {
 	NewGQLClientHeader1()
 	NewGQLClientHeader2()

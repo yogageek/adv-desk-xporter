@@ -130,41 +130,6 @@ func initGlobalVar() {
 	fmt.Println("MongoDB Connect ->", " URL:", config.MongodbURL, " Database:", config.MongodbDatabase)
 }
 
-func init() {
-	// var IFP_URL = "https://ifp-organizer-tienkang-eks002.sa.wise-paas.com/graphql" //天岡
-	// os.Setenv("IFP_URL", "https://ifp-organizer-training-eks011.hz.wise-paas.com.cn/graphql")
-	os.Setenv("IFP_URL", "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql") //匯出: 銳鼎
-	// os.Setenv("IFP_URL_IN", "https://ifp-organizer-testingsa1-eks002.sa.wise-paas.com/graphql") //匯入: 測試環境。
-	os.Setenv("IFP_URL_IN", "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql") //匯出: 銳鼎
-	os.Setenv("MONGODB_URL", "52.187.110.12:27017")
-	os.Setenv("MONGODB_DATABASE", "87e1dc58-4c20-4e65-ad81-507270f6bdac")
-	os.Setenv("MONGODB_USERNAME", "19e0ce80-af51-404c-8d55-9edefcbd4bdf")
-	os.Setenv("MONGODB_PASSWORD", "TYyvTeVemAlJzzuq4w3sBr2D")
-
-	// 2021/05/31
-	os.Setenv("SSO_API_URL", "https://api-sso-ensaas.sa.wise-paas.com/v4.0")
-	os.Setenv("datacenter", "sa")
-	os.Setenv("workspace", "4d468e6a-0744-40f0-8c05-e89c31440fc3")
-	os.Setenv("cluster", "eks005")
-	os.Setenv("namespace", "ifpsdemo")
-	os.Setenv("appID", "IunAtiS_vsxaFcgN5QluNwfxbXN7tUu3-1614837178")
-	os.Setenv("IFP_DESK_USERNAME", "devanliang@iii.org.tw")
-	os.Setenv("IFP_DESK_PASSWORD", "Abcd1234#")
-	os.Setenv("IFP_DESK_API_URL", "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql")
-	initGlobalVar()
-	go logic.RefreshTokenByAppSecret()
-	// MDVlOGM1N2QtYzQ0MC0xMWViLTlmNzUtYmUxNGNlMTk2ZDQ2
-	// 2021/05/31 End
-
-	setFlag()
-	db.StartMongo()
-	go db.MongoHealCheckLoop()
-	// logic.LoopRefreshToken()
-
-	// runtime.GOMAXPROCS(1)
-
-}
-
 func testFn() {
 	// gql.TestQuery()
 	// gql.TestMutation()

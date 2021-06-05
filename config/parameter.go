@@ -23,4 +23,5 @@ var (
 	IFPStatus         = "Down"
 	TaipeiTimeZone, _ = time.LoadLocation("Asia/Taipei")
 	UTCTimeZone, _    = time.LoadLocation("UTC")
+	EnvPath           = "local.env"
 )

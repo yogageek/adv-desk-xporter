@@ -173,9 +173,9 @@ func RefreshTokenByAppSecret() {
 			fmt.Println("len(config.Datacenter) != 0 refreshClientSecret============")
 			timestamp := time.Now()
 			options := &newSRPTokenOptions{Timestamp: &timestamp}
-			result := newSrpToken("export", options)
+			result := newSrpToken("OEE", options)
 			httpClient := &http.Client{}
-			request, _ := http.NewRequest("GET", config.SSOURL+"/clients/ifpsexport", nil)
+			request, _ := http.NewRequest("GET", config.SSOURL+"/clients/OEE", nil)
 			request.Header.Set("Content-Type", "application/json")
 			request.Header.Set("X-Auth-SRPToken", result)
 			q := request.URL.Query()
@@ -189,15 +189,18 @@ func RefreshTokenByAppSecret() {
 				q.Add("cluster", config.Cluster)
 				q.Add("workspace", config.Workspace)
 				q.Add("namespace", config.Namespace)
-				q.Add("appId", config.AppID)
+				//q.Add("appId", config.AppID)
 			}
-			q.Add("serviceName", "export")
+			q.Add("serviceName", "OEE")
 			request.URL.RawQuery = q.Encode()
 			response, err := httpClient.Do(request)
 			if err != nil {
 				fmt.Println(err)
 			}
-			m, _ := simplejson.NewFromReader(response.Body)
+			m, err := simplejson.NewFromReader(response.Body)
+			if err != nil {
+				fmt.Println(err)
+			}
 			config.Token = m.Get("clientSecret").MustString()
 			fmt.Println("Token:", config.Token)
 			time.Sleep(60 * time.Minute)

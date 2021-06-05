@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/base64"
 	"flag"
 	"fmt"
 	"net/http"
@@ -8,7 +9,6 @@ import (
 	"porter/config"
 	"porter/db"
 	logic "porter/pkg/logic/client"
-	"strings"
 	"time"
 
 	// gql "porter/pkg/logic/gql"
@@ -81,17 +81,19 @@ func init() {
 }
 
 func initGlobalVar() {
+
 	config.Datacenter = os.Getenv("datacenter")
 	config.Workspace = os.Getenv("workspace")
 	config.Cluster = os.Getenv("cluster")
 	config.Namespace = os.Getenv("namespace")
 	config.AppID = os.Getenv("appID")
+	external := os.Getenv("external")
 	if config.Namespace == "ifpsdev" || config.Namespace == "ifpsdemo" {
 		config.SSOURL = "https://api-sso-ensaas.hz.wise-paas.com.cn/v4.0"
 	} else {
-		config.SSOURL = os.Getenv("SSO_API_URL")
+		//config.SSOURL = os.Getenv("SSO_API_URL")
+		config.SSOURL = "https://api-sso-ensaas." + config.Datacenter + "." + external + "/v4.0"
 	}
-	external := os.Getenv("external")
 
 	ifps_desk_api_url := os.Getenv("IFP_DESK_API_URL")
 	if len(ifps_desk_api_url) != 0 {
@@ -110,8 +112,14 @@ func initGlobalVar() {
 	// ensaas services
 	ensaasService := os.Getenv("ENSAAS_SERVICES")
 	if len(ensaasService) != 0 {
-		tempReader := strings.NewReader(ensaasService)
-		m, _ := simplejson.NewFromReader(tempReader)
+		decoded, err := base64.StdEncoding.DecodeString(ensaasService)
+		if err != nil {
+			fmt.Println("decode error:", err)
+			return
+		}
+		fmt.Println(string(decoded))
+
+		m, _ := simplejson.NewJson(decoded)
 		mongodb := m.Get("mongodb").GetIndex(0).Get("credentials").MustMap()
 		config.MongodbURL = mongodb["externalHosts"].(string)
 		config.MongodbDatabase = mongodb["database"].(string)

@@ -20,8 +20,9 @@ var (
 	Namespace         string
 	SSOURL            string
 	AppID             string
+	ClientName        string
+	ServiceName       string
 	IFPStatus         = "Down"
 	TaipeiTimeZone, _ = time.LoadLocation("Asia/Taipei")
 	UTCTimeZone, _    = time.LoadLocation("UTC")
-	EnvPath           = "local.env"
 )

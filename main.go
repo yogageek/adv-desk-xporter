@@ -87,8 +87,10 @@ func initGlobalVar() {
 	config.Cluster = os.Getenv("cluster")
 	config.Namespace = os.Getenv("namespace")
 	config.AppID = os.Getenv("appID")
+	config.ClientName = os.Getenv("clientName")
+	config.ServiceName = os.Getenv("serviceName")
 	external := os.Getenv("external")
-	if config.Namespace == "ifpsdev" || config.Namespace == "ifpsdemo" {
+	if config.Namespace == "ifpsdev" {
 		config.SSOURL = "https://api-sso-ensaas.hz.wise-paas.com.cn/v4.0"
 	} else {
 		//config.SSOURL = os.Getenv("SSO_API_URL")

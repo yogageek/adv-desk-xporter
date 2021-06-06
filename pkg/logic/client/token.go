@@ -12,6 +12,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/beevik/ntp"
 	"github.com/bitly/go-simplejson"
 	"github.com/prometheus/common/log"
 )
@@ -171,12 +172,13 @@ func RefreshTokenByAppSecret() {
 			time.Sleep(60 * time.Minute)
 		} else {
 			fmt.Println("len(config.Datacenter) != 0 refreshClientSecret============")
-			timestamp := time.Now()
-			options := &newSRPTokenOptions{Timestamp: &timestamp}
-			result := newSrpToken("OEE", options)
+			//timestamp := time.Now()
+			//options := &newSRPTokenOptions{Timestamp: &timestamp}
+			result := newSrpToken(config.ServiceName, nil)
 			httpClient := &http.Client{}
-			request, _ := http.NewRequest("GET", config.SSOURL+"/clients/OEE", nil)
+			request, _ := http.NewRequest("GET", config.SSOURL+"/clients/"+config.ClientName, nil)
 			request.Header.Set("Content-Type", "application/json")
+			fmt.Println("Set X-Auth-SRPToken: ", result)
 			request.Header.Set("X-Auth-SRPToken", result)
 			q := request.URL.Query()
 			if config.Namespace == "ifpsdev" {
@@ -189,9 +191,9 @@ func RefreshTokenByAppSecret() {
 				q.Add("cluster", config.Cluster)
 				q.Add("workspace", config.Workspace)
 				q.Add("namespace", config.Namespace)
-				//q.Add("appId", config.AppID)
+				q.Add("appId", config.AppID)
 			}
-			q.Add("serviceName", "OEE")
+			q.Add("serviceName", config.ServiceName)
 			request.URL.RawQuery = q.Encode()
 			response, err := httpClient.Do(request)
 			if err != nil {
@@ -253,17 +255,31 @@ func PKCS7Padding(ciphertext []byte, blockSize int) []byte {
 	return append(ciphertext, padtext...)
 }
 
+/*
+● base64Url_encode(AES_encode(timestamp-srpName)) (tmestamp為當前10位時間戳記)
+
+● AES_encode
+	■ AES/ECB/PKCS5Padding
+○ Secret key: ssoisno12345678987654321
+○ Golden unit test
+	■ Source of plain text: 1234567890-SCADA
+	■ base64Encode(AES encode(src)): (可利用 Online Crypto Tool 驗證)
+		● h9mmu4CIc+YwBWDamtMKMA9tdDQNzz/RLTFfsfGoQhg=
+	■ base64UrlEncode(AES encode(src)): (實際帶在 header裡請用 base64UrlEncode)
+		● h9mmu4CIc-YwBWDamtMKMA9tdDQNzz_RLTFfsfGoQhg= ○ Online Crypto Tool (base64Encode)
+	■ https://goo.gl/6ig1No ○ Java Sample code
+*/
 func newSrpToken(serviceName string, opts ...*newSRPTokenOptions) string {
-	now := time.Now()
+	ntpTime, err := ntp.Time("time.google.com")
+	if err != nil {
+		fmt.Println(err)
+	}
+	now := ntpTime
+
 	timestamp := &now
 
-	for _, opt := range opts {
-		if opt.Timestamp != nil {
-			timestamp = opt.Timestamp
-		}
-	}
-
 	key := "ssoisno12345678987654321"
+	fmt.Println(timestamp.Unix())
 	src := fmt.Sprintf("%v-%v", timestamp.Unix(), serviceName)
 
 	block, err := aes.NewCipher([]byte(key))

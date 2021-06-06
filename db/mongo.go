@@ -68,7 +68,9 @@ func createConnection() *mgo.Database {
 	session.SetMode(mgo.Monotonic, true)
 
 	db := session.DB(mongodb_database)
+	//db.Name = config.MongodbSource
 	err = db.Login(mongodb_username, mongodb_password)
+
 	if err != nil {
 		panic(err)
 	}

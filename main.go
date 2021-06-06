@@ -9,6 +9,7 @@ import (
 	"porter/config"
 	"porter/db"
 	logic "porter/pkg/logic/client"
+	"strings"
 	"time"
 
 	// gql "porter/pkg/logic/gql"
@@ -131,7 +132,17 @@ func initGlobalVar() {
 		config.MongodbURL = os.Getenv("MONGODB_URL")
 		config.MongodbDatabase = os.Getenv("MONGODB_DATABASE")
 		config.MongodbUsername = os.Getenv("MONGODB_USERNAME")
+		mongodb_password_file := os.Getenv("MONGODB_PASSWORD_FILE")
 		config.MongodbPassword = os.Getenv("MONGODB_PASSWORD")
+		if mongodb_password_file != "" {
+			mongodb_pwd, err := os.ReadFile(mongodb_password_file)
+			if err != nil {
+				fmt.Println("Read mongodb_password_file error:", err)
+			} else {
+				config.MongodbPassword = strings.Trim(string(mongodb_pwd), "\n")
+			}
+		}
+		config.MongodbSource = os.Getenv("MONGODB_AUTH_SOURCE")
 	}
 
 	fmt.Println("----------", time.Now().In(config.TaipeiTimeZone), "----------")

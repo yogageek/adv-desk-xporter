@@ -8,6 +8,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"os"
 	"porter/config"
 	"strings"
 	"time"
@@ -122,54 +123,63 @@ func RefreshTokenByUserPwd(url string) (token string, err error) {
 func RefreshTokenByAppSecret() {
 	for {
 		fmt.Println("----------", time.Now().In(config.TaipeiTimeZone), "----------")
-		if len(config.Datacenter) == 0 {
-			fmt.Println("len(config.Datacenter) == 0 refreshToken============")
-			httpClient := &http.Client{}
-			content := map[string]string{"username": config.AdminUsername, "password": config.AdminPassword}
-			variable := map[string]interface{}{"input": content}
-			httpRequestBody, _ := json.Marshal(map[string]interface{}{
-				"query":     "mutation signIn($input: SignInInput!) {   signIn(input: $input) {     user {       name       __typename     }     __typename   } }",
-				"variables": variable,
-			})
-			request, _ := http.NewRequest("POST", config.IFPURL, bytes.NewBuffer(httpRequestBody))
-			request.Header.Set("Content-Type", "application/json")
-			response, _ := httpClient.Do(request)
-			m, _ := simplejson.NewFromReader(response.Body)
-			for {
-				if len(m.Get("errors").MustArray()) == 0 {
-					break
-				} else {
-					fmt.Println("----------", time.Now().In(config.TaipeiTimeZone), "----------")
-					fmt.Println("retry refreshToken")
-					httpRequestBody, _ = json.Marshal(map[string]interface{}{
-						"query":     "mutation signIn($input: SignInInput!) {   signIn(input: $input) {     user {       name       __typename     }     __typename   } }",
-						"variables": variable,
-					})
-					request, _ = http.NewRequest("POST", config.IFPURL, bytes.NewBuffer(httpRequestBody))
-					request.Header.Set("Content-Type", "application/json")
-					response, _ = httpClient.Do(request)
-					m, _ = simplejson.NewFromReader(response.Body)
-					time.Sleep(6 * time.Minute)
-				}
-			}
-			header := response.Header
-			cookie := header["Set-Cookie"]
-			var ifpToken, eiToken string
-			for _, cookieContent := range cookie {
-				tempSplit := strings.Split(cookieContent, ";")
-				if strings.HasPrefix(tempSplit[0], "IFPToken") {
-					ifpToken = tempSplit[0]
-				} else if strings.HasPrefix(tempSplit[0], "EIToken") {
-					eiToken = tempSplit[0]
-				}
-			}
-			if eiToken == "" {
-				config.Token = ifpToken
+		if len(config.AppSecretFile) > 0 {
+			appSecret, err := os.ReadFile(config.AppSecretFile)
+			if err != nil {
+				fmt.Println("Read appSecret_file error:", err)
 			} else {
-				config.Token = ifpToken + ";" + eiToken
+				config.Token = strings.Trim(string(appSecret), "\n")
 			}
-			fmt.Println("Token:", config.Token)
+			fmt.Println("Token from appSecret:", config.Token)
 			time.Sleep(60 * time.Minute)
+			// if len(config.Datacenter) == 0 {
+			// 	fmt.Println("len(config.Datacenter) == 0 refreshToken============")
+			// 	httpClient := &http.Client{}
+			// 	content := map[string]string{"username": config.AdminUsername, "password": config.AdminPassword}
+			// 	variable := map[string]interface{}{"input": content}
+			// 	httpRequestBody, _ := json.Marshal(map[string]interface{}{
+			// 		"query":     "mutation signIn($input: SignInInput!) {   signIn(input: $input) {     user {       name       __typename     }     __typename   } }",
+			// 		"variables": variable,
+			// 	})
+			// 	request, _ := http.NewRequest("POST", config.IFPURL, bytes.NewBuffer(httpRequestBody))
+			// 	request.Header.Set("Content-Type", "application/json")
+			// 	response, _ := httpClient.Do(request)
+			// 	m, _ := simplejson.NewFromReader(response.Body)
+			// 	for {
+			// 		if len(m.Get("errors").MustArray()) == 0 {
+			// 			break
+			// 		} else {
+			// 			fmt.Println("----------", time.Now().In(config.TaipeiTimeZone), "----------")
+			// 			fmt.Println("retry refreshToken")
+			// 			httpRequestBody, _ = json.Marshal(map[string]interface{}{
+			// 				"query":     "mutation signIn($input: SignInInput!) {   signIn(input: $input) {     user {       name       __typename     }     __typename   } }",
+			// 				"variables": variable,
+			// 			})
+			// 			request, _ = http.NewRequest("POST", config.IFPURL, bytes.NewBuffer(httpRequestBody))
+			// 			request.Header.Set("Content-Type", "application/json")
+			// 			response, _ = httpClient.Do(request)
+			// 			m, _ = simplejson.NewFromReader(response.Body)
+			// 			time.Sleep(6 * time.Minute)
+			// 		}
+			// 	}
+			// 	header := response.Header
+			// 	cookie := header["Set-Cookie"]
+			// 	var ifpToken, eiToken string
+			// 	for _, cookieContent := range cookie {
+			// 		tempSplit := strings.Split(cookieContent, ";")
+			// 		if strings.HasPrefix(tempSplit[0], "IFPToken") {
+			// 			ifpToken = tempSplit[0]
+			// 		} else if strings.HasPrefix(tempSplit[0], "EIToken") {
+			// 			eiToken = tempSplit[0]
+			// 		}
+			// 	}
+			// 	if eiToken == "" {
+			// 		config.Token = ifpToken
+			// 	} else {
+			// 		config.Token = ifpToken + ";" + eiToken
+			// 	}
+			// 	fmt.Println("Token:", config.Token)
+			// 	time.Sleep(60 * time.Minute)
 		} else {
 			fmt.Println("len(config.Datacenter) != 0 refreshClientSecret============")
 			//timestamp := time.Now()
@@ -204,7 +214,7 @@ func RefreshTokenByAppSecret() {
 				fmt.Println(err)
 			}
 			config.Token = m.Get("clientSecret").MustString()
-			fmt.Println("Token:", config.Token)
+			fmt.Println("Token from SSO:", config.Token)
 			time.Sleep(60 * time.Minute)
 		}
 	}

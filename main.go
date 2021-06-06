@@ -90,6 +90,7 @@ func initGlobalVar() {
 	config.AppID = os.Getenv("appID")
 	config.ClientName = os.Getenv("clientName")
 	config.ServiceName = os.Getenv("serviceName")
+	config.AppSecretFile = os.Getenv("IFP_APP_SECRET_FILE")
 	external := os.Getenv("external")
 	if config.Namespace == "ifpsdev" {
 		config.SSOURL = "https://api-sso-ensaas.hz.wise-paas.com.cn/v4.0"

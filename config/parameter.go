@@ -23,6 +23,7 @@ var (
 	AppID             string
 	ClientName        string
 	ServiceName       string
+	AppSecretFile     string
 	IFPStatus         = "Down"
 	TaipeiTimeZone, _ = time.LoadLocation("Asia/Taipei")
 	UTCTimeZone, _    = time.LoadLocation("UTC")

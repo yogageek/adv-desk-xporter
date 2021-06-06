@@ -32,6 +32,7 @@
                 "MONGODB_USERNAME": "19e0ce80-af51-404c-8d55-9edefcbd4bdf", // "root",
                 "MONGODB_PASSWORD_FILE": "/workspaces/adv-desk-xporter/secrets/mongo-root_password", // "/run/secrets/mongo-root_password",
                 "MONGODB_AUTH_SOURCE": "admin",
+                //"IFP_APP_SECRET_FILE": "/workspaces/adv-desk-xporter/secrets/appSecret",
             },
         },
         {

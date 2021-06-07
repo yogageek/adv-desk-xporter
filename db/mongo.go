@@ -3,7 +3,7 @@ package db
 import (
 	// _ "iii/m2i/v1/setenv" //可以使用_ "github.com/xxx/xxx"引入包，提前在這支前做init裡的方法
 
-	"fmt"
+	"log"
 	"porter/config"
 	"time"
 
@@ -48,7 +48,6 @@ func StartMongo() {
 	mongodb_database = config.MongodbDatabase
 	mongodb_username = config.MongodbUsername
 	mongodb_password = config.MongodbPassword
-	fmt.Println("MongodbSource:", config.MongodbSource)
 	MongoDB = NewMongo()
 }
 
@@ -68,14 +67,15 @@ func createConnection() *mgo.Database {
 
 	// Optional. Switch the session to a monotonic behavior.
 	session.SetMode(mgo.Monotonic, true)
-
 	db := session.DB(mongodb_database)
 
-	// db.Name = config.MongodbSource //add source for desk
-	err = db.Login(mongodb_username, mongodb_password)
-
-	// cred := &mgo.Credential{Username: mongodb_username, Password: mongodb_password, Source: config.MongodbSource}
-	// err = db.Session.Login(cred)
+	if config.MongodbSource != "" { //地
+		log.Println("mongodb source:", config.MongodbSource)
+		cred := &mgo.Credential{Username: mongodb_username, Password: mongodb_password, Source: config.MongodbSource}
+		err = db.Session.Login(cred)
+	} else { //雲
+		err = db.Login(mongodb_username, mongodb_password)
+	}
 
 	if err != nil {
 		panic(err)

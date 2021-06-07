@@ -31,7 +31,7 @@
                 "MONGODB_DATABASE": "87e1dc58-4c20-4e65-ad81-507270f6bdac", //"ifactory",
                 "MONGODB_USERNAME": "19e0ce80-af51-404c-8d55-9edefcbd4bdf", // "root",
                 "MONGODB_PASSWORD_FILE": "${workspaceFolder}\\secrets\\mongo-root_password", // "/run/secrets/mongo-root_password",
-                "MONGODB_AUTH_SOURCE": "admin",
+                "MONGODB_AUTH_SOURCE": "87e1dc58-4c20-4e65-ad81-507270f6bdac",//admin
                 //"IFP_APP_SECRET_FILE": "${workspaceFolder}\\secrets\\appSecret",
             },
         },

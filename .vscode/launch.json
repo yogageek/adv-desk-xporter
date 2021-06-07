@@ -9,7 +9,7 @@
             "type": "go",
             "request": "launch",
             "mode": "debug",
-            "program": "${workspaceFolder}/main.go",
+            "program": "${workspaceFolder}\\main.go",
             "env": {                
                 "LOGINFO":"false",
                 // "datacenter": "hz",
@@ -30,9 +30,9 @@
                 "MONGODB_URL": "52.187.110.12:27017", //"mongo:27017",
                 "MONGODB_DATABASE": "87e1dc58-4c20-4e65-ad81-507270f6bdac", //"ifactory",
                 "MONGODB_USERNAME": "19e0ce80-af51-404c-8d55-9edefcbd4bdf", // "root",
-                "MONGODB_PASSWORD_FILE": "/workspaces/adv-desk-xporter/secrets/mongo-root_password", // "/run/secrets/mongo-root_password",
+                "MONGODB_PASSWORD_FILE": "${workspaceFolder}\\secrets\\mongo-root_password", // "/run/secrets/mongo-root_password",
                 "MONGODB_AUTH_SOURCE": "admin",
-                //"IFP_APP_SECRET_FILE": "/workspaces/adv-desk-xporter/secrets/appSecret",
+                //"IFP_APP_SECRET_FILE": "${workspaceFolder}\\secrets\\appSecret",
             },
         },
         {

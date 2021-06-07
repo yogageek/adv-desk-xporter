@@ -3,7 +3,7 @@ module porter
 go 1.13
 
 require (
-	github.com/beevik/ntp v0.3.0 // indirect
+	github.com/beevik/ntp v0.3.0
 	github.com/bitly/go-simplejson v0.5.0
 	github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
@@ -11,7 +11,6 @@ require (
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
 	github.com/gorilla/websocket v1.4.2
 	github.com/imroc/req v0.3.0
-	github.com/joho/godotenv v1.3.0
 	github.com/logrusorgru/aurora v2.0.3+incompatible
 	github.com/prometheus/common v0.15.0
 	github.com/shurcooL/graphql v0.0.0-20200928012149-18c5c3165e3a

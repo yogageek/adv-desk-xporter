@@ -3,6 +3,8 @@ package routers
 import (
 	"log"
 	"net/http"
+	"os"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 )
@@ -29,6 +31,24 @@ func Cors() gin.HandlerFunc {
 		//允許型別校驗
 		if method == "OPTIONS" {
 			c.JSON(http.StatusOK, "method == OPTIONS ok!")
+		}
+
+		//solve cors for 地端
+		// http://127.0.0.1:11450/config/file/export
+		hostname := c.Request.Host
+		log.Println("Request Host with Port--->", hostname)
+		ss := strings.Split(hostname, ":")
+		host := ss[0]
+		log.Println("Request Host--->", host)
+		log.Println("Request Header Access-Control-Allow-Origin--->", c.GetHeader("Access-Control-Allow-Origin"))
+
+		env_acao := os.Getenv("ACCESS_CONTROL_ALLOW_ORIGIN")
+		if env_acao != "" {
+			log.Println("[ENV] ACCESS_CONTROL_ALLOW_ORIGIN--->", env_acao)
+			// ACCESS_CONTROL_ALLOW_ORIGIN=http://${HOSTNAME}:10000
+			acao := strings.ReplaceAll(env_acao, "${HOSTNAME}", host)
+			log.Println("set new Access-Control-Allow-Origin--->", acao)
+			c.Writer.Header().Set("Access-Control-Allow-Origin", acao)
 		}
 
 		defer func() {

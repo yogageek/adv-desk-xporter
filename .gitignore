@@ -1,2 +1,4 @@
 .devcontainer/*
 secrets/
+exportingData.json
+importingData.json

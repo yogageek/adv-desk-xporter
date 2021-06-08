@@ -18,6 +18,8 @@
                 // "namespace":"training",
                 // "appID":"",
                 // "external":"wise-paas.com.cn",
+
+                
                 "datacenter": "sa",
                 "workspace":"4d468e6a-0744-40f0-8c05-e89c31440fc3",
                 "cluster":"eks005",
@@ -33,6 +35,7 @@
                 "MONGODB_PASSWORD_FILE": "${workspaceFolder}\\secrets\\mongo-root_password", // "/run/secrets/mongo-root_password",
                 "MONGODB_AUTH_SOURCE": "87e1dc58-4c20-4e65-ad81-507270f6bdac",//admin
                 //"IFP_APP_SECRET_FILE": "${workspaceFolder}\\secrets\\appSecret",
+                
             },
         },
         {

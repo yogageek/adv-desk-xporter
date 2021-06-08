@@ -42,6 +42,14 @@ func setFlag() {
 
 func init() {
 	setFlag()
+	//for local test
+	// os.Setenv("MONGODB_URL", "52.187.110.12:27017")
+	// os.Setenv("MONGODB_DATABASE", "87e1dc58-4c20-4e65-ad81-507270f6bdac")
+	// os.Setenv("MONGODB_USERNAME", "19e0ce80-af51-404c-8d55-9edefcbd4bdf")
+	// os.Setenv("MONGODB_PASSWORD", "TYyvTeVemAlJzzuq4w3sBr2D")
+	// os.Setenv("IFP_DESK_API_URL", "https://ifp-organizer-testingsa1-eks002.sa.wise-paas.com/graphql") //training
+	// os.Setenv("IFP_DESK_USERNAME", "devanliang@iii.org.tw")
+	// os.Setenv("IFP_DESK_PASSWORD", "Abcd1234#")
 
 	//command all if run in saas
 	/*

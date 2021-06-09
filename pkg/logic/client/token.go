@@ -11,6 +11,7 @@ import (
 	"os"
 
 	"porter/config"
+	"porter/util"
 	"strings"
 	"time"
 
@@ -125,6 +126,7 @@ func RefreshTokenByAppSecret() {
 	for {
 		fmt.Println("----------", time.Now().In(config.TaipeiTimeZone), "----------")
 		if len(config.AppSecretFile) > 0 {
+			util.PrintBlue("not cloud-------------")
 			appSecret, err := os.ReadFile(config.AppSecretFile)
 			if err != nil {
 				fmt.Println("Read appSecret_file error:", err)
@@ -182,7 +184,7 @@ func RefreshTokenByAppSecret() {
 			// 	fmt.Println("Token:", config.Token)
 			// 	time.Sleep(60 * time.Minute)
 		} else {
-			fmt.Println("len(config.Datacenter) != 0 refreshClientSecret============")
+			util.PrintBlue("cloud--------------")
 			//timestamp := time.Now()
 			//options := &newSRPTokenOptions{Timestamp: &timestamp}
 			result := newSrpToken(config.ServiceName, nil)

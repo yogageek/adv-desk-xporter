@@ -104,7 +104,7 @@ func initGlobalVar() {
 		config.SSOURL = "https://api-sso-ensaas.hz.wise-paas.com.cn/v4.0"
 	} else {
 		//config.SSOURL = os.Getenv("SSO_API_URL")
-		config.SSOURL = "https://api-sso-ensaas." + config.Datacenter + "." + external + "/v4.0"
+		config.SSOURL = "https://api-sso-ensaas." + external + "/v4.0"
 	}
 
 	ifps_desk_api_url := os.Getenv("IFP_DESK_API_URL")

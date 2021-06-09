@@ -1,7 +1,4 @@
-{
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+{    
     "version": "0.2.0",
     "configurations": [        
         {
@@ -11,48 +8,21 @@
             "mode": "debug",
             "program": "${workspaceFolder}\\main.go",
             "env": {                
-                "LOGINFO":"false",
-                // "datacenter": "hz",
-                // "workspace":"53e8c8bd-b724-4c87-a905-5bbc5c30a36c",
-                // "cluster":"eks011",
-                // "namespace":"training",
-                // "appID":"",
-                // "external":"wise-paas.com.cn",
+                "LOGINFO":"false",               
+                 
+                "IFP_DESK_API_URL":"https://ifp-organizer-testingsa1-eks002.sa.wise-paas.com/graphql",                
+                "MONGODB_URL": "52.187.110.12:27017", 
+                "MONGODB_DATABASE": "87e1dc58-4c20-4e65-ad81-507270f6bdac", 
+                "MONGODB_USERNAME": "19e0ce80-af51-404c-8d55-9edefcbd4bdf", 
+                "MONGODB_PASSWORD": "TYyvTeVemAlJzzuq4w3sBr2D", 
 
+                "IFP_DESK_USERNAME": "devanliang@iii.org.tw", 
+                "IFP_DESK_PASSWORD": "Abcd1234#",                     
                 
-                "datacenter": "sa",
-                "workspace":"4d468e6a-0744-40f0-8c05-e89c31440fc3",
-                "cluster":"eks005",
-                "namespace":"ifpsdemo",
-                "appID":"", // IunAtiS_vsxaFcgN5QluNwfxbXN7tUu3-1614837178
-                "clientName":"ifpsexport",
-                "serviceName":"export",
-                "external":"wise-paas.com",
-                //"ENSAAS_SERVICES":"eyJtb25nb2RiIjpbeyJhc3luYyI6ZmFsc2UsImJpbmRpbmdfbmFtZSI6ImlmcHMtZGVtbyIsImNyZWRlbnRpYWxzIjp7ImRhdGFiYXNlIjoiODdlMWRjNTgtNGMyMC00ZTY1LWFkODEtNTA3MjcwZjZiZGFjIiwiZXh0ZXJuYWxIb3N0cyI6IjUyLjE4Ny4xMTAuMTI6MjcwMTciLCJob3N0IjoiMTAuMC4xNi41MCIsImhvc3QxIjoiMTAuMC4xNi41MCIsImhvc3QyIjoiMTAuMC4xNi41MCIsImhvc3QzIjoiMTAuMC4xNi41MCIsImludGVybmFsSG9zdHMiOiIxMC4wLjE2LjUwOjI3MDE3IiwicGFzc3dvcmQiOiJUWXl2VGVWZW1BbEp6enVxNHczc0JyMkQiLCJwb3J0IjoyNzAxNywicG9ydDEiOjI3MDE3LCJwb3J0MiI6MjcwMTcsInBvcnQzIjoyNzAxNywidXJpIjoibW9uZ29kYjovLzE5ZTBjZTgwLWFmNTEtNDA0Yy04ZDU1LTllZGVmY2JkNGJkZjpUWXl2VGVWZW1BbEp6enVxNHczc0JyMkRAMTAuMC4xNi41MDoyNzAxNy84N2UxZGM1OC00YzIwLTRlNjUtYWQ4MS01MDcyNzBmNmJkYWMiLCJ1c2VybmFtZSI6IjE5ZTBjZTgwLWFmNTEtNDA0Yy04ZDU1LTllZGVmY2JkNGJkZiJ9LCJpbnN0YW5jZV9uYW1lIjoibW9uZ29kYi1lOTY2MmNlNi1mOWJhLTQyODMtOTFiYS1hYjVkMjFlMzgyYmIiLCJsYWJlbCI6Ik1vbmdvREIiLCJwbGFuIjoiRGVkaWNhdGVkLVNpbmdsZS1NaW5pIiwic2VydmljZUluc3RhbmNlSWQiOiJlOTY2MmNlNi1mOWJhLTQyODMtOTFiYS1hYjVkMjFlMzgyYmIiLCJzdWJzY3JpcHRpb25JZCI6ImU1OTgyZmViLTI2MmEtNDg1MC1hYTg2LWY1NTlhZGFjNDkzMCJ9XX0=",
-                "MONGODB_URL": "52.187.110.12:27017", //"mongo:27017",
-                "MONGODB_DATABASE": "87e1dc58-4c20-4e65-ad81-507270f6bdac", //"ifactory",
-                "MONGODB_USERNAME": "19e0ce80-af51-404c-8d55-9edefcbd4bdf", // "root",
-                "MONGODB_PASSWORD_FILE": "${workspaceFolder}\\secrets\\mongo-root_password", // "/run/secrets/mongo-root_password",
-                "MONGODB_AUTH_SOURCE": "87e1dc58-4c20-4e65-ad81-507270f6bdac",//admin
                 //"IFP_APP_SECRET_FILE": "${workspaceFolder}\\secrets\\appSecret",
-                "ACCESS_CONTROL_ALLOW_ORIGIN": "http://${HOSTNAME}:10000"
+                
             },
-        },
-        {
-            "name": "porterFile",
-            "type": "go",
-            "request": "launch",
-            "mode": "debug",
-            "program": "${workspaceFolder}/pkg/logic/method/fn_count.go"
-        },
-        {
-            "name": "server(gqlgen)",
-            "type": "go",
-            "request": "launch",
-            "mode": "auto",
-            "program": "${workspaceFolder}/gqlgen-todos/server.go",
-            "env": {},
-            "args": []
         }
+        
     ]
 }

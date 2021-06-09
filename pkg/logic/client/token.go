@@ -184,7 +184,7 @@ func RefreshTokenByAppSecret() {
 			// 	fmt.Println("Token:", config.Token)
 			// 	time.Sleep(60 * time.Minute)
 		} else {
-			util.PrintBlue("cloud--------------")
+			fmt.Println("cloud--------------")
 			//timestamp := time.Now()
 			//options := &newSRPTokenOptions{Timestamp: &timestamp}
 			result := newSrpToken(config.ServiceName, nil)
@@ -209,6 +209,10 @@ func RefreshTokenByAppSecret() {
 			q.Add("serviceName", config.ServiceName)
 			request.URL.RawQuery = q.Encode()
 			response, err := httpClient.Do(request)
+			//----------
+			fmt.Println("--------request sso--------")
+			fmt.Println(request.URL)
+			fmt.Printf("%+v \n", response)
 			if err != nil {
 				fmt.Println(err)
 			}

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/base64"
 	"flag"
 	"fmt"
 	"net/http"
@@ -124,14 +123,17 @@ func initGlobalVar() {
 	// ensaas services
 	ensaasService := os.Getenv("ENSAAS_SERVICES")
 	if len(ensaasService) != 0 {
-		decoded, err := base64.StdEncoding.DecodeString(ensaasService)
-		if err != nil {
-			fmt.Println("decode error:", err)
-			return
-		}
-		fmt.Println(string(decoded))
+		// decoded, err := base64.StdEncoding.DecodeString(ensaasService)
+		// if err != nil {
+		// 	fmt.Println("decode error:", err)
+		// 	return
+		// }
+		// fmt.Println(string(decoded))
 
-		m, _ := simplejson.NewJson(decoded)
+		// m, _ := simplejson.NewJson(decoded)
+		// mongodb := m.Get("mongodb").GetIndex(0).Get("credentials").MustMap()
+
+		m, _ := simplejson.NewJson([]byte(ensaasService))
 		mongodb := m.Get("mongodb").GetIndex(0).Get("credentials").MustMap()
 		config.MongodbURL = mongodb["externalHosts"].(string)
 		config.MongodbDatabase = mongodb["database"].(string)

@@ -29,6 +29,8 @@ func (o mappingRule) Process(data *JsonData) {
 	ImportMappingRule(data)
 
 	b, _ := json.MarshalIndent(data, "", " ")
+
+	// fmt.Println(string(b))
 	m := map[string]string{} //儲存新舊id對應關係
 	func() {
 		for _, v := range data.MappingRuleData {

@@ -93,8 +93,19 @@ func ImportMappingRule(jsonData *JsonData) {
 			PType: v.PType,
 			Codes: codes,
 		}
+
 		//set new id
 		parameterMappings := AddParameterMappingRule(input)
 		v.NewId = parameterMappings.Id
+
+		//for multi lang
+		for _, r := range parameterMappings.Codes {
+			newDetailId := string(r.Id)
+			for _, detail := range v.Detail {
+				if detail.Code == string(r.Code) {
+					detail.NewId = newDetailId
+				}
+			}
+		}
 	}
 }

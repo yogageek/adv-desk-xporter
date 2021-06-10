@@ -60,13 +60,11 @@ func AddGroup(input model.AddGroupInput) (id string) {
 
 func AddGroupSample(parentId string) {
 	input := model.AddGroupInput{
-		Groups: model.Groups{
-			ParentId:    parentId, //如果無也可以直接放""
-			Name:        "yogaGroup3",
-			Description: "test",
-			TimeZone:    "Asia/Taipei",
-			Coordinate:  nil,
-		},
+		ParentId:    parentId, //如果無也可以直接放""
+		Name:        "yogaGroup3",
+		Description: "test",
+		TimeZone:    "Asia/Taipei",
+		Coordinate:  nil,
 	}
 	id := AddGroup(input)
 	fmt.Println("id:", id)

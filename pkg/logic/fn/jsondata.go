@@ -38,11 +38,12 @@ type MappingRuleData struct {
 	NewId  string
 	Name   string
 	PType  string
-	Detail []Detail
+	Detail []*Detail
 }
 
 type Detail struct { //這裡的大小寫會影響到json大小寫
 	Id       string
+	NewId    string //add for multilang
 	Code     string
 	Message  string
 	StatusId string

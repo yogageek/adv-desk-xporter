@@ -31,5 +31,9 @@ var AddGroup struct { //這行可隨便定義 但盡量和下面同名
 
 //for input,  need json tag------
 type AddGroupInput struct { //參數
-	Groups
+	ParentId    string      `json:"parentId,omitempty"`
+	Name        string      `json:"name"`
+	Description string      `json:"description"`
+	TimeZone    string      `json:"timeZone"`
+	Coordinate  *Coordinate `json:"coordinate"`
 }

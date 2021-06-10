@@ -3,7 +3,7 @@ package routers
 import (
 	"fmt"
 	"net/http"
-	"os"
+	"porter/config"
 	"porter/db"
 	gochan "porter/pkg/logic/gochan"
 	vars "porter/pkg/logic/vars"
@@ -97,7 +97,7 @@ func middleware_api(c *gin.Context) {
 	// 2021/06/02 End
 
 	log := &vars.Log{
-		Database:  os.Getenv("MONGODB_DATABASE"),
+		Database:  config.MongodbDatabase,
 		FileName:  fileName,
 		Mode:      mode,
 		CreatedAt: time.Now().UTC(),

@@ -59,13 +59,11 @@ func AddMachine(input model.AddMachineInput) (id string) {
 
 func AddMachineSample() {
 	input := model.AddMachineInput{
-		Machines: model.Machines{
-			GroupId:     "R3JvdXA.YD9bt3kI5QAHoyNw",
-			Name:        "testMachine4",
-			Description: "testing",
-			ImageUrl:    "",
-			IsStation:   nil,
-		},
+		GroupId:     "R3JvdXA.YD9bt3kI5QAHoyNw",
+		Name:        "testMachine4",
+		Description: "testing",
+		ImageUrl:    "",
+		IsStation:   nil,
 	}
 	AddMachine(input)
 }

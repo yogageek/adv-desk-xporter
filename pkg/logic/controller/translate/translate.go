@@ -73,7 +73,7 @@ func Translate(data *fn.JsonData) {
 	for _, v := range mappingRuleData {
 		for _, vv := range v.Detail {
 			for _, message := range vv.Messages {
-				gql.TranslateParameterMappingCode(vv.Id, message.Text, message.Lang)
+				gql.TranslateParameterMappingCode(vv.Id, message.Lang, message.Text)
 			}
 		}
 	}

@@ -51,11 +51,11 @@ func Cors() gin.HandlerFunc {
 			c.Writer.Header().Set("Access-Control-Allow-Origin", acao)
 		}
 
-		defer func() {
-			if err := recover(); err != nil {
-				log.Printf("Panic info is: %v", err)
-			}
-		}()
+		// defer func() {
+		// 	if err := recover(); err != nil {
+		// 		log.Printf("Panic info is: %v", err)
+		// 	}
+		// }()
 
 		c.Next()
 	}

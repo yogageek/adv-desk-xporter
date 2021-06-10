@@ -29,17 +29,25 @@ func (o mappingRule) Process(data *JsonData) {
 	ImportMappingRule(data)
 
 	b, _ := json.MarshalIndent(data, "", " ")
+
 	m := map[string]string{} //儲存新舊id對應關係
 	func() {
 		for _, v := range data.MappingRuleData {
 			if m[v.Id] == "" && v.NewId != "" {
 				m[v.Id] = v.NewId
 			}
+			for _, v := range v.Detail {
+				if m[v.Id] == "" && v.NewId != "" {
+					m[v.Id] = v.NewId
+				}
+			}
 		}
 	}()
+
 	for k, v := range m { //用新id取代整個file中的舊id
 		b = bytes.ReplaceAll(b, []byte(k), []byte(v))
 	}
+
 	json.Unmarshal(b, data)
 }
 

@@ -27,5 +27,9 @@ var AddMachine struct { //這行可隨便定義 但盡量和下面同名
 
 //for input,  need json tag------
 type AddMachineInput struct { //參數
-	Machines
+	GroupId     string `json:"groupId"`
+	Name        string `json:"name"`
+	Description string `json:"description"`
+	ImageUrl    string `json:"imageUrl"`
+	IsStation   *bool  `json:"isStation,omitempty"`
 }

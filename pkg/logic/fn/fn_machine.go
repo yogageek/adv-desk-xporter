@@ -23,13 +23,11 @@ func ImportMachines(jsonData *JsonData) map[string]string {
 		ChannelIn(Machine, c)
 
 		input := model.AddMachineInput{
-			Machines: model.Machines{ //有就放parentId 找不到就放""
-				GroupId:     v.GroupId,
-				Name:        v.Name,
-				Description: v.Description,
-				ImageUrl:    v.ImageUrl,
-				IsStation:   v.IsStation,
-			},
+			GroupId:     v.GroupId,
+			Name:        v.Name,
+			Description: v.Description,
+			ImageUrl:    v.ImageUrl,
+			IsStation:   v.IsStation,
 		}
 		newId := AddMachine(input)
 		M[v.Id] = newId //save new id

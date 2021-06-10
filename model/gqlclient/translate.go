@@ -68,30 +68,6 @@ type TranslateParameterMappingCodeInput struct { //參數
 
 //----------------------
 
-var TranslateProfileMachine struct { //這行可隨便定義 但盡量和下面同名
-	TranslateProfileMachine struct { //這裡只用來對應addParameterMappingRule 沒其他作用
-		ProfileMachine struct {
-			Name string
-		} //為graphql規格定義
-	} `graphql:"translateProfileMachine(input: $input)"`
-}
-
-//使用上面 TranslateMachineInput
-
-//----------------------
-
-var TranslateProfileParameter struct { //這行可隨便定義 但盡量和下面同名
-	TranslateProfileParameter struct { //這裡只用來對應addParameterMappingRule 沒其他作用
-		ProfileParameter struct {
-			Name string
-		} //為graphql規格定義
-	} `graphql:"translateProfileParameter(input: $input)"`
-}
-
-//使用上面 TranslateParameterInput
-
-//----------------------
-
 var TranslateParameter struct { //這行可隨便定義 但盡量和下面同名
 	TranslateParameter struct { //這裡只用來對應addParameterMappingRule 沒其他作用
 		Parameter struct {
@@ -105,3 +81,29 @@ type TranslateParameterInput struct { //參數
 	Lang        string `json:"lang"`
 	Description string `json:"description"`
 }
+
+//----------------------
+
+var TranslateProfileMachine struct { //這行可隨便定義 但盡量和下面同名
+	TranslateProfileMachine struct { //這裡只用來對應addParameterMappingRule 沒其他作用
+		ProfileMachine struct {
+			Name string
+		} //為graphql規格定義
+	} `graphql:"translateProfileMachine(input: $input)"`
+}
+
+// input
+//使用上面 TranslateMachineInput
+
+//----------------------
+
+var TranslateProfileParameter struct { //這行可隨便定義 但盡量和下面同名
+	TranslateProfileParameter struct { //這裡只用來對應addParameterMappingRule 沒其他作用
+		ProfileParameter struct {
+			Name string
+		} //為graphql規格定義
+	} `graphql:"translateProfileParameter(input: $input)"`
+}
+
+// input
+//使用上面 TranslateParameterInput

@@ -43,14 +43,14 @@ var AddParameter struct { //這行可隨便定義 但盡量和下面同名
 type QueryParametersOb struct { //這行可隨便命名
 	Machine struct { //對應規格裡第一層物件
 		Parameters struct {
-			Nodes    []Nodes
+			Nodes    []*Nodes
 			PageInfo PageInfo
 		} `graphql:"parameters(first: $first, after: $after)"` //注意要加在正確的struct後面
 	} `graphql:"machine(id: $id)"`
 }
 
 type Nodes struct {
-	Id           interface{}   `json:"id"`
+	Id           *string       `json:"id"`
 	ScadaId      interface{}   `json:"scadaId"`
 	TagId        interface{}   `json:"tagId"`
 	MachineId    interface{}   `json:"machineId"`

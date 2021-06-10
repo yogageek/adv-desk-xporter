@@ -32,13 +32,6 @@ func Translate(data *fn.JsonData) {
 	// }
 	// fmt.Println("langs:", Langs)
 
-	machineStatusData := data.MachineStatusData
-	for _, v := range machineStatusData {
-		for _, name := range v.Names {
-			gql.TranslateMachineStatus(v.Id, name.Text, name.Lang)
-		}
-	}
-
 	groupData := data.GroupData
 	for _, v := range groupData {
 		for i, name := range v.Names {
@@ -53,19 +46,10 @@ func Translate(data *fn.JsonData) {
 		}
 	}
 
-	parameterData := data.ParameterData
-	for _, v := range parameterData {
-		for _, vv := range v.Machine.Parameters.Nodes {
-			for _, description := range vv.Descriptions {
-				gql.TranslateParameter(vv.Id.(string), description.Text, description.Lang)
-			}
-		}
-	}
-
-	profileData := data.ProfileData
-	for _, v := range profileData {
-		for i, name := range v.Names {
-			gql.TranslateProfileMachine(string(v.Id), name.Text, name.Text, v.Descriptions[i].Text, v.ImageUrls[i].Text)
+	machineStatusData := data.MachineStatusData
+	for _, v := range machineStatusData {
+		for _, name := range v.Names {
+			gql.TranslateMachineStatus(v.Id, name.Text, name.Lang)
 		}
 	}
 
@@ -74,6 +58,27 @@ func Translate(data *fn.JsonData) {
 		for _, vv := range v.Detail {
 			for _, message := range vv.Messages {
 				gql.TranslateParameterMappingCode(vv.Id, message.Lang, message.Text)
+			}
+		}
+	}
+
+	parameterData := data.ParameterData
+	for _, v := range parameterData {
+		for _, vv := range v.Machine.Parameters.Nodes {
+			for _, description := range vv.Descriptions {
+				gql.TranslateParameter(*vv.Id, description.Lang, description.Text)
+			}
+		}
+	}
+
+	profileData := data.ProfileData
+	for _, v := range profileData {
+		for i, name := range v.Names {
+			gql.TranslateProfileMachine(string(v.Id), name.Text, name.Lang, v.Descriptions[i].Text, v.ImageUrls[i].Text)
+		}
+		for _, parameters := range v.Parameters {
+			for _, description := range parameters.Descriptions {
+				gql.TranslateProfileParameter(*parameters.Id, description.Lang, description.Text)
 			}
 		}
 	}

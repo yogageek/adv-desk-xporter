@@ -5,7 +5,7 @@ import "github.com/shurcooL/graphql"
 //for query, no need json tag------
 type ProfileMachine struct { //這裡一定要大寫
 	//---import profileMachines need
-	Id          graphql.String
+	Id          string
 	Name        graphql.String //裡面的欄位名稱一定要大寫開頭, 而且型態要正確! #import profile1 need
 	Description graphql.String
 	ImageUrl    graphql.String
@@ -18,7 +18,7 @@ type ProfileMachine struct { //這裡一定要大寫
 }
 
 type Parameters struct {
-	Id           graphql.String
+	Id           *string
 	MachineId    graphql.String
 	Name         graphql.String
 	Description  graphql.String
@@ -57,6 +57,7 @@ type AddProfileMachineInput struct {
 var AddProfileParameter struct { //這行可隨便定義 但盡量和下面同名
 	AddProfileParameter struct { //這裡只用來對應addParameterMappingRule 沒其他作用
 		ProfileParameter struct {
+			Id   string
 			Name string
 		}
 	} `graphql:"addProfileParameter(input: $input)"`

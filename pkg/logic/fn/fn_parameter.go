@@ -38,7 +38,9 @@ func ImportParameters(jsonData *JsonData) {
 			// fmt.Println(input.Description)
 			// fmt.Println(v.Description)
 
-			AddParameter(input)
+			//for multi lang
+			id := AddParameter(input)
+			v.Id = &id
 			loadedParameters++
 		}
 	}

@@ -55,7 +55,7 @@ func AddProfileMachine(input model.AddProfileMachineInput) (id string) {
 	return
 }
 
-func AddProfileParameter(input model.AddParameterInput) {
+func AddProfileParameter(input model.AddParameterInput) (id string) {
 	gqlQuery := model.AddProfileParameter
 
 	variables := map[string]interface{}{
@@ -76,4 +76,7 @@ func AddProfileParameter(input model.AddParameterInput) {
 	//debugging
 	b, _ := json.MarshalIndent(gqlQuery, "", " ")
 	PrintYellow(b)
+
+	id = gqlQuery.AddProfileParameter.ProfileParameter.Id
+	return
 }

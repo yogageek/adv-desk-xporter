@@ -263,6 +263,18 @@ func TranslateParameterMappingCode(id, lang, message string) {
 	Mutate(input, &gqlQuery)
 }
 
+func TranslateParameter(id, lang, desc string) {
+	input := model.TranslateParameterInput{
+		Id:          id, //UGFyYW1ldGVy.YMJ2pu3BRgAGL4Lc
+		Lang:        lang,
+		Description: desc,
+	}
+	// gqlQuery := model.TranslateProfileParameter
+	//# fix bug
+	gqlQuery := model.TranslateParameter
+	Mutate(input, &gqlQuery)
+}
+
 func TranslateProfileMachine(id, name, lang, desc, imageUrl string) {
 	input := model.TranslateMachineInput{
 		Id:          id,
@@ -275,7 +287,7 @@ func TranslateProfileMachine(id, name, lang, desc, imageUrl string) {
 	Mutate(input, &gqlQuery)
 }
 
-func TranslateParameter(id, lang, desc string) {
+func TranslateProfileParameter(id, lang, desc string) {
 	input := model.TranslateParameterInput{
 		Id:          id,
 		Lang:        lang,

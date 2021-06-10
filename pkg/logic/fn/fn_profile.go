@@ -77,8 +77,11 @@ query profileMachineList {
 //處理新增的machineId
 
 //先
-func ImportProfileMachine(jsonData *JsonData) {
+func ImportProfileMachine(jsonData *JsonData) (oldAndnewId_profile, oldAndnewId_profileparameter map[string]string) {
 	c := 0
+
+	oldAndnewId_profile, oldAndnewId_profileparameter = map[string]string{}, map[string]string{}
+
 	for _, v := range jsonData.ProfileData {
 
 		//channel寫法
@@ -90,13 +93,16 @@ func ImportProfileMachine(jsonData *JsonData) {
 			Description: v.Description,
 			ImageUrl:    v.ImageUrl,
 		}
-		id := AddProfileMachine(input)
-		importProfileParameter(id, *v)
+		newId := AddProfileMachine(input)
+		oldAndnewId_profile[v.Id] = newId
+		oldAndnewId_profileparameter = importProfileParameter(newId, *v)
 	}
+	return
 }
 
 //後
-func importProfileParameter(machineId string, profileData ProfileData) {
+func importProfileParameter(machineId string, profileData ProfileData) (oldAndnewId map[string]string) {
+	oldAndnewId = map[string]string{}
 	for _, v := range profileData.Parameters {
 		input := model.AddParameterInput{
 			MachineId:   machineId,
@@ -105,7 +111,8 @@ func importProfileParameter(machineId string, profileData ProfileData) {
 			ValueType:   v.ValueType,
 			MappingId:   v.Mapping.Id, //這裡是放mapping rule id
 		}
-		AddProfileParameter(input) //由於沒有其他支要用到profileid 所以這裡不需要處理
+		id := AddProfileParameter(input) //由於沒有其他支要用到profileid 所以這裡不需要處理
+		oldAndnewId[*v.Id] = id
 	}
-
+	return
 }

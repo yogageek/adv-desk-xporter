@@ -35,6 +35,9 @@ func Translate(data *fn.JsonData) {
 	groupData := data.GroupData
 	for _, v := range groupData {
 		for i, name := range v.Names {
+			if i > len(v.Descriptions)-1 {
+				break
+			}
 			gql.TranslateGroup(v.Id, name.Text, name.Lang, v.Descriptions[i].Text)
 		}
 	}
@@ -42,6 +45,9 @@ func Translate(data *fn.JsonData) {
 	machineData := data.MachineData
 	for _, v := range machineData {
 		for i, name := range v.Names {
+			if i > len(v.Descriptions)-1 || i > len(v.ImageUrls)-1 {
+				break
+			}
 			gql.TranslateMachine(v.Id, name.Text, name.Lang, v.Descriptions[i].Text, v.ImageUrls[i].Text)
 		}
 	}
@@ -74,6 +80,9 @@ func Translate(data *fn.JsonData) {
 	profileData := data.ProfileData
 	for _, v := range profileData {
 		for i, name := range v.Names {
+			if i > len(v.Descriptions)-1 || i > len(v.ImageUrls)-1 {
+				break
+			}
 			gql.TranslateProfileMachine(string(v.Id), name.Text, name.Lang, v.Descriptions[i].Text, v.ImageUrls[i].Text)
 		}
 		for _, parameters := range v.Parameters {
@@ -83,4 +92,11 @@ func Translate(data *fn.JsonData) {
 		}
 	}
 
+	// defer func() {
+	// 	// 可以取得 panic 的回傳值
+	// 	r := recover()
+	// 	if r != nil {
+	// 		fmt.Println("Recovered in f", r)
+	// 	}
+	// }()
 }

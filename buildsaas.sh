@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 正式用
-VERSION="1.1.0"
+VERSION="1.1.1"
 CONTAINER="ifps-xporter"
 
 # docker location

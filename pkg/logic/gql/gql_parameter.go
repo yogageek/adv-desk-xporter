@@ -51,7 +51,10 @@ func AddParameter(input model.AddParameterInput) string {
 	}
 
 	id := gqlQuery.AddParameter.Parameter.Id
-	return *id
+	if id != nil {
+		return *id
+	}
+	return ""
 
 	//如果返回這個error代表可能找不到groupId
 	//ERROR: logging before flag.Parse: E0309 15:27:03.319725   12064 gql_machine.go:43] Machine validation failed: group: Validator failed for path `group` with value `604060f3c1ae9d0006a44699`

@@ -41,6 +41,7 @@ func syncDoImport() {
 
 func importController() {
 	data := readFile() //read data
+
 	processes := implIface()
 	updatePuclicResTotal(&data, processes)
 	doImport(&data, processes)

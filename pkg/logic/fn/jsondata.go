@@ -7,13 +7,13 @@ import (
 //匯出的結構
 
 type JsonData struct {
-	MachineStatusData []*MachineStatusData
-	MappingRuleData   []*MappingRuleData
-	ProfileData       []*ProfileData
-	GroupData         []*GroupData
-	MachineData       []*MachineData
-	ParameterData     []*ParameterData
-	TranslationLangs  []*TranslationLangs
+	MachineStatusData    []*MachineStatusData
+	MappingRuleData      []*MappingRuleData
+	ProfileData          []*ProfileData
+	GroupData            []*GroupData
+	MachineData          []*MachineData
+	ParameterData        []*ParameterData
+	TranslationLangsData []*TranslationLangs
 }
 
 //未來改成從model拿原始input

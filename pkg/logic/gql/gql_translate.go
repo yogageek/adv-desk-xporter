@@ -66,7 +66,8 @@ func TestAdd() {
 func TestMutation() {
 	//init
 	func() {
-		logic.PrepareGQLClientByAppSecret()
+		// logic.PrepareGQLClientByAppSecret()
+		logic.PrepareGQLCLient()
 	}()
 
 	//machine status
@@ -189,7 +190,7 @@ func TestMutation() {
 
 	parameter := func() {
 		// query ok
-		res := QueryParameters("TWFjaGluZQ.YIFPI-3BRgAGL3vZ", "") //放query machine的Id
+		res := QueryParameters("TWFjaGluZQ.YMQh1u3BRgAGL4Uv", "") //放query machine的Id
 		util.PrintJson(res)                                       //如果查不出代表machine底下沒綁parameters
 
 		//確認有查到多語言資料後

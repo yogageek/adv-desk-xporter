@@ -13,7 +13,7 @@ func getEnvTranslations() []model.TranslationLangs {
 }
 
 func GetDefaultLangFromJson(data *JsonData) string {
-	t := data.TranslationLangs
+	t := data.TranslationLangsData
 	for _, v := range t {
 		if v.IsDefault {
 			return v.Lang

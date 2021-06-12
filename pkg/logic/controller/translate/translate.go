@@ -2,6 +2,7 @@ package translate
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	fn "porter/pkg/logic/fn"
 	gql "porter/pkg/logic/gql"
@@ -26,30 +27,76 @@ func TestTranslate() {
 
 func Translate(data *fn.JsonData) {
 	//從export檔取得langs種類
-	// var Langs []string
-	// for _, v := range data.TranslationLangs {
-	// 	Langs = append(Langs, v.Lang)
-	// }
-	// fmt.Println("langs:", Langs)
+	var Langs []string
+	for _, v := range data.TranslationLangsData {
+		Langs = append(Langs, v.Lang)
+	}
+	fmt.Println("langs:", Langs)
 
 	groupData := data.GroupData
 	for _, v := range groupData {
-		for i, name := range v.Names {
-			if i > len(v.Descriptions)-1 {
-				break
+		//--->
+		names := v.Names
+		desps := v.Descriptions
+
+		for _, lang := range Langs {
+			var name, desp string
+			for _, v := range names {
+				if v.Lang == lang {
+					name = v.Text
+				}
 			}
-			gql.TranslateGroup(v.Id, name.Text, name.Lang, v.Descriptions[i].Text)
+			for _, v := range desps {
+				if v.Lang == lang {
+					desp = v.Text
+				}
+			}
+			gql.TranslateGroup(v.Id, name, lang, desp)
 		}
+		//<---
+
+		// for i, name := range v.Names {
+		// 	if i > len(v.Descriptions)-1 {
+		// 		break
+		// 	}
+		// 	gql.TranslateGroup(v.Id, name.Text, name.Lang, v.Descriptions[i].Text)
+		// }
 	}
 
 	machineData := data.MachineData
 	for _, v := range machineData {
-		for i, name := range v.Names {
-			if i > len(v.Descriptions)-1 || i > len(v.ImageUrls)-1 {
-				break
+		//--->
+		names := v.Names
+		desps := v.Descriptions
+		urls := v.ImageUrls
+
+		for _, lang := range Langs {
+			var name, desp, url string
+			for _, v := range names {
+				if v.Lang == lang {
+					name = v.Text
+				}
 			}
-			gql.TranslateMachine(v.Id, name.Text, name.Lang, v.Descriptions[i].Text, v.ImageUrls[i].Text)
+			for _, v := range desps {
+				if v.Lang == lang {
+					desp = v.Text
+				}
+			}
+			for _, v := range urls {
+				if v.Lang == lang {
+					url = v.Text
+				}
+			}
+			gql.TranslateMachine(v.Id, name, lang, desp, url)
 		}
+		//<---
+
+		// for i, name := range v.Names {
+		// 	if i > len(v.Descriptions)-1 || i > len(v.ImageUrls)-1 {
+		// 		break
+		// 	}
+		// 	gql.TranslateMachine(v.Id, name.Text, name.Lang, v.Descriptions[i].Text, v.ImageUrls[i].Text)
+		// }
 	}
 
 	machineStatusData := data.MachineStatusData
@@ -79,12 +126,39 @@ func Translate(data *fn.JsonData) {
 
 	profileData := data.ProfileData
 	for _, v := range profileData {
-		for i, name := range v.Names {
-			if i > len(v.Descriptions)-1 || i > len(v.ImageUrls)-1 {
-				break
+		//--->
+		names := v.Names
+		desps := v.Descriptions
+		urls := v.ImageUrls
+
+		for _, lang := range Langs {
+			var name, desp, url string
+			for _, v := range names {
+				if v.Lang == lang {
+					name = v.Text
+				}
 			}
-			gql.TranslateProfileMachine(string(v.Id), name.Text, name.Lang, v.Descriptions[i].Text, v.ImageUrls[i].Text)
+			for _, v := range desps {
+				if v.Lang == lang {
+					desp = v.Text
+				}
+			}
+			for _, v := range urls {
+				if v.Lang == lang {
+					url = v.Text
+				}
+			}
+			gql.TranslateProfileMachine(string(v.Id), name, lang, desp, url)
 		}
+		//<---
+
+		// for i, name := range v.Names {
+		// 	if i > len(v.Descriptions)-1 || i > len(v.ImageUrls)-1 {
+		// 		break
+		// 	}
+		// 	gql.TranslateProfileMachine(string(v.Id), name.Text, name.Lang, v.Descriptions[i].Text, v.ImageUrls[i].Text)
+		// }
+
 		for _, parameters := range v.Parameters {
 			for _, description := range parameters.Descriptions {
 				gql.TranslateProfileParameter(*parameters.Id, description.Lang, description.Text)

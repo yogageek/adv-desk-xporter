@@ -94,7 +94,13 @@ func Import(c *gin.Context) {
 
 	// step4 business logic
 	// logic.Import() //old
-	controller.Import() //new
+	err = controller.Import() //new
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": err.Error(),
+		})
+		return
+	}
 
 	c.JSON(http.StatusOK, gin.H{
 		"fileName": file.Filename,

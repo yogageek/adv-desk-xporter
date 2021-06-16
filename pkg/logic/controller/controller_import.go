@@ -10,18 +10,23 @@ import (
 	vars "porter/pkg/logic/vars"
 
 	// . "porter/util"
+	"porter/util"
 
 	"github.com/golang/glog"
 )
 
-func Import() {
+func Import() error {
+	err := checkBeforeImport()
+	if err != nil {
+		return err
+	}
 	go syncDoImport()
 	importController()
 	// PrintJson(vars.Get_PublicRess())
 	// mutex := sync.Mutex{} //似乎不一定需要，尚未驗證
 	// mutex.Lock()
 	// mutex.Unlock()
-
+	return nil
 }
 
 func syncDoImport() {
@@ -37,6 +42,28 @@ func syncDoImport() {
 		}
 		// log.Info("channel out done, length:", len(vars.PublicRess))
 	}
+}
+
+func checkBeforeImport() error {
+	data := readFile() //read data
+	//檢查目標預設語言是否在匯出的清單內
+	var targetDefaultLang string
+	targetTranslation := GetSourceTranslations()
+	b := util.IfaceToJson(targetTranslation)
+	m := util.JsonAryToMap(b)
+	for _, v := range m {
+		if v["isDefault"].(bool) == true {
+			targetDefaultLang = v["lang"].(string)
+		}
+	}
+
+	fileTranslationLangsData := data.TranslationLangsData
+	for _, v := range fileTranslationLangsData {
+		if v.Lang == targetDefaultLang {
+			return nil
+		}
+	}
+	return fmt.Errorf("default Lang %s not included in file", targetDefaultLang)
 }
 
 func importController() {

@@ -45,14 +45,14 @@ func ImportMachineStatus(jsonData *JsonData) {
 	M2 := map[int]string{}
 
 	//-------------
-	// debugging 目前只抓萬以下的測
-	// var newMachineStatusDatas []*MachineStatusData
-	// for _, v := range machineStatusDatas {
-	// 	if v.Index < 10000 {
-	// 		newMachineStatusDatas = append(newMachineStatusDatas, v)
-	// 	}
-	// }
-	// machineStatusDatas = newMachineStatusDatas
+	// fix 忽略預設machine status
+	var newMachineStatusDatas []*MachineStatusData
+	for _, v := range machineStatusDatas {
+		if v.Index >= 5000 { //1000~4000開頭為預設
+			newMachineStatusDatas = append(newMachineStatusDatas, v)
+		}
+	}
+	machineStatusDatas = newMachineStatusDatas
 	//-------------
 
 	// debugging

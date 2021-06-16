@@ -4,6 +4,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"porter/config"
 	"strings"
 
 	"github.com/gin-gonic/gin"
@@ -43,10 +44,17 @@ func Cors() gin.HandlerFunc {
 		log.Println("Request Header Access-Control-Allow-Origin--->", c.GetHeader("Access-Control-Allow-Origin"))
 
 		env_acao := os.Getenv("ACCESS_CONTROL_ALLOW_ORIGIN")
-		if env_acao != "" {
-			log.Println("[ENV] ACCESS_CONTROL_ALLOW_ORIGIN--->", env_acao)
-			// ACCESS_CONTROL_ALLOW_ORIGIN=http://${HOSTNAME}:10000
+		log.Println("[ENV] ACCESS_CONTROL_ALLOW_ORIGIN--->", env_acao)
+		if strings.Contains(env_acao, "HOSTNAME") {
+			//地 ACCESS_CONTROL_ALLOW_ORIGIN會給http://${HOSTNAME}:10000
 			acao := strings.ReplaceAll(env_acao, "${HOSTNAME}", host)
+			log.Println("set new Access-Control-Allow-Origin--->", acao)
+			c.Writer.Header().Set("Access-Control-Allow-Origin", acao)
+		} else {
+			//雲 ACCESS_CONTROL_ALLOW_ORIGIN會給https://ifp-organizer-${NAMESPACE}-${CLUSTER}.${DATACENTER}.wise-paas.com.cn
+			acao := strings.ReplaceAll(env_acao, "${NAMESPACE}", config.Namespace)
+			acao = strings.ReplaceAll(acao, "${CLUSTER}", config.Cluster)
+			acao = strings.ReplaceAll(acao, "${DATACENTER}", config.Datacenter)
 			log.Println("set new Access-Control-Allow-Origin--->", acao)
 			c.Writer.Header().Set("Access-Control-Allow-Origin", acao)
 		}

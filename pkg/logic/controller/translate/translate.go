@@ -100,6 +100,15 @@ func Translate(data *fn.JsonData) {
 	}
 
 	machineStatusData := data.MachineStatusData
+	func() { // fix 忽略預設machine status
+		var newMachineStatusDatas []*fn.MachineStatusData
+		for _, v := range machineStatusData {
+			if v.Index >= 5000 { //1000~4000開頭為預設
+				newMachineStatusDatas = append(newMachineStatusDatas, v)
+			}
+		}
+		machineStatusData = newMachineStatusDatas
+	}()
 	for _, v := range machineStatusData {
 		for _, name := range v.Names {
 			gql.TranslateMachineStatus(v.Id, name.Text, name.Lang)

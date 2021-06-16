@@ -6,6 +6,7 @@ import (
 	"os"
 
 	logic "porter/pkg/logic/client"
+	"porter/routers/variable"
 
 	controller "porter/pkg/logic/controller"
 
@@ -94,14 +95,18 @@ func Import(c *gin.Context) {
 
 	// step4 business logic
 	// logic.Import() //old
-	err = controller.Import() //new
+
+	//檢查目標預設語言是否在file裡
+	err = controller.CheckBeforeImport()
 	if err != nil {
+		variable.CheckBeforeImport = "fail"
 		c.JSON(http.StatusBadRequest, gin.H{
 			"error": err.Error(),
 		})
 		return
 	}
 
+	controller.Import() //new
 	c.JSON(http.StatusOK, gin.H{
 		"fileName": file.Filename,
 		"size":     file.Size,

@@ -7,6 +7,7 @@ import (
 	"porter/db"
 	gochan "porter/pkg/logic/gochan"
 	vars "porter/pkg/logic/vars"
+	"porter/routers/variable"
 	"strings"
 	"time"
 
@@ -15,6 +16,7 @@ import (
 )
 
 func middleware_api(c *gin.Context) {
+	variable.CheckBeforeImport = ""
 	//查看是否正在做，如果是則值接返回錯誤
 	if !vars.Get_PublicRes_State() {
 		c.JSON(http.StatusLocked, gin.H{
@@ -109,9 +111,12 @@ func middleware_api(c *gin.Context) {
 
 	c.Next()
 
+	if variable.CheckBeforeImport == "fail" {
+		return
+	}
+
 	// util.PrintJson(gochan.GetChan().Err)
 	// util.PrintJson(gochan.GetChan().ErrCount)
-
 	if gochan.GetChan().ErrCount > 0 {
 		log.Result = "fail"
 		log.Error = gochan.GetChan().Err

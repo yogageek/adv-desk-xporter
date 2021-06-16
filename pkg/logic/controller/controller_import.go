@@ -15,18 +15,13 @@ import (
 	"github.com/golang/glog"
 )
 
-func Import() error {
-	err := checkBeforeImport()
-	if err != nil {
-		return err
-	}
+func Import() {
 	go syncDoImport()
 	importController()
 	// PrintJson(vars.Get_PublicRess())
 	// mutex := sync.Mutex{} //似乎不一定需要，尚未驗證
 	// mutex.Lock()
 	// mutex.Unlock()
-	return nil
 }
 
 func syncDoImport() {
@@ -44,7 +39,7 @@ func syncDoImport() {
 	}
 }
 
-func checkBeforeImport() error {
+func CheckBeforeImport() error {
 	data := readFile() //read data
 	//檢查目標預設語言是否在匯出的清單內
 	var targetDefaultLang string

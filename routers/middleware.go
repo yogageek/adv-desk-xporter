@@ -38,7 +38,7 @@ func middleware_api(c *gin.Context) {
 		if file, err := c.Copy().FormFile("file"); err == nil {
 			// d := fmt.Sprint(time.Now().UTC().Format("20060102"))
 			// sysFileName := "iFactory_Desk_" + d
-			fileName = file.Filename + ".json"
+			fileName = file.Filename
 		}
 
 	}
@@ -46,6 +46,7 @@ func middleware_api(c *gin.Context) {
 		d := fmt.Sprint(time.Now().UTC().Format("20060102"))
 		sysFileName := "iFactory_Desk_" + d
 		fileName = sysFileName + ".json"
+		c.Set("fileName", fileName)
 	}
 
 	// 2021/06/02 Username

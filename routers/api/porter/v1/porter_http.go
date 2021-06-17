@@ -31,7 +31,8 @@ func Export(c *gin.Context) {
 
 	controller.Export()
 	//下載檔案
-	c.FileAttachment("./exportingData.json", "exportingData.json") //注意都要加.json 否則會找不到轉很久
+	fileName := c.GetString("fileName")
+	c.FileAttachment("./exportingData.json", fileName) //注意都要加.json 否則會找不到轉很久
 
 	// 下面再加會報錯
 	// c.JSON(http.StatusOK, gin.H{

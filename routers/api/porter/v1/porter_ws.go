@@ -149,7 +149,14 @@ func ProcessWs(ws *websocket.Conn) {
 		time.Sleep(time.Second * 1)
 		l := len(vars.PublicRess)
 		// fmt.Println("PublicRess length so far:", l)
-		v := vars.PublicRess[l-1]
+
+		//fix 匯入空的資料，沒有收到 event-done 事件
+		if l == 0 {
+			sendEventDone()
+			return
+		}
+
+		v := vars.PublicRess[l-1] //如果匯入空資料，則l會==0 這裡會error
 
 		realtimeLoaded := vars.SumLoaded(v)
 

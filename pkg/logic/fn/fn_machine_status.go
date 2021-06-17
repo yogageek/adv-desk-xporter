@@ -44,6 +44,17 @@ func ImportMachineStatus(jsonData *JsonData) {
 	M1 := map[int]string{}
 	M2 := map[int]string{}
 
+	/*
+		修改這一段, 在這邊追加對匯入目標的 Graphql 查詢
+		匯入時，看該 Machine Status 的 index 是否存在，
+		>> [Done] 不存在就新增，然後其他有用到該 Machine Status 的關聯欄位改使用新增後的 ID
+		>> [TODO] 存在的話:
+		1. 就將其他有用到該 Machine Status 的關聯欄位改使用已存在的 ID
+		2. 也要將原本匯出的名稱更新到已存在的 Machine Status
+		-> 但是我的匯入檔拿不到已存在的ID，這樣是還要再去對 B 環境打 query 找
+		->
+	*/
+
 	//-------------
 	// fix 忽略預設machine status
 	var newMachineStatusDatas []*MachineStatusData

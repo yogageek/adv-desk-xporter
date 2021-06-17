@@ -64,6 +64,7 @@ func ImportMachineStatus(jsonData *JsonData) {
 			newMachineStatusDatas = append(newMachineStatusDatas, v)
 		} else {
 			ignoredCount++
+			ChannelIn(MachineStatus, ignoredCount)
 		}
 	}
 	machineStatusDatas = newMachineStatusDatas

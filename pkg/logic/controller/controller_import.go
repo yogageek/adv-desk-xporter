@@ -56,10 +56,15 @@ func CheckBeforeImport() error {
 	fileTranslationLangsData := data.TranslationLangsData
 	for _, v := range fileTranslationLangsData {
 		if v.Lang == targetDefaultLang {
+			//-------暫時增加檢查json檔預設語言是否等於目標預設語言
+			if !v.IsDefault {
+				return fmt.Errorf("default lang %s not equal to default lang in file", targetDefaultLang)
+			}
+			//-------
 			return nil
 		}
 	}
-	return fmt.Errorf("default Lang %s not included in file", targetDefaultLang)
+	return fmt.Errorf("default lang %s not included in file", targetDefaultLang)
 }
 
 func importController() {

@@ -57,10 +57,13 @@ func ImportMachineStatus(jsonData *JsonData) {
 
 	//-------------
 	// fix 忽略預設machine status
+	ignoredCount := 0
 	var newMachineStatusDatas []*MachineStatusData
 	for _, v := range machineStatusDatas {
 		if v.Index >= 5000 { //1000~4000開頭為預設
 			newMachineStatusDatas = append(newMachineStatusDatas, v)
+		} else {
+			ignoredCount++
 		}
 	}
 	machineStatusDatas = newMachineStatusDatas
@@ -71,6 +74,7 @@ func ImportMachineStatus(jsonData *JsonData) {
 	// fmt.Println("----------------------------")
 
 	c := 0
+	c = c + ignoredCount
 	//fix: add set new machine status id after import
 	for _, v := range machineStatusDatas {
 

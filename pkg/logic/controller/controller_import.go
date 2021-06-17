@@ -24,9 +24,10 @@ func Import() {
 	// mutex.Unlock()
 }
 
+//偵測匯入進度
 func syncDoImport() {
-	vars.ResetPublicRess()
-	vars.ChanDone = false
+	vars.ResetPublicRess() //重設ws response
+	vars.ChanDone = false  //重設是否完成狀態
 	for {
 		if gochan.ChannelOut() {
 			vars.AppendResToRess()

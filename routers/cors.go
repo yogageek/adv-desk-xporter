@@ -22,7 +22,7 @@ func Cors() gin.HandlerFunc {
 		//允許跨域設定可以返回其他子段，可以自定義欄位
 		c.Header("Access-Control-Allow-Headers", "Authorization, Content-Type, Content-Length, X-CSRF-Token, Token, session")
 		// 允許瀏覽器（客戶端）可以解析的頭部 （重要）
-		c.Header("Access-Control-Expose-Headers", "Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers")
+		c.Header("Access-Control-Expose-Headers", "Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers, Content-Disposition")
 		//設定快取時間
 		c.Header("Access-Control-Max-Age", "172800")
 		//允許客戶端傳遞校驗資訊比如 cookie (重要)

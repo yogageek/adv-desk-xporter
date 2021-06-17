@@ -1,6 +1,9 @@
 package logic
 
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
 type State int
 type Mode string
@@ -117,6 +120,7 @@ func AppendResToRess() {
 	}
 
 	PublicRess = append(PublicRess, r)
+	fmt.Println("PublicRess:", PublicRess)
 }
 
 func SumLoaded(r Response) int {

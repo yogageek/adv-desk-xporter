@@ -132,10 +132,10 @@ func ProcessWs(ws *websocket.Conn) {
 	//檢查後台response(包含total數)是否已建好
 	for {
 		time.Sleep(time.Second * 1)
-		log.Println("check if DETAIL is available...")
+		// log.Println("check if DETAIL is available...")
 		if vars.Get_PubliceRes_Detail_Prepared() {
 			sendEventStart() //發送事件開始前的通知
-			log.Println("check if DETAIL is available... -> ok")
+			// log.Println("check if DETAIL is available... -> ok")
 			break
 		}
 	}

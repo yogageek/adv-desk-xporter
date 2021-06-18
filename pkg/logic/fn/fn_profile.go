@@ -95,7 +95,12 @@ func ImportProfileMachine(jsonData *JsonData) (oldAndnewId_profile, oldAndnewId_
 		}
 		newId := AddProfileMachine(input)
 		oldAndnewId_profile[v.Id] = newId
-		oldAndnewId_profileparameter = importProfileParameter(newId, *v)
+
+		//fix bug 當profile有多個paramter 第二個以後的會沒替換到
+		m := importProfileParameter(newId, *v)
+		for k, v := range m {
+			oldAndnewId_profileparameter[k] = v
+		}
 	}
 	return
 }

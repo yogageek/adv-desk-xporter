@@ -10,7 +10,7 @@
             "env": {                
                 "LOGINFO":"true",               
                  
-                "IFP_DESK_API_URL":"https://ifp-organizer-testingsa1-eks002.sa.wise-paas.com/graphql",
+                "IFP_DESK_API_URL":"https://ifp-organizer-testingsa1-eks002.sa.wise-paas.com/graphql",                
                 //"IFP_DESK_API_URL":"https://ifp-organizer-training-eks011.hz.wise-paas.com.cn/graphql",                
                 // "IFP_DESK_API_URL":"https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql",
                 

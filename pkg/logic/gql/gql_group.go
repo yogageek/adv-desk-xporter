@@ -48,6 +48,7 @@ func AddGroup(input model.AddGroupInput) (id string) {
 		gochan.GetChan().PutChan(err, vars.Group)
 		glog.Error(err)
 		// glog.Fatal(err)
+		return "error"
 	}
 
 	// //debugging

@@ -41,9 +41,12 @@ func syncDoImport() {
 }
 
 func CheckBeforeImport() error {
-	data := readFile() //read data
+	data, err := readFile() //read data
+	if err != nil {
+		return fmt.Errorf("file error: %s", err.Error())
+	}
 	//檢查目標預設語言是否在匯出的清單內
-	var targetDefaultLang string
+	var targetDefaultLang string //system default lang
 	targetTranslation := GetSourceTranslations()
 	b := util.IfaceToJson(targetTranslation)
 	m := util.JsonAryToMap(b)
@@ -58,7 +61,7 @@ func CheckBeforeImport() error {
 		if v.Lang == targetDefaultLang {
 			//-------暫時增加檢查json檔預設語言是否等於目標預設語言
 			if !v.IsDefault {
-				return fmt.Errorf("default lang %s not equal to default lang in file", targetDefaultLang)
+				return fmt.Errorf("system default lang %s not equal to default lang in file", targetDefaultLang)
 			}
 			//-------
 			return nil
@@ -68,7 +71,7 @@ func CheckBeforeImport() error {
 }
 
 func importController() {
-	data := readFile() //read data
+	data, _ := readFile() //read data
 
 	processes := implIface()
 	updatePuclicResTotal(&data, processes)
@@ -106,13 +109,14 @@ func doImport(data *JsonData, processes []Processer) {
 	}
 }
 
-func readFile() JsonData {
+func readFile() (data JsonData, err error) {
 	// checkFilePath()
 
 	//step1 Read json file...
 	b, err := ioutil.ReadFile("./importingData.json")
 	if err != nil {
-		glog.Fatal(err)
+		glog.Errorln(err)
+		return data, err
 	}
 	// fmt.Printf("%s", b)
 
@@ -121,15 +125,20 @@ func readFile() JsonData {
 	// result := gjson.GetBytes(b, "machineStatusData") //get all values which key is "id" in a array
 	// machineStatusDataB := []byte(result.Raw)
 	// method2
-	var data JsonData
 	err = json.Unmarshal(b, &data)
 	if err != nil {
-		glog.Fatal(err)
+		//handle bom format
+		cb := Clean(b)
+		err = json.Unmarshal(cb, &data)
+		if err != nil {
+			glog.Errorln(err)
+			return data, err
+		}
 	}
 
 	// debugging
 	// util.PrintJson(data)
 	// fmt.Println(data)
 
-	return data
+	return data, nil
 }

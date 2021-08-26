@@ -1,0 +1,210 @@
+{
+	"groupData": [
+		{
+			"id": "R3JvdXA.YIFPI-3BRgAGL3vX",
+			"name": "測試群postman",
+			"description": "testing",
+			"timeZone": "Asia/Taipei",
+			"coordinate": {
+				"longitude": 0,
+				"latitude": 0
+			},
+			"names": [
+				{
+					"text": "測試群name",
+					"lang": "en-US"
+				}
+			],
+			"descriptions": [
+				{
+					"text": "測試群description",
+					"lang": "en-US"
+				}
+			]
+		}
+	],
+	"machineData": [
+		{
+			"id": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+			"groupId": "R3JvdXA.X0Nt9dZ5cgAG6yNh",
+			"name": "測試",
+			"description": "xxx",
+			"imageUrl": "xxx",
+			"names": [
+				{
+					"text": "測試us",
+					"lang": "en-US"
+				},
+				{
+					"text": "測試tw",
+					"lang": "zh-TW"
+				}
+			],
+			"descriptions": [
+				{
+					"text": "測試description-us",
+					"lang": "en-US"
+				},
+				{
+					"text": "測試description-tw",
+					"lang": "zh-TW"
+				}
+			],
+			"imageUrls": [
+				{
+					"text": "測試url-us",
+					"lang": "en-US"
+				},
+				{
+					"text": "測試url-tw",
+					"lang": "zh-TW"
+				}
+			]
+		}
+	],
+	"machineStatusData": [
+		{
+			"color": "#008cd6",
+			"depth": 2,
+			"id": "TVN0YXR1cw.YDho1MGunQAGpEZu",
+			"index": 5200,
+			"name": "測試2",
+			"parentId": "TVN0YXR1cw.YDhor8GunQAGpEZo",
+			"parentIndex": 5000
+		}
+	],
+	"mappingRuleData": [
+		{
+			"detail": [
+				{
+					"code": "1",
+					"lang": "en-US",
+					"message": "測試msg",
+					"statusId": "TVN0YXR1cw.YDhor8GunQAGpEZo",
+					"text": "測試msg"
+				},
+				{
+					"code": "2",
+					"lang": "en-US",
+					"message": "測試msg2",
+					"statusId": "TVN0YXR1cw.YDhozcGunQAGpEZs",
+					"text": "測試msg2"
+				}
+			],
+			"id": "UE1hcFJ1bGU.YDhpcMGunQAGpEZw",
+			"name": "測試Rule",
+			"pType": "Number"
+		}
+	],
+	"parameterData": [
+		{
+			"Machine": {
+				"Parameters": {
+					"Nodes": [
+						{
+							"scadaId": "scada_MLiWnhbYms",
+							"tagId": "B-Time-set1",
+							"machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+							"name": "測試",
+							"description": "",
+							"valueType": "Number",
+							"mappingId": null,
+							"kind": null
+						}
+					],
+					"PageInfo": {
+						"hasNextPage": true,
+						"endCursor": "RGF0ZQ.MTU5OTY0MDA2MDAxOQ.X1iR-4RZEgAGpSQj"
+					}
+				}
+			}
+		},
+		{
+			"Machine": {
+				"Parameters": {
+					"Nodes": [],
+					"PageInfo": {
+						"hasNextPage": false,
+						"endCursor": ""
+					}
+				}
+			}
+		}
+	],
+	"profileData": [
+		{
+			"Name": "測試profile1",
+			"Description": "testing",
+			"ImageUrl": "",
+			"Parameters": [
+				{
+					"MachineId": "UGZNYWNoaW5l.YDhpjcGunQAGpEZz",
+					"Name": "測試para",
+					"Description": "testing",
+					"ValueType": "Number",
+					"Mapping": {
+						"Name": "測試Rule2",
+						"Id": "UE1hcFJ1bGU.YDveYMGunQAGpEZ8"
+					}
+				}
+			]
+		},
+		{
+			"Name": "測試profile",
+			"Description": "testing",
+			"ImageUrl": "",
+			"Parameters": [
+				{
+					"MachineId": "UGZNYWNoaW5l.YDhpjcGunQAGpEZz",
+					"Name": "測試para",
+					"Description": "testing",
+					"descriptions": [
+						{
+							"text": "testing",
+							"lang": "en-US"
+						}
+					],
+					"ValueType": "Number",
+					"Mapping": {
+						"Name": "測試Rule2",
+						"Id": "UE1hcFJ1bGU.YDveYMGunQAGpEZ8"
+					}
+				}
+			],
+			"names": [
+				{
+					"text": "測試profile",
+					"lang": "en-US"
+				}
+			],
+			"descriptions": [
+				{
+					"text": "testing",
+					"lang": "en-US"
+				}
+			],
+			"imageUrls": []
+		}
+	],
+	"translationLangsData": [
+		{
+			"id": "VHJhbnNsYXRpb25MYW5n.XzyjtZS83gAGuMaH",
+			"name": "English",
+			"lang": "en-US",
+			"isDefault": true
+		},
+		{
+			"id": "VHJhbnNsYXRpb25MYW5n.XzykGpS83gAGuMaJ",
+			"name": "簡體中文",
+			"lang": "zh-CN",
+			"isDefault": false
+		},
+		{
+			"id": "VHJhbnNsYXRpb25MYW5n.XzykApS83gAGuMaI",
+			"name": "正體中文",
+			"lang": "zh-TW",
+			"isDefault": false
+		}
+	],
+	"url": "https://ifp-organizer-impelex-eks011.hz.wise-paas.com.cn/graphql"
+}

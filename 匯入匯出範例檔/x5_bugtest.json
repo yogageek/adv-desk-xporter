@@ -1,0 +1,178 @@
+{
+	"groupData": [],
+	"machineData": [],
+	"machineStatusData": [],
+	"mappingRuleData": [],
+	"parameterData": null,
+	"profileData": [
+		{
+			"Id": "UGZNYWNoaW5l.YMwz_Slq_gAG3ge8",
+			"Name": "Thermometer",
+			"Description": "",
+			"ImageUrl": "",
+			"Parameters": [
+				{
+					"Id": "UGZQYXJhbWV0ZXI.YMwz_Slq_gAG3ge9",
+					"MachineId": "UGZNYWNoaW5l.YMwz_Slq_gAG3ge8",
+					"Name": "temperature",
+					"Description": "",
+					"descriptions": [
+						{
+							"text": "只是溫度",
+							"lang": "zh-TW"
+						}
+					],
+					"ValueType": "Number",
+					"Mapping": {
+						"Name": "",
+						"Id": ""
+					}
+				}
+			],
+			"names": [
+				{
+					"text": "Thermometer",
+					"lang": "en-US"
+				},
+				{
+					"text": "溫度計",
+					"lang": "zh-TW"
+				}
+			],
+			"descriptions": [
+				{
+					"text": "只是個溫度計",
+					"lang": "zh-TW"
+				}
+			],
+			"imageUrls": []
+		},
+		{
+			"Id": "UGZNYWNoaW5l.YMwz_Slq_gAG3ge-",
+			"Name": "production_real_time_system",
+			"Description": "",
+			"ImageUrl": "",
+			"Parameters": [
+				{
+					"Id": "UGZQYXJhbWV0ZXI.YMwz_Slq_gAG3ge_",
+					"MachineId": "UGZNYWNoaW5l.YMwz_Slq_gAG3ge-",
+					"Name": "attendance_rate",
+					"Description": "",
+					"descriptions": [],
+					"ValueType": "String",
+					"Mapping": {
+						"Name": "",
+						"Id": ""
+					}
+				},
+				{
+					"Id": "UGZQYXJhbWV0ZXI.YMwz_Slq_gAG3gfA",
+					"MachineId": "UGZNYWNoaW5l.YMwz_Slq_gAG3ge-",
+					"Name": "change_time_avg",
+					"Description": "",
+					"descriptions": [],
+					"ValueType": "String",
+					"Mapping": {
+						"Name": "",
+						"Id": ""
+					}
+				},
+				{
+					"Id": "UGZQYXJhbWV0ZXI.YMwz_Slq_gAG3gfB",
+					"MachineId": "UGZNYWNoaW5l.YMwz_Slq_gAG3ge-",
+					"Name": "focus_ng_count",
+					"Description": "",
+					"descriptions": [],
+					"ValueType": "String",
+					"Mapping": {
+						"Name": "",
+						"Id": ""
+					}
+				},
+				{
+					"Id": "UGZQYXJhbWV0ZXI.YMwz_Slq_gAG3gfC",
+					"MachineId": "UGZNYWNoaW5l.YMwz_Slq_gAG3ge-",
+					"Name": "late_rate",
+					"Description": "",
+					"descriptions": [],
+					"ValueType": "String",
+					"Mapping": {
+						"Name": "",
+						"Id": ""
+					}
+				},
+				{
+					"Id": "UGZQYXJhbWV0ZXI.YMwz_Slq_gAG3gfD",
+					"MachineId": "UGZNYWNoaW5l.YMwz_Slq_gAG3ge-",
+					"Name": "productivity",
+					"Description": "",
+					"descriptions": [],
+					"ValueType": "String",
+					"Mapping": {
+						"Name": "",
+						"Id": ""
+					}
+				},
+				{
+					"Id": "UGZQYXJhbWV0ZXI.YMwz_Slq_gAG3gfE",
+					"MachineId": "UGZNYWNoaW5l.YMwz_Slq_gAG3ge-",
+					"Name": "wip_doh",
+					"Description": "",
+					"descriptions": [],
+					"ValueType": "String",
+					"Mapping": {
+						"Name": "",
+						"Id": ""
+					}
+				},
+				{
+					"Id": "UGZQYXJhbWV0ZXI.YMwz_Slq_gAG3gfF",
+					"MachineId": "UGZNYWNoaW5l.YMwz_Slq_gAG3ge-",
+					"Name": "wip_idle_time",
+					"Description": "",
+					"descriptions": [],
+					"ValueType": "String",
+					"Mapping": {
+						"Name": "",
+						"Id": ""
+					}
+				},
+				{
+					"Id": "UGZQYXJhbWV0ZXI.YMwz_Slq_gAG3gfG",
+					"MachineId": "UGZNYWNoaW5l.YMwz_Slq_gAG3ge-",
+					"Name": "yield_rate",
+					"Description": "",
+					"descriptions": [],
+					"ValueType": "String",
+					"Mapping": {
+						"Name": "",
+						"Id": ""
+					}
+				}
+			],
+			"names": [
+				{
+					"text": "production_real_time_system",
+					"lang": "en-US"
+				}
+			],
+			"descriptions": [],
+			"imageUrls": []
+		}
+	],
+	"translationLangsData": [
+		{
+			"id": "VHJhbnNsYXRpb25MYW5n.YMAvPFO2kgAHft7o",
+			"name": "English",
+			"lang": "en-US",
+			"isDefault": true
+		},
+		{
+			"id": "VHJhbnNsYXRpb25MYW5n.YMAvOFO2kgAHft7n",
+			"name": "繁體中文",
+			"lang": "zh-TW",
+			"isDefault": false
+		}
+	],
+	"url": "http://organizer:80/graphql"
+}

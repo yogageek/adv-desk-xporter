@@ -1,0 +1,190 @@
+{
+	"groupData": [
+		{
+			"id": "R3JvdXA.YIFPI-3BRgAGL3vA",
+			"name": "測試群name",
+			"description": "testing",
+			"timeZone": "Asia/Taipei",
+			"coordinate": {
+				"longitude": 0,
+				"latitude": 0
+			},
+			"names": [
+				{
+					"text": "測試群name-us",
+					"lang": "en-US"
+				}
+			],
+			"descriptions": [
+				{
+					"text": "測試群description-us",
+					"lang": "en-US"
+				}
+			]
+		}
+	],
+	"machineData": [
+		{
+			"id": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+			"groupId": "R3JvdXA.YIFPI-3BRgAGL3vA",
+			"name": "測試",
+			"description": "測試description",
+			"imageUrl": "測試url",
+			"names": [
+				{
+					"text": "測試us",
+					"lang": "en-US"
+				}
+			],
+			"descriptions": [
+				{
+					"text": "測試description-us",
+					"lang": "en-US"
+				}
+			],
+			"imageUrls": [
+				{
+					"text": "測試url-us",
+					"lang": "en-US"
+				}
+			]
+		}
+	],
+	"machineStatusData": [
+		{
+			"color": "#008cd6",
+			"depth": 1,
+			"id": "TVN0YXR1cw.YIFPIu3BRgAGL3vH",
+			"index": 5000,
+			"name": "測試",
+			"names": [
+				{
+					"Lang": "en-US",
+					"Text": "測試us"
+				},
+				{
+					"Lang": "zh-TW",
+					"Text": "測試"
+				}
+			]
+		}
+	],
+	"mappingRuleData": [
+		{
+			"detail": [
+				{
+					"id": "UE1hcENvZGU.YMJQYe3BRgAGL4Hu",
+					"code": "1",
+					"lang": "en-US",
+					"message": "測試msg",
+					"statusId": "TVN0YXR1cw.YIFPIu3BRgAGL3vH",
+					"text": "測試msg",
+					"messages": [
+						{
+							"Lang": "en-US",
+							"Text": "測試msg-us"
+						},
+						{
+							"Lang": "zh-TW",
+							"Text": "測試msg"
+						}
+					]
+				}
+			],
+			"id": "UE1hcFJ1bGU.YDhpcMGunQAGpEZw",
+			"name": "測試Rule",
+			"pType": "Number"
+		}
+	],
+	"parameterData": [
+		{
+			"Machine": {
+				"Parameters": {
+					"Nodes": [
+						{
+							"scadaId": "scada_MLiWnhbYms",
+							"tagId": "B-Time-set1",
+							"machineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+							"name": "測試",
+							"description": "測試description",
+							"descriptions": [
+								{
+									"text": "測試description-us",
+									"lang": "en-US"
+								}
+							],
+							"valueType": "Number",
+							"mappingId": "UE1hcFJ1bGU.YDhpcMGunQAGpEZw",
+							"kind": null
+						}
+					],
+					"PageInfo": {
+						"hasNextPage": true,
+						"endCursor": "RGF0ZQ.MTU5OTY0MDA2MDAxOQ.X1iR-4RZEgAGpSQj"
+					}
+				}
+			}
+		}
+	],
+	"profileData": [
+		{
+			"Id": "UGZNYWNoaW5l.YMJ9JO3BRgAGL4MR",
+			"Name": "測試name",
+			"Description": "測試description",
+			"ImageUrl": "x",
+			"Parameters": [
+				{
+					"Id": "UGZQYXJhbWV0ZXI.YMJ9du3BRgAGL4MY",
+					"MachineId": "TWFjaGluZQ.X0OAStZ5cgAG6yN-",
+					"Name": "測試name",
+					"Description": "測試description",
+					"descriptions": [
+						{
+							"text": "測試description",
+							"lang": "zh-TW"
+						},
+						{
+							"text": "測試description-us",
+							"lang": "en-US"
+						}
+					],
+					"ValueType": "Number",
+					"Mapping": {
+						"Name": "測試Rule",
+						"Id": "UE1hcFJ1bGU.YDhpcMGunQAGpEZw"
+					}
+				}
+			],
+			"names": [
+				{
+					"text": "測試name-us",
+					"lang": "en-US"
+				},
+				{
+					"text": "測試name",
+					"lang": "zh-TW"
+				}
+			],
+			"descriptions": [
+				{
+					"text": "測試description-us",
+					"lang": "en-US"
+				},
+				{
+					"text": "測試description",
+					"lang": "zh-TW"
+				}
+			],
+			"imageUrls": [
+				{
+					"text": "x-us",
+					"lang": "en-US"
+				},
+				{
+					"text": "x",
+					"lang": "zh-TW"
+				}
+			]
+		}
+	]
+}

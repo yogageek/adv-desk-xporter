@@ -1,0 +1,38 @@
+{
+	"groupData": [
+		{
+			"id": "R3JvdXA.YMAwYFO2kgAHft-0",
+			"name": "A",
+			"description": "",
+			"timeZone": "America/Juneau",
+			"coordinate": null,
+			"names": [
+				{
+					"text": "A",
+					"lang": "zh-TW"
+				}
+			],
+			"descriptions": []
+		}
+	],
+	"machineData": [],
+	"machineStatusData": [],
+	"mappingRuleData": [],
+	"parameterData": null,
+	"profileData": [],
+	"translationLangsData": [
+		{
+			"id": "VHJhbnNsYXRpb25MYW5n.YMAvOFO2kgAHft7n",
+			"name": "繁體中文",
+			"lang": "zh-TW",
+			"isDefault": true
+		},
+		{
+			"id": "VHJhbnNsYXRpb25MYW5n.YMAvPFO2kgAHft7o",
+			"name": "English",
+			"lang": "en-US",
+			"isDefault": false
+		}
+	],
+	"url": "http://organizer:80/graphql"
+}

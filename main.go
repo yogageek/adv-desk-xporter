@@ -15,12 +15,8 @@ import (
 	"porter/routers"
 
 	"github.com/bitly/go-simplejson"
+	"github.com/prometheus/common/log"
 )
-
-// var m *sync.Mutex
-// m = new(sync.Mutex)
-// m.Lock()
-// m.Unlock()
 
 func usage() {
 	flag.PrintDefaults()
@@ -29,27 +25,23 @@ func usage() {
 
 func setFlag() {
 	flag.Usage = usage
-
-	//after setting here, no more need to put in .vscode args
-	flag.Set("alsologtostderr", "true")
-	flag.Set("v", "5")        //Info,Error...這種的不用set v就印的出來, glog.V(3)...這種的要set v才印的出來
-	flag.Set("log_dir", "gg") //put glog log data into "gg" folder, (注意要先把資料夾創出來!)
-	//stderrthreshold确保了只有大于或者等于该级别的日志才会被输出到stderr中，也就是标准错误输出中，默认为ERROR。当设置为FATAL时候，不会再有任何error信息的输出。
-
-	flag.Parse() //解析上面的set。 after parse(), so that your flag.set start effected
+	err := flag.Set("alsologtostderr", "true")
+	if err != nil {
+		log.Error(err)
+	}
+	err = flag.Set("v", "5")
+	if err != nil {
+		log.Error(err)
+	}
+	err = flag.Set("log_dir", "log_folder")
+	if err != nil {
+		log.Error(err)
+	}
+	flag.Parse()
 }
 
 func init() {
 	setFlag()
-	//for local test
-	// os.Setenv("MONGODB_URL", "52.187.110.12:27017")
-	// os.Setenv("MONGODB_DATABASE", "87e1dc58-4c20-4e65-ad81-507270f6bdac")
-	// os.Setenv("MONGODB_USERNAME", "19e0ce80-af51-404c-8d55-9edefcbd4bdf")
-	// os.Setenv("MONGODB_PASSWORD", "TYyvTeVemAlJzzuq4w3sBr2D")
-	// os.Setenv("IFP_DESK_API_URL", "https://ifp-organizer-testingsa1-eks002.sa.wise-paas.com/graphql") //training
-	// os.Setenv("IFP_DESK_USERNAME", "devanliang@iii.org.tw")
-	// os.Setenv("IFP_DESK_PASSWORD", "Abcd1234#")
-
 	//command all if run in saas
 	/*
 		os.Setenv("MONGODB_URL", "52.187.110.12:27017")
@@ -78,7 +70,7 @@ func init() {
 
 	initGlobalVar()
 
-	if config.AdminUsername != "" && config.AdminPassword != "" {
+	if config.IfpDeskUsername != "" && config.IfpDeskPassword != "" {
 		logic.Loop_RefreshTokenByUserPwd() //use user pwd
 	} else {
 		go logic.RefreshTokenByAppSecret() //use app secret
@@ -102,12 +94,19 @@ func initGlobalVar() {
 	if config.Namespace == "ifpsdev" {
 		config.SSOURL = "https://api-sso-ensaas.hz.wise-paas.com.cn/v4.0"
 	} else {
-		//config.SSOURL = os.Getenv("SSO_API_URL")
-		config.SSOURL = "https://api-sso-ensaas." + external + "/v4.0"
+		//#fix 改為WISE_PAAS_SSO_API_URL
+		config.SSOURL = os.Getenv("WISE_PAAS_SSO_API_URL")
+		fmt.Println("[ENV] WISE_PAAS_SSO_API_URL=", config.SSOURL)
+		// config.SSOURL = "https://api-sso-ensaas." + external + "/v4.0"
 	}
 
+	fmt.Println("[ENV] IFP_DESK_API_URL=", os.Getenv("IFP_DESK_API_URL"))
 	ifps_desk_api_url := os.Getenv("IFP_DESK_API_URL")
 	if len(ifps_desk_api_url) != 0 {
+		//到時候會給過來像 http://ifps-ifp-organizer:80/graphql 或是 https://ifp-organizer-${NAMESPACE}-${CLUSTER}.hz.wise-paas.com.cn/graphql
+		ifps_desk_api_url = strings.ReplaceAll(ifps_desk_api_url, "${NAMESPACE}", config.Namespace)
+		ifps_desk_api_url = strings.ReplaceAll(ifps_desk_api_url, "${CLUSTER}", config.Cluster)
+		ifps_desk_api_url = strings.ReplaceAll(ifps_desk_api_url, "${DATACENTER}", config.Datacenter)
 		config.IFPURL = ifps_desk_api_url
 		config.IFP_URL = config.IFPURL
 		config.IFP_URL_IN = config.IFPURL
@@ -116,9 +115,10 @@ func initGlobalVar() {
 		config.IFP_URL = config.IFPURL
 		config.IFP_URL_IN = config.IFPURL
 	}
+	fmt.Println("[ENV] IFP_DESK_API_URL After Replacing=", ifps_desk_api_url)
 
-	config.AdminUsername = os.Getenv("IFP_DESK_USERNAME")
-	config.AdminPassword = os.Getenv("IFP_DESK_PASSWORD")
+	config.IfpDeskUsername = os.Getenv("IFP_DESK_USERNAME")
+	config.IfpDeskPassword = os.Getenv("IFP_DESK_PASSWORD")
 
 	// ensaas services
 	ensaasService := os.Getenv("ENSAAS_SERVICES")

@@ -14,7 +14,7 @@ var (
 )
 
 func PrepareGQLCLient() {
-	if config.AdminUsername != "" && config.AdminPassword != "" {
+	if config.IfpDeskUsername != "" && config.IfpDeskPassword != "" {
 		PrepareGQLClientByUserPwd()
 	} else {
 		PrepareGQLClientByAppSecret()

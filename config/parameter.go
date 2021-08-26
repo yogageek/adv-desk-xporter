@@ -11,8 +11,8 @@ var (
 	MongodbPassword   string
 	MongodbDatabase   string
 	MongodbSource     string
-	AdminUsername     string
-	AdminPassword     string
+	IfpDeskUsername   string
+	IfpDeskPassword   string
 	OutboundURL       string
 	Token             string
 	Datacenter        string

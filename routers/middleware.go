@@ -136,8 +136,8 @@ func ChanFlow() {
 
 //havent implemet
 func middleware_ws(c *gin.Context) {
-	fmt.Println("exec middleware2...")
-	defer fmt.Println("after exec middleware2...")
+	// fmt.Println("exec middleware2...")
+	// defer fmt.Println("after exec middleware2...")
 	c.Next()
 
 }

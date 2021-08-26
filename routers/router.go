@@ -22,14 +22,15 @@ func InitRouter() *gin.Engine {
 	log := r.Group("/")
 	ws := r.Group("/")
 	{
-		//test
+
 		api.GET("/", func(c *gin.Context) {
 			c.JSON(200, gin.H{
 				"message": "OK",
 			})
 		})
+
 		//use middlware
-		api.Use(middleware_api) //新增存log功能 //.use的先後放置順序很重要 會影響以下
+		api.Use(middleware_api)
 
 		//api
 		api.GET("/config/file/export", v1.Export)

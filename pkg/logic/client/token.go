@@ -56,18 +56,11 @@ wait:
 		return
 	}
 	goto wait
-
-	// fmt.Println(Token)
-	// fmt.Println(Token2)
 }
 
 func RefreshTokenByUserPwd(url string) (token string, err error) {
-
-	// for {
-	fmt.Println("----------", time.Now().In(TaipeiTimeZone), "----------")
-	fmt.Println("RefreshToken...")
 	httpClient := &http.Client{}
-	content := map[string]string{"username": config.AdminUsername, "password": config.AdminPassword}
+	content := map[string]string{"username": config.IfpDeskUsername, "password": config.IfpDeskPassword}
 	variable := map[string]interface{}{"input": content}
 	httpRequestBody, _ := json.Marshal(map[string]interface{}{
 		"query":     "mutation signIn($input: SignInInput!) {   signIn(input: $input) {     user {       name       __typename     }     __typename   } }",
@@ -83,42 +76,26 @@ func RefreshTokenByUserPwd(url string) (token string, err error) {
 		return "", err
 	}
 	m, _ := simplejson.NewFromReader(response.Body)
-	for {
-		if len(m.Get("errors").MustArray()) == 0 {
-			break
-		} else {
-			httpRequestBody, _ = json.Marshal(map[string]interface{}{
-				"query":     "mutation signIn($input: SignInInput!) {   signIn(input: $input) {     user {       name       __typename     }     __typename   } }",
-				"variables": variable,
-			})
-			request, err = http.NewRequest("POST", url, bytes.NewBuffer(httpRequestBody))
-			if err != nil {
-				return "", err
-			}
-			request.Header.Set("Content-Type", "application/json")
-			response, err = httpClient.Do(request)
-			if err != nil {
-				return "", err
-			}
-			m, _ = simplejson.NewFromReader(response.Body)
-		}
+	errors := m.Get("errors")
+	errorsb, _ := errors.MarshalJSON()
+	if string(errorsb) != "null" {
+		log.Error("graphql sign in response got errors...")
+		panic(string(errorsb))
 	}
-	// fmt.Println("-- GraphQL API End", time.Now().In(taipeiTimeZone))
+
+	// r, _ := m.MarshalJSON()
+	// fmt.Printf("response body: %s", r)
+
 	header := response.Header
-	// fmt.Println(header)
-	// m, _ := simplejson.NewFromReader(response.Header)
+	// fmt.Printf("response header: %s", header)
 	cookie := header["Set-Cookie"]
 	tempSplit := strings.Split(cookie[0], ";")
 	ifpToken := tempSplit[0]
 	tempSplit = strings.Split(cookie[1], ";")
 	eiToken := tempSplit[0]
 	token = ifpToken + ";" + eiToken
-	fmt.Println(token)
+	fmt.Println("Token from cookie:", token)
 	return token, nil
-	// fmt.Println("Token:", Token)
-	// os.Setenv("Token", Token)
-	// time.Sleep(60 * time.Minute)
-	// }
 }
 
 // 2021/05/31 Add AppSecret Token
@@ -126,7 +103,7 @@ func RefreshTokenByAppSecret() {
 	for {
 		fmt.Println("----------", time.Now().In(config.TaipeiTimeZone), "----------")
 		if len(config.AppSecretFile) > 0 {
-			util.PrintBlue("not cloud-------------")
+			util.PrintBlue("running on an enviroment which is not cloud-------------")
 			appSecret, err := os.ReadFile(config.AppSecretFile)
 			if err != nil {
 				fmt.Println("Read appSecret_file error:", err)
@@ -135,90 +112,33 @@ func RefreshTokenByAppSecret() {
 			}
 			fmt.Println("Token from appSecret:", config.Token)
 			time.Sleep(60 * time.Minute)
-			// if len(config.Datacenter) == 0 {
-			// 	fmt.Println("len(config.Datacenter) == 0 refreshToken============")
-			// 	httpClient := &http.Client{}
-			// 	content := map[string]string{"username": config.AdminUsername, "password": config.AdminPassword}
-			// 	variable := map[string]interface{}{"input": content}
-			// 	httpRequestBody, _ := json.Marshal(map[string]interface{}{
-			// 		"query":     "mutation signIn($input: SignInInput!) {   signIn(input: $input) {     user {       name       __typename     }     __typename   } }",
-			// 		"variables": variable,
-			// 	})
-			// 	request, _ := http.NewRequest("POST", config.IFPURL, bytes.NewBuffer(httpRequestBody))
-			// 	request.Header.Set("Content-Type", "application/json")
-			// 	response, _ := httpClient.Do(request)
-			// 	m, _ := simplejson.NewFromReader(response.Body)
-			// 	for {
-			// 		if len(m.Get("errors").MustArray()) == 0 {
-			// 			break
-			// 		} else {
-			// 			fmt.Println("----------", time.Now().In(config.TaipeiTimeZone), "----------")
-			// 			fmt.Println("retry refreshToken")
-			// 			httpRequestBody, _ = json.Marshal(map[string]interface{}{
-			// 				"query":     "mutation signIn($input: SignInInput!) {   signIn(input: $input) {     user {       name       __typename     }     __typename   } }",
-			// 				"variables": variable,
-			// 			})
-			// 			request, _ = http.NewRequest("POST", config.IFPURL, bytes.NewBuffer(httpRequestBody))
-			// 			request.Header.Set("Content-Type", "application/json")
-			// 			response, _ = httpClient.Do(request)
-			// 			m, _ = simplejson.NewFromReader(response.Body)
-			// 			time.Sleep(6 * time.Minute)
-			// 		}
-			// 	}
-			// 	header := response.Header
-			// 	cookie := header["Set-Cookie"]
-			// 	var ifpToken, eiToken string
-			// 	for _, cookieContent := range cookie {
-			// 		tempSplit := strings.Split(cookieContent, ";")
-			// 		if strings.HasPrefix(tempSplit[0], "IFPToken") {
-			// 			ifpToken = tempSplit[0]
-			// 		} else if strings.HasPrefix(tempSplit[0], "EIToken") {
-			// 			eiToken = tempSplit[0]
-			// 		}
-			// 	}
-			// 	if eiToken == "" {
-			// 		config.Token = ifpToken
-			// 	} else {
-			// 		config.Token = ifpToken + ";" + eiToken
-			// 	}
-			// 	fmt.Println("Token:", config.Token)
-			// 	time.Sleep(60 * time.Minute)
 		} else {
-			fmt.Println("cloud--------------")
+			fmt.Println("running on an enviroment which is cloud--------------")
 			//timestamp := time.Now()
 			//options := &newSRPTokenOptions{Timestamp: &timestamp}
 			result := newSrpToken(config.ServiceName, nil)
 			httpClient := &http.Client{}
 			request, _ := http.NewRequest("GET", config.SSOURL+"/clients/"+config.ClientName, nil)
 			request.Header.Set("Content-Type", "application/json")
-			fmt.Println("Set X-Auth-SRPToken: ", result)
 			request.Header.Set("X-Auth-SRPToken", result)
+			fmt.Println("Set X-Auth-SRPToken: ", result)
 			q := request.URL.Query()
-			if config.Namespace == "ifpsdev" {
-				// 我們自己環境連的是 eks011 training 的站點, 這裡寫死
-				q.Add("cluster", "eks011")
-				q.Add("workspace", "53e8c8bd-b724-4c87-a905-5bbc5c30a36c")
-				q.Add("namespace", "training")
-				q.Add("appId", config.AppID)
-			} else {
-				q.Add("cluster", config.Cluster)
-				q.Add("workspace", config.Workspace)
-				q.Add("namespace", config.Namespace)
-				q.Add("appId", config.AppID)
-			}
+			q.Add("cluster", config.Cluster)
+			q.Add("workspace", config.Workspace)
+			q.Add("namespace", config.Namespace)
+			q.Add("appId", config.AppID)
 			q.Add("serviceName", config.ServiceName)
 			request.URL.RawQuery = q.Encode()
 			response, err := httpClient.Do(request)
-			//----------
-			fmt.Println("--------request sso--------")
-			fmt.Println(request.URL)
-			fmt.Printf("%+v \n", response)
 			if err != nil {
-				fmt.Println(err)
+				panic(err)
 			}
+
+			fmt.Printf("request url and param: %s \n", request.URL)
+			fmt.Printf("response: %+v \n", response)
 			m, err := simplejson.NewFromReader(response.Body)
 			if err != nil {
-				fmt.Println(err)
+				panic(err)
 			}
 			config.Token = m.Get("clientSecret").MustString()
 			fmt.Println("Token from SSO:", config.Token)

@@ -110,6 +110,8 @@ func ProcessWs(ws *websocket.Conn) {
 		); err != nil {
 			log.Println("write:", err)
 		}
+		//#1.1.7 fix 有時候收不到event-done
+		time.Sleep(time.Second * 1)
 	}
 
 	for {
